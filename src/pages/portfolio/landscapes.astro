@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Gallery from '../../components/Gallery.astro';
+
+const base = 'https://crismaturana.com/wp-content/uploads/2017/03/';
+
+// Using portraits-style images for couples & family
+const images = [
+  { thumb: base + 'TheHyggeFamily@-24-267x400.jpg', full: base + 'TheHyggeFamily@-24.jpg' },
+  { thumb: base + 'MartinsSoul@-24-599x400.jpg', full: base + 'MartinsSoul@-24.jpg' },
+  { thumb: base + 'MartinsSoul@-27-599x400.jpg', full: base + 'MartinsSoul@-27.jpg' },
+  { thumb: base + 'Danya1@-19-267x400.jpg', full: base + 'Danya1@-19.jpg' },
+  { thumb: base + 'Danya1@-27-599x400.jpg', full: base + 'Danya1@-27.jpg' },
+  { thumb: base + 'Danya1@-35-267x400.jpg', full: base + 'Danya1@-35.jpg' },
+  { thumb: base + 'Danya1@-69-599x400.jpg', full: base + 'Danya1@-69.jpg' },
+  { thumb: base + 'Danya1@-81-267x400.jpg', full: base + 'Danya1@-81.jpg' },
+  { thumb: base + 'IMG_3025-600x400.jpg', full: base + 'IMG_3025.jpg' },
+  { thumb: base + 'IMG_7856-600x400.jpg', full: base + 'IMG_7856.jpg' },
+  { thumb: base + 'IMG_3435-320x400.jpg', full: base + 'IMG_3435-scaled.jpg' },
+  { thumb: base + 'RetratoGenteLagkawi@-9-267x400.jpg', full: base + 'RetratoGenteLagkawi@-9.jpg' },
+].map(img => ({ ...img, alt: 'Couples & Family photography by Cristóbal Maturana' }));
+---
+
+<Layout title="Couples & Family – Cristóbal Maturana" description="Couples and family photography by Cristóbal Maturana.">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Couples & Family</h1>
+      <p>Genuine connection, beautifully captured.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery-intro">
+        <p>These sessions are about you — your connection, your story, your dynamic. Whether it's a couple in the city or a family on the coast, I create a relaxed environment where genuine moments happen naturally. No stiff poses. Just you, beautifully captured.</p>
+      </div>
+      <Gallery images={images} layout="masonry" columns={3} />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .gallery-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+</style>

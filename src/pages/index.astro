@@ -1,0 +1,503 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const heroSlides = [
+  {
+    title: 'My Personal Work',
+    subtitle: 'LOVELY PLACES',
+    cta: 'Find More',
+    href: '/portfolio',
+    bg: 'https://crismaturana.com/wp-content/uploads/2017/03/RiverBoatsHoiAn@-10.jpg',
+  },
+  {
+    title: 'Photo Tours Vietnam 2026',
+    subtitle: 'DESTINATION PHOTOGRAPHER',
+    cta: 'Find More',
+    href: '/portfolio/photo-tours-vietnam-2026',
+    bg: 'https://crismaturana.com/wp-content/uploads/2017/03/DronCoconutBoat@-9.jpg',
+  },
+  {
+    title: 'Documentary Weddings',
+    subtitle: 'DESTINATION PHOTOGRAPHER',
+    cta: 'View Portfolio',
+    href: '/portfolio/weddings',
+    bg: 'https://crismaturana.com/wp-content/uploads/2017/03/IMG_9822.jpg',
+  },
+  {
+    title: 'Portraits / Love Stories',
+    subtitle: 'YOUR STORY, INDIVIDUALLY OR TOGETHER',
+    cta: 'Find More',
+    href: '/portfolio/portraits',
+    bg: 'https://crismaturana.com/wp-content/uploads/2017/03/DSC_1690_2048px.jpg',
+  },
+];
+
+const portfolioCategories = [
+  {
+    title: 'Photo Tours Vietnam 2026',
+    href: '/portfolio/photo-tours-vietnam-2026',
+    thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/DronCoconutBoat@-9-711x400.jpg',
+  },
+  {
+    title: 'Portraits',
+    subtitle: 'Natural light. Honest expressions.',
+    href: '/portfolio/portraits',
+    thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/DSC_1690_2048px-267x400.jpg',
+  },
+  {
+    title: 'Weddings',
+    subtitle: 'Moments that last forever.',
+    href: '/portfolio/weddings',
+    thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/IMG_9822-599x400.jpg',
+  },
+  {
+    title: 'Travel & Culture',
+    subtitle: 'Observing the world, honestly.',
+    href: '/portfolio/travel-culture',
+    thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/01.25HoiAn@-39-800x534.jpg',
+  },
+  {
+    title: 'From Above',
+    subtitle: 'Perspective changes everything.',
+    href: '/portfolio/aerial',
+    thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/DronCoconutBoat@-9-711x400.jpg',
+  },
+  {
+    title: 'Couples & Family',
+    subtitle: 'Genuine connection, beautifully captured.',
+    href: '/portfolio/landscapes',
+    thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/TheHyggeFamily@-24-267x400.jpg',
+  },
+  {
+    title: 'Architecture',
+    subtitle: 'Form, light, and space.',
+    href: '/portfolio/architecture',
+    thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/HoiAnDron@-1-711x400.jpg',
+  },
+  {
+    title: 'Night Sky',
+    subtitle: 'The universe above.',
+    href: '/portfolio/night-sky',
+    thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/temp_image_for_default_share-4-711x400.jpg',
+  },
+];
+---
+
+<Layout title="Cristóbal Maturana – Documentary Photographer">
+
+  <!-- HERO SLIDER -->
+  <section class="hero" id="hero" aria-label="Featured work">
+    <div class="hero-slides">
+      {heroSlides.map((slide, i) => (
+        <div class={`hero-slide ${i === 0 ? 'active' : ''}`} style={`background-image: url('${slide.bg}')`}>
+          <div class="hero-content">
+            <p class="hero-subtitle">{slide.subtitle}</p>
+            <h1 class="hero-title">{slide.title}</h1>
+            <a href={slide.href} class="btn">{slide.cta}</a>
+          </div>
+        </div>
+      ))}
+    </div>
+    <button class="hero-arrow hero-prev" aria-label="Previous slide">&#8249;</button>
+    <button class="hero-arrow hero-next" aria-label="Next slide">&#8250;</button>
+    <div class="hero-dots">
+      {heroSlides.map((_, i) => (
+        <button class={`hero-dot ${i === 0 ? 'active' : ''}`} aria-label={`Go to slide ${i + 1}`} data-slide={i}></button>
+      ))}
+    </div>
+  </section>
+
+  <!-- PORTFOLIO GRID -->
+  <section class="section portfolio-section">
+    <div class="container">
+      <p class="section-label">Take a look at my works</p>
+      <div class="portfolio-grid">
+        {portfolioCategories.map((cat) => (
+          <a href={cat.href} class="portfolio-card">
+            <div class="portfolio-card-img">
+              <img src={cat.thumb} alt={cat.title} loading="lazy" />
+            </div>
+            <div class="portfolio-card-info">
+              <h3 class="portfolio-card-title">{cat.title}</h3>
+              {cat.subtitle && <p class="portfolio-card-sub">{cat.subtitle}</p>}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="section about-section">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-img-wrap">
+          <img
+            src="https://crismaturana.com/wp-content/uploads/2026/02/DSC_1505-2-3-684x1024.jpg"
+            alt="Cristóbal Maturana"
+            loading="lazy"
+          />
+        </div>
+        <div class="about-content">
+          <p class="section-label">About the photographer</p>
+          <h2 class="section-title">
+            Hi, I'm Cristóbal, photographer and visual storyteller. I capture authentic, meaningful moments with intention and depth.
+          </h2>
+          <p class="about-text">
+            Each frame is shaped by light, emotion, and the subtle details that often go unnoticed. My experience living abroad expanded my perspective, allowing me to see beauty in contrasts, cultures, and quiet in-between moments. I approach every project with sensitivity and purpose, creating images that feel honest, timeless, and deeply personal.
+          </p>
+          <img
+            src="https://crismaturana.com/wp-content/uploads/2026/02/firma-Cristobal-Maturana.png"
+            alt="Cristóbal Maturana signature"
+            class="about-signature"
+            loading="lazy"
+          />
+          <div class="about-social">
+            <a href="https://www.facebook.com/Matufoto/" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="awards-section">
+    <div class="container">
+      <div class="awards-grid">
+        <div class="award-item">
+          <div class="award-stars">★★★★★</div>
+          <p class="award-title">Photographer of the Year 2018</p>
+        </div>
+        <div class="award-item">
+          <div class="award-stars">★★★★★</div>
+          <p class="award-title">Best Wedding Photo 2018</p>
+        </div>
+        <div class="award-item">
+          <div class="award-stars">★★★★★</div>
+          <p class="award-title">Best Portrait 2017</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-title">Book a photo session today</h2>
+        <a href="/contact" class="btn btn-accent">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* HERO */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+  }
+
+  .hero-slides { position: relative; width: 100%; height: 100%; }
+
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .hero-slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%);
+  }
+
+  .hero-slide.active { opacity: 1; }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 400;
+    color: var(--color-white);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  }
+
+  .hero-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    font-size: 2.5rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    line-height: 1;
+    padding-bottom: 4px;
+  }
+
+  .hero-arrow:hover { background: rgba(255,255,255,0.25); }
+  .hero-prev { left: 1.5rem; }
+  .hero-next { right: 1.5rem; }
+
+  .hero-dots {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+  }
+
+  .hero-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .hero-dot.active {
+    background: var(--color-white);
+    transform: scale(1.3);
+  }
+
+  /* PORTFOLIO GRID */
+  .portfolio-section { padding-top: 80px; }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 2rem;
+  }
+
+  .portfolio-card {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    aspect-ratio: 4/3;
+  }
+
+  .portfolio-card-img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .portfolio-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .portfolio-card:hover .portfolio-card-img img {
+    transform: scale(1.06);
+  }
+
+  .portfolio-card-info {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .portfolio-card:hover .portfolio-card-info { opacity: 1; }
+
+  .portfolio-card-title {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-white);
+    margin-bottom: 0.3rem;
+  }
+
+  .portfolio-card-sub {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.75);
+    font-weight: 300;
+  }
+
+  /* ABOUT */
+  .about-section { background: var(--color-surface); }
+
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-img-wrap {
+    position: relative;
+  }
+
+  .about-img-wrap img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .about-text {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .about-signature {
+    height: 50px;
+    width: auto;
+    margin-bottom: 1.5rem;
+    filter: invert(1);
+    opacity: 0.8;
+  }
+
+  .about-social {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .about-social a {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .about-social a:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  /* AWARDS */
+  .awards-section {
+    padding: 60px 0;
+    background: #0d0d0d;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .award-item { padding: 1rem; }
+
+  .award-stars {
+    font-size: 1rem;
+    color: var(--color-accent);
+    letter-spacing: 0.2em;
+    margin-bottom: 0.75rem;
+  }
+
+  .award-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  /* CTA */
+  .cta-section { padding: 80px 0; }
+
+  .cta-inner {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .about-img-wrap img { height: 400px; }
+    .awards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  }
+
+  @media (max-width: 600px) {
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .hero-arrow { display: none; }
+  }
+</style>
+
+<script>
+  // Hero slider
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  let current = 0;
+  let timer: ReturnType<typeof setInterval>;
+
+  function goTo(idx: number) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (idx + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 5000);
+  }
+
+  document.querySelector('.hero-prev')?.addEventListener('click', () => { goTo(current - 1); startTimer(); });
+  document.querySelector('.hero-next')?.addEventListener('click', () => { goTo(current + 1); startTimer(); });
+  dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); startTimer(); }));
+
+  startTimer();
+</script>

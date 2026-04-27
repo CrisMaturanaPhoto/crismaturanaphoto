@@ -1,0 +1,260 @@
+---
+const navLinks = [
+  { label: 'Home', href: '/' },
+  {
+    label: 'Portfolio',
+    href: '/portfolio',
+    children: [
+      { label: 'All Work', href: '/portfolio' },
+      { label: 'Portraits', href: '/portfolio/portraits' },
+      { label: 'Weddings', href: '/portfolio/weddings' },
+      { label: 'Travel & Culture', href: '/portfolio/travel-culture' },
+      { label: 'From Above', href: '/portfolio/aerial' },
+      { label: 'Couples & Family', href: '/portfolio/landscapes' },
+      { label: 'Architecture', href: '/portfolio/architecture' },
+      { label: 'Night Sky', href: '/portfolio/night-sky' },
+    ],
+  },
+  {
+    label: 'Pages',
+    href: '#',
+    children: [
+      { label: 'About Me', href: '/about-me' },
+      { label: 'Prices', href: '/prices' },
+      { label: 'FAQ', href: '/faq' },
+    ],
+  },
+  { label: 'Contact', href: '/contact' },
+];
+---
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-name">Cristóbal Maturana</span>
+      <span class="logo-sub">Documentary Photographer</span>
+    </a>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" role="navigation">
+      <ul class="nav-list">
+        {navLinks.map((link) => (
+          <li class={`nav-item ${link.children ? 'has-dropdown' : ''}`}>
+            <a href={link.href} class="nav-link">
+              {link.label}
+              {link.children && <span class="dropdown-arrow">&#9662;</span>}
+            </a>
+            {link.children && (
+              <ul class="dropdown">
+                {link.children.map((child) => (
+                  <li><a href={child.href} class="dropdown-link">{child.label}</a></li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: var(--nav-height);
+    transition: background 0.4s ease, backdrop-filter 0.4s ease;
+  }
+
+  .site-header.scrolled {
+    background: rgba(17, 17, 17, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  .logo-name {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--color-white);
+    letter-spacing: 0.02em;
+  }
+
+  .logo-sub {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .site-nav { display: flex; }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    gap: 0;
+    align-items: center;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0 1.1rem;
+    height: var(--nav-height);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover { color: var(--color-white); }
+
+  .dropdown-arrow {
+    font-size: 0.6rem;
+    opacity: 0.6;
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: calc(var(--nav-height) - 2px);
+    left: 0;
+    min-width: 200px;
+    background: #1a1a1a;
+    border: 1px solid var(--color-border);
+    border-top: 2px solid var(--color-accent);
+    list-style: none;
+    padding: 0.5rem 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  }
+
+  .has-dropdown:hover .dropdown { display: block; }
+
+  .dropdown-link {
+    display: block;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    transition: color 0.2s, padding-left 0.2s;
+    white-space: nowrap;
+  }
+
+  .dropdown-link:hover {
+    color: var(--color-white);
+    padding-left: 1.6rem;
+  }
+
+  /* Mobile */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-white);
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 900px) {
+    .menu-toggle { display: flex; }
+
+    .site-nav {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--color-bg);
+      overflow-y: auto;
+      padding: 2rem;
+    }
+
+    .site-nav.open { display: block; }
+
+    .nav-list { flex-direction: column; align-items: flex-start; gap: 0; }
+
+    .nav-link {
+      height: auto;
+      padding: 1rem 0;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid var(--color-border);
+      width: 100%;
+    }
+
+    .dropdown {
+      display: block;
+      position: static;
+      border: none;
+      background: transparent;
+      border-top: none;
+      padding: 0 0 0 1rem;
+      box-shadow: none;
+    }
+
+    .dropdown-link {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .dropdown-link:hover { padding-left: 0.5rem; }
+  }
+</style>
+
+<script>
+  const header = document.getElementById('site-header')!;
+  const toggle = document.getElementById('menu-toggle')!;
+  const nav = document.getElementById('site-nav')!;
+
+  // Scroll effect
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+  header.classList.toggle('scrolled', window.scrollY > 20);
+
+  // Mobile menu
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+</script>

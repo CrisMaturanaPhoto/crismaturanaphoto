@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Gallery from '../../components/Gallery.astro';
+
+const base = 'https://crismaturana.com/wp-content/uploads/2017/03/';
+
+const images = [
+  { thumb: base + '65A7130F-8437-40C6-A0CE-A484A4A9FA4D-711x400.jpg', full: base + '65A7130F-8437-40C6-A0CE-A484A4A9FA4D.jpg' },
+  { thumb: base + 'Dron@-3-711x400.jpg', full: base + 'Dron@-3.jpg' },
+  { thumb: base + 'DronCoconutBoat@-9-711x400.jpg', full: base + 'DronCoconutBoat@-9.jpg' },
+  { thumb: base + 'DronCoconutBoat@-3-711x400.jpg', full: base + 'DronCoconutBoat@-3.jpg' },
+  { thumb: base + 'DronCoconutBoat@-8-711x400.jpg', full: base + 'DronCoconutBoat@-8.jpg' },
+  { thumb: base + 'DronCoconutBoat@-11-711x400.jpg', full: base + 'DronCoconutBoat@-11.jpg' },
+  { thumb: base + 'DronCoconutBoat@-10-711x400.jpg', full: base + 'DronCoconutBoat@-10.jpg' },
+  { thumb: base + 'HoiAnDron@-1-711x400.jpg', full: base + 'HoiAnDron@-1.jpg' },
+  { thumb: base + 'HoiAnDron@-3-711x400.jpg', full: base + 'HoiAnDron@-3.jpg' },
+  { thumb: base + 'HoiAnDron@-7-711x400.jpg', full: base + 'HoiAnDron@-7.jpg' },
+  { thumb: base + 'HoiAnDron@-4-711x400.jpg', full: base + 'HoiAnDron@-4.jpg' },
+  { thumb: base + 'HoiAnDron@-5-711x400.jpg', full: base + 'HoiAnDron@-5.jpg' },
+  { thumb: base + 'Pai-Buda-1-711x400.jpg', full: base + 'Pai-Buda-1.jpg' },
+  { thumb: base + 'temp_image_for_default_share-4-711x400.jpg', full: base + 'temp_image_for_default_share-4.jpg' },
+  { thumb: base + 'temp_image_for_default_share-8-711x400.jpg', full: base + 'temp_image_for_default_share-8.jpg' },
+  { thumb: base + 'temp_image_for_default_share-7-711x400.jpg', full: base + 'temp_image_for_default_share-7.jpg' },
+  { thumb: base + 'temp_image_for_default_share-6-711x400.jpg', full: base + 'temp_image_for_default_share-6.jpg' },
+  { thumb: base + 'temp_image_for_default_share-5-711x400.jpg', full: base + 'temp_image_for_default_share-5.jpg' },
+  { thumb: base + 'Dron@-8-711x400.jpg', full: base + 'Dron@-8.jpg' },
+  { thumb: base + 'Dron@-6-711x400.jpg', full: base + 'Dron@-6.jpg' },
+  { thumb: base + 'Dron@-5-711x400.jpg', full: base + 'Dron@-5.jpg' },
+  { thumb: base + 'Dron@-2-711x400.jpg', full: base + 'Dron@-2.jpg' },
+].map(img => ({ ...img, alt: 'Aerial drone photography by Cristóbal Maturana' }));
+---
+
+<Layout title="From Above – Cristóbal Maturana" description="Aerial drone photography by Cristóbal Maturana.">
+  <div class="page-hero">
+    <div class="container">
+      <h1>From Above</h1>
+      <p>Perspective changes everything.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery-intro">
+        <p>Through drone photography, I explore landscapes from above — revealing patterns, scale, and geometry often invisible from the ground. Guided by light and composition, each frame offers a refined, cinematic view that transforms familiar places into striking visual statements.</p>
+      </div>
+      <Gallery images={images} layout="grid" columns={3} />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .gallery-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+</style>

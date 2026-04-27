@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Gallery from '../../components/Gallery.astro';
+
+const base = 'https://crismaturana.com/wp-content/uploads/2017/03/';
+
+const images = [
+  { thumb: base + 'HoiAnDron@-1-711x400.jpg', full: base + 'HoiAnDron@-1.jpg' },
+  { thumb: base + 'HoiAnDron@-3-711x400.jpg', full: base + 'HoiAnDron@-3.jpg' },
+  { thumb: base + 'HoiAnDron@-4-711x400.jpg', full: base + 'HoiAnDron@-4.jpg' },
+  { thumb: base + 'HoiAnDron@-5-711x400.jpg', full: base + 'HoiAnDron@-5.jpg' },
+  { thumb: base + 'HoiAnDron@-7-711x400.jpg', full: base + 'HoiAnDron@-7.jpg' },
+  { thumb: base + 'BudaPai-1-800x534.jpg', full: base + 'BudaPai-1.jpg' },
+  { thumb: base + 'BudaPai-4-800x534.jpg', full: base + 'BudaPai-4.jpg' },
+  { thumb: base + 'Pai-Buda-1-711x400.jpg', full: base + 'Pai-Buda-1.jpg' },
+  { thumb: base + '01.25HoiAn@-39-800x534.jpg', full: base + '01.25HoiAn@-39.jpg' },
+  { thumb: base + '01.25HoiAn@-42-800x534.jpg', full: base + '01.25HoiAn@-42.jpg' },
+  { thumb: base + '01.25HoiAn@-34-800x534.jpg', full: base + '01.25HoiAn@-34.jpg' },
+  { thumb: base + '01.25HoiAn@-47-800x534.jpg', full: base + '01.25HoiAn@-47.jpg' },
+].map(img => ({ ...img, alt: 'Architecture photography by Cristóbal Maturana' }));
+---
+
+<Layout title="Architecture – Cristóbal Maturana" description="Architecture photography by Cristóbal Maturana.">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Architecture</h1>
+      <p>Form, light, and space.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery-intro">
+        <p>Architecture is frozen music — rhythm in stone, glass, and steel. I photograph buildings and spaces with an eye for composition and light, finding the lines and angles that reveal the intention behind the design. From ancient temples to modern structures, every building has a story to tell.</p>
+      </div>
+      <Gallery images={images} layout="grid" columns={3} />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .gallery-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+</style>

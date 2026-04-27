@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  {
+    q: 'Duis aute irure dolor in reprehenderit?',
+    a: 'Inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Qui officia deserunt mollit anim id est laborum. Esse cillum dolore eu fugiat nulla pariatur. Itaque earum rerum hic tenetur a sapiente delectus. At vero eos et accusamus. Itaque earum rerum hic tenetur a sapiente delectus. Excepteur sint occaecat cupidatat non proident, sunt in culpa. Animi, id est laborum et dolorum fuga. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
+  },
+  {
+    q: 'Excepteur sint occaecat cupidatat non proident?',
+    a: 'Fusce commodo odio et leo tristique, in cursus ipsum cursus. Etiam nulla neque, volutpat vel enim in, mattis pulvinar mi. Nam ac est nec tellus maximus gravida. Etiam ultricies sapien eu sapien aliquet congue. Sed porttitor tellus nec viverra egestas. Cras vitae nisi non mauris ultrices fermentum. Maecenas vehicula metus nisi, nec finibus justo vulputate eget.',
+  },
+  {
+    q: 'Fugiat quo voluptas nulla pariatur?',
+    a: 'Architecto beatae vitae dicta sunt explicabo. Et harum quidem rerum facilis est et expedita distinctio. Totam rem aperiam. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia.',
+  },
+  {
+    q: 'Nisi ut aliquid ex ea commodi consequatur?',
+    a: 'Inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Qui officia deserunt mollit anim id est laborum. Esse cillum dolore eu fugiat nulla pariatur. Itaque earum rerum hic tenetur a sapiente delectus. At vero eos et accusamus. Itaque earum rerum hic tenetur a sapiente delectus. Excepteur sint occaecat cupidatat non proident, sunt in culpa.',
+  },
+  {
+    q: 'Quia consequuntur magni dolores eos?',
+    a: 'At vero eos et accusamus. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat. Nihil molestiae consequatur, vel illum qui dolorem eum. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia.',
+  },
+];
+---
+
+<Layout
+  title="FAQ – Cristóbal Maturana"
+  description="Frequently asked questions about Cristóbal Maturana's photography services."
+>
+  <div class="page-hero">
+    <div class="container">
+      <h1>FAQ</h1>
+      <p>Check the most frequent questions</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="faq-list">
+        {faqs.map((item, i) => (
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span class="faq-num">{String(i + 1).padStart(2, '0')}.</span>
+              {item.q}
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>{item.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-white);
+    list-style: none;
+    transition: color 0.2s;
+    position: relative;
+    padding-right: 2.5rem;
+  }
+
+  .faq-question::-webkit-details-marker { display: none; }
+
+  .faq-question:hover { color: var(--color-accent); }
+
+  .faq-num {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    flex-shrink: 0;
+    line-height: 1.2;
+  }
+
+  .faq-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--color-text-muted);
+    transition: transform 0.3s, color 0.2s;
+    line-height: 1;
+  }
+
+  details[open] .faq-icon {
+    transform: translateY(-50%) rotate(45deg);
+    color: var(--color-accent);
+  }
+
+  .faq-answer {
+    padding: 0 0 1.5rem 3rem;
+  }
+
+  .faq-answer p {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    font-size: 0.95rem;
+  }
+</style>

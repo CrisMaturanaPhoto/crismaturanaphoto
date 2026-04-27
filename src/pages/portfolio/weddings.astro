@@ -1,0 +1,64 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Gallery from '../../components/Gallery.astro';
+
+const base = 'https://crismaturana.com/wp-content/uploads/2017/03/';
+
+const images = [
+  { thumb: base + '191B0569-A302-4F00-890F-B48167CA4543-596x400.jpg', full: base + '191B0569-A302-4F00-890F-B48167CA4543.jpg' },
+  { thumb: base + 'B55A7FB8-D160-420D-94A1-8FE0E9EF354E-596x400.jpg', full: base + 'B55A7FB8-D160-420D-94A1-8FE0E9EF354E.jpg' },
+  { thumb: base + 'IMG_0923-599x400.jpg', full: base + 'IMG_0923.jpg' },
+  { thumb: base + 'IMG_5073-599x400.jpg', full: base + 'IMG_5073.jpg' },
+  { thumb: base + 'IMG_5064-599x400.jpg', full: base + 'IMG_5064.jpg' },
+  { thumb: base + 'IMG_5311-599x400.jpg', full: base + 'IMG_5311.jpg' },
+  { thumb: base + 'IMG_5319-599x400.jpg', full: base + 'IMG_5319.jpg' },
+  { thumb: base + 'IMG_8199-599x400.jpg', full: base + 'IMG_8199.jpg' },
+  { thumb: base + 'IMG_8348-599x400.jpg', full: base + 'IMG_8348.jpg' },
+  { thumb: base + 'IMG_9778-599x400.jpg', full: base + 'IMG_9778.jpg' },
+  { thumb: base + 'IMG_9822-599x400.jpg', full: base + 'IMG_9822.jpg' },
+  { thumb: base + 'IMG_9836-599x400.jpg', full: base + 'IMG_9836.jpg' },
+  { thumb: base + 'IMG_9855-267x400.jpg', full: base + 'IMG_9855.jpg' },
+  { thumb: base + '40659128_269182743804458_7109616424245445443_n-600x400.jpg', full: base + '40659128_269182743804458_7109616424245445443_n.jpg' },
+  { thumb: base + '45275611_1212622275536130_4662197949705155727_n-600x400.jpg', full: base + '45275611_1212622275536130_4662197949705155727_n.jpg' },
+  { thumb: base + '45658153_2196054500667413_3887439326508564771_n-600x400.jpg', full: base + '45658153_2196054500667413_3887439326508564771_n.jpg' },
+  { thumb: base + '66611782_124177975543988_852195725120558627_n-600x400.jpg', full: base + '66611782_124177975543988_852195725120558627_n.jpg' },
+  { thumb: base + '43913889_1908697202549354_8554022349614104869_n-599x400.jpg', full: base + '43913889_1908697202549354_8554022349614104869_n.jpg' },
+  { thumb: base + '94454830_2631415167136655_6668798063426562514_n-599x400.jpg', full: base + '94454830_2631415167136655_6668798063426562514_n.jpg' },
+  { thumb: base + '117315879_187910892714915_4670342845055158349_n-600x400.jpg', full: base + '117315879_187910892714915_4670342845055158349_n.jpg' },
+  { thumb: base + '144832529_926291371443991_6538549166714229456_n-599x400.jpg', full: base + '144832529_926291371443991_6538549166714229456_n.jpg' },
+  { thumb: base + '242669279_134842902184946_749603108931829493_n-600x400.jpg', full: base + '242669279_134842902184946_749603108931829493_n.jpg' },
+  { thumb: base + '156517222_441377190431941_2805012480354885949_n-600x400.jpg', full: base + '156517222_441377190431941_2805012480354885949_n.jpg' },
+  { thumb: base + '273078922_353281609700059_4292810784674907877_n-599x400.jpg', full: base + '273078922_353281609700059_4292810784674907877_n.jpg' },
+  { thumb: base + '256004521_853614528653177_5708404312890493302_n-596x400.jpg', full: base + '256004521_853614528653177_5708404312890493302_n.jpg' },
+  { thumb: base + 'F83E2D21-2589-4C9D-969E-97D81763B4AF-597x400.jpg', full: base + 'F83E2D21-2589-4C9D-969E-97D81763B4AF.jpg' },
+].map(img => ({ ...img, alt: 'Wedding photography by Cristóbal Maturana' }));
+---
+
+<Layout title="Weddings – Cristóbal Maturana" description="Documentary wedding photography by Cristóbal Maturana.">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Weddings</h1>
+      <p>Moments that last forever.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery-intro">
+        <p>I document weddings with a natural and refined approach, focusing on real emotions and meaningful details. Working with natural light and spontaneous moments, I capture the atmosphere as it unfolds. With gentle guidance when needed, I ensure you feel comfortable — creating timeless images that reflect the beauty and authenticity of your day.</p>
+      </div>
+      <Gallery images={images} layout="grid" columns={3} />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .gallery-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+</style>

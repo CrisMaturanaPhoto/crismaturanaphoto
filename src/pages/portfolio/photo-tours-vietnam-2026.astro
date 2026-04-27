@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Gallery from '../../components/Gallery.astro';
+
+const base = 'https://crismaturana.com/wp-content/uploads/2017/03/';
+
+const images = [
+  { thumb: base + 'DronCoconutBoat@-9-711x400.jpg', full: base + 'DronCoconutBoat@-9.jpg' },
+  { thumb: base + 'RiverBoatsHoiAn@-10-599x400.jpg', full: base + 'RiverBoatsHoiAn@-10.jpg' },
+  { thumb: base + 'RiceHarvest@-4-599x400.jpg', full: base + 'RiceHarvest@-4.jpg' },
+  { thumb: base + 'RiverBoatsHoiAn@-2-599x400.jpg', full: base + 'RiverBoatsHoiAn@-2.jpg' },
+  { thumb: base + 'DuyHay2HoiAn@-29-599x400.jpg', full: base + 'DuyHay2HoiAn@-29.jpg' },
+  { thumb: base + 'DuyHay2HoiAn@-18-599x400.jpg', full: base + 'DuyHay2HoiAn@-18.jpg' },
+].map(img => ({ ...img, alt: 'Photo Tours Vietnam 2026 – Cristóbal Maturana' }));
+---
+
+<Layout title="Photo Tours Vietnam 2026 – Cristóbal Maturana" description="Photo tours to Vietnam 2026 with documentary photographer Cristóbal Maturana.">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Photo Tours Vietnam 2026</h1>
+      <p>Destination Photographer</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery-intro">
+        <p>Join me on an immersive photo tour through the landscapes and cultures of Vietnam. From the river boats of Hội An to the rice terraces and floating villages, this journey offers rare access to authentic moments and extraordinary light. Limited spots available for 2026.</p>
+        <a href="/contact" class="btn btn-accent" style="display:inline-block;margin-top:1.5rem;">Enquire Now</a>
+      </div>
+      <Gallery images={images} layout="grid" columns={3} />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .gallery-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Gallery from '../../components/Gallery.astro';
+
+const base = 'https://crismaturana.com/wp-content/uploads/2017/03/';
+
+const images = [
+  { thumb: base + 'A620BD67-A847-409F-AEE8-DF45B2EA8678-320x400.jpg', full: base + 'A620BD67-A847-409F-AEE8-DF45B2EA8678.jpg' },
+  { thumb: base + 'Danya1@-27-599x400.jpg', full: base + 'Danya1@-27.jpg' },
+  { thumb: base + 'DSC_1690_2048px-267x400.jpg', full: base + 'DSC_1690_2048px.jpg' },
+  { thumb: base + 'DSC_1703_2048px-267x400.jpg', full: base + 'DSC_1703_2048px.jpg' },
+  { thumb: base + 'Fo-Web@-2-267x400.jpg', full: base + 'Fo-Web@-2.jpg' },
+  { thumb: base + 'IMG_8723-267x400.jpg', full: base + 'IMG_8723.jpg' },
+  { thumb: base + 'IMG_0258-267x400.jpg', full: base + 'IMG_0258.jpg' },
+  { thumb: base + 'HoiAnPortrais1@-10-267x400.jpg', full: base + 'HoiAnPortrais1@-10.jpg' },
+  { thumb: base + 'HoiAnPortrais1@-15-267x400.jpg', full: base + 'HoiAnPortrais1@-15.jpg' },
+  { thumb: base + 'Fo-Web@-8-267x400.jpg', full: base + 'Fo-Web@-8.jpg' },
+  { thumb: base + 'IMG_0812-267x400.jpg', full: base + 'IMG_0812.jpg' },
+  { thumb: base + 'IMG_0813-267x400.jpg', full: base + 'IMG_0813.jpg' },
+  { thumb: base + 'IMG_3025-600x400.jpg', full: base + 'IMG_3025.jpg' },
+  { thumb: base + 'IMG_3027-267x400.jpg', full: base + 'IMG_3027.jpg' },
+  { thumb: base + 'IMG_3435-320x400.jpg', full: base + 'IMG_3435-scaled.jpg' },
+  { thumb: base + 'IMG_7856-600x400.jpg', full: base + 'IMG_7856.jpg' },
+  { thumb: base + 'IMG_8723-1-267x400.jpg', full: base + 'IMG_8723-1.jpg' },
+  { thumb: base + 'IMG_8721-267x400.jpg', full: base + 'IMG_8721.jpg' },
+  { thumb: base + 'HoiAnPortrais1@-16-267x400.jpg', full: base + 'HoiAnPortrais1@-16.jpg' },
+  { thumb: base + 'IMG_8725-599x400.jpg', full: base + 'IMG_8725.jpg' },
+  { thumb: base + 'IMG_8730-267x400.jpg', full: base + 'IMG_8730.jpg' },
+  { thumb: base + 'MartinsSoul@-27-599x400.jpg', full: base + 'MartinsSoul@-27.jpg' },
+  { thumb: base + 'RetratoGenteLagkawi@-9-267x400.jpg', full: base + 'RetratoGenteLagkawi@-9.jpg' },
+  { thumb: base + 'TheHyggeFamily@-24-267x400.jpg', full: base + 'TheHyggeFamily@-24.jpg' },
+  { thumb: base + 'MartinsSoul@-24-599x400.jpg', full: base + 'MartinsSoul@-24.jpg' },
+  { thumb: base + 'Danya1@-19-267x400.jpg', full: base + 'Danya1@-19.jpg' },
+  { thumb: base + 'Danya1@-35-267x400.jpg', full: base + 'Danya1@-35.jpg' },
+  { thumb: base + 'Danya1@-69-599x400.jpg', full: base + 'Danya1@-69.jpg' },
+  { thumb: base + 'Danya1@-81-267x400.jpg', full: base + 'Danya1@-81.jpg' },
+].map(img => ({ ...img, alt: 'Portrait photo by Cristóbal Maturana' }));
+---
+
+<Layout title="Portraits – Cristóbal Maturana" description="Natural light portrait photography by Cristóbal Maturana.">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Portraits</h1>
+      <p>Natural light. Honest expressions.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery-intro">
+        <p>I work primarily with natural light to create soft, authentic portraits full of depth and atmosphere. My approach is relaxed and intuitive — I gently guide you throughout the session, helping you pose in a way that feels natural and effortless. The result: spontaneous, honest images that truly reflect your personality.</p>
+      </div>
+      <Gallery images={images} layout="masonry" columns={3} />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .gallery-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+</style>
