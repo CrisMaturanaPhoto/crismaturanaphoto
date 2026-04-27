@@ -29,6 +29,7 @@ const heroSlides = [
     cta: 'Find More',
     href: '/portfolio/portraits',
     bg: 'https://crismaturana.com/wp-content/uploads/2017/03/DSC_1690_2048px.jpg',
+    focus: 'center 22%',
   },
 ];
 
@@ -89,7 +90,10 @@ const portfolioCategories = [
   <section class="hero" id="hero" aria-label="Featured work">
     <div class="hero-slides">
       {heroSlides.map((slide, i) => (
-        <div class={`hero-slide ${i === 0 ? 'active' : ''}`} style={`background-image: url('${slide.bg}')`}>
+        <div
+          class={`hero-slide ${i === 0 ? 'active' : ''}`}
+          style={`background-image: url('${slide.bg}'); --hero-focus: ${slide.focus ?? 'center'};`}
+        >
           <div class="hero-content">
             <p class="hero-subtitle">{slide.subtitle}</p>
             <h1 class="hero-title">{slide.title}</h1>
@@ -209,7 +213,7 @@ const portfolioCategories = [
     position: absolute;
     inset: 0;
     background-size: cover;
-    background-position: center;
+    background-position: var(--hero-focus, center);
     display: flex;
     align-items: center;
     justify-content: center;
