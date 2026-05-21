@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
 const heroSlides = [
@@ -44,6 +45,7 @@ const portfolioCategories = [
     subtitle: 'Natural light. Honest expressions.',
     href: '/portfolio/portraits',
     thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/DSC_1690_2048px-267x400.jpg',
+    focus: 'center top',
   },
   {
     title: 'Weddings',
@@ -82,6 +84,10 @@ const portfolioCategories = [
     thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/temp_image_for_default_share-4-711x400.jpg',
   },
 ];
+
+const latestBlogPosts = (await getCollection('blog'))
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
+  .slice(0, 3);
 ---
 
 <Layout title="Cristóbal Maturana – Documentary Photographer">
@@ -119,7 +125,7 @@ const portfolioCategories = [
         {portfolioCategories.map((cat) => (
           <a href={cat.href} class="portfolio-card">
             <div class="portfolio-card-img">
-              <img src={cat.thumb} alt={cat.title} loading="lazy" />
+              <img src={cat.thumb} alt={cat.title} loading="lazy" style={`object-position: ${cat.focus ?? 'center'};`} />
             </div>
             <div class="portfolio-card-info">
               <h3 class="portfolio-card-title">{cat.title}</h3>
@@ -181,6 +187,30 @@ const portfolioCategories = [
           <div class="award-stars">★★★★★</div>
           <p class="award-title">Best Portrait 2017</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  <section class="section blog-preview-section">
+    <div class="container">
+      <div class="blog-preview-head">
+        <p class="section-label">From the Blog</p>
+        <a href="/blog" class="blog-preview-link">View All Articles</a>
+      </div>
+      <div class="blog-preview-grid">
+        {latestBlogPosts.map((post) => (
+          <a href={`/blog/${post.slug}`} class="blog-preview-card">
+            <div class="blog-preview-image">
+              <img src={post.data.coverImage} alt={post.data.title} loading="lazy" />
+            </div>
+            <div class="blog-preview-content">
+              <p class="blog-preview-category">{post.data.category}</p>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.excerpt}</p>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </section>
@@ -427,7 +457,7 @@ const portfolioCategories = [
   /* AWARDS */
   .awards-section {
     padding: 60px 0;
-    background: #0d0d0d;
+    background: var(--color-surface);
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
   }
@@ -456,6 +486,88 @@ const portfolioCategories = [
     color: var(--color-text-muted);
   }
 
+  /* BLOG PREVIEW */
+  .blog-preview-section {
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .blog-preview-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-preview-link {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    font-weight: 700;
+    transition: color 0.2s;
+  }
+
+  .blog-preview-link:hover {
+    color: var(--color-accent);
+  }
+
+  .blog-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .blog-preview-card {
+    border: 1px solid var(--color-border);
+    background: #ffffff;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .blog-preview-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-4px);
+  }
+
+  .blog-preview-image {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .blog-preview-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .blog-preview-content {
+    padding: 1rem;
+  }
+
+  .blog-preview-category {
+    font-size: 0.64rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-preview-content h3 {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--color-heading);
+    line-height: 1.25;
+    margin-bottom: 0.55rem;
+  }
+
+  .blog-preview-content p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+  }
+
   /* CTA */
   .cta-section { padding: 80px 0; }
 
@@ -471,11 +583,17 @@ const portfolioCategories = [
     .about-inner { grid-template-columns: 1fr; gap: 2rem; }
     .about-img-wrap img { height: 400px; }
     .awards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .blog-preview-grid { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 600px) {
     .portfolio-grid { grid-template-columns: 1fr; }
     .hero-arrow { display: none; }
+    .blog-preview-head {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
   }
 </style>
 

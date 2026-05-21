@@ -1,45 +1,267 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Gallery from '../../components/Gallery.astro';
-
-const base = 'https://crismaturana.com/wp-content/uploads/2017/03/';
-
-const images = [
-  { thumb: base + 'DronCoconutBoat@-9-711x400.jpg', full: base + 'DronCoconutBoat@-9.jpg' },
-  { thumb: base + 'RiverBoatsHoiAn@-10-599x400.jpg', full: base + 'RiverBoatsHoiAn@-10.jpg' },
-  { thumb: base + 'RiceHarvest@-4-599x400.jpg', full: base + 'RiceHarvest@-4.jpg' },
-  { thumb: base + 'RiverBoatsHoiAn@-2-599x400.jpg', full: base + 'RiverBoatsHoiAn@-2.jpg' },
-  { thumb: base + 'DuyHay2HoiAn@-29-599x400.jpg', full: base + 'DuyHay2HoiAn@-29.jpg' },
-  { thumb: base + 'DuyHay2HoiAn@-18-599x400.jpg', full: base + 'DuyHay2HoiAn@-18.jpg' },
-].map(img => ({ ...img, alt: 'Photo Tours Vietnam 2026 – Cristóbal Maturana' }));
+import TourVietnamLayout from '../../layouts/TourVietnamLayout.astro';
 ---
-
-<Layout title="Photo Tours Vietnam 2026 – Cristóbal Maturana" description="Photo tours to Vietnam 2026 with documentary photographer Cristóbal Maturana.">
-  <div class="page-hero">
-    <div class="container">
-      <h1>Photo Tours Vietnam 2026</h1>
-      <p>Destination Photographer</p>
-    </div>
-  </div>
-
-  <section class="section">
-    <div class="container">
-      <div class="gallery-intro">
-        <p>Join me on an immersive photo tour through the landscapes and cultures of Vietnam. From the river boats of Hội An to the rice terraces and floating villages, this journey offers rare access to authentic moments and extraordinary light. Limited spots available for 2026.</p>
-        <a href="/contact" class="btn btn-accent" style="display:inline-block;margin-top:1.5rem;">Enquire Now</a>
-      </div>
-      <Gallery images={images} layout="grid" columns={3} />
-    </div>
-  </section>
-</Layout>
+<TourVietnamLayout
+  title="Photo Tours Vietnam 2026 – Cristóbal Maturana"
+  description="Dos tours fotográficos en Hội An, Vietnam 2026."
+><!-- PHOTO TOURS VIETNAM 2026 — crismaturana.com -->
+<!-- Slider version — horizontal scroll per tour -->
 
 <style>
-  .gallery-intro {
-    max-width: 700px;
-    margin: 0 auto 3rem;
-    text-align: center;
-    color: var(--color-text-muted);
-    font-size: 1rem;
-    line-height: 1.8;
+  .cm-tours-wrap { font-family: inherit; max-width: 1080px; margin: 0 auto; padding: 2rem 1.5rem; color: inherit; }
+
+  .cm-tours-intro { text-align: center; margin-bottom: 3rem; }
+  .cm-tours-intro .eyebrow { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.4; margin-bottom: 0.75rem; }
+  .cm-tours-intro .eyebrow { font-size: 16px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; opacity: 0.85; margin-bottom: 0.75rem; }  .cm-tours-intro p { font-size: 1rem; opacity: 0.6; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+  .cm-local-note { font-style: italic; opacity: 0.45; margin-top: 1rem !important; }
+
+  .cm-tours-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+
+  .cm-tour-card { display: flex; flex-direction: column; }
+
+  /* SLIDER */
+  .cm-slider { position: relative; width: 100%; overflow: hidden; border-radius: 4px; background: transparent; }
+  .cm-slider-track { display: flex; transition: transform 0.4s ease; will-change: transform; }
+  .cm-slider-track img { width: 100%; flex-shrink: 0; height: 240px; object-fit: cover; object-position: center; display: block; }
+  .cm-slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: #fff; border: none; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; font-size: 16px; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.2s; }
+  .cm-slider-btn:hover { background: rgba(0,0,0,0.8); }
+  .cm-slider-btn.prev { left: 10px; }
+  .cm-slider-btn.next { right: 10px; }
+  .cm-slider-dots { display: flex; justify-content: center; gap: 6px; padding: 8px 0 4px; }
+  .cm-slider-dots span { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: 0.2; cursor: pointer; transition: opacity 0.2s; }
+  .cm-slider-dots span.active { opacity: 0.7; }
+
+  /* TOUR INFO */
+  .cm-tour-header { padding: 1.25rem 0 0.75rem; }
+  .cm-tour-num { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.35; display: block; margin-bottom: 0.4rem; }
+  .cm-tour-header h3 { font-size: 1.35rem; font-weight: 400; margin: 0 0 0.3rem; letter-spacing: -0.01em; }
+  .cm-tour-header .tagline { font-size: 0.85rem; opacity: 0.5; margin: 0; }
+  .cm-tour-badge { display: inline-block; margin-top: 0.6rem; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border: 1px solid currentColor; border-radius: 2px; opacity: 0.4; }
+
+  .cm-tour-meta { display: flex; gap: 1.25rem; flex-wrap: wrap; padding: 0.75rem 0; border-top: 1px solid rgba(128,128,128,0.15); border-bottom: 1px solid rgba(128,128,128,0.15); margin: 0.5rem 0; }
+  .cm-tour-meta-item { font-size: 0.78rem; opacity: 0.5; }
+  .cm-tour-meta-item strong { display: block; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; font-weight: 400; margin-bottom: 2px; }
+
+  .cm-tour-body { display: flex; flex-direction: column; gap: 0.75rem; padding: 0.5rem 0; flex: 1; }
+  .cm-tour-section-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.3; margin-bottom: 0.4rem; }
+  .cm-tour-shots { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.35rem; }
+  .cm-tour-shots li { font-size: 0.83rem; opacity: 0.6; padding-left: 1rem; position: relative; line-height: 1.45; }
+  .cm-tour-shots li::before { content: "—"; position: absolute; left: 0; opacity: 0.3; }
+  .cm-tour-includes { font-size: 0.78rem; opacity: 0.4; line-height: 1.6; }
+
+  .cm-tour-footer { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0 0; border-top: 1px solid rgba(128,128,128,0.15); margin-top: auto; }
+  .cm-tour-price { font-size: 1.5rem; font-weight: 300; letter-spacing: -0.02em; }
+  .cm-tour-price span { font-size: 0.72rem; opacity: 0.4; margin-left: 3px; font-weight: 400; }
+  .cm-tour-cta a { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 18px; border: 1px solid currentColor; border-radius: 2px; text-decoration: none; color: inherit; opacity: 0.6; transition: opacity 0.2s; }
+  .cm-tour-cta a:hover { opacity: 1; }
+
+  .cm-tours-footer { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(128,128,128,0.15); }
+  .cm-tours-footer p { font-size: 0.85rem; opacity: 0.4; margin: 0 0 1rem; }
+  .cm-tours-footer a { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: inherit; opacity: 0.5; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+
+  @media (max-width: 640px) {
+    .cm-tours-wrap { padding: 1.5rem 1rem; }
+    .cm-tours-grid { grid-template-columns: 1fr; }
+    .cm-slider-track img { height: 200px; }
   }
 </style>
+
+<div class="cm-tours-wrap">
+
+  <div class="cm-tours-intro">
+    <p class="eyebrow">Hội An · Vietnam · 2026</p>
+    <h2>Photo Tours</h2>
+    <p>Three private experiences built around light, timing, and genuine access — to places most visitors never reach. Small groups, no rush.</p>
+    <p class="cm-local-note">I've lived in Hội An for years. I know the fishermen by name, the alleys that catch the best morning light, and the exact moment the market comes alive. These aren't tours I researched — they're the places I photograph every week.</p>
+  </div>
+
+  <div class="cm-tours-grid">
+
+    <!-- TOUR 01: DUY HAI -->
+    <div class="cm-tour-card">
+      <div class="cm-slider" id="slider-01">
+        <div class="cm-slider-track">
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-1.JPG" alt="Fishermen at Duy Hai" loading="lazy">
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHay2HoiAn%40-0001.JPG" alt="Duy Hai fishing village at dawn" loading="lazy">
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-10.JPG" alt="Basket boats at sunrise" loading="lazy">
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-15.JPG" alt="Fish market on the beach" loading="lazy">
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHay2HoiAn%40-21.JPG" alt="Fishermen at Duy Hai" loading="lazy">
+        </div>
+        <button class="cm-slider-btn prev" onclick="slideMove('slider-01',-1)">&#8592;</button>
+        <button class="cm-slider-btn next" onclick="slideMove('slider-01', 1)">&#8594;</button>
+        <div class="cm-slider-dots" id="dots-slider-01">
+          <span class="active"></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="cm-tour-header">
+        <span class="cm-tour-num">Tour 01 · Duy Hai</span>
+        <h3>Dawn at the Fishing Village</h3>
+        <p class="tagline">Silhouettes, nets, and salt air at sunrise.</p>
+        <span class="cm-tour-badge">Documentary · Coastal</span>
+      </div>
+      <div class="cm-tour-meta">
+        <div class="cm-tour-meta-item"><strong>When</strong>4:30 – 9:00 AM</div>
+        <div class="cm-tour-meta-item"><strong>Duration</strong>4.5 hours</div>
+        <div class="cm-tour-meta-item"><strong>Level</strong>All levels</div>
+        <div class="cm-tour-meta-item"><strong>Group</strong>Max 4 people</div>
+      </div>
+      <div class="cm-tour-body">
+        <div>
+          <p class="cm-tour-section-label">What you'll photograph</p>
+          <ul class="cm-tour-shots">
+            <li>Round basket boats (thuyền thúng) launching before first light</li>
+            <li>Fishermen sorting the night's catch on the sand</li>
+            <li>The spontaneous fish market — faces, color, movement</li>
+            <li>Traditional trawlers silhouetted against a golden horizon</li>
+            <li>Long exposure waves and boat reflections at the shore</li>
+          </ul>
+        </div>
+        <div>
+          <p class="cm-tour-section-label">Included</p>
+          <p class="cm-tour-includes">Private transport,Coffe, Bánh mì (Vietnamese Sandwich) and Photography Guidance.</p>
+        </div>
+      </div>
+      <div class="cm-tour-footer">
+        <div class="cm-tour-price">$95 <span>/ person</span></div>
+        <div class="cm-tour-cta"><a href="/contact">Enquire</a></div>
+      </div>
+    </div>
+
+    <!-- TOUR 02: OLD TOWN -->
+    <div class="cm-tour-card">
+      <div class="cm-slider" id="slider-02">
+        <div class="cm-slider-track">
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-32.jpg" alt="Hội An rooftops at morning light" loading="lazy">
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/market-001.JPG" alt="Market vendor with colorful produce" loading="lazy">
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-37.jpg" alt="Morning market vendors" loading="lazy">
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-39.JPG" alt="Yellow building corner at dawn" loading="lazy">
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-43.jpg" alt="Old Town street life" loading="lazy">
+        </div>
+        <button class="cm-slider-btn prev" onclick="slideMove('slider-02',-1)">&#8592;</button>
+        <button class="cm-slider-btn next" onclick="slideMove('slider-02', 1)">&#8594;</button>
+        <div class="cm-slider-dots" id="dots-slider-02">
+          <span class="active"></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="cm-tour-header">
+        <span class="cm-tour-num">Tour 02 · Old Town</span>
+        <h3>Old Town Before the Crowds</h3>
+        <p class="tagline">Architecture, color, and real market life — before the tourists arrive.</p>
+        <span class="cm-tour-badge">Most Requested · Street · Architecture · Market</span>
+      </div>
+      <div class="cm-tour-meta">
+        <div class="cm-tour-meta-item"><strong>When</strong>6:00 – 9:30 AM</div>
+        <div class="cm-tour-meta-item"><strong>Duration</strong>3.5 hours</div>
+        <div class="cm-tour-meta-item"><strong>Level</strong>All levels</div>
+        <div class="cm-tour-meta-item"><strong>Group</strong>Max 4 people</div>
+      </div>
+      <div class="cm-tour-body">
+        <div>
+          <p class="cm-tour-section-label">What you'll photograph</p>
+          <ul class="cm-tour-shots">
+            <li>UNESCO yellow walls in soft morning raking light — textures, shadows, depth</li>
+            <li>Empty alleys and iconic facades before the day begins</li>
+            <li>The morning market: tropical fruit, fresh seafood, vendors in conical hats</li>
+            <li>Color and authentic street life — real Hội An, not the postcard version</li>
+            <li>The Japanese Covered Bridge — architecture, symmetry, quiet reflection</li>
+          </ul>
+        </div>
+        <div>
+          <p class="cm-tour-section-label">Included</p>
+          <p class="cm-tour-includes">Private transport · Printed shot list · Market breakfast together · Full image selection assistance</p>
+        </div>
+      </div>
+      <div class="cm-tour-footer">
+        <div class="cm-tour-price">$110 <span>/ person</span></div>
+        <div class="cm-tour-cta"><a href="/contact">Enquire</a></div>
+      </div>
+    </div>
+
+    <!-- TOUR 03: THU BON RIVER -->
+    <div class="cm-tour-card">
+      <div class="cm-slider" id="slider-03">
+        <div class="cm-slider-track">
+       <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/ThuBhonRiver-SELECTION/man-fishing-net-004.JPEG" alt="Fisherman casting net" loading="lazy">
+<img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/ThuBhonRiver-SELECTION/ThuBhonRiver-004.JPG" alt="River life Thu Bon" loading="lazy">
+<img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/ThuBhonRiver-SELECTION/man-fishing-net-001.JPEG" alt="Man fishing on Thu Bon" loading="lazy">
+<img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/ThuBhonRiver-SELECTION/ThuBhonRiver-008.jpg" alt="Thu Bon morning mist" loading="lazy">
+<img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/ThuBhonRiver-SELECTION/ThuBhonRiver-009.jpg" alt="Thu Bon river landscape" loading="lazy">
+        </div>
+        <button class="cm-slider-btn prev" onclick="slideMove('slider-03',-1)">&#8592;</button>
+        <button class="cm-slider-btn next" onclick="slideMove('slider-03', 1)">&#8594;</button>
+        <div class="cm-slider-dots" id="dots-slider-03">
+<span class="active"></span><span></span><span></span><span></span><span></span><span></span>        </div>
+      </div>
+      <div class="cm-tour-header">
+        <span class="cm-tour-num">Tour 03 · Thu Bon River</span>
+        <h3>River Life at First Light</h3>
+        <p class="tagline">Mist, reflection, and slow movement from a wooden boat.</p>
+        <span class="cm-tour-badge">Documentary · Landscape · Boat</span>
+      </div>
+      <div class="cm-tour-meta">
+        <div class="cm-tour-meta-item"><strong>When</strong>6:00 – 9:00 AM</div>
+        <div class="cm-tour-meta-item"><strong>Duration</strong>3 hours</div>
+        <div class="cm-tour-meta-item"><strong>Level</strong>All levels</div>
+        <div class="cm-tour-meta-item"><strong>Group</strong>Max 4 people</div>
+      </div>
+      <div class="cm-tour-body">
+        <div>
+          <p class="cm-tour-section-label">What you'll photograph</p>
+          <ul class="cm-tour-shots">
+            <li>Fishermen casting nets from a traditional wooden boat</li>
+            <li>Morning mist drifting over still water</li>
+            <li>Coconut palm reflections and flooded rice paddies</li>
+            <li>Basket boats navigating narrow river channels</li>
+            <li>Rural river-bank life — farmers, children, daily rhythm</li>
+          </ul>
+        </div>
+        <div>
+          <p class="cm-tour-section-label">Included</p>
+          <p class="cm-tour-includes">Private wooden boat · Local river guide · Printed shot list · Full image selection assistance</p>
+        </div>
+      </div>
+      <div class="cm-tour-footer">
+        <div class="cm-tour-price">$105 <span>/ person</span></div>
+        <div class="cm-tour-cta"><a href="/contact">Enquire</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cm-tours-footer">
+    <p>All tours are private and run year-round. Custom dates and combined tours available on request.</p>
+    <p style="font-style:italic;margin-bottom:1rem;">Based in Hội An — not passing through.</p>
+    <a href="/contact">Get in touch to book your dates</a>
+  </div>
+
+</div>
+
+<script is:inline>
+  const sliderState = {};
+
+  function slideMove(id, dir) {
+    const slider = document.getElementById(id);
+    const track = slider.querySelector('.cm-slider-track');
+    const imgs = track.querySelectorAll('img');
+    const dots = document.getElementById('dots-' + id).querySelectorAll('span');
+    const total = imgs.length;
+
+    if (!sliderState[id]) sliderState[id] = 0;
+    sliderState[id] = (sliderState[id] + dir + total) % total;
+
+    track.style.transform = `translateX(-${sliderState[id] * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === sliderState[id]));
+  }
+
+  document.querySelectorAll('.cm-slider-dots span').forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      const dotsEl = dot.parentElement;
+      const id = dotsEl.id.replace('dots-', '');
+      sliderState[id] = i;
+      const track = document.getElementById(id).querySelector('.cm-slider-track');
+      track.style.transform = `translateX(-${i * 100}%)`;
+      dotsEl.querySelectorAll('span').forEach((d, j) => d.classList.toggle('active', j === i));
+    });
+  });
+</script>
+</TourVietnamLayout>

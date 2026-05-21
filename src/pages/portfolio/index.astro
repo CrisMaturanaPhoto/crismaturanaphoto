@@ -12,6 +12,7 @@ const categories = [
     subtitle: 'Natural light. Honest expressions.',
     href: '/portfolio/portraits',
     thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/DSC_1690_2048px-267x400.jpg',
+    focus: 'center top',
   },
   {
     title: 'Weddings',
@@ -66,7 +67,7 @@ const categories = [
         {categories.map((cat) => (
           <a href={cat.href} class="portfolio-card">
             <div class="card-img">
-              <img src={cat.thumb} alt={cat.title} loading="lazy" />
+              <img src={cat.thumb} alt={cat.title} loading="lazy" style={`object-position: ${cat.focus ?? 'center'};`} />
             </div>
             <div class="card-overlay">
               <h2 class="card-title">{cat.title}</h2>

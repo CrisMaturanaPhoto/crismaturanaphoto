@@ -1,0 +1,1129 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Tours fotográficos en Vietnam 2026 con Cristóbal Maturana.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style is:global>
+      .tour-vn-page *,
+      .tour-vn-page *::before,
+      .tour-vn-page *::after {
+        box-sizing: border-box;
+      }
+
+      .tour-vn-page {
+        --vn-white: #ffffff;
+        --vn-off-white: #f8f6f3;
+        --vn-light-gray: #efefed;
+        --vn-mid-gray: #c0bdb8;
+        --vn-dark: #1a1a18;
+        --vn-text: #2e2e2c;
+        --vn-accent: #b8965a;
+        --vn-serif: 'Cormorant Garamond', Georgia, serif;
+        --vn-sans: 'Jost', sans-serif;
+        font-family: var(--vn-sans);
+        background: var(--vn-white);
+        color: var(--vn-text);
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+        padding-top: 100px;
+      }
+
+      .tour-vn-page .lang-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 101;
+        background: var(--vn-dark);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 40px;
+        height: 36px;
+        gap: 6px;
+      }
+      .tour-vn-page .lang-label {
+        font-size: 0.6rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--vn-mid-gray);
+        margin-right: 6px;
+      }
+      .tour-vn-page .lang-btn {
+        font-family: var(--vn-sans);
+        font-size: 0.65rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: transparent;
+        color: var(--vn-mid-gray);
+        padding: 4px 12px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .tour-vn-page .lang-btn.active {
+        background: var(--vn-accent);
+        border-color: var(--vn-accent);
+        color: var(--vn-white);
+      }
+      .tour-vn-page .lang-btn:not(.active):hover {
+        border-color: rgba(255, 255, 255, 0.5);
+        color: var(--vn-white);
+      }
+
+      .tour-vn-page .tour-site-header {
+        position: fixed;
+        top: 36px;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid var(--vn-light-gray);
+        padding: 0 40px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: box-shadow 0.2s;
+      }
+      .tour-vn-page .tour-logo {
+        font-family: var(--vn-serif);
+        font-size: 1.05rem;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        text-decoration: none;
+        color: var(--vn-dark);
+      }
+      .tour-vn-page .tour-logo em {
+        font-style: italic;
+        color: var(--vn-accent);
+      }
+.tour-vn-page .tour-logo-wrap { display: flex; flex-direction: column; }
+.tour-vn-page .tour-logo-sub { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--vn-accent); margin: 0; line-height: 1; }      .tour-vn-page .tour-site-nav {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .tour-vn-page .tour-site-nav a {
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--vn-text);
+        font-weight: 400;
+        transition: color 0.2s;
+      }
+      .tour-vn-page .tour-site-nav a:hover,
+      .tour-vn-page .tour-site-nav a.active {
+        color: var(--vn-accent);
+      }
+      .tour-vn-page .tour-site-nav a.active {
+        border-bottom: 1px solid var(--vn-accent);
+        padding-bottom: 2px;
+      }
+
+      .tour-vn-page .hero {
+        position: relative;
+        height: 88vh;
+        min-height: 560px;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+      }
+      .tour-vn-page .hero-bg {
+        position: absolute;
+        inset: 0;
+        background-image: url('https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/ThuBhonRiver-tour/man-fishing-net-007.JPEG');
+        background-size: cover;
+        background-position: center 40%;
+        transform: scale(1.04);
+        animation: vn-slowZoom 12s ease-out forwards;
+      }
+      @keyframes vn-slowZoom {
+        to {
+          transform: scale(1);
+        }
+      }
+      .tour-vn-page .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(15, 14, 12, 0.85) 0%, rgba(15, 14, 12, 0.1) 60%);
+      }
+      .tour-vn-page .hero-content {
+        position: relative;
+        padding: 0 80px 72px;
+        color: var(--vn-white);
+        max-width: 900px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: vn-fadeUp 0.9s ease forwards 0.4s;
+      }
+      .tour-vn-page .hero-eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--vn-accent);
+        margin-bottom: 16px;
+      }
+      .tour-vn-page .hero h1 {
+        font-family: var(--vn-serif);
+        font-size: clamp(2.8rem, 6vw, 5rem);
+        font-weight: 300;
+        line-height: 1.05;
+        letter-spacing: 0.01em;
+        margin-bottom: 20px;
+      }
+      .tour-vn-page .hero h1 em {
+        font-style: italic;
+      }
+      .tour-vn-page .hero-sub {
+        font-size: 1rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.7;
+        max-width: 560px;
+        margin-bottom: 36px;
+        letter-spacing: 0.02em;
+      }
+      .tour-vn-page .hero-langs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+      }
+      .tour-vn-page .lang-pill {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.85);
+      }
+      .tour-vn-page .hero-cta {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .tour-vn-page .btn-primary {
+        display: inline-block;
+        padding: 14px 36px;
+        background: var(--vn-accent);
+        color: var(--vn-white);
+        text-decoration: none;
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-weight: 400;
+        transition: background 0.2s;
+        border: none;
+        cursor: pointer;
+      }
+      .tour-vn-page .btn-primary:hover {
+        background: #a07840;
+      }
+      .tour-vn-page .btn-ghost {
+        display: inline-block;
+        padding: 14px 36px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: var(--vn-white);
+        text-decoration: none;
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-weight: 400;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+      }
+      .tour-vn-page .btn-ghost:hover {
+        border-color: var(--vn-white);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .tour-vn-page .intro-strip {
+        background: var(--vn-off-white);
+        border-bottom: 1px solid var(--vn-light-gray);
+        padding: 48px 80px;
+        display: flex;
+        gap: 60px;
+        align-items: center;
+      }
+      .tour-vn-page .intro-text {
+        flex: 1;
+      }
+      .tour-vn-page .intro-text h2 {
+        font-family: var(--vn-serif);
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        font-weight: 300;
+        line-height: 1.3;
+        margin-bottom: 14px;
+      }
+      .tour-vn-page .intro-text h2 em {
+        font-style: italic;
+      }
+      .tour-vn-page .intro-text p {
+        font-size: 0.9rem;
+        line-height: 1.8;
+        color: #5a5a58;
+      }
+      .tour-vn-page .intro-stats {
+        display: flex;
+        gap: 48px;
+        flex-shrink: 0;
+      }
+      .tour-vn-page .stat {
+        text-align: center;
+      }
+      .tour-vn-page .stat-num {
+        font-family: var(--vn-serif);
+        font-size: 2.4rem;
+        font-weight: 300;
+        color: var(--vn-accent);
+        line-height: 1;
+        display: block;
+      }
+      .tour-vn-page .stat-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--vn-mid-gray);
+        margin-top: 6px;
+        display: block;
+      }
+
+      .tour-vn-page .tour-divider {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        padding: 64px 80px 0;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+      .tour-vn-page .divider-num {
+        font-family: var(--vn-serif);
+        font-size: 5rem;
+        font-weight: 300;
+        color: var(--vn-light-gray);
+        line-height: 1;
+        flex-shrink: 0;
+      }
+      .tour-vn-page .divider-tag {
+        font-size: 0.62rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--vn-accent);
+        margin-bottom: 8px;
+      }
+      .tour-vn-page .divider-title {
+        font-family: var(--vn-serif);
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+        font-weight: 300;
+        line-height: 1.15;
+      }
+      .tour-vn-page .divider-title em {
+        font-style: italic;
+      }
+      .tour-vn-page .divider-line {
+        flex: 1;
+        height: 1px;
+        background: var(--vn-light-gray);
+        margin-left: 24px;
+        align-self: center;
+      }
+
+      .tour-vn-page .tour-section {
+        padding: 48px 80px 80px;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+      .tour-vn-page .tour-layout {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 64px;
+        align-items: start;
+      }
+      .tour-vn-page .tour-layout.reverse {
+        direction: rtl;
+      }
+      .tour-vn-page .tour-layout.reverse > * {
+        direction: ltr;
+      }
+
+      .tour-vn-page .tour-gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .tour-vn-page .gallery-main {
+        overflow: hidden;
+        aspect-ratio: 3/2;
+      }
+      .tour-vn-page .gallery-main img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s ease;
+      }
+      .tour-vn-page .gallery-main:hover img {
+        transform: scale(1.04);
+      }
+      .tour-vn-page .gallery-thumbs {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 8px;
+      }
+      .tour-vn-page .gallery-thumbs button {
+        overflow: hidden;
+        aspect-ratio: 3/2;
+        cursor: pointer;
+        border: none;
+        padding: 0;
+        display: block;
+        background: none;
+        font: inherit;
+      }
+      .tour-vn-page .gallery-thumbs button img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition:
+          transform 0.5s ease,
+          opacity 0.3s;
+        opacity: 0.75;
+      }
+      .tour-vn-page .gallery-thumbs button:hover img {
+        transform: scale(1.08);
+        opacity: 1;
+      }
+
+      .tour-vn-page .tour-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        background: var(--vn-dark);
+        color: var(--vn-white);
+        padding: 5px 12px;
+        margin-bottom: 20px;
+      }
+      .tour-vn-page .tour-badge.sold-out {
+        background: #999;
+      }
+      .tour-vn-page .tour-info h3 {
+        font-family: var(--vn-serif);
+        font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+        font-weight: 300;
+        line-height: 1.2;
+        margin-bottom: 8px;
+      }
+      .tour-vn-page .tour-info h3 em {
+        font-style: italic;
+      }
+      .tour-vn-page .tour-location {
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        color: var(--vn-accent);
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+      .tour-vn-page .tour-description {
+        font-size: 0.9rem;
+        line-height: 1.8;
+        color: #5a5a58;
+        margin-bottom: 32px;
+      }
+
+      .tour-vn-page .quick-facts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 32px;
+        padding: 24px;
+        background: var(--vn-off-white);
+        border-left: 3px solid var(--vn-accent);
+      }
+      .tour-vn-page .fact-label {
+        font-size: 0.6rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--vn-mid-gray);
+        margin-bottom: 4px;
+      }
+      .tour-vn-page .fact-value {
+        font-size: 0.88rem;
+        font-weight: 400;
+        color: var(--vn-dark);
+      }
+      .tour-vn-page .fact-value strong {
+        font-weight: 500;
+      }
+
+      .tour-vn-page .schedule-title {
+        font-size: 0.65rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--vn-dark);
+        margin-bottom: 16px;
+        font-weight: 500;
+      }
+      .tour-vn-page .schedule {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 32px;
+      }
+      .tour-vn-page .schedule-item {
+        display: flex;
+        gap: 16px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--vn-light-gray);
+      }
+      .tour-vn-page .schedule-item:first-child {
+        border-top: 1px solid var(--vn-light-gray);
+      }
+      .tour-vn-page .sched-time {
+        font-size: 0.72rem;
+        color: var(--vn-accent);
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        min-width: 60px;
+        padding-top: 2px;
+      }
+      .tour-vn-page .sched-text {
+        font-size: 0.85rem;
+        line-height: 1.55;
+        color: var(--vn-text);
+      }
+      .tour-vn-page .sched-text strong {
+        font-weight: 500;
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      .tour-vn-page .includes-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 32px;
+      }
+      .tour-vn-page .includes-col h4 {
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        font-weight: 500;
+      }
+      .tour-vn-page .includes-col.yes h4 {
+        color: var(--vn-dark);
+      }
+      .tour-vn-page .includes-col.no h4 {
+        color: var(--vn-mid-gray);
+      }
+      .tour-vn-page .includes-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin: 0;
+        padding: 0;
+      }
+      .tour-vn-page .includes-list li {
+        font-size: 0.83rem;
+        line-height: 1.4;
+        padding-left: 18px;
+        position: relative;
+        color: #5a5a58;
+      }
+      .tour-vn-page .includes-list li::before {
+        position: absolute;
+        left: 0;
+        font-size: 0.7em;
+      }
+      .tour-vn-page .includes-col.yes .includes-list li::before {
+        content: '✓';
+        color: var(--vn-accent);
+      }
+      .tour-vn-page .includes-col.no .includes-list li::before {
+        content: '✕';
+        color: var(--vn-mid-gray);
+      }
+
+      .tour-vn-page .price-cta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 24px;
+        background: var(--vn-dark);
+        flex-wrap: wrap;
+      }
+      .tour-vn-page .price-label {
+        font-size: 0.6rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--vn-mid-gray);
+        margin-bottom: 4px;
+      }
+      .tour-vn-page .price-value {
+        font-family: var(--vn-serif);
+        font-size: 2.2rem;
+        font-weight: 300;
+        color: var(--vn-white);
+        line-height: 1;
+      }
+      .tour-vn-page .price-value span {
+        font-size: 0.9rem;
+        font-family: var(--vn-sans);
+        color: var(--vn-mid-gray);
+        vertical-align: middle;
+        margin-left: 4px;
+      }
+      .tour-vn-page .price-note {
+        font-size: 0.7rem;
+        color: var(--vn-mid-gray);
+        margin-top: 4px;
+      }
+
+      .tour-vn-page .tour-sep {
+        height: 1px;
+        background: var(--vn-light-gray);
+        margin: 20px 80px;
+      }
+
+      .tour-vn-page .guide-section {
+        background: var(--vn-off-white);
+        border-top: 1px solid var(--vn-light-gray);
+        border-bottom: 1px solid var(--vn-light-gray);
+        padding: 80px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 80px;
+        align-items: center;
+      }
+      .tour-vn-page .guide-img-wrap {
+        position: relative;
+      }
+      .tour-vn-page .guide-img-wrap img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        object-position: top;
+        display: block;
+      }
+      .tour-vn-page .guide-img-wrap::after {
+        content: '';
+        position: absolute;
+        bottom: -12px;
+        right: -12px;
+        width: 60%;
+        height: 60%;
+        border: 2px solid var(--vn-accent);
+        z-index: -1;
+      }
+      .tour-vn-page .guide-tag {
+        font-size: 0.62rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--vn-accent);
+        margin-bottom: 16px;
+      }
+      .tour-vn-page .guide-info h2 {
+        font-family: var(--vn-serif);
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+        font-weight: 300;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+      .tour-vn-page .guide-info h2 em {
+        font-style: italic;
+      }
+      .tour-vn-page .guide-info p {
+        font-size: 0.9rem;
+        line-height: 1.85;
+        color: #5a5a58;
+        margin-bottom: 16px;
+      }
+      .tour-vn-page .guide-langs {
+        display: flex;
+        gap: 12px;
+        margin-top: 24px;
+        flex-wrap: wrap;
+      }
+      .tour-vn-page .guide-lang-badge {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 18px;
+        border: 1px solid var(--vn-mid-gray);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .tour-vn-page .guide-sig {
+        display: block;
+        height: 40px;
+        margin-top: 28px;
+        filter: opacity(0.7);
+      }
+
+      .tour-vn-page .testimonials {
+        padding: 80px;
+        text-align: center;
+      }
+      .tour-vn-page .test-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--vn-accent);
+        margin-bottom: 48px;
+      }
+      .tour-vn-page .test-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      .tour-vn-page .test-card {
+        padding: 32px;
+        border: 1px solid var(--vn-light-gray);
+      }
+      .tour-vn-page .test-stars {
+        color: var(--vn-accent);
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+        margin-bottom: 16px;
+      }
+      .tour-vn-page .test-quote {
+        font-family: var(--vn-serif);
+        font-size: 1.05rem;
+        font-weight: 300;
+        font-style: italic;
+        line-height: 1.6;
+        color: var(--vn-text);
+        margin-bottom: 20px;
+      }
+      .tour-vn-page .test-author {
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--vn-mid-gray);
+      }
+      .tour-vn-page .test-author strong {
+        color: var(--vn-dark);
+        font-weight: 500;
+      }
+
+      .tour-vn-page .cta-strip {
+        background: var(--vn-dark);
+        padding: 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .tour-vn-page .cta-strip::before {
+        content: 'VIETNAM';
+        position: absolute;
+        font-family: var(--vn-serif);
+        font-size: clamp(80px, 16vw, 200px);
+        color: rgba(255, 255, 255, 0.03);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        letter-spacing: 0.15em;
+        pointer-events: none;
+        white-space: nowrap;
+      }
+      .tour-vn-page .cta-strip .tag {
+        font-size: 0.62rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--vn-accent);
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .tour-vn-page .cta-strip h2 {
+        font-family: var(--vn-serif);
+        font-size: clamp(2rem, 4vw, 3.4rem);
+        font-weight: 300;
+        color: var(--vn-white);
+        line-height: 1.15;
+        margin-bottom: 16px;
+        position: relative;
+      }
+      .tour-vn-page .cta-strip h2 em {
+        font-style: italic;
+      }
+      .tour-vn-page .cta-strip p {
+        font-size: 0.9rem;
+        color: var(--vn-mid-gray);
+        max-width: 500px;
+        margin: 0 auto 36px;
+        line-height: 1.75;
+        position: relative;
+      }
+      .tour-vn-page .cta-btns {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+      }
+      .tour-vn-page .cta-strip .btn-primary {
+        border: none;
+      }
+      .tour-vn-page .cta-strip .btn-ghost {
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      .tour-vn-page .tour-site-footer {
+        background: var(--vn-white);
+        border-top: 1px solid var(--vn-light-gray);
+        padding: 56px 80px 32px;
+      }
+      .tour-vn-page .footer-inner {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 48px;
+        margin-bottom: 48px;
+      }
+      .tour-vn-page .footer-brand .tour-logo {
+        display: block;
+        margin-bottom: 8px;
+      }
+      .tour-vn-page .footer-role {
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--vn-mid-gray);
+        margin-bottom: 20px;
+      }
+      .tour-vn-page .footer-social {
+        display: flex;
+        gap: 16px;
+      }
+      .tour-vn-page .footer-social a {
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--vn-mid-gray);
+        transition: color 0.2s;
+      }
+      .tour-vn-page .footer-social a:hover {
+        color: var(--vn-accent);
+      }
+      .tour-vn-page .footer-col h4 {
+        font-size: 0.65rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--vn-dark);
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+      .tour-vn-page .footer-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+      }
+      .tour-vn-page .footer-col ul a {
+        font-size: 0.82rem;
+        text-decoration: none;
+        color: var(--vn-mid-gray);
+        transition: color 0.2s;
+      }
+      .tour-vn-page .footer-col ul a:hover {
+        color: var(--vn-accent);
+      }
+      .tour-vn-page .footer-bottom {
+        padding-top: 24px;
+        border-top: 1px solid var(--vn-light-gray);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .tour-vn-page .footer-bottom p {
+        font-size: 0.72rem;
+        color: var(--vn-mid-gray);
+        letter-spacing: 0.04em;
+      }
+      .tour-vn-page .footer-bottom a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      @keyframes vn-fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .tour-vn-page .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .tour-vn-page .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      .tour-vn-page [data-lang] {
+        display: none;
+      }
+      .tour-vn-page.lang-es [data-lang='es'] {
+        display: block;
+      }
+      .tour-vn-page.lang-en [data-lang='en'] {
+        display: block;
+      }
+      .tour-vn-page.lang-es .inline-en {
+        display: none;
+      }
+      .tour-vn-page.lang-es .inline-es {
+        display: inline;
+      }
+      .tour-vn-page.lang-en .inline-en {
+        display: inline;
+      }
+      .tour-vn-page.lang-en .inline-es {
+        display: none;
+      }
+      .tour-vn-page .inline-es,
+      .tour-vn-page .inline-en {
+        display: none;
+      }
+
+      @media (max-width: 1024px) {
+        .tour-vn-page .tour-layout,
+        .tour-vn-page .tour-layout.reverse {
+          grid-template-columns: 1fr;
+          direction: ltr;
+        }
+        .tour-vn-page .intro-strip {
+          flex-direction: column;
+          padding: 40px;
+        }
+        .tour-vn-page .guide-section {
+          grid-template-columns: 1fr;
+          padding: 60px 40px;
+        }
+        .tour-vn-page .guide-img-wrap {
+          max-width: 340px;
+        }
+      }
+      @media (max-width: 768px) {
+        .tour-vn-page {
+          padding-top: 100px;
+        }
+        .tour-vn-page .lang-bar,
+        .tour-vn-page .tour-site-header {
+          padding: 0 20px;
+        }
+        .tour-vn-page .hero-content {
+          padding: 0 24px 56px;
+        }
+        .tour-vn-page .tour-divider,
+        .tour-vn-page .tour-section {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        .tour-vn-page .tour-sep {
+          margin: 20px;
+        }
+        .tour-vn-page .testimonials,
+        .tour-vn-page .cta-strip,
+        .tour-vn-page .tour-site-footer {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+        .tour-vn-page .test-grid {
+          grid-template-columns: 1fr;
+        }
+        .tour-vn-page .intro-stats {
+          gap: 24px;
+        }
+        .tour-vn-page .footer-inner {
+          grid-template-columns: 1fr;
+        }
+        .tour-vn-page .footer-bottom {
+          flex-direction: column;
+          gap: 8px;
+          text-align: center;
+        }
+        .tour-vn-page .quick-facts {
+          grid-template-columns: 1fr 1fr;
+        }
+        .tour-vn-page .tour-site-nav {
+          gap: 14px;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+        }
+      }
+    </style>
+  </head>
+  <body class="tour-vn-page lang-es">
+    <div class="lang-bar">
+      <span class="lang-label">Idioma / Language</span>
+      <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">🇪🇸 ES</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">🇬🇧 EN</button>
+    </div>
+
+    <header class="tour-site-header" id="tour-site-header">
+ <div class="tour-logo-wrap">
+  <a class="tour-logo" href="/">Cristóbal <em>Maturana</em></a>
+  <p class="tour-logo-sub">Documentary Photographer</p>
+</div>
+      <nav aria-label="Primary">
+        <ul class="tour-site-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li>
+            <a href="/about-me"><span class="inline-es">Sobre mí</span><span class="inline-en">About</span></a>
+          </li>
+          <li><a href="/portfolio/photo-tours-vietnam-2026" class="active">Photo Tours</a></li>
+          <li>
+            <a href="/contact"><span class="inline-es">Contacto</span><span class="inline-en">Contact</span></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="tour-site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="tour-logo" href="/">Cristóbal <em>Maturana</em></a>
+          <p class="footer-role">Documentary Photographer</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/Matufoto/" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Portfolio</h4>
+          <ul>
+            <li><a href="/portfolio/portraits">Portraits</a></li>
+            <li><a href="/portfolio/weddings">Weddings</a></li>
+            <li><a href="/portfolio/travel-culture">Travel & Culture</a></li>
+            <li><a href="/portfolio/aerial">From Above</a></li>
+            <li><a href="/portfolio/night-sky">Night Sky</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Info</h4>
+          <ul>
+            <li>
+              <a href="/about-me"><span class="inline-es">Sobre mí</span><span class="inline-en">About Me</span></a>
+            </li>
+            <li>
+              <a href="/prices"><span class="inline-es">Tarifas</span><span class="inline-en">Prices</span></a>
+            </li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/portfolio/photo-tours-vietnam-2026">Photo Tours</a></li>
+            <li>
+              <a href="/contact"><span class="inline-es">Contacto</span><span class="inline-en">Contact</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          © 2026 Cristóbal Maturana. <span class="inline-es">Todos los derechos reservados.</span><span class="inline-en">All rights reserved.</span>
+        </p>
+        <p><a href="#">↑ Top</a></p>
+      </div>
+    </footer>
+
+    <script>
+      function setLang(lang: 'es' | 'en') {
+        const root = document.querySelector('.tour-vn-page');
+        if (!root) return;
+        root.classList.remove('lang-es', 'lang-en');
+        root.classList.add('lang-' + lang);
+        document.documentElement.lang = lang;
+        document.querySelectorAll('.lang-btn').forEach((b) => {
+          const active = (b as HTMLButtonElement).dataset.lang === lang;
+          b.classList.toggle('active', active);
+          b.setAttribute('aria-pressed', String(active));
+        });
+      }
+
+      document.querySelectorAll('.lang-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const lang = (btn as HTMLButtonElement).dataset.lang as 'es' | 'en';
+          if (lang) setLang(lang);
+        });
+      });
+
+      function swapMain(imgId: string, src: string) {
+        const img = document.getElementById(imgId) as HTMLImageElement | null;
+        if (!img) return;
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.2s';
+        setTimeout(() => {
+          img.src = src;
+          img.style.opacity = '1';
+        }, 200);
+      }
+      (window as unknown as { swapMain: typeof swapMain }).swapMain = swapMain;
+
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add('visible');
+          });
+        },
+        { threshold: 0.12 }
+      );
+      reveals.forEach((el) => observer.observe(el));
+
+      const header = document.getElementById('tour-site-header');
+      if (header) {
+        window.addEventListener(
+          'scroll',
+          () => {
+            header.style.boxShadow = window.scrollY > 10 ? '0 2px 20px rgba(0,0,0,0.06)' : 'none';
+          },
+          { passive: true }
+        );
+      }
+    </script>
+  </body>
+</html>

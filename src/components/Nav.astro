@@ -22,8 +22,10 @@ const navLinks = [
       { label: 'About Me', href: '/about-me' },
       { label: 'Prices', href: '/prices' },
       { label: 'FAQ', href: '/faq' },
+      { label: 'Blog', href: '/blog' },
     ],
   },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ];
 ---
@@ -73,7 +75,7 @@ const navLinks = [
   }
 
   .site-header.scrolled {
-    background: rgba(17, 17, 17, 0.95);
+    background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--color-border);
   }
@@ -132,7 +134,7 @@ const navLinks = [
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-text);
+    color: rgba(255, 255, 255, 0.9);
     transition: color 0.2s;
   }
 
@@ -149,7 +151,7 @@ const navLinks = [
     top: calc(var(--nav-height) - 2px);
     left: 0;
     min-width: 200px;
-    background: #1a1a1a;
+    background: #ffffff;
     border: 1px solid var(--color-border);
     border-top: 2px solid var(--color-accent);
     list-style: none;
@@ -171,8 +173,20 @@ const navLinks = [
   }
 
   .dropdown-link:hover {
-    color: var(--color-white);
+    color: var(--color-heading);
     padding-left: 1.6rem;
+  }
+
+  .site-header.scrolled .logo-name {
+    color: var(--color-heading);
+  }
+
+  .site-header.scrolled .nav-link {
+    color: var(--color-text);
+  }
+
+  .site-header.scrolled .nav-link:hover {
+    color: var(--color-accent);
   }
 
   /* Mobile */
@@ -192,6 +206,10 @@ const navLinks = [
     height: 2px;
     background: var(--color-white);
     transition: all 0.3s ease;
+  }
+
+  .site-header.scrolled .menu-toggle span {
+    background: var(--color-heading);
   }
 
   @media (max-width: 900px) {
@@ -234,7 +252,7 @@ const navLinks = [
 
     .dropdown-link {
       padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
     }
 
     .dropdown-link:hover { padding-left: 0.5rem; }
