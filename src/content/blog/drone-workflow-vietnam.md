@@ -5,7 +5,7 @@ publishDate: 2026-03-14
 category: "Gear & Technique"
 tags: ["drone", "aerial", "vietnam"]
 readTime: "6 min read"
-coverImage: "https://crismaturana.com/wp-content/uploads/2017/03/DronCoconutBoat@-9-711x400.jpg"
+coverImage: "https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/criadero-peces-thu-bhon-river-2.jpg"
 featured: false
 ---
 

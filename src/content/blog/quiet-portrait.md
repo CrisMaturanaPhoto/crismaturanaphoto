@@ -5,7 +5,7 @@ publishDate: 2026-03-28
 category: "Photography"
 tags: ["portraits", "storytelling"]
 readTime: "5 min read"
-coverImage: "https://crismaturana.com/wp-content/uploads/2017/03/DSC_1690_2048px-267x400.jpg"
+coverImage: "https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/agnes-partner-portrait-001.JPG"
 featured: false
 ---
 

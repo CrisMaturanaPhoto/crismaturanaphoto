@@ -5,7 +5,7 @@ publishDate: 2026-04-12
 category: "Travel & Culture"
 tags: ["travel", "culture", "vietnam", "golden-hour"]
 readTime: "7 min read"
-coverImage: "https://crismaturana.com/wp-content/uploads/2017/03/01.25HoiAn@-39-800x534.jpg"
+coverImage: "https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-32.jpg"
 featured: true
 ---
 
