@@ -144,6 +144,13 @@ const latestBlogPosts = (await getCollection('blog'))
           <p class="about-text">
             Each frame is shaped by light, emotion, and the subtle details that often go unnoticed. My experience living abroad expanded my perspective, allowing me to see beauty in contrasts, cultures, and quiet in-between moments. I approach every project with sensitivity and purpose, creating images that feel honest, timeless, and deeply personal.
           </p>
+          <div class="about-img-wrap-mobile">
+            <img
+              src="https://CrisMaturana.b-cdn.net/AUTORETRATO/DSC_1505-2%203.JPG"
+              alt="Cristóbal Maturana"
+              loading="lazy"
+            />
+          </div>
           <img
             src="https://CrisMaturana.b-cdn.net/Logos/firma-Cristobal-Maturana-300x150.png"
             alt="Cristóbal Maturana signature"
@@ -395,6 +402,8 @@ const latestBlogPosts = (await getCollection('blog'))
     align-items: center;
   }
 
+  .about-img-wrap-mobile { display: none; }
+
   .about-img-wrap {
     position: relative;
   }
@@ -573,7 +582,10 @@ const latestBlogPosts = (await getCollection('blog'))
   @media (max-width: 900px) {
     .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
     .about-inner { grid-template-columns: 1fr; gap: 2rem; }
-    .about-img-wrap { order: 1; width: 50%; margin: 0 auto; }
+    .about-img-wrap-mobile { display: none; }
+
+  .about-img-wrap { display: none; }
+    .about-img-wrap-mobile { display: block; width: 50%; margin: 0 auto; }
     .about-img-wrap img { height: 300px; }
     .about-content { order: 2; }
     .awards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
