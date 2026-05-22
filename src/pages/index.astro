@@ -632,13 +632,11 @@ const latestBlogPosts = (await getCollection('blog'))
   }
 
   .instagram-handle {
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    font-weight: 400;
+    letter-spacing: 0.05em;
     color: var(--color-accent);
     transition: color 0.2s;
-    order: 3;
   }
 
   .instagram-handle:hover { color: var(--color-accent); }
@@ -897,6 +895,8 @@ const latestBlogPosts = (await getCollection('blog'))
 
   .instagram-icon {
     color: var(--color-text-muted);
+    width: clamp(2rem, 4vw, 3.5rem);
+    height: clamp(2rem, 4vw, 3.5rem);
   }
 
 </style>
