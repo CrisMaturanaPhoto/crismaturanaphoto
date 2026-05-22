@@ -2,23 +2,32 @@
 import Layout from '../../layouts/Layout.astro';
 import Gallery from '../../components/Gallery.astro';
 
-const base = 'https://crismaturana.com/wp-content/uploads/2017/03/';
-
-// Using portraits-style images for couples & family
 const images = [
-  { thumb: base + 'TheHyggeFamily@-24-267x400.jpg', full: base + 'TheHyggeFamily@-24.jpg' },
-  { thumb: base + 'MartinsSoul@-24-599x400.jpg', full: base + 'MartinsSoul@-24.jpg' },
-  { thumb: base + 'MartinsSoul@-27-599x400.jpg', full: base + 'MartinsSoul@-27.jpg' },
-  { thumb: base + 'Danya1@-19-267x400.jpg', full: base + 'Danya1@-19.jpg' },
-  { thumb: base + 'Danya1@-27-599x400.jpg', full: base + 'Danya1@-27.jpg' },
-  { thumb: base + 'Danya1@-35-267x400.jpg', full: base + 'Danya1@-35.jpg' },
-  { thumb: base + 'Danya1@-69-599x400.jpg', full: base + 'Danya1@-69.jpg' },
-  { thumb: base + 'Danya1@-81-267x400.jpg', full: base + 'Danya1@-81.jpg' },
-  { thumb: base + 'IMG_3025-600x400.jpg', full: base + 'IMG_3025.jpg' },
-  { thumb: base + 'IMG_7856-600x400.jpg', full: base + 'IMG_7856.jpg' },
-  { thumb: base + 'IMG_3435-320x400.jpg', full: base + 'IMG_3435-scaled.jpg' },
-  { thumb: base + 'RetratoGenteLagkawi@-9-267x400.jpg', full: base + 'RetratoGenteLagkawi@-9.jpg' },
-].map(img => ({ ...img, alt: 'Couples & Family photography by Cristóbal Maturana' }));
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/agnes-couple-001.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/agnes-couple-001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-10.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-10.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-3.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-3.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/brauli-itziar-sesion-001.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/brauli-itziar-sesion-001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/familia.santiago.chile.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/familia.santiago.chile.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina-Nick-Pai-thailand-sesion-001.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina-Nick-Pai-thailand-sesion-001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-113.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-113.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-12.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-12.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-25.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-25.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-49.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-49.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-55.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-55.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Isa%26Fen%CC%83a%40-3.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Isa%26Fen%CC%83a%40-3.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-101-1536x1025.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-101-1536x1025.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-132.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-132.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-55.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-55.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-80.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-80.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/maca-julian-sesion-embarazo-001.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/maca-julian-sesion-embarazo-001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/nadeem-dionne-kohlanta-session.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/nadeem-dionne-kohlanta-session.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/pareja-gam-santiago-chile.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/pareja-gam-santiago-chile.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/poppin-chris-oldtown-001.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/poppin-chris-oldtown-001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/rodrigo-silvia-familia.001.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/rodrigo-silvia-familia.001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/TheHyggeFamily%40-31.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/TheHyggeFamily%40-31.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/TheHyggeFamily%40-39.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/TheHyggeFamily%40-39.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/TheHyggePortraits%40-31.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/TheHyggePortraits%40-31.JPG' },
+].map(img => ({ ...img, alt: 'Couples and family photo by Cristóbal Maturana' }));
 ---
 
 <Layout title="Couples & Family – Cristóbal Maturana" description="Couples and family photography by Cristóbal Maturana.">
@@ -28,11 +37,10 @@ const images = [
       <p>Genuine connection, beautifully captured.</p>
     </div>
   </div>
-
   <section class="section">
     <div class="container">
       <div class="gallery-intro">
-        <p>These sessions are about you — your connection, your story, your dynamic. Whether it's a couple in the city or a family on the coast, I create a relaxed environment where genuine moments happen naturally. No stiff poses. Just you, beautifully captured.</p>
+        <p>Whether it's a couple exploring a new city or a family sharing a quiet afternoon — I look for the real moments, the ones that happen between the posed ones.</p>
       </div>
       <Gallery images={images} layout="masonry" columns={3} />
     </div>
