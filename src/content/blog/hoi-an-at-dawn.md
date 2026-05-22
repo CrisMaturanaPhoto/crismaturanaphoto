@@ -70,4 +70,12 @@ Move slowly. Put your camera down sometimes. Drink a coffee from one of the earl
 
 If you're visiting Hoi An and want to experience this properly, I run small-group **Photo Tours at dawn** specifically designed around these locations and this light. You'll leave with images that look nothing like the tourist shots — because you'll be there three hours before the tourists arrive.
 
-[See the Photo Tours →](/portfolio/photo-tours-vietnam-2026#old-town)
+---
+
+## Want to Shoot Hoi An Like This?
+
+I live here. I know exactly where to stand, when to arrive, and how to find the frames that most visitors never see.
+
+My **Old Town Photo Tour** runs at dawn — small group, 3 hours, real locations. No tourist traps. Just honest light and honest photography.
+
+**[Book the Old Town Photo Tour →](/portfolio/photo-tours-vietnam-2026)**
