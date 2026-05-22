@@ -5,7 +5,7 @@ publishDate: 2026-04-01
 category: "Travel & Culture"
 tags: ["hoi-an", "photo-spots", "vietnam", "travel", "street-photography", "instagram"]
 readTime: "8 min read"
-coverImage: "https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-39.JPG"
+coverImage: "https://CrisMaturana.b-cdn.net/ARTICLES/Best%20Photo%20Spots%20in%20Hoi%20An%20Old%20Town/01.25HoiAn%40-34.JPG"
 featured: true
 ---
 
@@ -37,7 +37,7 @@ The most photographed landmark in Hội An. The challenge isn't finding it — i
 **Best time:** 5:00–5:30am (before it opens to visitors) or after 6:30pm when the lanterns are lit  
 **Angle most people miss:** Stand on the small bridge to the east and shoot back toward Chùa Cầu with the canal reflection below. On calm mornings the reflection is mirror-perfect.
 
-![Old Town Hoi An — early morning light](https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-36.jpg)
+![Japanese Covered Bridge Hoi An](https://CrisMaturana.b-cdn.net/ARTICLES/Best%20Photo%20Spots%20in%20Hoi%20An%20Old%20Town/Poppin%26Chris-japanese-bridge.JPG)
 
 **For the lantern shot:** Come back at dusk. The bridge lit against the darkening sky, with the canal reflection below, is one of the most beautiful frames in Southeast Asia. Bring a tripod.
 
@@ -63,7 +63,7 @@ The Thu Bồn River at dawn is one of the calmest, most reflective scenes in the
 **Best time:** 5:30–7:00am  
 **What to shoot:** The boats moored along the riverbank with the Old Town reflected in the water. The light from the east hits the boat hulls beautifully at this hour.
 
-![Hoi An riverside — early morning](https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-37.jpg)
+![Hoi An riverside — early morning](https://CrisMaturana.b-cdn.net/ARTICLES/Best%20Photo%20Spots%20in%20Hoi%20An%20Old%20Town/01.25HoiAn%40-42%203.JPG)
 
 **Evening option:** The riverside at dusk, with lanterns reflected in the water and the sky transitioning from orange to deep blue, is equally stunning. Come back at 6:30pm.
 
@@ -76,18 +76,7 @@ Less visited than Trần Phú, more varied in architecture, and often completely
 **Best time:** 5:30–7:00am  
 **What makes it special:** The narrowness of the street creates beautiful directional light in the early morning. Look for the moments when a shaft of sunlight cuts across the alley between buildings.
 
-![Hoi An Old Town — side streets at dawn](https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-43.jpg)
-
----
-
-## 6. The Lantern Shops
-
-The lantern workshops and shops along Trần Phú and the surrounding streets are iconic — but the best photographs happen inside, not from the street.
-
-**Best time:** Any time of day, but the late afternoon light (4:00–5:30pm) creates a beautiful warm glow inside the shops  
-**How to get in:** Just ask. Most shop owners are happy to let you photograph inside. Buy something small if you do — it's good manners and good karma.
-
-![Hoi An lanterns — warm afternoon light](https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-39.JPG)
+![Hoi An Old Town — side streets at dawn](https://CrisMaturana.b-cdn.net/ARTICLES/Best%20Photo%20Spots%20in%20Hoi%20An%20Old%20Town/01.25HoiAn%40-39.JPG)
 
 ---
 
