@@ -219,26 +219,13 @@ const latestBlogPosts = (await getCollection('blog'))
         <h2 class="instagram-heading">Let's connect on Instagram</h2>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" rel="noopener" class="instagram-handle">@cristobalmaturanaphoto</a>
       </div>
-      <div class="instagram-grid">
-        <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" rel="noopener" class="instagram-item">
-          <img src="https://CrisMaturana.b-cdn.net/GRILLA%20INSTAGRAM/009-IMG_9493.JPG" alt="Instagram" loading="lazy" />
-        </a>
-        <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" rel="noopener" class="instagram-item">
-          <img src="https://CrisMaturana.b-cdn.net/GRILLA%20INSTAGRAM/BudaPai-4.JPG" alt="Instagram" loading="lazy" />
-        </a>
-        <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" rel="noopener" class="instagram-item">
-          <img src="https://CrisMaturana.b-cdn.net/GRILLA%20INSTAGRAM/DSC_1489_2048px.JPG" alt="Instagram" loading="lazy" />
-        </a>
-        <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" rel="noopener" class="instagram-item">
-          <img src="https://CrisMaturana.b-cdn.net/GRILLA%20INSTAGRAM/DSC_2912.JPG" alt="Instagram" loading="lazy" />
-        </a>
-        <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" rel="noopener" class="instagram-item">
-          <img src="https://CrisMaturana.b-cdn.net/GRILLA%20INSTAGRAM/DSC_3165.JPG" alt="Instagram" loading="lazy" />
-        </a>
-        <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" rel="noopener" class="instagram-item">
-          <img src="https://CrisMaturana.b-cdn.net/GRILLA%20INSTAGRAM/Yaz%26Andy-242.jpg" alt="Instagram" loading="lazy" />
-        </a>
+            <div class="instagram-embeds">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DX_yReUiS9f/" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DWlfLAiiSnm/" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DVa4o9ViXBK/" data-instgrm-version="14"></blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DCq8W_xzOIT/" data-instgrm-version="14"></blockquote>
       </div>
+      <script async src="//www.instagram.com/embed.js"></script>
     </div>
   </section>
 
@@ -637,7 +624,13 @@ const latestBlogPosts = (await getCollection('blog'))
 
   .instagram-handle:hover { color: var(--color-accent); }
 
-  .instagram-grid {
+  .instagram-embeds {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .old-instagram-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 3px;
@@ -659,11 +652,23 @@ const latestBlogPosts = (await getCollection('blog'))
   .instagram-item:hover img { transform: scale(1.05); }
 
   @media (max-width: 900px) {
-    .instagram-grid { grid-template-columns: repeat(3, 1fr); }
+    .instagram-embeds {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .old-instagram-grid { grid-template-columns: repeat(3, 1fr); }
   }
 
   @media (max-width: 500px) {
-    .instagram-grid { grid-template-columns: repeat(3, 1fr); }
+    .instagram-embeds {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .old-instagram-grid { grid-template-columns: repeat(3, 1fr); }
   }
 
   /* CTA */
