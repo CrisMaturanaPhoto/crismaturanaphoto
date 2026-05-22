@@ -221,8 +221,10 @@ const navLinks = [
       right: 0;
       bottom: 0;
       background: var(--color-bg);
-      overflow-y: auto;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
       padding: 2rem;
+      z-index: 999;
     }
 
     .site-nav.open { display: block; }
