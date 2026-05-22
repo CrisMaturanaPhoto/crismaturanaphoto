@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Gallery from '../../components/Gallery.astro';
+
+const images = [
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/agnes-couple-001.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/agnes-couple-001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-10.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-10.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-3.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-3.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/brauli-itziar-sesion-001.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/brauli-itziar-sesion-001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/familia.santiago.chile.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/familia.santiago.chile.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina-Nick-Pai-thailand-sesion-001.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina-Nick-Pai-thailand-sesion-001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-113.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-113.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-12.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-12.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-25.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-25.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-49.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-49.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-55.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-55.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Isa%26Fen%CC%83a%40-3.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Isa%26Fen%CC%83a%40-3.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-101-1536x1025.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-101-1536x1025.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-132.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-132.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-55.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-55.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-80.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-80.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/maca-julian-sesion-embarazo-001.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/maca-julian-sesion-embarazo-001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/nadeem-dionne-kohlanta-session.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/nadeem-dionne-kohlanta-session.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/pareja-gam-santiago-chile.jpg', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/pareja-gam-santiago-chile.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/poppin-chris-oldtown-001.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/poppin-chris-oldtown-001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/rodrigo-silvia-familia.001.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/rodrigo-silvia-familia.001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/TheHyggeFamily%40-31.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/TheHyggeFamily%40-31.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/TheHyggeFamily%40-39.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/TheHyggeFamily%40-39.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/TheHyggePortraits%40-31.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/TheHyggePortraits%40-31.JPG' },
+].map(img => ({ ...img, alt: 'Couples and family photo by Cristóbal Maturana' }));
+---
+
+<Layout title="Couples & Families – Cristóbal Maturana" description="Couples and family photography by Cristóbal Maturana.">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Couples & Families</h1>
+      <p>Genuine connection, beautifully captured.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="gallery-intro">
+        <p>Whether it's a couple exploring a new city or a family sharing a quiet afternoon — I look for the real moments, the ones that happen between the posed ones.</p>
+      </div>
+      <Gallery images={images} layout="masonry" columns={3} />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .gallery-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+</style>
