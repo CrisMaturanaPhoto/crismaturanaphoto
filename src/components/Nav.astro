@@ -267,10 +267,11 @@ const navLinks = [
   const nav = document.getElementById('site-nav')!;
 
   // Scroll effect
+  const isHome = window.location.pathname === '/';
   window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 20);
+    header.classList.toggle('scrolled', isHome ? window.scrollY > 20 : true);
   }, { passive: true });
-  header.classList.toggle('scrolled', window.scrollY > 20);
+  header.classList.toggle('scrolled', isHome ? window.scrollY > 20 : true);
 
   // Mobile menu
   toggle.addEventListener('click', () => {
