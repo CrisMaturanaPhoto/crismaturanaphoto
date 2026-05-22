@@ -573,9 +573,9 @@ const latestBlogPosts = (await getCollection('blog'))
   @media (max-width: 900px) {
     .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
     .about-inner { grid-template-columns: 1fr; gap: 2rem; }
-    .about-img-wrap { order: 2; width: 50%; margin: 0 auto; }
+    .about-img-wrap { order: 1; width: 50%; margin: 0 auto; }
     .about-img-wrap img { height: 300px; }
-    .about-content { order: 1; }
+    .about-content { order: 2; }
     .awards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .blog-preview-grid { grid-template-columns: 1fr; }
   }
