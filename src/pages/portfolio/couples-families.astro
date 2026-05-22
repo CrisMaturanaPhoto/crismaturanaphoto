@@ -31,10 +31,10 @@ const images = [
 ---
 
 <Layout title="Couples & Families – Cristóbal Maturana" description="Couples and family photography by Cristóbal Maturana.">
-  <div class="page-hero">
-    <div class="container">
+  <div class="page-hero-img" style="background-image: url('https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-10.jpg')">
+    <div class="page-hero-content">
       <h1>Couples & Families</h1>
-      <p>Genuine connection, beautifully captured.</p>
+      <p>Love looks better when it's not posed.</p>
     </div>
   </div>
   <section class="section">
@@ -48,6 +48,41 @@ const images = [
 </Layout>
 
 <style>
+  .page-hero-img {
+    height: 60vh;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .page-hero-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+  }
+  .page-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 2rem;
+  }
+  .page-hero-content h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 400;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  .page-hero-content p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.05em;
+  }
+
   .gallery-intro {
     max-width: 700px;
     margin: 0 auto 3rem;
