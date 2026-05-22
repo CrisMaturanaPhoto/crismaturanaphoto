@@ -275,5 +275,6 @@ const navLinks = [
   toggle.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
+    header.classList.toggle('scrolled', open || window.scrollY > 20);
   });
 </script>
