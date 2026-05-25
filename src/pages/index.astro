@@ -167,25 +167,103 @@ const latestBlogPosts = (await getCollection('blog'))
     </div>
   </section>
 
-  <!-- AWARDS -->
-  <section class="awards-section">
-    <div class="container">
-      <div class="awards-grid">
-        <div class="award-item">
-          <div class="award-stars">★★★★★</div>
-          <p class="award-title">15+ Years of Documentary Photography</p>
-        </div>
-        <div class="award-item">
-          <div class="award-stars">★★★★★</div>
-          <p class="award-title">No Posing. No Staging. Just Truth.</p>
-        </div>
-        <div class="award-item">
-          <div class="award-stars">★★★★★</div>
-          <p class="award-title">Destination Weddings Across Southeast Asia</p>
-        </div>
+  <!-- STATS + PROCESS -->
+  <section class="trust-section">
+
+    <div class="counters-row">
+      <div class="counter-item">
+        <div class="counter-number" data-target="15" data-suffix="+">0</div>
+        <div class="counter-label">Years of experience</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-number" data-target="100" data-suffix="+">0</div>
+        <div class="counter-label">Sessions completed</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-number" data-target="24" data-suffix="h">0</div>
+        <div class="counter-label">Sneak peek delivery</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-number" data-text="FLOW">FLOW</div>
+        <div class="counter-label">Natural directing method</div>
       </div>
     </div>
+
+    <div class="process-wrap">
+      <p class="process-eyebrow">How it works</p>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-num">01</div>
+          <div class="process-content">
+            <h3 class="process-title">You reach out</h3>
+            <p class="process-desc">Fill in the contact form or send a WhatsApp. I reply within 24 hours to schedule a short call — no pressure, just a conversation.</p>
+          </div>
+        </div>
+        <div class="process-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="process-step">
+          <div class="process-num">02</div>
+          <div class="process-content">
+            <h3 class="process-title">We plan together</h3>
+            <p class="process-desc">We talk about locations, timing, and what you want to feel in the images. A deposit secures your date.</p>
+          </div>
+        </div>
+        <div class="process-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div class="process-step">
+          <div class="process-num">03</div>
+          <div class="process-content">
+            <h3 class="process-title">You get real photos</h3>
+            <p class="process-desc">Fully edited gallery delivered in 7 to 30 days. Sneak peek within 24 hours. Images that feel like you.</p>
+          </div>
+        </div>
+      </div>
+      <div class="process-cta">
+        <a href="/contact" class="process-btn">Start the conversation</a>
+      </div>
+    </div>
+
   </section>
+
+  <script>
+    const counters = document.querySelectorAll('.counter-number:not([data-text])');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target);
+          const suffix = el.dataset.suffix || '';
+          let current = 0;
+          const step = target / (1800 / 16);
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) { current = target; clearInterval(timer); }
+            el.textContent = Math.floor(current) + suffix;
+          }, 16);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => observer.observe(c));
+
+    const steps = document.querySelectorAll('.process-step');
+    const stepObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.2 });
+    steps.forEach((s, i) => {
+      s.style.opacity = '0';
+      s.style.transform = 'translateY(24px)';
+      s.style.transition = 'opacity 0.6s ease ' + (i * 0.15) + 's, transform 0.6s ease ' + (i * 0.15) + 's';
+      stepObs.observe(s);
+    });
+  </script>
 
   <!-- BLOG PREVIEW -->
   <section class="section blog-preview-section">
@@ -904,6 +982,87 @@ const latestBlogPosts = (await getCollection('blog'))
     line-height: 1.1;
   }
 
+
+
+
+@media(max-width:700px){}
+
+
+
+
+
+/* TRUST SECTION */
+.trust-section { padding: 0; }
+
+/* Counters */
+.counters-row { display: grid; grid-template-columns: repeat(4,1fr); border-top: 1px solid rgba(160,114,42,0.18); border-bottom: 1px solid rgba(160,114,42,0.18); }
+@media(max-width:700px){ .counters-row { grid-template-columns: repeat(2,1fr); } }
+.counter-item { padding: 2.5rem 1.5rem; text-align: center; border-right: 1px solid rgba(160,114,42,0.18); }
+.counter-item:last-child { border-right: none; }
+.counter-number { font-family: 'Cormorant Garant', Georgia, serif; font-size: 2.8rem; font-weight: 300; line-height: 1; color: #1c1a17; margin-bottom: 0.4rem; font-style: italic; }
+.counter-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: #8a8278; }
+
+/* Process */
+.process-wrap { padding: 5rem 5vw; max-width: 1100px; margin: 0 auto; }
+.process-eyebrow { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: #a0722a; margin-bottom: 3rem; display: flex; align-items: center; gap: 1rem; }
+.process-eyebrow::before { content: ''; display: block; width: 2rem; height: 1px; background: #a0722a; }
+.process-steps { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 1.5rem; align-items: start; margin-bottom: 3rem; }
+@media(max-width:750px){ .process-steps { grid-template-columns: 1fr; } .process-arrow { display: none; } }
+.process-step { display: flex; flex-direction: column; gap: 1rem; }
+.process-num { font-family: 'Cormorant Garant', Georgia, serif; font-size: 3rem; font-weight: 300; line-height: 1; color: rgba(160,114,42,0.25); }
+.process-title { font-family: 'Cormorant Garant', Georgia, serif; font-size: 1.3rem; font-weight: 400; color: #1c1a17; margin-bottom: 0.5rem; }
+.process-desc { font-size: 0.88rem; color: #8a8278; line-height: 1.9; }
+.process-arrow { display: flex; align-items: center; justify-content: center; padding-top: 1.5rem; color: rgba(160,114,42,0.4); }
+.process-cta { text-align: center; }
+.process-btn { display: inline-flex; align-items: center; gap: 0.7rem; padding: 1rem 2.5rem; background: #1c1a17; color: #f7f4ef; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.3s; }
+.process-btn:hover { background: #a0722a; }
+
+/* TRUST SECTION */
+.trust-section { padding: 0; }
+
+/* Counters */
+.counters-row { display: grid; grid-template-columns: repeat(4,1fr); border-top: 1px solid rgba(160,114,42,0.18); border-bottom: 1px solid rgba(160,114,42,0.18); }
+@media(max-width:700px){ .counters-row { grid-template-columns: repeat(2,1fr); } }
+.counter-item { padding: 2.5rem 1.5rem; text-align: center; border-right: 1px solid rgba(160,114,42,0.18); }
+.counter-item:last-child { border-right: none; }
+.counter-number { font-family: 'Cormorant Garant', Georgia, serif; font-size: 2.8rem; font-weight: 300; line-height: 1; color: #1c1a17; margin-bottom: 0.4rem; font-style: italic; }
+.counter-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: #8a8278; }
+
+/* Process */
+.process-wrap { padding: 5rem 5vw; max-width: 1100px; margin: 0 auto; }
+.process-eyebrow { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: #a0722a; margin-bottom: 3rem; display: flex; align-items: center; gap: 1rem; }
+.process-eyebrow::before { content: ''; display: block; width: 2rem; height: 1px; background: #a0722a; }
+.process-steps { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 1.5rem; align-items: start; margin-bottom: 3rem; }
+@media(max-width:750px){ .process-steps { grid-template-columns: 1fr; } .process-arrow { display: none; } }
+.process-step { display: flex; flex-direction: column; gap: 1rem; }
+.process-num { font-family: 'Cormorant Garant', Georgia, serif; font-size: 3rem; font-weight: 300; line-height: 1; color: rgba(160,114,42,0.25); }
+.process-title { font-family: 'Cormorant Garant', Georgia, serif; font-size: 1.3rem; font-weight: 400; color: #1c1a17; margin-bottom: 0.5rem; }
+.process-desc { font-size: 0.88rem; color: #8a8278; line-height: 1.9; }
+.process-arrow { display: flex; align-items: center; justify-content: center; padding-top: 1.5rem; color: rgba(160,114,42,0.4); }
+.process-cta { text-align: center; }
+.process-btn { display: inline-flex; align-items: center; gap: 0.7rem; padding: 1rem 2.5rem; background: #1c1a17; color: #f7f4ef; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.3s; }
+.process-btn:hover { background: #a0722a; }
+
+.trust-section{padding:0;}
+.counters-row{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(160,114,42,0.18);border-bottom:1px solid rgba(160,114,42,0.18);}
+@media(max-width:700px){.counters-row{grid-template-columns:repeat(2,1fr);}}
+.counter-item{padding:2.5rem 1.5rem;text-align:center;border-right:1px solid rgba(160,114,42,0.18);}
+.counter-item:last-child{border-right:none;}
+.counter-number{font-family:'Cormorant Garant',Georgia,serif;font-size:2.8rem;font-weight:300;line-height:1;color:#1c1a17;margin-bottom:0.4rem;font-style:italic;}
+.counter-label{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:#8a8278;}
+.process-wrap{padding:5rem 5vw;max-width:1100px;margin:0 auto;}
+.process-eyebrow{font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:#a0722a;margin-bottom:3rem;display:flex;align-items:center;gap:1rem;}
+.process-eyebrow::before{content:'';display:block;width:2rem;height:1px;background:#a0722a;}
+.process-steps{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:1.5rem;align-items:start;margin-bottom:3rem;}
+@media(max-width:750px){.process-steps{grid-template-columns:1fr;}.process-arrow{display:none;}}
+.process-step{display:flex;flex-direction:column;gap:1rem;}
+.process-num{font-family:'Cormorant Garant',Georgia,serif;font-size:3rem;font-weight:300;line-height:1;color:rgba(160,114,42,0.25);}
+.process-title{font-family:'Cormorant Garant',Georgia,serif;font-size:1.3rem;font-weight:400;color:#1c1a17;margin-bottom:0.5rem;}
+.process-desc{font-size:0.88rem;color:#8a8278;line-height:1.9;}
+.process-arrow{display:flex;align-items:center;justify-content:center;padding-top:1.5rem;color:rgba(160,114,42,0.4);}
+.process-cta{text-align:center;}
+.process-btn{display:inline-flex;align-items:center;gap:0.7rem;padding:1rem 2.5rem;background:#1c1a17;color:#f7f4ef;font-size:0.75rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background 0.3s;}
+.process-btn:hover{background:#a0722a;}
 </style>
 
 <script>
