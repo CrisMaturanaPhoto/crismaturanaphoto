@@ -1,4 +1,4 @@
----
+content = '''---
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -14,17 +14,17 @@ import Layout from '../layouts/Layout.astro';
   --accent:#a0722a;--accent2:#7a5420;--green2:#3d6b2b;
   --green-bg:rgba(74,122,53,0.08);--green-border:rgba(74,122,53,0.35);
   --border:rgba(160,114,42,0.18);--border2:rgba(160,114,42,0.35);
-  --serif:'Cormorant Garant',Georgia,serif;--sans:'Jost',sans-serif;
+  --serif:\'Cormorant Garant\',Georgia,serif;--sans:\'Jost\',sans-serif;
 }
 html{font-size:16px;scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 5vw 4rem;position:relative;overflow:hidden;}
-.hero-bg{position:absolute;inset:-15%;background-image:url('https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/DronCoconutBoat%40-10.JPG');background-size:cover;background-position:center;will-change:transform;z-index:0;}
+.hero-bg{position:absolute;inset:-15%;background-image:url(\'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/DronCoconutBoat%40-10.JPG\');background-size:cover;background-position:center;will-change:transform;z-index:0;}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,9,7,0.65) 0%,rgba(10,9,7,0.58) 50%,rgba(10,9,7,0.78) 100%);z-index:1;}
 .hero-bg-word{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:clamp(12rem,26vw,22rem);font-weight:600;font-style:italic;color:rgba(255,255,255,0.04);line-height:1;pointer-events:none;user-select:none;white-space:nowrap;z-index:1;}
 .hero-content{position:relative;z-index:2;max-width:760px;}
 .hero-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.95);margin-bottom:2.5rem;border:1px solid rgba(255,255,255,0.5);padding:0.4rem 1.1rem;border-radius:40px;}
-.hero-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);}
+.hero-tag::before{content:\'\';width:5px;height:5px;border-radius:50%;background:var(--accent);}
 .hero-h1{font-family:var(--serif);font-size:clamp(2.4rem,6vw,5.2rem);font-weight:300;line-height:1.1;letter-spacing:-0.02em;color:#ffffff;margin-bottom:1.2rem;}
 .hero-h1 .static{display:block;margin-bottom:0.1em;}
 .hero-h1 .rotating-wrapper{display:inline-block;position:relative;height:1.2em;overflow:hidden;vertical-align:bottom;}
@@ -53,7 +53,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
 .stat-l{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);}
 .section{padding:6rem 5vw;max-width:1200px;margin:0 auto;}
 .section-label{font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:3rem;display:flex;align-items:center;gap:1rem;}
-.section-label::before{content:'';display:block;width:2rem;height:1px;background:var(--accent);}
+.section-label::before{content:\'\';display:block;width:2rem;height:1px;background:var(--accent);}
 .contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:6rem;align-items:start;}
 @media(max-width:800px){.contact-grid{grid-template-columns:1fr;gap:3rem;}}
 .contact-info h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.2;margin-bottom:1.5rem;}
@@ -76,7 +76,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
 .field{display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.4rem;}
 .field label{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);}
 .field input,.field select,.field textarea{background:var(--bg3);border:1px solid var(--border);border-radius:2px;color:var(--text);font-family:var(--sans);font-weight:300;font-size:0.95rem;padding:0.85rem 1rem;outline:none;transition:border-color 0.3s;-webkit-appearance:none;appearance:none;}
-.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a7167' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'8\' viewBox=\'0 0 12 8\'%3E%3Cpath d=\'M1 1l5 5 5-5\' stroke=\'%237a7167\' stroke-width=\'1.5\' fill=\'none\' stroke-linecap=\'round\'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);}
 .field input::placeholder,.field textarea::placeholder{color:#c5bfb5;}
 .field textarea{resize:vertical;min-height:120px;}
@@ -127,7 +127,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
         </span>
       </span>
     </h1>
-    <p class="hero-sub">15 years behind the camera. A documentary instinct, an unposed approach, and a genuine interest in whoever's in front of the lens. If that sounds right — let's talk.</p>
+    <p class="hero-sub">15 years behind the camera. A documentary instinct, an unposed approach, and a genuine interest in whoever\'s in front of the lens. If that sounds right — let\'s talk.</p>
     <div class="hero-services-row">
       <a href="/portfolio/weddings" class="svc-item">Weddings</a>
       <a href="/portfolio/portraits" class="svc-item">Portraits</a>
@@ -152,8 +152,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
   <p class="section-label">Contact</p>
   <div class="contact-grid">
     <div class="contact-info">
-      <h2>Let's make<br>something <em>real.</em></h2>
-      <p>Whether it's a yoga branding session on the rice fields, a destination wedding in the ancient town, or a personal project you've been carrying around — I'd love to hear about it.</p>
+      <h2>Let\'s make<br>something <em>real.</em></h2>
+      <p>Whether it\'s a yoga branding session on the rice fields, a destination wedding in the ancient town, or a personal project you\'ve been carrying around — I\'d love to hear about it.</p>
       <div class="contact-detail">
         <div class="detail-item"><span class="detail-label">Based in</span><span class="detail-value">Hoi An, Vietnam</span></div>
         <div class="detail-item"><span class="detail-label">Email</span><span class="detail-value"><a href="mailto:info@crismaturana.com">info@crismaturana.com</a></span></div>
@@ -201,43 +201,48 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
       <p class="section-label" style="font-size:clamp(2.2rem,4vw,3.2rem);letter-spacing:0.01em;text-transform:none;font-family:var(--serif);font-weight:300;line-height:1.15;margin-bottom:0.6rem;">FAQ</p>
       <h2>Questions<br>I get <em>often.</em></h2>
     </div>
-    <div class="faq-header-right"><p>Hiring a photographer is a real decision. These are the questions that come up in almost every first conversation. If yours isn't here, just ask.</p></div>
+    <div class="faq-header-right"><p>Hiring a photographer is a real decision. These are the questions that come up in almost every first conversation. If yours isn\'t here, just ask.</p></div>
   </div>
   <div class="faq-list">
-    <div class="faq-item"><button class="faq-q" aria-expanded="false">What's your photography style?<span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button><div class="faq-a"><div class="faq-a-inner">Documentary, human, and unposed. My references are Sergio Larrain, Cartier-Bresson, McCurry, Salgado, and Fan Ho — photographers who observed first and directed never.</div></div></div>
-    <div class="faq-item"><button class="faq-q" aria-expanded="false">Do you pose people? What if I'm awkward in front of the camera?<span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button><div class="faq-a"><div class="faq-a-inner">I use a directing approach called <strong>FLOW</strong>: instead of static poses, I give you actions and prompts that draw out your natural self. Most of my clients tell me afterwards that they forgot I was there.</div></div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false">What\'s your photography style?<span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button><div class="faq-a"><div class="faq-a-inner">Documentary, human, and unposed. My references are Sergio Larrain, Cartier-Bresson, McCurry, Salgado, and Fan Ho — photographers who observed first and directed never.</div></div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false">Do you pose people? What if I\'m awkward in front of the camera?<span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button><div class="faq-a"><div class="faq-a-inner">I use a directing approach called <strong>FLOW</strong>: instead of static poses, I give you actions and prompts that draw out your natural self. Most of my clients tell me afterwards that they forgot I was there.</div></div></div>
     <div class="faq-item"><button class="faq-q" aria-expanded="false">What services do you offer?<span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button><div class="faq-a"><div class="faq-a-inner"><strong>Portrait and personal branding</strong> (especially yoga and wellness), <strong>destination weddings</strong> in Vietnam and Southeast Asia, <strong>product photography</strong>, and <strong>documentary / travel work</strong>.</div></div></div>
     <div class="faq-item"><button class="faq-q" aria-expanded="false">Where are you based? Do you travel?<span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button><div class="faq-a"><div class="faq-a-inner">Based in <strong>Hoi An, Vietnam</strong>. I shoot across Central Vietnam (Da Nang area) with no travel fee, and travel throughout Southeast Asia and internationally.</div></div></div>
     <div class="faq-item"><button class="faq-q" aria-expanded="false">When will I receive my photos?<span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button><div class="faq-a"><div class="faq-a-inner"><strong>Portraits and branding</strong>: 7-10 business days. <strong>Weddings</strong>: sneak peek within 24 hours, full gallery in 15-30 days.</div></div></div>
-    <div class="faq-item"><button class="faq-q" aria-expanded="false">How do I book?<span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button><div class="faq-a"><div class="faq-a-inner">Fill in the form above. I'll reply within 24-48 hours to schedule a short call. A <strong>30-50% deposit</strong> secures your date.</div></div></div>
+    <div class="faq-item"><button class="faq-q" aria-expanded="false">How do I book?<span class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></span></button><div class="faq-a"><div class="faq-a-inner">Fill in the form above. I\'ll reply within 24-48 hours to schedule a short call. A <strong>30-50% deposit</strong> secures your date.</div></div></div>
   </div>
 </section>
 
 <script>
-  const heroBg = document.getElementById('heroBg');
+  const heroBg = document.getElementById(\'heroBg\');
   function onScroll() {
     const scrollY = window.scrollY;
-    const heroH = document.querySelector('.hero').offsetHeight;
-    if (scrollY <= heroH) heroBg.style.transform = 'translateY(' + (scrollY * 0.35) + 'px)';
+    const heroH = document.querySelector(\'.hero\').offsetHeight;
+    if (scrollY <= heroH) heroBg.style.transform = \'translateY(\' + (scrollY * 0.35) + \'px)\';
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const answer = item.querySelector('.faq-a');
-      const isOpen = btn.classList.contains('open');
-      document.querySelectorAll('.faq-q.open').forEach(b => {
-        b.classList.remove('open');
-        b.setAttribute('aria-expanded', 'false');
-        b.closest('.faq-item').querySelector('.faq-a').style.maxHeight = '0';
+  window.addEventListener(\'scroll\', onScroll, { passive: true });
+  document.querySelectorAll(\'.faq-q\').forEach(btn => {
+    btn.addEventListener(\'click\', () => {
+      const item = btn.closest(\'.faq-item\');
+      const answer = item.querySelector(\'.faq-a\');
+      const isOpen = btn.classList.contains(\'open\');
+      document.querySelectorAll(\'.faq-q.open\').forEach(b => {
+        b.classList.remove(\'open\');
+        b.setAttribute(\'aria-expanded\', \'false\');
+        b.closest(\'.faq-item\').querySelector(\'.faq-a\').style.maxHeight = \'0\';
       });
       if (!isOpen) {
-        btn.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-        answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.classList.add(\'open\');
+        btn.setAttribute(\'aria-expanded\', \'true\');
+        answer.style.maxHeight = answer.scrollHeight + \'px\';
       }
     });
   });
 </script>
 
 </Layout>
+'''
+
+with open('src/pages/contact.astro', 'w', encoding='utf-8') as f:
+    f.write(content)
+print('contact.astro written successfully!')
