@@ -266,30 +266,6 @@ const latestBlogPosts = (await getCollection('blog'))
   </script>
 
   <!-- BLOG PREVIEW -->
-  <section class="section blog-preview-section">
-    <div class="container">
-      <div class="blog-preview-head">
-        <p class="section-label" data-i18n="blog.label">From the Blog</p>
-        <a href="/blog" class="blog-preview-link" data-i18n="blog.viewall">View All Articles</a>
-      </div>
-      <div class="blog-preview-grid">
-        {latestBlogPosts.map((post) => (
-          <a href={`/blog/${post.slug}`} class="blog-preview-card">
-            <div class="blog-preview-image">
-              <img src={post.data.coverImage} alt={post.data.title} loading="lazy" />
-            </div>
-            <div class="blog-preview-content">
-              <p class="blog-preview-category" data-i18n={"blog.cat." + post.data.category.toLowerCase().replace(/ /g, "_")}>{post.data.category}</p>
-              <h3>{post.data.title}</h3>
-              <p>{post.data.excerpt}</p>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- INSTAGRAM GRID -->
   <!-- INSTAGRAM MARQUEE -->
   <section class="ig-section">
     <div class="ig-section-inner">
@@ -402,6 +378,31 @@ const latestBlogPosts = (await getCollection('blog'))
       <p class="cta-scarcity-note" data-i18n="cta.note" style="color:rgba(255,255,255,0.85);font-size:0.8rem;letter-spacing:0.08em;margin-top:1rem;display:block;">Traveling to Chile · Oct – Dec 2026 · Also available year-round in Vietnam &amp; Southeast Asia</p>
     </div>
   </section>
+
+<section class="section blog-preview-section">
+    <div class="container">
+      <div class="blog-preview-head">
+        <p class="section-label" data-i18n="blog.label">From the Blog</p>
+        <a href="/blog" class="blog-preview-link" data-i18n="blog.viewall">View All Articles</a>
+      </div>
+      <div class="blog-preview-grid">
+        {latestBlogPosts.map((post) => (
+          <a href={`/blog/${post.slug}`} class="blog-preview-card">
+            <div class="blog-preview-image">
+              <img src={post.data.coverImage} alt={post.data.title} loading="lazy" />
+            </div>
+            <div class="blog-preview-content">
+              <p class="blog-preview-category" data-i18n={"blog.cat." + post.data.category.toLowerCase().replace(/ /g, "_")}>{post.data.category}</p>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.excerpt}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM GRID -->
 
 </Layout>
 
