@@ -74,6 +74,7 @@ const latestBlogPosts = (await getCollection('blog'))
 <Layout title="Cristóbal Maturana – Documentary Photographer">
 
   <!-- HERO SLIDER -->
+  <h1 class="seo-h1">Documentary Photographer in Hội An, Vietnam — Weddings, Portraits &amp; Yoga Branding | Cristóbal Maturana</h1>
   <section class="hero" id="hero" aria-label="Featured work">
     <div class="hero-slides">
       {heroSlides.map((slide, i) => (
@@ -83,7 +84,7 @@ const latestBlogPosts = (await getCollection('blog'))
         >
           <div class="hero-content">
             <p class="hero-subtitle" data-i18n={`hero.slide${i+1}.subtitle`}>{slide.subtitle}</p>
-            <h1 class="hero-title" data-i18n={`hero.slide${i+1}.title`}>{slide.title}</h1>
+            <h2 class="hero-title" data-i18n={`hero.slide${i+1}.title`}>{slide.title}</h2>
             <a href={slide.href} class="btn" data-i18n={`hero.slide${i+1}.cta`}>{slide.cta}</a>
           </div>
         </div>
@@ -1271,6 +1272,8 @@ const latestBlogPosts = (await getCollection('blog'))
 .cta-slot.open{color:#e8c070;border-color:rgba(232,192,112,0.4);}
 .cta-scarcity-btn{display:inline-flex;align-items:center;padding:1.1rem 3rem;background:#e8c070;color:#0d0c0a;font-size:0.75rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background 0.3s;}
 .cta-scarcity-btn:hover{background:#f0d080;}
+
+  .seo-h1 { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 </style>
 
 <script>
