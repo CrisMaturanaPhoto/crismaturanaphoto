@@ -1,30 +1,30 @@
 ---
 const navLinks = [
-  { label: 'Home', href: '/' },
+  { label: 'Home', i18n: 'nav.home', i18n: 'nav.home', href: '/' },
   {
-    label: 'Portfolio',
+    label: 'Portfolio', i18n: 'nav.portfolio', i18n: 'nav.portfolio',
     href: '/portfolio',
     children: [
-      { label: 'Weddings', href: '/portfolio/weddings' },
-      { label: 'Couples & Families', href: '/portfolio/couples-families' },
-      { label: 'Portraits', href: '/portfolio/portraits' },
-      { label: 'Travel & Culture', href: '/portfolio/travel-culture' },
-      { label: 'From Above', href: '/portfolio/aerial' },
+      { label: 'Weddings', i18n: 'nav.weddings', i18n: 'nav.weddings', href: '/portfolio/weddings' },
+      { label: 'Couples & Families', i18n: 'nav.couples', i18n: 'nav.couples', href: '/portfolio/couples-families' },
+      { label: 'Portraits', i18n: 'nav.portraits', i18n: 'nav.portraits', href: '/portfolio/portraits' },
+      { label: 'Travel & Culture', i18n: 'nav.travel', i18n: 'nav.travel', href: '/portfolio/travel-culture' },
+      { label: 'From Above', i18n: 'nav.aerial', i18n: 'nav.aerial', href: '/portfolio/aerial' },
     ],
   },
   {
     label: 'Pages',
     href: '#',
     children: [
-      { label: 'About Me', href: '/about-me' },
-      { label: 'Prices', href: '/prices' },
-      { label: 'FAQ', href: '/faq' },
-      { label: 'Blog', href: '/blog' },
+      { label: 'About Me', i18n: 'nav.about', i18n: 'nav.about', href: '/about-me' },
+      { label: 'Prices', i18n: 'nav.prices', i18n: 'nav.prices', href: '/prices' },
+      { label: 'FAQ', i18n: 'nav.faq', i18n: 'nav.faq', href: '/faq' },
+      { label: 'Blog', href: '/blog', i18n: 'nav.blog' },
     ],
   },
-  { label: 'Photo Tours', href: '/portfolio/photo-tours-vietnam-2026' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Photo Tours', i18n: 'nav.phototours', i18n: 'nav.phototours', href: '/portfolio/photo-tours-vietnam-2026' },
+  { label: 'Blog', href: '/blog', i18n: 'nav.blog' },
+  { label: 'Contact', i18n: 'nav.contact', i18n: 'nav.contact', href: '/contact' },
 ];
 ---
 
@@ -44,7 +44,7 @@ const navLinks = [
         {navLinks.map((link) => (
           <li class={`nav-item ${link.children ? 'has-dropdown' : ''}`}>
             <a href={link.href} class="nav-link">
-              {link.label}
+              <span data-i18n={link.i18n || ''}><span data-i18n={link.i18n || ''}>{link.label}</span></span>
               {link.children && <span class="dropdown-arrow">&#9662;</span>}
             </a>
             {link.children && (

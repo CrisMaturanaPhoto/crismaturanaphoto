@@ -82,9 +82,9 @@ const latestBlogPosts = (await getCollection('blog'))
           style={`background-image: url('${slide.bg}'); --hero-focus: ${slide.focus ?? 'center'};`}
         >
           <div class="hero-content">
-            <p class="hero-subtitle">{slide.subtitle}</p>
-            <h1 class="hero-title">{slide.title}</h1>
-            <a href={slide.href} class="btn">{slide.cta}</a>
+            <p class="hero-subtitle" data-i18n={`hero.slide${i+1}.subtitle`}>{slide.subtitle}</p>
+            <h1 class="hero-title" data-i18n={`hero.slide${i+1}.title`}>{slide.title}</h1>
+            <a href={slide.href} class="btn" data-i18n={`hero.slide${i+1}.cta`}>{slide.cta}</a>
           </div>
         </div>
       ))}
@@ -101,7 +101,7 @@ const latestBlogPosts = (await getCollection('blog'))
   <!-- PORTFOLIO GRID -->
   <section class="section portfolio-section">
     <div class="container">
-      <p class="section-label">Take a look at my works</p>
+      <p class="section-label" data-i18n="portfolio.label" data-i18n="portfolio.label">Take a look at my works</p>
       <div class="portfolio-grid">
         {portfolioCategories.map((cat) => (
           <a href={cat.href} class="portfolio-card">
@@ -109,8 +109,8 @@ const latestBlogPosts = (await getCollection('blog'))
               <img src={cat.thumb} alt={cat.title} loading="lazy" style={`object-position: ${cat.focus ?? 'center'};`} />
             </div>
             <div class="portfolio-card-info">
-              <h3 class="portfolio-card-title">{cat.title}</h3>
-              {cat.subtitle && <p class="portfolio-card-sub">{cat.subtitle}</p>}
+              <h3 class="portfolio-card-title" data-i18n={`portfolio.cat${portfolioCategories.indexOf(cat)+1}.title`}>{cat.title}</h3>
+              {cat.subtitle && <p class="portfolio-card-sub" data-i18n={`portfolio.cat${portfolioCategories.indexOf(cat)+1}.sub`}>{cat.subtitle}</p>}
             </div>
           </a>
         ))}
@@ -130,11 +130,11 @@ const latestBlogPosts = (await getCollection('blog'))
           />
         </div>
         <div class="about-content">
-          <p class="section-label">About the photographer</p>
+          <p class="section-label" data-i18n="about.label" data-i18n="about.label">About the photographer</p>
           <h2 class="section-title">
-            Hi, I'm Cristóbal, photographer and visual storyteller. I capture authentic, meaningful moments with intention and depth.
+            <span data-i18n="about.text">Hi, I'm Cristóbal, photographer and visual storyteller. I capture authentic, meaningful moments with intention and depth.</span>
           </h2>
-          <p class="about-text">
+          <p class="about-text" data-i18n="about.subtext">
             Each frame is shaped by light, emotion, and the subtle details that often go unnoticed. My experience living abroad expanded my perspective, allowing me to see beauty in contrasts, cultures, and quiet in-between moments. I approach every project with sensitivity and purpose, creating images that feel honest, timeless, and deeply personal.
           </p>
           <div class="about-img-wrap-mobile">
@@ -221,7 +221,7 @@ const latestBlogPosts = (await getCollection('blog'))
         </div>
       </div>
       <div class="process-cta">
-        <a href="/contact" class="process-btn">Start the conversation</a>
+        <a href="/contact" class="process-btn" data-i18n="process.cta">Start the conversation</a>
       </div>
     </div>
 
@@ -279,7 +279,7 @@ const latestBlogPosts = (await getCollection('blog'))
               <img src={post.data.coverImage} alt={post.data.title} loading="lazy" />
             </div>
             <div class="blog-preview-content">
-              <p class="blog-preview-category">{post.data.category}</p>
+              <p class="blog-preview-category" data-i18n={"blog.cat." + post.data.category.toLowerCase().replace(/ /g, "_")}>{post.data.category}</p>
               <h3>{post.data.title}</h3>
               <p>{post.data.excerpt}</p>
             </div>
@@ -388,9 +388,9 @@ const latestBlogPosts = (await getCollection('blog'))
         🇨🇱 Now booking · Chile Wedding Season 2026
       </div>
       <h2 class="cta-scarcity-heading">
-        A few dates<br>still <em>available.</em>
+        <span data-i18n="cta.heading1">A few dates</span><br><span data-i18n="cta.heading2">still</span> <em data-i18n="cta.available">available.</em>
       </h2>
-      <p class="cta-scarcity-sub">
+      <p class="cta-scarcity-sub" data-i18n="cta.sub">
         I’m heading to Chile this spring for wedding season. I keep my calendar intentionally small — each couple gets my full attention. If you have a date in mind, now is the time.
       </p>
       <div class="cta-scarcity-slots">

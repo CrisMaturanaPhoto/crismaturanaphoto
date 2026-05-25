@@ -40,6 +40,7 @@ const translations = {
     "counter.sessions": "Sessions completed",
     "counter.sneak": "Sneak peek delivery",
     "counter.flow": "Natural directing method",
+    "process.cta": "Start the conversation",
 
     // INDEX INSTAGRAM
     "ig.heading": "Let's connect on Instagram",
@@ -112,10 +113,42 @@ const translations = {
     "contact.faq.a5": "<strong>Portraits and branding</strong>: 7–10 business days. <strong>Weddings</strong>: sneak peek within 24 hours, full gallery in 15–30 days.",
     "contact.faq.a6": "Fill in the form above. I'll reply within 24–48 hours to schedule a short call. A <strong>30–50% deposit</strong> secures your date.",
 
+
+    // HERO SLIDES
+    "hero.slide1.title": "Photo Tours Vietnam",
+    "hero.slide1.subtitle": "DESTINATION DOCUMENTARY PHOTOGRAPHER",
+    "hero.slide1.cta": "Find More",
+    "hero.slide2.title": "Documentary Weddings",
+    "hero.slide2.subtitle": "DESTINATION DOCUMENTARY PHOTOGRAPHER",
+    "hero.slide2.cta": "View Portfolio",
+    "hero.slide3.title": "Couples & Families",
+    "hero.slide3.subtitle": "REAL MOMENTS. HONEST CONNECTION.",
+    "hero.slide3.cta": "Find More",
+
+    // PORTFOLIO
+    "portfolio.label": "Take a look at my works",
+    "portfolio.cat1.title": "Photo Tours Vietnam",
+    "portfolio.cat2.title": "Portraits",
+    "portfolio.cat2.sub": "Natural light. Honest expressions.",
+    "portfolio.cat3.title": "Weddings",
+    "portfolio.cat3.sub": "Moments that last forever.",
+    "portfolio.cat4.title": "Travel & Culture",
+    "portfolio.cat4.sub": "Observing the world, honestly.",
+    "portfolio.cat5.title": "From Above",
+    "portfolio.cat5.sub": "Perspective changes everything.",
+    "portfolio.cat6.title": "Couples & Families",
+    "portfolio.cat6.sub": "Genuine connection, beautifully captured.",
+
+    // ABOUT
+    "about.label": "About the photographer",
+    "about.text": "Hi, I'm Cristóbal, photographer and visual storyteller. I capture authentic, meaningful moments with intention and depth.",
+    "about.link": "More about me",
+    "about.title": "Light, depth,\nand the moments\nin between.",
+
     // FOOTER
+    "footer.tagline": "Documentary Photographer",
     "footer.rights": "All rights reserved.",
     "footer.location": "Hội An, Vietnam",
-    "footer.tagline": "Documentary Photographer",
   },
 
   es: {
@@ -158,6 +191,7 @@ const translations = {
     "counter.sessions": "Sesiones realizadas",
     "counter.sneak": "Sneak peek",
     "counter.flow": "Método de dirección natural",
+    "process.cta": "Iniciar conversación",
 
     // INDEX INSTAGRAM
     "ig.heading": "Conéctate en Instagram",
@@ -230,10 +264,42 @@ const translations = {
     "contact.faq.a5": "<strong>Retratos y branding</strong>: 7–10 días hábiles. <strong>Matrimonios</strong>: sneak peek en 24 horas, galería completa en 15–30 días.",
     "contact.faq.a6": "Llena el formulario. Respondo en 24–48 horas para coordinar una llamada breve. Un <strong>depósito del 30–50%</strong> asegura tu fecha.",
 
+
+    // HERO SLIDES
+    "hero.slide1.title": "Photo Tours Vietnam",
+    "hero.slide1.subtitle": "FOTÓGRAFO DOCUMENTAL DE DESTINO",
+    "hero.slide1.cta": "Saber más",
+    "hero.slide2.title": "Matrimonios Documentales",
+    "hero.slide2.subtitle": "FOTÓGRAFO DOCUMENTAL DE DESTINO",
+    "hero.slide2.cta": "Ver Portafolio",
+    "hero.slide3.title": "Parejas y Familias",
+    "hero.slide3.subtitle": "MOMENTOS REALES. CONEXIÓN AUTÉNTICA.",
+    "hero.slide3.cta": "Saber más",
+
+    // PORTFOLIO
+    "portfolio.label": "Echa un vistazo a mi trabajo",
+    "portfolio.cat1.title": "Photo Tours Vietnam",
+    "portfolio.cat2.title": "Retratos",
+    "portfolio.cat2.sub": "Luz natural. Expresiones honestas.",
+    "portfolio.cat3.title": "Matrimonios",
+    "portfolio.cat3.sub": "Momentos que duran para siempre.",
+    "portfolio.cat4.title": "Viajes y Cultura",
+    "portfolio.cat4.sub": "Observando el mundo, honestamente.",
+    "portfolio.cat5.title": "Desde el Aire",
+    "portfolio.cat5.sub": "La perspectiva lo cambia todo.",
+    "portfolio.cat6.title": "Parejas y Familias",
+    "portfolio.cat6.sub": "Conexión genuina, bellamente capturada.",
+
+    // ABOUT
+    "about.label": "Sobre el fotógrafo",
+    "about.text": "Hola, soy Cristóbal, fotógrafo y narrador visual. Capturo momentos auténticos y significativos con intención y profundidad.",
+    "about.link": "Más sobre mí",
+    "about.title": "Luz, profundidad,\ny los momentos\nen medio de todo.",
+
     // FOOTER
+    "footer.tagline": "Fotógrafo Documental",
     "footer.rights": "Todos los derechos reservados.",
     "footer.location": "Hội An, Vietnam",
-    "footer.tagline": "Fotógrafo Documental",
   }
 };
 
@@ -248,7 +314,7 @@ window.setLang = function setLang(lang) {
   window.updateSwitcher(lang);
 }
 
-window.applyTranslations = function window.applyTranslations(lang) {
+window.applyTranslations = function applyTranslations(lang) {
   const t = translations[lang];
   if (!t) return;
   document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -266,7 +332,7 @@ window.applyTranslations = function window.applyTranslations(lang) {
   document.documentElement.lang = lang === 'es' ? 'es' : 'en';
 }
 
-window.updateSwitcher = function window.updateSwitcher(lang) {
+window.updateSwitcher = function updateSwitcher(lang) {
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
   });
