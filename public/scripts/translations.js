@@ -55,6 +55,9 @@ const translations = {
     "cta.btn": "Check availability",
     "cta.note": "Traveling to Chile · Oct – Dec 2026 · Also available year-round in Vietnam & Southeast Asia",
     "cta.slot.open": "Open",
+    "cta.month1": "October",
+    "cta.month2": "November",
+    "cta.month3": "December",
 
     // BLOG
     "blog.label": "From the Blog",
@@ -204,9 +207,13 @@ const translations = {
     "cta.heading2": "aún",
     "cta.available": "disponibles.",
     "cta.sub": "Viajo a Chile esta primavera para la temporada de matrimonios. Mantengo mi agenda intencionalmente pequeña — cada pareja recibe mi atención completa. Si tienes una fecha en mente, este es el momento.",
+    "cta.sub": "Viajo a Chile esta primavera para la temporada de matrimonios. Mantengo mi agenda intencionalmente pequeña — cada pareja recibe mi atención completa. Si tienes una fecha en mente, este es el momento.",
     "cta.btn": "Consultar disponibilidad",
     "cta.note": "Viajando a Chile · Oct – Dic 2026 · Disponible todo el año en Vietnam y Sudeste Asiático",
     "cta.slot.open": "Disponible",
+    "cta.month1": "Octubre",
+    "cta.month2": "Noviembre",
+    "cta.month3": "Diciembre",
 
     // BLOG
     "blog.label": "Del Blog",
