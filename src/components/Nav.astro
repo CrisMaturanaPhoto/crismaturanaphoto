@@ -59,6 +59,18 @@ const navLinks = [
       </ul>
     </nav>
   </div>
+
+    <div class="lang-switcher" role="group" aria-label="Language selector">
+      <button class="lang-btn active" data-lang="en" onclick="window.setLang && window.setLang('en')" aria-label="English">
+        <span class="lang-flag">🇬🇧</span>
+        <span class="lang-code">EN</span>
+      </button>
+      <span class="lang-divider">|</span>
+      <button class="lang-btn" data-lang="es" onclick="window.setLang && window.setLang('es')" aria-label="Español">
+        <span class="lang-flag">🇪🇸</span>
+        <span class="lang-code">ES</span>
+      </button>
+    </div>
 </header>
 
 <style>
@@ -257,6 +269,44 @@ const navLinks = [
     }
 
     .dropdown-link:hover { padding-left: 0.5rem; }
+  }
+
+  /* Language switcher */
+  .lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-left: 1.5rem;
+  }
+  .lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    font-family: var(--font-sans, 'Jost', sans-serif);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: var(--color-muted, #8a8278);
+    transition: color 0.2s, background 0.2s;
+    opacity: 0.7;
+  }
+  .lang-btn.active {
+    color: var(--color-accent, #a0722a);
+    opacity: 1;
+    font-weight: 500;
+  }
+  .lang-btn:hover { opacity: 1; color: var(--color-heading, #1c1a17); }
+  .lang-flag { font-size: 0.9rem; line-height: 1; }
+  .lang-code { font-size: 0.65rem; letter-spacing: 0.12em; }
+  .lang-divider { color: var(--color-border, rgba(160,114,42,0.3)); font-size: 0.7rem; }
+  @media (max-width: 900px) {
+    .lang-switcher { margin-left: 0.5rem; }
+    .lang-code { display: none; }
   }
 </style>
 
