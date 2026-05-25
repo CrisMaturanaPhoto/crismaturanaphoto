@@ -708,8 +708,14 @@ const latestBlogPosts = (await getCollection('blog'))
   }
 
   .blog-preview-card:hover {
-    border-color: var(--color-accent);
     transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+  }
+  .blog-preview-card:hover h3 {
+    color: #a0722a;
+  }
+  .blog-preview-card:hover h3 {
+    color: #a0722a;
   }
 
   .blog-preview-image {
@@ -728,26 +734,36 @@ const latestBlogPosts = (await getCollection('blog'))
   }
 
   .blog-preview-category {
-    font-size: 0.64rem;
-    letter-spacing: 0.16em;
+    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--color-accent);
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    color: #a0722a;
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(160,114,42,0.25);
   }
 
   .blog-preview-content h3 {
-    font-family: var(--font-serif);
-    font-size: 1.2rem;
-    color: var(--color-heading);
-    line-height: 1.25;
-    margin-bottom: 0.55rem;
+    font-family: 'Cormorant Garant', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #1c1a17;
+    margin-bottom: 0.9rem;
+    letter-spacing: -0.015em;
+    transition: color 0.3s;
   }
 
   .blog-preview-content p {
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
-    line-height: 1.65;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.83rem;
+    font-weight: 300;
+    color: #8a8278;
+    line-height: 1.9;
+    letter-spacing: 0.01em;
   }
 
   /* INSTAGRAM GRID */
