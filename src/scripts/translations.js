@@ -41,6 +41,7 @@ const translations = {
     "counter.sneak": "Sneak peek delivery",
     "counter.flow": "Natural directing method",
     "process.cta": "Start the conversation",
+    "about.subtext": "Each frame is shaped by light, emotion, and the subtle details that often go unnoticed. My experience living abroad expanded my perspective, allowing me to see beauty in contrasts, cultures, and quiet in-between moments. I approach every project with sensitivity and purpose, creating images that feel honest, timeless, and deeply personal.",
 
     // INDEX INSTAGRAM
     "ig.heading": "Let's connect on Instagram",
@@ -192,6 +193,7 @@ const translations = {
     "counter.sneak": "Sneak peek",
     "counter.flow": "Método de dirección natural",
     "process.cta": "Iniciar conversación",
+    "about.subtext": "Cada imagen está moldeada por la luz, la emoción y los detalles sutiles que suelen pasar desapercibidos. Mi experiencia viviendo en el extranjero amplió mi perspectiva, permitiéndome ver belleza en los contrastes, las culturas y los momentos silenciosos. Abordo cada proyecto con sensibilidad y propósito, creando imágenes que se sienten honestas, atemporales y profundamente personales.",
 
     // INDEX INSTAGRAM
     "ig.heading": "Conéctate en Instagram",
