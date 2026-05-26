@@ -93,7 +93,45 @@ const latestBlogPosts = (await getCollection('blog'))
       "https://www.facebook.com/Matufoto/"
     ],
     "knowsLanguage": ["en", "es"],
-    "priceRange": "$$"
+    "priceRange": "$$",
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Poppin & Chris" },
+        "reviewBody": "They are stunning. Thank you so much.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Mandy & Swen Rohm" },
+        "reviewBody": "I'm very happy with the result. Now we have a lot of great photos for our website.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Rachael Newport" },
+        "reviewBody": "I added that one to my website. Looks pretty snazzy!",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Jose" },
+        "reviewBody": "Arrived home last night. Thank you so much for the beautiful photos!",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Monika" },
+        "reviewBody": "Everything looks amazing. You did such a good job.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "5",
+      "bestRating": "5"
+    }
   })} />
 
 
