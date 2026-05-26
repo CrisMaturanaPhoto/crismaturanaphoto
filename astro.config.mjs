@@ -1,7 +1,5 @@
 import { defineConfig } from 'astro/config';
 
-import sitemap from '@astrojs/sitemap';
-
 export default defineConfig({
   site: 'https://crismaturana.com',
   compressHTML: true,
@@ -10,5 +8,4 @@ export default defineConfig({
     assets: '_assets',
   },
 
-  integrations: [sitemap()],
 });
