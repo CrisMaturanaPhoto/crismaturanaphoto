@@ -73,6 +73,30 @@ const latestBlogPosts = (await getCollection('blog'))
 
 <Layout title="Cristóbal Maturana – Documentary Photographer">
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://crismaturana.com",
+    "name": "Cristóbal Maturana Photography",
+    "image": "https://CrisMaturana.b-cdn.net/AUTORETRATO/DSC_1505-2%203.JPG",
+    "url": "https://crismaturana.com",
+    "description": "Documentary photographer based in Hội An, Vietnam. Weddings, portraits, couples, and yoga branding across Southeast Asia and Chile.",
+    "founder": { "@type": "Person", "name": "Cristóbal Maturana" },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hội An",
+      "addressCountry": "VN"
+    },
+    "areaServed": ["Vietnam", "Southeast Asia", "Chile", "Worldwide"],
+    "sameAs": [
+      "https://www.instagram.com/cristobalmaturanaphoto/",
+      "https://www.facebook.com/Matufoto/"
+    ],
+    "knowsLanguage": ["en", "es"],
+    "priceRange": "$$"
+  })} />
+
+
   <!-- HERO SLIDER -->
   <h1 class="seo-h1">Documentary Photographer in Hội An, Vietnam — Weddings, Portraits &amp; Yoga Branding | Cristóbal Maturana</h1>
   <section class="hero" id="hero" aria-label="Featured work">
