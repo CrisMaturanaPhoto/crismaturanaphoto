@@ -1447,6 +1447,19 @@ const latestBlogPosts = (await getCollection('blog'))
 .td-card span { font-size: 0.82rem; font-weight: 500; color: #e8c070; }
 .td-card em { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); font-style: normal; }
 .td-card blockquote { font-family: 'Cormorant Garant', Georgia, serif; font-size: 1.1rem; font-weight: 300; font-style: italic; line-height: 1.5; color: #fff; }
+
+@media(max-width:750px){
+  .process-steps { gap: 1rem !important; }
+  .process-step { gap: 0.4rem !important; text-align: center; align-items: center; }
+  .process-num { margin-bottom: 0 !important; font-size: 3.5rem !important; }
+  .process-content { text-align: center; }
+  .process-title { font-size: 1.7rem !important; }
+  .process-desc { font-size: 1.05rem !important; line-height: 1.7 !important; max-width: 340px; margin: 0 auto; }
+}
+
+@media(max-width:750px){
+  .process-btn { padding: 1.3rem 3rem !important; font-size: 0.9rem !important; letter-spacing: 0.16em !important; }
+}
 </style>
 
 <script>
