@@ -142,6 +142,10 @@ const translations = {
 
     // HERO SLIDES
     "hero.slide1.title": "Photo Tours Vietnam",
+    "hero.getintouch": "Get in touch →",
+    "hero.viewwork": "View portfolio",
+    "hero.eyebrow": "Documentary Photographer · Hội An",
+    "hero.split.sub": "Real moments, honestly captured — across Vietnam, Southeast Asia, and beyond.",
     "hero.slide1.subtitle": "DESTINATION DOCUMENTARY PHOTOGRAPHER",
     "hero.slide1.cta": "Find More",
     "hero.slide2.title": "Documentary Weddings",
@@ -320,6 +324,10 @@ const translations = {
 
     // HERO SLIDES
     "hero.slide1.title": "Photo Tours Vietnam",
+    "hero.getintouch": "Conversemos →",
+    "hero.viewwork": "Ver portafolio",
+    "hero.eyebrow": "Fotógrafo Documental · Hội An",
+    "hero.split.sub": "Momentos reales, capturados con honestidad — en Vietnam, Sudeste Asiático y más allá.",
     "hero.slide1.subtitle": "FOTÓGRAFO DOCUMENTAL DE DESTINO",
     "hero.slide1.cta": "Saber más",
     "hero.slide2.title": "Matrimonios Documentales",

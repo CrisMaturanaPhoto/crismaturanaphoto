@@ -137,27 +137,29 @@ const latestBlogPosts = (await getCollection('blog'))
 
   <!-- HERO SLIDER -->
   <h1 class="seo-h1">Documentary Photographer in Hội An, Vietnam — Weddings, Portraits &amp; Yoga Branding | Cristóbal Maturana</h1>
-  <section class="hero" id="hero" aria-label="Featured work">
-    <div class="hero-slides">
-      {heroSlides.map((slide, i) => (
-        <div
-          class={`hero-slide ${i === 0 ? 'active' : ''}`}
-          style={`background-image: url('${slide.bg}'); --hero-focus: ${slide.focus ?? 'center'};`}
-        >
-          <div class="hero-content">
-            <p class="hero-subtitle" data-i18n={`hero.slide${i+1}.subtitle`}>{slide.subtitle}</p>
-            <h2 class="hero-title" data-i18n={`hero.slide${i+1}.title`}>{slide.title}</h2>
-            <a href={slide.href} class="btn" data-i18n={`hero.slide${i+1}.cta`}>{slide.cta}</a>
-          </div>
-        </div>
-      ))}
+  <section class="hero hero-split" id="hero" aria-label="Featured work">
+    <div class="hero-split-text">
+      <p class="hero-split-eyebrow" data-i18n="hero.eyebrow">Documentary Photographer · Hội An</p>
+      <div class="hero-slides-text">
+        {heroSlides.map((slide, i) => (
+          <h2 class={`hero-split-title ${i === 0 ? 'active' : ''}`} data-i18n={`hero.slide${i+1}.title`}>{slide.title}</h2>
+        ))}
+      </div>
+      <p class="hero-split-sub" data-i18n="hero.split.sub">Real moments, honestly captured — across Vietnam, Southeast Asia, and beyond.</p>
+      <div class="hero-ctas">
+        <a href="/portfolio" class="btn-dark" data-i18n="hero.viewwork">View portfolio</a>
+        <a href="/contact" class="hero-split-link" data-i18n="hero.getintouch">Get in touch →</a>
+      </div>
     </div>
-    <button class="hero-arrow hero-prev" aria-label="Previous slide">&#8249;</button>
-    <button class="hero-arrow hero-next" aria-label="Next slide">&#8250;</button>
-    <div class="hero-dots">
-      {heroSlides.map((_, i) => (
-        <button class={`hero-dot ${i === 0 ? 'active' : ''}`} aria-label={`Go to slide ${i + 1}`} data-slide={i}></button>
+    <div class="hero-split-imgs">
+      {heroSlides.map((slide, i) => (
+        <div class={`hero-split-img ${i === 0 ? 'active' : ''}`} style={`background-image: url('${slide.bg}'); --hero-focus: ${slide.focus ?? 'center'};`}></div>
       ))}
+      <div class="hero-dots">
+        {heroSlides.map((_, i) => (
+          <button class={`hero-dot ${i === 0 ? 'active' : ''}`} aria-label={`Go to slide ${i + 1}`} data-slide={i}></button>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -1522,6 +1524,28 @@ const latestBlogPosts = (await getCollection('blog'))
 @media(max-width:750px){
   .process-btn { padding: 1.3rem 3rem !important; font-size: 0.9rem !important; letter-spacing: 0.16em !important; }
 }
+
+/* HERO SPLIT EDITORIAL */
+.hero-split { height: 100vh; min-height: 600px; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+@media(max-width:850px){ .hero-split { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; } }
+.hero-split-text { background: #14110d; display: flex; flex-direction: column; justify-content: center; padding: 4rem 5rem; }
+@media(max-width:850px){ .hero-split-text { padding: 3rem 2rem; order: 2; text-align: center; align-items: center; } }
+.hero-split-eyebrow { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: #a0722a; margin-bottom: 2rem; }
+.hero-slides-text { position: relative; min-height: 4.5rem; margin-bottom: 1.5rem; }
+.hero-split-title { position: absolute; inset: 0; font-family: 'Cormorant Garant', Georgia, serif; font-size: clamp(2.5rem,4.5vw,4.5rem); font-weight: 300; line-height: 1.05; color: #fff; opacity: 0; transition: opacity 0.8s ease; }
+.hero-split-title.active { opacity: 1; position: relative; }
+.hero-split-sub { font-size: 0.95rem; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 2.5rem; max-width: 380px; }
+.hero-ctas { display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap; }
+@media(max-width:850px){ .hero-ctas { justify-content: center; } }
+.btn-dark { display: inline-flex; padding: 1rem 2.4rem; background: #e8c070; color: #14110d; font-family: 'Jost', sans-serif; font-size: 0.73rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.3s; }
+.btn-dark:hover { background: #f0d080; }
+.hero-split-link { font-size: 0.8rem; color: rgba(255,255,255,0.7); text-decoration: none; letter-spacing: 0.05em; transition: color 0.3s; }
+.hero-split-link:hover { color: #fff; }
+.hero-split-imgs { position: relative; overflow: hidden; }
+@media(max-width:850px){ .hero-split-imgs { order: 1; } }
+.hero-split-img { position: absolute; inset: 0; background-size: cover; background-position: var(--hero-focus, center); opacity: 0; transition: opacity 1s ease; }
+.hero-split-img.active { opacity: 1; }
+.hero-split-imgs .hero-dots { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 3; }
 </style>
 
 <script>
