@@ -142,10 +142,6 @@ const translations = {
 
     // HERO SLIDES
     "hero.slide1.title": "Photo Tours Vietnam",
-    "hero.getintouch": "Get in touch →",
-    "hero.viewwork": "View portfolio",
-    "hero.eyebrow": "Documentary Photographer · Hội An",
-    "hero.split.sub": "Real moments, honestly captured — across Vietnam, Southeast Asia, and beyond.",
     "hero.getintouch": "Get in touch",
     "hero.viewwork": "View portfolio",
     "hero.eyebrow": "Documentary Photographer · Hội An",
@@ -329,10 +325,6 @@ const translations = {
 
     // HERO SLIDES
     "hero.slide1.title": "Photo Tours Vietnam",
-    "hero.getintouch": "Conversemos →",
-    "hero.viewwork": "Ver portafolio",
-    "hero.eyebrow": "Fotógrafo Documental · Hội An",
-    "hero.split.sub": "Momentos reales, capturados con honestidad — en Vietnam, Sudeste Asiático y más allá.",
     "hero.getintouch": "Conversemos",
     "hero.viewwork": "Ver portafolio",
     "hero.eyebrow": "Fotógrafo Documental · Hội An",

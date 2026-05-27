@@ -4,6 +4,13 @@ import Layout from '../layouts/Layout.astro';
 
 const heroSlides = [
   {
+    title: 'Documentary Weddings',
+    subtitle: 'DESTINATION DOCUMENTARY PHOTOGRAPHER',
+    cta: 'Find More',
+    href: '/portfolio/weddings',
+    bg: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/abrazo-001.JPG',
+  },
+  {
     title: 'Photo Tours Vietnam',
     subtitle: 'DESTINATION DOCUMENTARY PHOTOGRAPHER',
     cta: 'Find More',
@@ -15,7 +22,7 @@ const heroSlides = [
     subtitle: 'DESTINATION DOCUMENTARY PHOTOGRAPHER',
     cta: 'View Portfolio',
     href: '/portfolio/weddings',
-    bg: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Poppin%26Chris-Wedding-%40-226.jpg',
+    bg: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Poppin%26Chris-Wedding-%40-228.jpg',
   },
   {
     title: 'Couples & Families',
@@ -137,29 +144,27 @@ const latestBlogPosts = (await getCollection('blog'))
 
   <!-- HERO SLIDER -->
   <h1 class="seo-h1">Documentary Photographer in Hội An, Vietnam — Weddings, Portraits &amp; Yoga Branding | Cristóbal Maturana</h1>
-  <section class="hero hero-split" id="hero" aria-label="Featured work">
-    <div class="hero-split-text">
-      <p class="hero-split-eyebrow" data-i18n="hero.eyebrow">Documentary Photographer · Hội An</p>
-      <div class="hero-slides-text">
-        {heroSlides.map((slide, i) => (
-          <h2 class={`hero-split-title ${i === 0 ? 'active' : ''}`} data-i18n={`hero.slide${i+1}.title`}>{slide.title}</h2>
-        ))}
-      </div>
-      <p class="hero-split-sub" data-i18n="hero.split.sub">Real moments, honestly captured — across Vietnam, Southeast Asia, and beyond.</p>
+  <section class="hero hero-kb" id="hero" aria-label="Featured work">
+    <div class="hero-slides">
+      {heroSlides.map((slide, i) => (
+        <div class={`hero-slide ${i === 0 ? 'active' : ''}`}>
+          <div class="hero-kb-img" style={`background-image: url('${slide.bg}'); --hero-focus: ${slide.focus ?? 'center'};`}></div>
+        </div>
+      ))}
+    </div>
+    <div class="hero-kb-overlay"></div>
+    <div class="hero-mosaic-card">
+      <p class="hero-subtitle" data-i18n="hero.eyebrow">Documentary Photographer · Hội An</p>
+      <h2 class="hero-mosaic-title" data-i18n="hero.mosaic.title">Real moments,<br>honestly captured.</h2>
+      <p class="hero-mosaic-sub" data-i18n="hero.split.sub">Weddings, portraits & yoga branding across Vietnam, Southeast Asia, and beyond.</p>
       <div class="hero-ctas">
-        <a href="/portfolio" class="btn-dark" data-i18n="hero.viewwork">View portfolio</a>
-        <a href="/contact" class="hero-split-link" data-i18n="hero.getintouch">Get in touch →</a>
+        <a href="/contact" class="btn-getintouch" data-i18n="hero.getintouch">Get in touch</a>
       </div>
     </div>
-    <div class="hero-split-imgs">
-      {heroSlides.map((slide, i) => (
-        <div class={`hero-split-img ${i === 0 ? 'active' : ''}`} style={`background-image: url('${slide.bg}'); --hero-focus: ${slide.focus ?? 'center'};`}></div>
+    <div class="hero-dots">
+      {heroSlides.map((_, i) => (
+        <button class={`hero-dot ${i === 0 ? 'active' : ''}`} aria-label={`Go to slide ${i + 1}`} data-slide={i}></button>
       ))}
-      <div class="hero-dots">
-        {heroSlides.map((_, i) => (
-          <button class={`hero-dot ${i === 0 ? 'active' : ''}`} aria-label={`Go to slide ${i + 1}`} data-slide={i}></button>
-        ))}
-      </div>
     </div>
   </section>
 
@@ -1525,28 +1530,6 @@ const latestBlogPosts = (await getCollection('blog'))
   .process-btn { padding: 1.3rem 3rem !important; font-size: 0.9rem !important; letter-spacing: 0.16em !important; }
 }
 
-/* HERO SPLIT EDITORIAL */
-.hero-split { height: 100vh; min-height: 600px; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
-@media(max-width:850px){ .hero-split { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; } }
-.hero-split-text { background: #14110d; display: flex; flex-direction: column; justify-content: center; padding: 4rem 5rem; }
-@media(max-width:850px){ .hero-split-text { padding: 3rem 2rem; order: 2; text-align: center; align-items: center; } }
-.hero-split-eyebrow { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: #a0722a; margin-bottom: 2rem; }
-.hero-slides-text { position: relative; min-height: 4.5rem; margin-bottom: 1.5rem; }
-.hero-split-title { position: absolute; inset: 0; font-family: 'Cormorant Garant', Georgia, serif; font-size: clamp(2.5rem,4.5vw,4.5rem); font-weight: 300; line-height: 1.05; color: #fff; opacity: 0; transition: opacity 0.8s ease; }
-.hero-split-title.active { opacity: 1; position: relative; }
-.hero-split-sub { font-size: 0.95rem; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 2.5rem; max-width: 380px; }
-.hero-ctas { display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap; }
-@media(max-width:850px){ .hero-ctas { justify-content: center; } }
-.btn-dark { display: inline-flex; padding: 1rem 2.4rem; background: #e8c070; color: #14110d; font-family: 'Jost', sans-serif; font-size: 0.73rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.3s; }
-.btn-dark:hover { background: #f0d080; }
-.hero-split-link { font-size: 0.8rem; color: rgba(255,255,255,0.7); text-decoration: none; letter-spacing: 0.05em; transition: color 0.3s; }
-.hero-split-link:hover { color: #fff; }
-.hero-split-imgs { position: relative; overflow: hidden; }
-@media(max-width:850px){ .hero-split-imgs { order: 1; } }
-.hero-split-img { position: absolute; inset: 0; background-size: cover; background-position: var(--hero-focus, center); opacity: 0; transition: opacity 1s ease; }
-.hero-split-img.active { opacity: 1; }
-.hero-split-imgs .hero-dots { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 3; }
-
 /* HERO HYBRID — Ken Burns + centered card */
 .hero-kb { position: relative; height: 100vh; min-height: 600px; overflow: hidden; }
 .hero-kb .hero-slides { position: absolute; inset: 0; }
@@ -1563,28 +1546,8 @@ const latestBlogPosts = (await getCollection('blog'))
 .hero-ctas { display: flex; gap: 1.4rem; justify-content: center; align-items: center; flex-wrap: wrap; }
 .btn-dark { display: inline-flex; padding: 1.1rem 2.6rem; background: #e8c070; color: #14110d; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.3s; }
 .btn-dark:hover { background: #f0d080; }
-.btn-getintouch { display: inline-flex; align-items: center; padding: 1.1rem 2.6rem; border: 1px solid rgba(255,255,255,0.6); color: #fff; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.3s, color 0.3s; }
-.btn-getintouch:hover { background: #fff; color: #14110d; }
-.hero-kb .hero-dots { position: absolute; bottom: 1.8rem; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 0.6rem; }
-
-/* HERO HYBRID — Ken Burns + centered card */
-.hero-kb { position: relative; height: 100vh; min-height: 600px; overflow: hidden; }
-.hero-kb .hero-slides { position: absolute; inset: 0; }
-.hero-kb .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; }
-.hero-kb .hero-slide.active { opacity: 1; }
-.hero-kb-img { position: absolute; inset: 0; background-size: cover; background-position: var(--hero-focus, center); transform: scale(1); }
-.hero-kb .hero-slide.active .hero-kb-img { animation: kenburns 12s ease-out forwards; }
-@keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.12); } }
-.hero-kb-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(10,9,7,0.45) 0%, rgba(10,9,7,0.5) 60%, rgba(10,9,7,0.65) 100%); }
-.hero-mosaic-card { position: absolute; z-index: 2; top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: center; padding: 0 5vw; max-width: 760px; width: 100%; }
-.hero-mosaic-card .hero-subtitle { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.85); margin-bottom: 1rem; }
-.hero-mosaic-title { font-family: 'Cormorant Garant', Georgia, serif; font-size: clamp(2.8rem,6vw,5.5rem); font-weight: 300; line-height: 1.05; color: #fff; margin: 1rem 0 1.5rem; }
-.hero-mosaic-sub { font-size: 1rem; color: rgba(255,255,255,0.82); line-height: 1.8; margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; }
-.hero-ctas { display: flex; gap: 1.4rem; justify-content: center; align-items: center; flex-wrap: wrap; }
-.btn-dark { display: inline-flex; padding: 1.1rem 2.6rem; background: #e8c070; color: #14110d; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.3s; }
-.btn-dark:hover { background: #f0d080; }
-.btn-getintouch { display: inline-flex; align-items: center; padding: 1.1rem 2.6rem; border: 1px solid rgba(255,255,255,0.6); color: #fff; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.3s, color 0.3s; }
-.btn-getintouch:hover { background: #fff; color: #14110d; }
+.btn-getintouch { display: inline-flex; align-items: center; padding: 1.1rem 2.8rem; background: #e8c070; color: #14110d; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.3s; }
+.btn-getintouch:hover { background: #f0d080; }
 .hero-kb .hero-dots { position: absolute; bottom: 1.8rem; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 0.6rem; }
 </style>
 
