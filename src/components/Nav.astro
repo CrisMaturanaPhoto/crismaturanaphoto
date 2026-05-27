@@ -9,9 +9,17 @@ const navLinks = [
       { label: 'Portraits', i18n: 'nav.portraits', href: '/portfolio/portraits' },
       { label: 'Travel & Culture', i18n: 'nav.travel', href: '/portfolio/travel-culture' },
       { label: 'From Above', i18n: 'nav.aerial', href: '/portfolio/aerial' },
+      { label: 'Matrimonios en Chile 🇨🇱', href: '/es/matrimonios-chile' },
     ],
   },
-  { label: 'Photo Tours', i18n: 'nav.phototours', href: '/portfolio/photo-tours-vietnam-2026' },
+  {
+    label: 'Photo Tours', i18n: 'nav.phototours',
+    href: '/portfolio/photo-tours-vietnam-2026',
+    children: [
+      { label: 'Vietnam 2026 (English)', href: '/portfolio/photo-tours-vietnam-2026' },
+      { label: 'Tours en español 🇪🇸', href: '/es/photo-tours-vietnam' },
+    ],
+  },
   {
     label: 'About', i18n: 'nav.aboutmenu',
     href: '#',
