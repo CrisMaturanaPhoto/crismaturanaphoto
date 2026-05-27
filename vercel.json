@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/prices",
+      "destination": "/contact",
+      "permanent": false
+    }
+  ]
+}
