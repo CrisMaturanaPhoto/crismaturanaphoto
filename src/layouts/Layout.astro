@@ -37,6 +37,19 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
     ))}
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>{title}</title>
+
+    {/*
+      Sincroniza el idioma ANTES de pintar para evitar FOUC.
+      La URL manda: el `lang` de la página sobreescribe lo guardado en
+      localStorage. translations.js (más abajo) lee localStorage en
+      DOMContentLoaded, así que dejamos el valor listo aquí.
+    */}
+    <script is:inline define:vars={{ pageLang: lang }}>
+      try {
+        localStorage.setItem('lang', pageLang);
+      } catch (e) {}
+      document.documentElement.lang = pageLang;
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

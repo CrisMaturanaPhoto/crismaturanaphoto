@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HomeContent from '../../components/HomeContent.astro';
+import { heroSlides, portfolioCategories } from '../../lib/ui';
+import { getLatestBlogPosts, buildAlternates } from '../../lib/utils';
+
+const latestBlogPosts = await getLatestBlogPosts(3);
+const alternates = buildAlternates('/', '/es/');
+---
+
+<Layout
+  title="Cristóbal Maturana – Fotógrafo Documental"
+  description="Cristóbal Maturana – Fotógrafo documental y narrador visual"
+  lang="es"
+  canonical="https://crismaturana.com/es/"
+  alternates={alternates}
+>
+  <HomeContent
+    heroSlides={heroSlides}
+    portfolioCategories={portfolioCategories}
+    latestBlogPosts={latestBlogPosts}
+  />
+</Layout>
