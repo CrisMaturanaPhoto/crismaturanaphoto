@@ -1,0 +1,183 @@
+---
+import TourVietnamLayout from '../../../layouts/TourVietnamLayout.astro';
+import { buildAlternates } from '../../../lib/utils';
+
+const alternates = buildAlternates('/portfolio/photo-tours-vietnam-2026', '/es/portfolio/photo-tours-vietnam-2026');
+---
+<TourVietnamLayout
+  title="Photo Tours Vietnam 2026 – Cristóbal Maturana"
+  description="Dos tours fotográficos en Hội An, Vietnam 2026."
+  lang="es"
+  canonical="https://crismaturana.com/es/portfolio/photo-tours-vietnam-2026"
+  alternates={alternates}
+><!-- PHOTO TOURS VIETNAM 2026 ES — crismaturana.com -->
+
+<style>
+  .cm-tours-wrap { font-family: inherit; max-width: 1080px; margin: 0 auto; padding: 2rem 1.5rem; color: inherit; }
+  .cm-tours-intro { text-align: center; margin-bottom: 3rem; }
+  .cm-tours-intro .eyebrow { font-size: 16px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; opacity: 0.85; margin-bottom: 0.75rem; }
+  .cm-tours-intro p { font-size: 1rem; opacity: 0.6; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+  .cm-local-note { font-style: italic; opacity: 0.45; margin-top: 1rem !important; }
+  .cm-tours-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .cm-tour-card { display: flex; flex-direction: column; }
+  .cm-slider { position: relative; width: 100%; overflow: hidden; border-radius: 4px; background: transparent; }
+  .cm-slider-track { display: flex; transition: transform 0.4s ease; will-change: transform; }
+  .cm-slider-track img { width: 100%; flex-shrink: 0; height: 240px; object-fit: cover; object-position: center; display: block; }
+  .cm-slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: #fff; border: none; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; font-size: 16px; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.2s; }
+  .cm-slider-btn:hover { background: rgba(0,0,0,0.8); }
+  .cm-slider-btn.prev { left: 10px; }
+  .cm-slider-btn.next { right: 10px; }
+  .cm-slider-dots { display: flex; justify-content: center; gap: 6px; padding: 8px 0 4px; }
+  .cm-slider-dots span { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: 0.2; cursor: pointer; transition: opacity 0.2s; }
+  .cm-slider-dots span.active { opacity: 0.7; }
+  .cm-tour-header { padding: 1.25rem 0 0.75rem; }
+  .cm-tour-num { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.35; display: block; margin-bottom: 0.4rem; }
+  .cm-tour-header h3 { font-size: 1.35rem; font-weight: 400; margin: 0 0 0.3rem; letter-spacing: -0.01em; }
+  .cm-tour-header .tagline { font-size: 0.85rem; opacity: 0.5; margin: 0; }
+  .cm-tour-badge { display: inline-block; margin-top: 0.6rem; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border: 1px solid currentColor; border-radius: 2px; opacity: 0.4; }
+  .cm-tour-meta { display: flex; gap: 1.25rem; flex-wrap: wrap; padding: 0.75rem 0; border-top: 1px solid rgba(128,128,128,0.15); border-bottom: 1px solid rgba(128,128,128,0.15); margin: 0.5rem 0; }
+  .cm-tour-meta-item { font-size: 0.78rem; opacity: 0.5; }
+  .cm-tour-meta-item strong { display: block; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; font-weight: 400; margin-bottom: 2px; }
+  .cm-tour-body { display: flex; flex-direction: column; gap: 0.75rem; padding: 0.5rem 0; flex: 1; }
+  .cm-tour-section-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.3; margin-bottom: 0.4rem; }
+  .cm-tour-shots { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.35rem; }
+  .cm-tour-shots li { font-size: 0.83rem; opacity: 0.6; padding-left: 1rem; position: relative; line-height: 1.45; }
+  .cm-tour-shots li::before { content: "—"; position: absolute; left: 0; opacity: 0.3; }
+  .cm-tour-includes { font-size: 0.78rem; opacity: 0.4; line-height: 1.6; }
+  .cm-tour-footer { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0 0; border-top: 1px solid rgba(128,128,128,0.15); margin-top: auto; }
+  .cm-tour-price { font-size: 1.5rem; font-weight: 300; letter-spacing: -0.02em; }
+  .cm-tour-price span { font-size: 0.72rem; opacity: 0.4; margin-left: 3px; font-weight: 400; }
+  .cm-tour-cta a { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 18px; border: 1px solid currentColor; border-radius: 2px; text-decoration: none; color: inherit; opacity: 0.6; transition: opacity 0.2s; }
+  .cm-tour-cta a:hover { opacity: 1; }
+  .cm-tours-footer { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(128,128,128,0.15); }
+  .cm-tours-footer p { font-size: 0.85rem; opacity: 0.4; margin: 0 0 1rem; }
+  .cm-tours-footer a { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: inherit; opacity: 0.5; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+</style>
+
+<div class="cm-tours-wrap">
+  <div class="cm-tours-intro">
+    <p class="eyebrow">Photo Tours Vietnam 2026</p>
+    <p>Dos salidas fotográficas guiadas en Hội An. Lugares reales, luz real, sin poses. Máximo 4 participantes por tour.</p>
+    <p class="cm-local-note">Disponibles solo en Hội An · Guiados por Cristóbal Maturana</p>
+  </div>
+
+  <div class="cm-tours-grid">
+
+    <!-- TOUR 1 -->
+    <div class="cm-tour-card">
+      <div class="cm-slider" data-slider>
+        <div class="cm-slider-track">
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-43.jpg" alt="Pueblo Antiguo de Hội An al amanecer" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-26.JPG" alt="Calles del Pueblo Antiguo" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-40.JPG" alt="Vida local en Hội An" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-5.JPG" alt="Fotógrafo local Hội An" loading="lazy" />
+        </div>
+        <button class="cm-slider-btn prev" aria-label="Anterior">&#8249;</button>
+        <button class="cm-slider-btn next" aria-label="Siguiente">&#8250;</button>
+        <div class="cm-slider-dots">
+          <span class="active"></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="cm-tour-header">
+        <span class="cm-tour-num">Tour 01</span>
+        <h3>Pueblo Antiguo al Amanecer</h3>
+        <p class="tagline">Antes de que lleguen los turistas.</p>
+        <span class="cm-tour-badge">Máx. 4 personas</span>
+      </div>
+      <div class="cm-tour-meta">
+        <div class="cm-tour-meta-item"><strong>Hora</strong>05:30 – 08:30</div>
+        <div class="cm-tour-meta-item"><strong>Duración</strong>3 horas</div>
+        <div class="cm-tour-meta-item"><strong>Nivel</strong>Todos</div>
+        <div class="cm-tour-meta-item"><strong>Idioma</strong>ES / EN</div>
+      </div>
+      <div class="cm-tour-body">
+        <div>
+          <p class="cm-tour-section-label">Qué fotografiarás</p>
+          <ul class="cm-tour-shots">
+            <li>Callejones y fachadas pintadas del Pueblo Antiguo</li>
+            <li>Mercado matutino y vendedores locales</li>
+            <li>Botes de bambú en el río Thu Bồn</li>
+            <li>Luz dorada sobre los tejados de tejas</li>
+            <li>Retratos de personas locales (con consentimiento)</li>
+          </ul>
+        </div>
+        <p class="cm-tour-includes">Incluye: guía fotográfico privado · feedback en tiempo real · sin transporte (nos movemos caminando)</p>
+      </div>
+      <div class="cm-tour-footer">
+        <div class="cm-tour-price">$85 <span>USD / persona</span></div>
+        <div class="cm-tour-cta"><a href="/es/contact">Reservar</a></div>
+      </div>
+    </div>
+
+    <!-- TOUR 2 -->
+    <div class="cm-tour-card">
+      <div class="cm-slider" data-slider>
+        <div class="cm-slider-track">
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-10.JPG" alt="Mercado de pescado Duy Hải" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-1.JPG" alt="Pescadores al amanecer" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-4.JPG" alt="Vida de pescadores" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-15.JPG" alt="Botes de bambú tradicionales" loading="lazy" />
+        </div>
+        <button class="cm-slider-btn prev" aria-label="Anterior">&#8249;</button>
+        <button class="cm-slider-btn next" aria-label="Siguiente">&#8250;</button>
+        <div class="cm-slider-dots">
+          <span class="active"></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="cm-tour-header">
+        <span class="cm-tour-num">Tour 02</span>
+        <h3>Pescadores de Duy Hải</h3>
+        <p class="tagline">Una mañana de trabajo real en el mar.</p>
+        <span class="cm-tour-badge">Máx. 4 personas</span>
+      </div>
+      <div class="cm-tour-meta">
+        <div class="cm-tour-meta-item"><strong>Hora</strong>04:30 – 08:00</div>
+        <div class="cm-tour-meta-item"><strong>Duración</strong>3,5 horas</div>
+        <div class="cm-tour-meta-item"><strong>Nivel</strong>Todos</div>
+        <div class="cm-tour-meta-item"><strong>Idioma</strong>ES / EN</div>
+      </div>
+      <div class="cm-tour-body">
+        <div>
+          <p class="cm-tour-section-label">Qué fotografiarás</p>
+          <ul class="cm-tour-shots">
+            <li>Pescadores recogiendo redes al amanecer</li>
+            <li>Mercado de pescado fresco en la orilla</li>
+            <li>Botes de bambú tradicionales (thúng chài)</li>
+            <li>Retratos de trabajadores locales</li>
+            <li>Luz de madrugada sobre el océano</li>
+          </ul>
+        </div>
+        <p class="cm-tour-includes">Incluye: transporte ida y vuelta desde Hội An · guía fotográfico privado · feedback en tiempo real</p>
+      </div>
+      <div class="cm-tour-footer">
+        <div class="cm-tour-price">$110 <span>USD / persona</span></div>
+        <div class="cm-tour-cta"><a href="/es/contact">Reservar</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cm-tours-footer">
+    <p>Disponibles todo el año · Reserva con al menos 48 horas de anticipación</p>
+    <a href="/es/contact">Consultar disponibilidad</a>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('[data-slider]').forEach(slider => {
+    const track = slider.querySelector('.cm-slider-track');
+    const dots = slider.querySelectorAll('.cm-slider-dots span');
+    const imgs = track.querySelectorAll('img');
+    let idx = 0;
+    function go(n) {
+      idx = (n + imgs.length) % imgs.length;
+      track.style.transform = `translateX(-${idx * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    }
+    slider.querySelector('.prev').addEventListener('click', () => go(idx - 1));
+    slider.querySelector('.next').addEventListener('click', () => go(idx + 1));
+    dots.forEach((d, i) => d.addEventListener('click', () => go(i)));
+  });
+</script>
+
+</TourVietnamLayout>

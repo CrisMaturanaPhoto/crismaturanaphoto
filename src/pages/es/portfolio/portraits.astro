@@ -1,0 +1,61 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Gallery from '../../../components/Gallery.astro';
+import { buildAlternates } from '../../../lib/utils';
+
+const alternates = buildAlternates('/portfolio/portraits', '/es/portfolio/portraits');
+
+const cdn = 'https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION';
+const images = [
+  { thumb: `${cdn}/DanyaMuestra%40-2.JPG`, full: `${cdn}/DanyaMuestra%40-2.JPG` },
+  { thumb: `${cdn}/agnes-portrait-001.JPG`, full: `${cdn}/agnes-portrait-001.JPG` },
+  { thumb: `${cdn}/agnes-portrait-002.JPG`, full: `${cdn}/agnes-portrait-002.JPG` },
+  { thumb: `${cdn}/agnes-partner-portrait-001.JPG`, full: `${cdn}/agnes-partner-portrait-001.JPG` },
+  { thumb: `${cdn}/agnes-partner-portrait-002.JPG`, full: `${cdn}/agnes-partner-portrait-002.JPG` },
+  { thumb: `${cdn}/anna-portrait-001.JPG`, full: `${cdn}/anna-portrait-001.JPG` },
+  { thumb: `${cdn}/anna-portrait-002.JPG`, full: `${cdn}/anna-portrait-002.JPG` },
+  { thumb: `${cdn}/Fo-Web%40-9.JPG`, full: `${cdn}/Fo-Web%40-9.JPG` },
+  { thumb: `${cdn}/HoiAnPortrais1%40-10.JPG`, full: `${cdn}/HoiAnPortrais1%40-10.JPG` },
+  { thumb: `${cdn}/HoiAnPortrais1%40-13.JPG`, full: `${cdn}/HoiAnPortrais1%40-13.JPG` },
+  { thumb: `${cdn}/HoiAnPortrais1%40-15.JPG`, full: `${cdn}/HoiAnPortrais1%40-15.JPG` },
+  { thumb: `${cdn}/HoiAnPortrais1%40-18.JPG`, full: `${cdn}/HoiAnPortrais1%40-18.JPG` },
+  { thumb: `${cdn}/hygge-farm-portrait-001.JPG`, full: `${cdn}/hygge-farm-portrait-001.JPG` },
+  { thumb: `${cdn}/MartinsSoul%40-24.JPG`, full: `${cdn}/MartinsSoul%40-24.JPG` },
+  { thumb: `${cdn}/MartinsSoul%40-27.JPG`, full: `${cdn}/MartinsSoul%40-27.JPG` },
+  { thumb: `${cdn}/monse-portrait-001.JPG`, full: `${cdn}/monse-portrait-001.JPG` },
+  { thumb: `${cdn}/MonseRetratos%40-18.jpg`, full: `${cdn}/MonseRetratos%40-18.jpg` },
+  { thumb: `${cdn}/MonseRetratos%40-30.jpg`, full: `${cdn}/MonseRetratos%40-30.jpg` },
+  { thumb: `${cdn}/MonseRetratos%40-40.jpg`, full: `${cdn}/MonseRetratos%40-40.jpg` },
+  { thumb: `${cdn}/rachel-portrait-001.JPG`, full: `${cdn}/rachel-portrait-001.JPG` },
+  { thumb: `${cdn}/rachel-portrait-0013.JPG`, full: `${cdn}/rachel-portrait-0013.JPG` },
+  { thumb: `${cdn}/tania-portrait-001.JPG`, full: `${cdn}/tania-portrait-001.JPG` },
+  { thumb: `${cdn}/TheHyggePortraits%40-72.JPG`, full: `${cdn}/TheHyggePortraits%40-72.JPG` },
+].map(img => ({ ...img, alt: 'Retrato por Cristóbal Maturana' }));
+---
+
+<Layout
+  title="Retratos – Cristóbal Maturana"
+  description="Fotografía de retrato con luz natural por Cristóbal Maturana."
+  lang="es"
+  canonical="https://crismaturana.com/es/portfolio/portraits"
+  alternates={alternates}
+>
+  <div class="page-hero">
+    <div class="container">
+      <h1>Retratos</h1>
+      <p>Luz natural. Expresiones honestas.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="gallery-intro">
+        <p>Trabajo principalmente con luz natural para crear retratos suaves y auténticos, llenos de profundidad y atmósfera. Mi enfoque es relajado e intuitivo — te guío suavemente durante la sesión, ayudándote a posar de una manera que se siente natural y sin esfuerzo.</p>
+      </div>
+      <Gallery images={images} layout="masonry" columns={3} />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .gallery-intro { max-width: 700px; margin: 0 auto 3rem; text-align: center; color: var(--color-text-muted); font-size: 1rem; line-height: 1.8; }
+</style>

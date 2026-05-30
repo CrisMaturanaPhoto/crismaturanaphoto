@@ -1,0 +1,133 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { buildAlternates } from '../../lib/utils';
+
+const alternates = buildAlternates('/about-me', '/es/about-me');
+---
+
+<Layout
+  title="Sobre Mí – Cristóbal Maturana"
+  description="Conoce a Cristóbal Maturana, fotógrafo documental y narrador visual radicado en Hội An, Vietnam."
+  lang="es"
+  canonical="https://crismaturana.com/es/about-me"
+  alternates={alternates}
+>
+  <div class="page-hero">
+    <div class="container">
+      <h1 data-i18n="about.page.h1">Sobre Mí</h1>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-photo">
+          <img
+            src="https://CrisMaturana.b-cdn.net/AUTORETRATO/autoretrato-003.jpg"
+            alt="Cristóbal Maturana"
+            loading="lazy"
+          />
+        </div>
+        <div class="about-body">
+          <p class="section-label" data-i18n="about.page.label">Fotógrafo y Narrador Visual</p>
+          <h2 class="section-title" data-i18n="about.page.h2">Hola, soy Cristóbal.</h2>
+          <p data-i18n="about.page.p1">
+            Soy fotógrafo documental radicado en Hội An, Vietnam, donde vivo con mi esposa Paulina y nuestros dos hijos. Esta ciudad es nuestro hogar desde hace dos años — y ha moldeado la forma en que veo la luz, las personas y los momentos silenciosos que más importan.
+          </p>
+          <p data-i18n="about.page.p2">
+            La fotografía, para mí, siempre ha sido sobre conexión. No técnica. No equipo. Conexión — con la persona frente a la cámara, con el lugar, con la historia que se está desarrollando ahora mismo y no se repetirá.
+          </p>
+          <p data-i18n="about.page.p3">
+            Creo que las fotografías son una de las pocas cosas que dejamos atrás que realmente llevan sentimiento. Un fotograma bien hecho no es solo un registro — es un pedazo de una vida. Eso es lo que me impulsa cada vez que tomo la cámara: la idea de que lo que hago hoy le importará a alguien veinte años después.
+          </p>
+          <p data-i18n="about.page.p4">
+            Trabajo con personas que quieren imágenes honestas. Matrimonios fotografiados como realmente ocurren. Retratos que se parecen a ti, no a una versión de ti. Photo tours que te llevan a un lugar real, antes de que lleguen los turistas.
+          </p>
+          <blockquote data-i18n="about.page.quote">
+            "Mi trabajo no es hacerte ver bien. Es hacerte ver verdadero."
+          </blockquote>
+          <img
+            src="https://CrisMaturana.b-cdn.net/Logos/firma-Cristobal-Maturana-300x150.png"
+            alt="Cristóbal Maturana signature"
+            class="signature"
+            loading="lazy"
+          />
+          <div class="social-links">
+            <a href="https://www.facebook.com/Matufoto/" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              Facebook
+            </a>
+            <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .about-photo img {
+    width: 100%;
+    height: auto;
+    max-height: 700px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 12px;
+  }
+  .about-body p {
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.8;
+    font-size: 1rem;
+  }
+  blockquote {
+    border-left: 3px solid var(--color-accent);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--color-heading);
+    line-height: 1.6;
+  }
+  .signature {
+    height: 60px;
+    width: auto;
+    margin: 1.5rem 0;
+    mix-blend-mode: multiply;
+  }
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .social-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    padding: 0.5rem 1rem;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .social-links a:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+  @media (max-width: 768px) {
+    .about-layout { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>

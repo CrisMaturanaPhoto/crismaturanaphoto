@@ -1,0 +1,63 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Gallery from '../../../components/Gallery.astro';
+import { buildAlternates } from '../../../lib/utils';
+
+const alternates = buildAlternates('/portfolio/travel-culture', '/es/portfolio/travel-culture');
+
+const images = [
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/01.25HoiAn%40-26.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/01.25HoiAn%40-26.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/01.25HoiAn%40-37.jpg', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/01.25HoiAn%40-37.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/01.25HoiAn%40-40.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/01.25HoiAn%40-40.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/01.25HoiAn%40-5.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/01.25HoiAn%40-5.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/ba-le-market-001.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/ba-le-market-001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/ba-le-market-002.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/ba-le-market-002.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/cao-lau-noodle-001.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/cao-lau-noodle-001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/cao-lau-noodle-002.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/cao-lau-noodle-002.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/couple-fishing-net-001.jpg', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/couple-fishing-net-001.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/duy-hai-fish-market-001.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/duy-hai-fish-market-001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/DuyHaiFisherman%40-24.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/DuyHaiFisherman%40-24.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/DuyHaiSeleccion%40-1.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/DuyHaiSeleccion%40-1.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/DuyHaiSeleccion%40-10.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/DuyHaiSeleccion%40-10.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/DuyHaiSeleccion%40-4.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/DuyHaiSeleccion%40-4.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/india-001.jpg', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/india-001.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/india-002.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/india-002.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/india-003.jpg', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/india-003.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/india-005.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/india-005.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/india-007.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/india-007.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/man-fishing-net-001.JPEG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/man-fishing-net-001.JPEG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/man-fishing-net-002.JPEG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/man-fishing-net-002.JPEG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/RiceHarvest%40-13.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/RiceHarvest%40-13.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/RiceHarvest%40-5.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/RiceHarvest%40-5.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/RiverBoatsHoiAn%40-11.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/RiverBoatsHoiAn%40-11.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/RiverBoatsHoiAn%40-9.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/RiverBoatsHoiAn%40-9.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/woman-fishing-net-001.JPG', full: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/woman-fishing-net-001.JPG' },
+].map(img => ({ ...img, alt: 'Fotografía de viaje y cultura por Cristóbal Maturana' }));
+---
+
+<Layout
+  title="Viajes y Cultura – Cristóbal Maturana"
+  description="Fotografía documental de viaje y cultura por Cristóbal Maturana."
+  lang="es"
+  canonical="https://crismaturana.com/es/portfolio/travel-culture"
+  alternates={alternates}
+>
+  <div class="page-hero">
+    <div class="container">
+      <h1>Viajes y Cultura</h1>
+      <p>Observando el mundo, honestamente.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="gallery-intro">
+        <p>Vida en las calles, mercados, ríos y momentos silenciosos entre desconocidos. Imágenes hechas mientras viajaba por Vietnam, India y más allá — siempre observando, nunca escenificando.</p>
+      </div>
+      <Gallery images={images} layout="masonry" columns={3} />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .gallery-intro { max-width: 700px; margin: 0 auto 3rem; text-align: center; color: var(--color-text-muted); font-size: 1rem; line-height: 1.8; }
+</style>

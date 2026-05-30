@@ -1,0 +1,80 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { buildAlternates } from '../../lib/utils';
+
+const alternates = buildAlternates('/faq', '/es/faq');
+
+const faqs = [
+  {
+    q: '¿Cuál es tu estilo fotográfico?',
+    a: 'Documental, humano y sin poses. Mis referencias son Sergio Larrain, Cartier-Bresson, McCurry, Salgado y Fan Ho — fotógrafos que observaron primero y nunca dirigieron.',
+  },
+  {
+    q: '¿Poses a las personas? ¿Qué pasa si me siento incómodo frente a la cámara?',
+    a: 'Uso un método de dirección llamado FLOW: en lugar de poses estáticas, te doy acciones y estímulos que sacan tu yo natural. La mayoría de mis clientes me dicen después que olvidaron que estaba ahí.',
+  },
+  {
+    q: '¿Qué servicios ofreces?',
+    a: 'Retrato y branding personal (especialmente yoga y bienestar), matrimonios de destino en Vietnam y Sudeste Asiático, fotografía de producto, y trabajo documental y de viaje.',
+  },
+  {
+    q: '¿Dónde estás basado? ¿Viajas?',
+    a: 'Basado en Hội An, Vietnam. Fotografío en Vietnam Central (área de Đà Nẵng) sin costo de traslado, y viajo por Sudeste Asiático e internacionalmente.',
+  },
+  {
+    q: '¿Cuándo recibiré mis fotos?',
+    a: 'Retratos y branding: 7–10 días hábiles. Matrimonios: sneak peek en 24 horas, galería completa en 15–30 días.',
+  },
+  {
+    q: '¿Cómo reservo?',
+    a: 'Llena el formulario de contacto. Respondo en 24–48 horas para coordinar una llamada breve. Un depósito del 30–50% asegura tu fecha.',
+  },
+];
+---
+
+<Layout
+  title="Preguntas Frecuentes – Cristóbal Maturana"
+  description="Preguntas frecuentes sobre los servicios fotográficos de Cristóbal Maturana."
+  lang="es"
+  canonical="https://crismaturana.com/es/faq"
+  alternates={alternates}
+>
+  <div class="page-hero">
+    <div class="container">
+      <h1>Preguntas Frecuentes</h1>
+      <p>Lo que me preguntan siempre</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="faq-list">
+        {faqs.map((item, i) => (
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span class="faq-num">{String(i + 1).padStart(2, '0')}.</span>
+              {item.q}
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>{item.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .faq-list { max-width: 800px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--color-border); }
+  .faq-question { display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem 0; cursor: pointer; font-size: 1rem; font-weight: 400; color: var(--color-white); list-style: none; transition: color 0.2s; position: relative; padding-right: 2.5rem; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-question:hover { color: var(--color-accent); }
+  .faq-num { font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-accent); flex-shrink: 0; line-height: 1.2; }
+  .faq-icon { position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--color-text-muted); transition: transform 0.3s, color 0.2s; line-height: 1; }
+  details[open] .faq-icon { transform: translateY(-50%) rotate(45deg); color: var(--color-accent); }
+  .faq-answer { padding: 0 0 1.5rem 3rem; }
+  .faq-answer p { color: var(--color-text-muted); line-height: 1.8; font-size: 0.95rem; }
+</style>

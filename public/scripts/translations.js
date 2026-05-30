@@ -306,7 +306,7 @@ const translations = {
     "contact.form.send": "Enviar mensaje",
     "contact.faq.label": "Preguntas",
     "contact.faq.heading": "Lo que me",
-    "contact.faq.heading.em": "preguntan siempre.",
+    "contact.faq.heading.em": "siempre.",
     "contact.faq.intro": "Contratar un fotógrafo es una decisión real. Estas son las preguntas que aparecen en casi todas las primeras conversaciones. Si la tuya no está aquí, pregunta nomás.",
     "contact.faq.q1": "¿Cuál es tu estilo fotográfico?",
     "contact.faq.q2": "¿Poses a las personas? ¿Qué pasa si me siento incómodo frente a la cámara?",

@@ -1,0 +1,50 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Gallery from '../../../components/Gallery.astro';
+import { buildAlternates } from '../../../lib/utils';
+
+const alternates = buildAlternates('/portfolio/aerial', '/es/portfolio/aerial');
+
+const images = [
+  { thumb: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/atacama-desert-001.JPG', full: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/atacama-desert-001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/atacama-desert-002.JPG', full: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/atacama-desert-002.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/atacama-desert-003.JPG', full: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/atacama-desert-003.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/Dron%40-2.jpg', full: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/Dron%40-2.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/Dron%40-3.jpg', full: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/Dron%40-3.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/Dron%40-5.jpg', full: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/Dron%40-5.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/DronCoconutBoat%40-10.JPG', full: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/DronCoconutBoat%40-10.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/DronCoconutBoat%40-5.JPG', full: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/DronCoconutBoat%40-5.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/HoiAnDron%40-17.JPG', full: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/HoiAnDron%40-17.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/HoiAnDron%40-6.JPG', full: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/HoiAnDron%40-6.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/HoiAnDron%40-7.JPG', full: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/HoiAnDron%40-7.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/mar-pan-de-azucar-001.jpg', full: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/mar-pan-de-azucar-001.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/Pai%20Buda%20-1.JPG', full: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/Pai%20Buda%20-1.JPG' },
+].map(img => ({ ...img, alt: 'Fotografía aérea por Cristóbal Maturana' }));
+---
+
+<Layout
+  title="Desde el Aire – Cristóbal Maturana"
+  description="Fotografía aérea y con dron por Cristóbal Maturana."
+  lang="es"
+  canonical="https://crismaturana.com/es/portfolio/aerial"
+  alternates={alternates}
+>
+  <div class="page-hero">
+    <div class="container">
+      <h1>Desde el Aire</h1>
+      <p>La perspectiva lo cambia todo.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="gallery-intro">
+        <p>Fotografía con dron desde Vietnam, Chile y Tailandia — arrozales, bosques de cocoteros, paisajes desérticos y botes de pescadores vistos desde un ángulo completamente distinto.</p>
+      </div>
+      <Gallery images={images} layout="masonry" columns={3} />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .gallery-intro { max-width: 700px; margin: 0 auto 3rem; text-align: center; color: var(--color-text-muted); font-size: 1rem; line-height: 1.8; }
+</style>
