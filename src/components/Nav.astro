@@ -9,15 +9,15 @@ const navLinks = [
       { label: 'Portraits', i18n: 'nav.portraits', href: '/portfolio/portraits' },
       { label: 'Travel & Culture', i18n: 'nav.travel', href: '/portfolio/travel-culture' },
       { label: 'From Above', i18n: 'nav.aerial', href: '/portfolio/aerial' },
-      { label: 'Matrimonios en Chile 🇨🇱', href: '/es/matrimonios-chile' },
+      { label: 'Matrimonios en Chile 🇨🇱', i18n: 'nav.matrimonios', href: '/es/matrimonios-chile' },
     ],
   },
   {
     label: 'Photo Tours', i18n: 'nav.phototours',
     href: '/portfolio/photo-tours-vietnam-2026',
     children: [
-      { label: 'Vietnam 2026 (English)', href: '/portfolio/photo-tours-vietnam-2026' },
-      { label: 'Tours en español 🇪🇸', href: '/es/photo-tours-vietnam' },
+      { label: 'Vietnam 2026 (English)', i18n: 'nav.tours.en', href: '/portfolio/photo-tours-vietnam-2026' },
+      { label: 'Tours en español 🇪🇸', i18n: 'nav.tours.es', href: '/es/portfolio/photo-tours-vietnam-2026' },
     ],
   },
   {
@@ -56,7 +56,7 @@ const navLinks = [
             {link.children && (
               <ul class="dropdown">
                 {link.children.map((child) => (
-                  <li><a href={child.href} class="dropdown-link">{child.label}</a></li>
+                  <li><a href={child.href} class="dropdown-link" data-i18n={child.i18n || ''}>{child.label}</a></li>
                 ))}
               </ul>
             )}
@@ -338,4 +338,36 @@ const navLinks = [
     toggle.setAttribute('aria-expanded', String(open));
     header.classList.toggle('scrolled', open || window.scrollY > 20);
   });
+
+  // Actualizar hrefs del nav según idioma activo
+  function updateNavHrefs(lang) {
+    const isEs = lang === 'es';
+    const map = {
+      '/portfolio':                          isEs ? '/es/portfolio'                          : '/portfolio',
+      '/portfolio/weddings':                 isEs ? '/es/portfolio/weddings'                 : '/portfolio/weddings',
+      '/portfolio/couples-families':         isEs ? '/es/portfolio/couples-families'         : '/portfolio/couples-families',
+      '/portfolio/portraits':                isEs ? '/es/portfolio/portraits'                : '/portfolio/portraits',
+      '/portfolio/travel-culture':           isEs ? '/es/portfolio/travel-culture'           : '/portfolio/travel-culture',
+      '/portfolio/aerial':                   isEs ? '/es/portfolio/aerial'                   : '/portfolio/aerial',
+      '/portfolio/photo-tours-vietnam-2026': isEs ? '/es/portfolio/photo-tours-vietnam-2026' : '/portfolio/photo-tours-vietnam-2026',
+      '/about-me':                           isEs ? '/es/about-me'                           : '/about-me',
+      '/prices':                             isEs ? '/es/prices'                             : '/prices',
+      '/faq':                                isEs ? '/es/faq'                                : '/faq',
+      '/contact':                            isEs ? '/es/contact'                            : '/contact',
+    };
+    document.querySelectorAll('.nav-link, .dropdown-link').forEach(el => {
+      const href = el.getAttribute('href');
+      if (href && map[href]) el.setAttribute('href', map[href]);
+      // también el reverso: si ya tiene la ruta ES, apuntar a EN
+      const reverseMap = Object.fromEntries(Object.entries(map).map(([k,v]) => [v,k]));
+      if (href && !isEs && reverseMap[href]) el.setAttribute('href', reverseMap[href]);
+    });
+  }
+
+  // Aplicar al cargar
+  const initLang = localStorage.getItem('lang') || 'en';
+  updateNavHrefs(initLang);
+
+  // Escuchar cambios de idioma
+  window.addEventListener('langChanged', (e) => updateNavHrefs(e.detail));
 </script>

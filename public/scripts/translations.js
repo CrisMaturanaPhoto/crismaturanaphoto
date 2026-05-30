@@ -16,6 +16,9 @@ const translations = {
     "nav.travel": "Travel & Culture",
     "nav.aerial": "From Above",
     "nav.couples": "Couples & Families",
+    "nav.matrimonios": "Matrimonios en Chile 🇨🇱",
+    "nav.tours.en": "Vietnam 2026 (English)",
+    "nav.tours.es": "Tours en español 🇪🇸",
 
     // INDEX HERO
     "hero.label": "Documentary Photographer · Hội An, Vietnam",
@@ -198,6 +201,9 @@ const translations = {
     "nav.travel": "Viajes y Cultura",
     "nav.aerial": "Desde el Aire",
     "nav.couples": "Parejas y Familias",
+    "nav.matrimonios": "Matrimonios en Chile 🇨🇱",
+    "nav.tours.en": "Vietnam 2026 (English)",
+    "nav.tours.es": "Tours en español 🇪🇸",
 
     // INDEX HERO
     "hero.label": "Fotógrafo Documental · Hội An, Vietnam",
@@ -225,9 +231,10 @@ const translations = {
     "counter.flow": "Método de dirección natural",
     "process.cta": "Iniciar conversación",
     "testi.eyebrow": "Lo que dicen mis clientes",
-    "testi.title": "Lo que comparten quienes<br>confiaron en mi trabajo.",
+    "testi.title": "La confianza de parejas<br>y marcas en todo el mundo.",
     "testi.sub": "Palabras reales de personas reales que tuve el privilegio de fotografiar.",
     "testi.cta": "Reserva tu sesion",
+    "testi.title": "La confianza de parejas<br>y marcas en todo el mundo.",
     "testi.1.text": "Son impresionantes. Muchas gracias.",
     "testi.1.name": "Poppin & Chris",
     "testi.1.role": "Matrimonio · Hội An",
@@ -247,7 +254,7 @@ const translations = {
     "about.subtext": "Cada imagen está moldeada por la luz, la emoción y los detalles sutiles que suelen pasar desapercibidos. Mi experiencia viviendo en el extranjero amplió mi perspectiva, permitiéndome ver belleza en los contrastes, las culturas y los momentos silenciosos. Abordo cada proyecto con sensibilidad y propósito, creando imágenes que se sienten honestas, atemporales y profundamente personales.",
 
     // INDEX INSTAGRAM
-    "ig.heading": "Conectemos en Instagram",
+    "ig.heading": "Conéctate en Instagram",
 
     // INDEX CTA
     "cta.badge": "Reservas abiertas · Temporada de Matrimonios Chile 2026",
@@ -306,7 +313,7 @@ const translations = {
     "contact.form.send": "Enviar mensaje",
     "contact.faq.label": "Preguntas",
     "contact.faq.heading": "Lo que me",
-    "contact.faq.heading.em": "siempre.",
+    "contact.faq.heading.em": "preguntan siempre.",
     "contact.faq.intro": "Contratar un fotógrafo es una decisión real. Estas son las preguntas que aparecen en casi todas las primeras conversaciones. Si la tuya no está aquí, pregunta nomás.",
     "contact.faq.q1": "¿Cuál es tu estilo fotográfico?",
     "contact.faq.q2": "¿Poses a las personas? ¿Qué pasa si me siento incómodo frente a la cámara?",
@@ -326,7 +333,7 @@ const translations = {
     "hero.slide1.title": "Photo Tours Vietnam",
     "hero.getintouch": "Conversemos",
     "hero.viewwork": "Ver portafolio",
-    "hero.eyebrow": "Fotógrafo · Hội An · Đà Nẵng",
+    "hero.eyebrow": "Fotógrafo Documental · Hội An",
     "hero.mosaic.title": "Momentos reales,<br>capturados con honestidad.",
     "hero.split.sub": "Matrimonios, retratos y branding de yoga en Vietnam, Sudeste Asiático y más allá.",
     "hero.slide1.subtitle": "FOTÓGRAFO DOCUMENTAL DE DESTINO",
@@ -354,7 +361,7 @@ const translations = {
 
     // ABOUT
     "about.label": "Sobre el fotógrafo",
-    "about.text": "Hola, soy Cristóbal, fotógrafo y narrador visual. Capturo momentos auténticos que transmiten emoción de manera honesta y cercana.",
+    "about.text": "Hola, soy Cristóbal, fotógrafo y narrador visual. Capturo momentos auténticos y significativos con intención y profundidad.",
     "about.link": "Más sobre mí",
     "about.title": "Luz, profundidad,\ny los momentos\nen medio de todo.",
 
@@ -370,34 +377,10 @@ window.getLang = function getLang() {
   return localStorage.getItem('lang') || 'en';
 }
 
-// Mapea la ruta actual a su equivalente en el idioma destino.
-// EN vive en la raíz (/, /portfolio/...); ES vive bajo /es (/es/, /es/portfolio/...).
-window.pathForLang = function pathForLang(lang) {
-  const { pathname, search, hash } = window.location;
-  const isEs = pathname === '/es' || pathname.startsWith('/es/');
-  let basePath = isEs ? pathname.replace(/^\/es/, '') || '/' : pathname;
-  if (!basePath.startsWith('/')) basePath = '/' + basePath;
-
-  let target;
-  if (lang === 'es') {
-    target = basePath === '/' ? '/es/' : '/es' + basePath;
-  } else {
-    target = basePath;
-  }
-  return target + search + hash;
-}
-
 window.setLang = function setLang(lang) {
   localStorage.setItem('lang', lang);
-  const current = window.location.pathname + window.location.search + window.location.hash;
-  const target = window.pathForLang(lang);
-  if (target !== current) {
-    window.location.href = target;
-  } else {
-    // Misma URL (ya estamos en ese idioma): solo refrescar textos/switcher.
-    window.applyTranslations(lang);
-    window.updateSwitcher(lang);
-  }
+  window.applyTranslations(lang);
+  window.updateSwitcher(lang);
 }
 
 window.applyTranslations = function applyTranslations(lang) {
