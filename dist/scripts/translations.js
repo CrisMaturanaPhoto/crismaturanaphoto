@@ -16,6 +16,9 @@ const translations = {
     "nav.travel": "Travel & Culture",
     "nav.aerial": "From Above",
     "nav.couples": "Couples & Families",
+    "nav.matrimonios": "Matrimonios en Chile 🇨🇱",
+    "nav.tours.en": "Vietnam 2026 (English)",
+    "nav.tours.es": "Tours en español 🇪🇸",
 
     // INDEX HERO
     "hero.label": "Documentary Photographer · Hội An, Vietnam",
@@ -142,6 +145,11 @@ const translations = {
 
     // HERO SLIDES
     "hero.slide1.title": "Photo Tours Vietnam",
+    "hero.getintouch": "Get in touch",
+    "hero.viewwork": "View portfolio",
+    "hero.eyebrow": "Documentary Photographer · Hội An",
+    "hero.mosaic.title": "Real moments,<br>honestly captured.",
+    "hero.split.sub": "Weddings, portraits & yoga branding across Vietnam, Southeast Asia, and beyond.",
     "hero.slide1.subtitle": "DESTINATION DOCUMENTARY PHOTOGRAPHER",
     "hero.slide1.cta": "Find More",
     "hero.slide2.title": "Documentary Weddings",
@@ -193,6 +201,9 @@ const translations = {
     "nav.travel": "Viajes y Cultura",
     "nav.aerial": "Desde el Aire",
     "nav.couples": "Parejas y Familias",
+    "nav.matrimonios": "Matrimonios en Chile 🇨🇱",
+    "nav.tours.en": "Vietnam 2026 (English)",
+    "nav.tours.es": "Tours en español 🇪🇸",
 
     // INDEX HERO
     "hero.label": "Fotógrafo Documental · Hội An, Vietnam",
@@ -320,6 +331,11 @@ const translations = {
 
     // HERO SLIDES
     "hero.slide1.title": "Photo Tours Vietnam",
+    "hero.getintouch": "Conversemos",
+    "hero.viewwork": "Ver portafolio",
+    "hero.eyebrow": "Fotógrafo Documental · Hội An",
+    "hero.mosaic.title": "Momentos reales,<br>capturados con honestidad.",
+    "hero.split.sub": "Matrimonios, retratos y branding de yoga en Vietnam, Sudeste Asiático y más allá.",
     "hero.slide1.subtitle": "FOTÓGRAFO DOCUMENTAL DE DESTINO",
     "hero.slide1.cta": "Saber más",
     "hero.slide2.title": "Matrimonios Documentales",
