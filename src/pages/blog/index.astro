@@ -75,6 +75,15 @@ const formatDate = (date: Date) =>
       ))}
     </div>
   </section>
+<script is:inline>
+(function(){
+  var l=(navigator.language||'en').toLowerCase();
+  var es=l.startsWith('es');
+  document.querySelectorAll('[data-en][data-es]').forEach(function(el){
+    el.textContent=es?el.dataset.es:el.dataset.en;
+  });
+})();
+</script>
 </Layout>
 
 <style>
