@@ -2,9 +2,9 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime(),
-);
+const posts = (await getCollection('blog'))
+  .filter((post) => !post.data.lang || post.data.lang === 'en')
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 
 const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
 const latestPosts = posts.filter((post) => post.slug !== featuredPost.slug);
