@@ -74,15 +74,19 @@ const images = [
 
 <Layout title="Weddings – Cristóbal Maturana" description="Documentary wedding photography by Cristóbal Maturana.">
   <div class="gallery-hero">
-    <p class="hero-label">Portfolio · Weddings</p>
-    <p class="hero-location">Hội An · Chile · Southeast Asia</p>
-    <h1>Moments that<br>last forever.</h1>
-    <p class="hero-text">Weddings are a mix of chaos, emotion, and everything in between. I stay in the background, close enough to catch what matters.</p>
-    <div class="hero-stats">
-      <div class="stat"><p class="stat-num">15+</p><p class="stat-label">Years</p></div>
-      <div class="stat"><p class="stat-num">100+</p><p class="stat-label">Couples</p></div>
-      <div class="stat"><p class="stat-num">24h</p><p class="stat-label">Sneak peek</p></div>
-      <div class="stat stat-text"><p class="stat-num stat-sm">Natural light</p><p class="stat-label">Style</p></div>
+    <div class="gallery-hero-bg"></div>
+    <div class="gallery-hero-overlay"></div>
+    <div class="gallery-hero-content">
+      <p class="hero-label">Portfolio · Weddings</p>
+      <p class="hero-location">Hội An · Chile · Southeast Asia</p>
+      <h1>Moments that<br>last forever.</h1>
+      <p class="hero-text">Weddings are a mix of chaos, emotion, and everything in between. I stay in the background, close enough to catch what matters.</p>
+      <div class="hero-stats">
+        <div class="stat"><p class="stat-num">15+</p><p class="stat-label">Years</p></div>
+        <div class="stat"><p class="stat-num">100+</p><p class="stat-label">Couples</p></div>
+        <div class="stat"><p class="stat-num">24h</p><p class="stat-label">Sneak peek</p></div>
+        <div class="stat stat-text"><p class="stat-num stat-sm">Natural light</p><p class="stat-label">Style</p></div>
+      </div>
     </div>
   </div>
   <section class="section">
@@ -94,10 +98,32 @@ const images = [
 
 <style>
   .gallery-hero {
-    background: #1a1a18;
-    padding: 3rem 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+
+  .gallery-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/poppin-chris-001.JPG');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px) brightness(1.1);
+    transform: scale(1.08);
+  }
+
+  .gallery-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  .gallery-hero-content {
+    position: relative;
     max-width: 860px;
-    margin: 0 auto 0;
+    margin: 0 auto;
+    padding: 3rem 2.5rem 2rem;
   }
 
   .hero-label {
@@ -122,14 +148,14 @@ const images = [
     font-size: clamp(2.5rem, 7vw, 4.5rem);
     font-weight: 400;
     font-style: italic;
-    color: #f5f2ee;
+    color: #1a1a18;
     line-height: 1.15;
     margin-bottom: 1.75rem;
   }
 
   .hero-text {
     font-size: 0.95rem;
-    color: #a09c96;
+    color: #4a4a48;
     line-height: 1.9;
     max-width: 500px;
     margin-bottom: 2.5rem;
@@ -139,7 +165,7 @@ const images = [
     display: flex;
     gap: 2.5rem;
     flex-wrap: wrap;
-    border-top: 1px solid #2e2e2c;
+    border-top: 1px solid rgba(0,0,0,0.12);
     padding-top: 1.75rem;
     align-items: flex-end;
   }
@@ -154,7 +180,6 @@ const images = [
 
   .stat-sm {
     font-size: 1.35rem;
-    line-height: 1;
     padding-bottom: 0.3rem;
   }
 
