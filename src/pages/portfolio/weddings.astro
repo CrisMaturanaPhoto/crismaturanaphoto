@@ -73,29 +73,102 @@ const images = [
 ---
 
 <Layout title="Weddings – Cristóbal Maturana" description="Documentary wedding photography by Cristóbal Maturana.">
-  <div class="page-hero">
-    <div class="container">
-      <h1>Weddings</h1>
-      <p>Moments that last forever.</p>
+  <div class="gallery-hero">
+    <p class="hero-label">Portfolio · Weddings</p>
+    <p class="hero-location">Hội An · Chile · Southeast Asia</p>
+    <h1>Moments that<br>last forever.</h1>
+    <p class="hero-text">Weddings are a mix of chaos, emotion, and everything in between. I stay in the background, close enough to catch what matters.</p>
+    <div class="hero-stats">
+      <div class="stat"><p class="stat-num">15+</p><p class="stat-label">Years</p></div>
+      <div class="stat"><p class="stat-num">100+</p><p class="stat-label">Couples</p></div>
+      <div class="stat"><p class="stat-num">24h</p><p class="stat-label">Sneak peek</p></div>
+      <div class="stat stat-text"><p class="stat-num stat-sm">Natural light</p><p class="stat-label">Style</p></div>
     </div>
   </div>
   <section class="section">
     <div class="container">
-      <div class="gallery-intro">
-        <p>I photograph weddings the way they actually happen — candidly, with attention to real emotion and quiet in-between moments. No forced poses, just honest storytelling.</p>
-      </div>
       <Gallery images={images} layout="masonry" columns={3} />
     </div>
   </section>
 </Layout>
 
 <style>
-  .gallery-intro {
-    max-width: 700px;
-    margin: 0 auto 3rem;
-    text-align: center;
-    color: var(--color-text-muted);
-    font-size: 1rem;
-    line-height: 1.8;
+  .gallery-hero {
+    background: #1a1a18;
+    padding: 3rem 2.5rem 2rem;
+    max-width: 860px;
+    margin: 0 auto 0;
+  }
+
+  .hero-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-location {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6f6b65;
+    margin-bottom: 2rem;
+  }
+
+  .gallery-hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 400;
+    font-style: italic;
+    color: #f5f2ee;
+    line-height: 1.15;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-text {
+    font-size: 0.95rem;
+    color: #a09c96;
+    line-height: 1.9;
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    border-top: 1px solid #2e2e2c;
+    padding-top: 1.75rem;
+    align-items: flex-end;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: #c9a96e;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .stat-sm {
+    font-size: 1.35rem;
+    line-height: 1;
+    padding-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6f6b65;
+    margin: 0.3rem 0 0;
+  }
+
+  .stat-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 </style>
