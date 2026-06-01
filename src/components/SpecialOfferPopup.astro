@@ -51,7 +51,7 @@
           <span class="pold">$160</span>
           <span class="psave">–38%</span>
         </div>
-        <p class="pnote" id="pop-pnote">Only for the next 24 hours</p>
+        <p class="pnote" id="pop-pnote">Only for the next 48 hours</p>
 
         <div class="tabs" role="group">
           <button class="stab active" data-en="Family"   data-es="Familia"  type="button">Family</button>
@@ -319,7 +319,7 @@
       flash:  'Flash offer \u00b7 today only',
       eyebrow:'H\u1ed9i An \u00b7 Photography session',
       hl:     'Your session<br>for <em>just</em> $99.',
-      pnote:  'Only for the next 24 hours',
+      pnote:  'Only for the next 48 hours',
       tabs:   ['Family', 'Couple', 'Branding'],
       inc:    ['1 hour', '25+ photos', 'Sneak 24h', 'Online gallery'],
       spots:  '3 dates available',
@@ -401,7 +401,7 @@
 
   function initTimer() {
     var stored = parseInt(sessionStorage.getItem(TIMER_KEY) || '0', 10);
-    var end = (stored && stored > Date.now()) ? stored : Date.now() + 24 * 3600 * 1000;
+    var end = (stored && stored > Date.now()) ? stored : Date.now() + 48 * 3600 * 1000;
     sessionStorage.setItem(TIMER_KEY, String(end));
     return end;
   }
