@@ -47,7 +47,7 @@ const formatDate = (date: Date) =>
             <span>{featuredPost.data.readTime}</span>
           </p>
           <p class="post-excerpt">{featuredPost.data.excerpt}</p>
-          <a class="read-link" href={`/blog/${featuredPost.slug}`}>Read Article</a>
+          <a class="read-link" href={`/blog/${featuredPost.slug}`} data-en="Read Article" data-es="Leer Artículo">Read Article</a>
         </div>
       </article>
     </div>
@@ -70,7 +70,7 @@ const formatDate = (date: Date) =>
           <h3 class="card-title">{post.data.title}</h3>
           <p class="card-meta">{formatDate(post.data.publishDate)} - {post.data.readTime}</p>
           <p class="card-excerpt">{post.data.excerpt}</p>
-          <a class="card-link" href={`/blog/${post.slug}`}>Read More</a>
+          <a class="card-link" href={`/blog/${post.slug}`} data-en="Read More" data-es="Leer Más">Read More</a>
         </article>
       ))}
     </div>
