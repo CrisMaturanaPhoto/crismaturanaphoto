@@ -1,27 +1,25 @@
 ---
 // SpecialOfferPopup.astro
-// Oferta flash $99 USD — aparece una vez por sesión en home y /prices
-// Uso: importar en index.astro y prices.astro
+// Flash offer popup — $99 USD — bilingual EN/ES
+// Auto-detects browser language: Spanish → ES, everything else → EN
+// WhatsApp: +56999679935
+// Usage:
 //   import SpecialOfferPopup from '../components/SpecialOfferPopup.astro';
-//   <SpecialOfferPopup />
+//   <SpecialOfferPopup />  (before </Layout>)
 ---
 
-<div id="offer-overlay" aria-modal="true" role="dialog" aria-labelledby="offer-title">
+<div id="offer-overlay" role="dialog" aria-modal="true" aria-labelledby="offer-title">
   <div id="offer-card">
 
     <div class="photo-col">
       <img
         src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/Mady%26Sven-%40-25.JPG"
-        alt="Sesión fotográfica en Hội An"
+        alt="Photography session Hội An"
         loading="eager"
       />
-      <div class="photo-top-badge">
-        <div class="pulse"></div>
-        <span>Hội An, Vietnam</span>
-      </div>
       <div class="photo-bottom">
-        <p class="photo-quote">"Capturó algo que nunca podríamos haber posado."</p>
-        <span class="photo-cite">— Mandy &amp; Swen, Berlín</span>
+        <p class="photo-quote" id="pop-quote">"I'm very happy with the result. Now we have a lot of great photos for our website."</p>
+        <span class="photo-cite">— Mandy &amp; Swen, Berlin</span>
       </div>
     </div>
 
@@ -29,7 +27,7 @@
       <div class="top-strip">
         <div class="strip-left">
           <div class="strip-dot"></div>
-          <span class="strip-label">Oferta flash · solo hoy</span>
+          <span class="strip-label" id="pop-flash">Flash offer · today only</span>
         </div>
         <div class="strip-timer">
           <span class="st-num" id="pop-th">23</span><span class="st-sep">h</span>
@@ -39,101 +37,75 @@
       </div>
 
       <div class="body">
-        <button
-          class="close-btn"
-          id="offer-close"
-          aria-label="Cerrar oferta"
-          type="button"
-        >×</button>
-
-        <div class="session-tabs" role="group" aria-label="Tipo de sesión">
-          <button class="stab active" data-type="Familia" type="button">Familia</button>
-          <button class="stab" data-type="Pareja" type="button">Pareja</button>
-          <button class="stab" data-type="Branding" type="button">Branding</button>
+        <div class="top-row">
+          <div>
+            <p class="eyebrow" id="pop-eyebrow">Hội An · Photography session</p>
+            <h2 class="hl" id="pop-hl" id="offer-title">Your session<br>for <em>just</em> $99.</h2>
+          </div>
+          <button class="close-btn" id="pop-close" type="button" aria-label="Close">×</button>
         </div>
-
-        <h2 id="offer-title" class="hl">Momentos<br /><em>honestamente</em><br />capturados.</h2>
-        <p class="sub">Luz natural. Sin posados forzados. Hội An como escenario.</p>
-
-        <div class="divider"></div>
 
         <div class="price-row">
           <span class="pcur">USD</span>
           <span class="pmain">99</span>
           <span class="pold">$160</span>
-          <span class="psave">– 38%</span>
+          <span class="psave">–38%</span>
         </div>
-        <p class="pnote">Precio habitual $160 · Solo durante las próximas 24 horas</p>
+        <p class="pnote" id="pop-pnote">Only for the next 24 hours</p>
+
+        <div class="tabs" role="group">
+          <button class="stab active" data-en="Family"   data-es="Familia"  type="button">Family</button>
+          <button class="stab"        data-en="Couple"   data-es="Pareja"   type="button">Couple</button>
+          <button class="stab"        data-en="Branding" data-es="Branding" type="button">Branding</button>
+        </div>
+
+        <div class="includes">
+          <div class="inc">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span id="pop-inc1">1 hour</span>
+          </div>
+          <div class="inc">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span id="pop-inc2">25+ photos</span>
+          </div>
+          <div class="inc">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span id="pop-inc3">Sneak 24h</span>
+          </div>
+          <div class="inc">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <span id="pop-inc4">Online gallery</span>
+          </div>
+        </div>
 
         <div class="spots">
-          <span class="spot-dot">●</span>
-          <span>Solo 3 fechas disponibles este mes</span>
+          <span aria-hidden="true">●</span>
+          <span id="pop-spots">3 dates available</span>
           <div class="sbar"><div class="sfill"></div></div>
         </div>
 
-        <div class="grid">
-          <div class="gi">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="gi-ico" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <div class="gi-text"><strong>1 hora</strong>sesión completa</div>
-          </div>
-          <div class="gi">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="gi-ico" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <div class="gi-text"><strong>25+ fotos</strong>editadas</div>
-          </div>
-          <div class="gi">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="gi-ico" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            <div class="gi-text"><strong>Sneak peek</strong>en 24 horas</div>
-          </div>
-          <div class="gi">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="gi-ico" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            <div class="gi-text"><strong>Galería</strong>privada online</div>
-          </div>
-        </div>
+        <a id="pop-wsp" href="https://wa.me/56999679935?text=Hi+Cris,+I%27d+like+to+book+a+Family+session+for+%2499" target="_blank" rel="noopener noreferrer" class="cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span id="pop-cta-txt">Book via WhatsApp</span>
+        </a>
 
-        <div class="bonus">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="bonus-ico" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-          <div class="bonus-txt">
-            <strong>Bonus:</strong> Guía de preparación — outfits, luz dorada y locaciones según tu sesión. Enviada por WhatsApp al confirmar.
-          </div>
-        </div>
+        <button class="cta2" id="pop-dismiss" type="button">No thanks, I'll pay full price</button>
 
-        <div class="social-row">
-          <div class="avatars" aria-hidden="true">
-            <div class="av">M</div>
-            <div class="av">S</div>
-            <div class="av">R</div>
-            <div class="av">+</div>
-          </div>
-          <p class="social-text"><strong>47 personas</strong> reservaron sesión este año en Hội An</p>
-        </div>
-
-        <a
-          href="/contact"
-          id="offer-cta"
-          class="cta"
-          role="button"
-        >Reservar sesión Familia por $99 →</a>
-
-        <button
-          class="cta2"
-          id="offer-dismiss"
-          type="button"
-        >No gracias, prefiero pagar precio completo</button>
-
-        <div class="trust" aria-label="Garantías">
+        <div class="trust">
           <span class="tr">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Sin pago previo
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span id="pop-tr1">No upfront payment</span>
           </span>
           <span class="tr">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Residente local
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span id="pop-tr2">Local resident</span>
           </span>
           <span class="tr">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            WhatsApp 24h
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span id="pop-tr3">Reply within 24h</span>
           </span>
         </div>
+
       </div>
     </div>
 
@@ -141,46 +113,41 @@
 </div>
 
 <style>
-  /* ── Overlay ── */
   #offer-overlay {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(8, 6, 4, 0.78);
+    background: rgba(8, 6, 4, 0.82);
     z-index: 9999;
     align-items: center;
     justify-content: center;
     padding: 20px;
     font-family: 'DM Sans', -apple-system, sans-serif;
-    animation: fadeIn 0.35s ease;
   }
   #offer-overlay.is-visible {
     display: flex;
+    animation: popFadeIn 0.35s ease;
   }
-  @keyframes fadeIn {
+  @keyframes popFadeIn {
     from { opacity: 0; }
     to   { opacity: 1; }
   }
-
-  /* ── Card ── */
   #offer-card {
     background: #faf8f4;
-    max-width: 600px;
+    max-width: 420px;
     width: 100%;
     display: flex;
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid #e0d8cc;
-    animation: slideUp 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+    animation: popSlideUp 0.38s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(24px); }
+  @keyframes popSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-
-  /* ── Photo column ── */
   .photo-col {
-    width: 200px;
+    width: 145px;
     flex-shrink: 0;
     position: relative;
     overflow: hidden;
@@ -191,507 +158,302 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: brightness(0.82);
-  }
-  .photo-top-badge {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    background: rgba(10, 8, 5, 0.72);
-    padding: 12px 14px;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-  }
-  .pulse {
-    width: 7px; height: 7px;
-    background: #c8a84a;
-    border-radius: 50%;
-    flex-shrink: 0;
-    animation: pl 1.4s ease-in-out infinite;
-  }
-  @keyframes pl {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50%       { opacity: 0.4; transform: scale(0.8); }
-  }
-  .photo-top-badge span {
-    font-size: 10px;
-    color: #e8d088;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    font-weight: 500;
+    filter: brightness(0.8);
   }
   .photo-bottom {
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    background: rgba(8, 6, 4, 0.78);
-    padding: 14px;
+    background: rgba(8, 6, 4, 0.75);
+    padding: 10px 11px;
   }
   .photo-quote {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 13px;
-    color: rgba(255,255,255,0.88);
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.85);
     font-style: italic;
-    line-height: 1.5;
+    line-height: 1.45;
     font-weight: 300;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
   .photo-cite {
-    font-size: 10px;
-    color: rgba(255,255,255,0.45);
+    font-size: 9px;
+    color: rgba(255,255,255,0.4);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.09em;
   }
-
-  /* ── Content column ── */
   .content-col {
     flex: 1;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
   }
   .top-strip {
     background: #1a1812;
-    padding: 12px 20px;
+    padding: 9px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
-  }
-  .strip-left {
-    display: flex;
-    align-items: center;
     gap: 8px;
   }
+  .strip-left { display: flex; align-items: center; gap: 7px; }
   .strip-dot {
-    width: 8px; height: 8px;
+    width: 7px; height: 7px;
     background: #c8a84a;
     border-radius: 50%;
     flex-shrink: 0;
-    animation: pl 1.4s ease-in-out infinite;
+    animation: popPulse 1.4s ease-in-out infinite;
+  }
+  @keyframes popPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.4; transform: scale(0.8); }
   }
   .strip-label {
-    font-size: 13px;
-    color: #e8d088;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 500;
+    font-size: 11px; color: #e8d088;
+    letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
   }
-  .strip-timer {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    flex-shrink: 0;
-  }
+  .strip-timer { display: flex; align-items: center; gap: 1px; flex-shrink: 0; }
   .st-num {
-    font-size: 14px;
-    color: #e8d088;
-    font-weight: 500;
-    min-width: 22px;
-    display: inline-block;
-    text-align: center;
+    font-size: 12px; color: #e8d088; font-weight: 500;
+    min-width: 18px; display: inline-block; text-align: center;
   }
-  .st-sep {
-    color: #6a5a28;
-    font-size: 13px;
-    font-weight: 500;
-    margin: 0 1px;
-  }
-
-  /* ── Body ── */
+  .st-sep { color: #6a5a28; font-size: 11px; margin: 0 1px; }
   .body {
-    padding: 20px 22px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    padding: 16px 16px 14px;
+    flex: 1; display: flex; flex-direction: column;
     background: #faf8f4;
   }
+  .top-row {
+    display: flex; align-items: flex-start;
+    justify-content: space-between; margin-bottom: 12px;
+  }
   .close-btn {
-    align-self: flex-end;
-    background: none;
-    border: none;
-    color: #c0b8a8;
-    font-size: 22px;
-    cursor: pointer;
-    line-height: 1;
-    margin-bottom: 6px;
-    transition: color 0.2s;
-    padding: 0;
+    background: none; border: none; color: #c0b8a8;
+    font-size: 18px; cursor: pointer; line-height: 1;
+    padding: 0; transition: color 0.2s; margin-left: 8px; flex-shrink: 0;
   }
   .close-btn:hover { color: #1a1812; }
-
-  /* ── Tabs ── */
-  .session-tabs {
-    display: flex;
-    gap: 6px;
-    margin-bottom: 18px;
+  .eyebrow {
+    font-size: 9px; color: #8B6914;
+    letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; margin-bottom: 5px;
   }
-  .stab {
-    flex: 1;
-    background: transparent;
-    border: 1px solid #e0d8cc;
-    color: #a09888;
-    font-family: inherit;
-    font-size: 11px;
-    padding: 8px 4px;
-    border-radius: 2px;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.2s;
-    letter-spacing: 0.04em;
-  }
-  .stab.active {
-    background: #faf6ea;
-    border-color: #c8a84a;
-    color: #8B6914;
-  }
-  .stab:hover:not(.active) {
-    border-color: #c0b8a8;
-    color: #6a6050;
-  }
-
-  /* ── Headline ── */
   .hl {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 31px;
-    color: #1a1812;
-    line-height: 1.1;
-    font-weight: 300;
-    margin-bottom: 5px;
+    font-size: 22px; color: #1a1812; line-height: 1.15; font-weight: 600;
   }
-  .hl em {
-    font-style: italic;
-    font-weight: 600;
-    color: #8B6914;
-  }
-  .sub {
-    font-size: 12px;
-    color: #8a8070;
-    line-height: 1.6;
-    margin-bottom: 14px;
-  }
-  .divider {
-    height: 1px;
-    background: #e8e2d8;
-    margin-bottom: 14px;
-  }
-
-  /* ── Price ── */
-  .price-row {
-    display: flex;
-    align-items: flex-end;
-    gap: 10px;
-    margin-bottom: 4px;
-  }
-  .pcur {
-    font-size: 14px;
-    color: #a09888;
-    align-self: flex-start;
-    margin-top: 8px;
-    font-weight: 300;
-  }
+  .hl em { font-style: italic; color: #8B6914; font-weight: 300; }
+  .price-row { display: flex; align-items: flex-end; gap: 8px; margin-bottom: 3px; }
+  .pcur { font-size: 12px; color: #a09888; align-self: flex-start; margin-top: 5px; font-weight: 300; }
   .pmain {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 50px;
-    color: #1a1812;
-    font-weight: 600;
-    line-height: 1;
+    font-size: 40px; color: #1a1812; font-weight: 600; line-height: 1;
   }
-  .pold {
-    font-size: 14px;
-    color: #c0b8a8;
-    text-decoration: line-through;
-    font-weight: 300;
-    align-self: flex-end;
-    margin-bottom: 5px;
-  }
+  .pold { font-size: 12px; color: #c0b8a8; text-decoration: line-through; align-self: flex-end; margin-bottom: 4px; }
   .psave {
-    font-size: 11px;
-    background: #eaf4e0;
-    color: #3b6d11;
-    border: 1px solid #c0dda0;
-    padding: 3px 8px;
-    border-radius: 2px;
-    font-weight: 500;
-    align-self: flex-end;
-    margin-bottom: 5px;
+    font-size: 10px; background: #eaf4e0; color: #3b6d11;
+    border: 1px solid #c0dda0; padding: 2px 7px; border-radius: 2px;
+    font-weight: 500; align-self: flex-end; margin-bottom: 4px;
   }
-  .pnote {
-    font-size: 11px;
-    color: #b0a898;
-    margin-bottom: 12px;
+  .pnote { font-size: 10px; color: #b0a898; margin-bottom: 10px; }
+  .tabs { display: flex; gap: 5px; margin-bottom: 12px; }
+  .stab {
+    flex: 1; background: transparent; border: 1px solid #e0d8cc;
+    color: #a09888; font-family: 'DM Sans', -apple-system, sans-serif;
+    font-size: 10px; padding: 6px 3px; border-radius: 2px;
+    cursor: pointer; text-align: center; transition: all 0.2s; letter-spacing: 0.03em;
   }
-
-  /* ── Spots ── */
+  .stab.active { background: #faf6ea; border-color: #c8a84a; color: #8B6914; }
+  .stab:hover:not(.active) { border-color: #c0b8a8; color: #6a6050; }
+  .includes { display: flex; gap: 5px; margin-bottom: 12px; flex-wrap: wrap; }
+  .inc {
+    display: flex; align-items: center; gap: 4px;
+    font-size: 10px; color: #6a6050;
+    background: #f4f0e8; border: 1px solid #e8e2d8;
+    border-radius: 2px; padding: 4px 7px;
+  }
+  .inc svg { color: #8B6914; flex-shrink: 0; }
   .spots {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 11px;
-    color: #c85a30;
-    font-weight: 500;
-    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 6px;
+    font-size: 10px; color: #c85a30; font-weight: 500; margin-bottom: 12px;
   }
-  .sbar {
-    flex: 1;
-    height: 2px;
-    background: #e8e2d8;
-    border-radius: 2px;
-    overflow: hidden;
-  }
-  .sfill {
-    height: 100%;
-    width: 70%;
-    background: #c85a30;
-    border-radius: 2px;
-  }
-
-  /* ── Includes grid ── */
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
-    margin-bottom: 12px;
-  }
-  .gi {
-    display: flex;
-    align-items: flex-start;
-    gap: 7px;
-    background: #f4f0e8;
-    border: 1px solid #e8e2d8;
-    border-radius: 2px;
-    padding: 8px 9px;
-  }
-  .gi-ico {
-    color: #8B6914;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .gi-text {
-    font-size: 11px;
-    color: #6a6050;
-    line-height: 1.4;
-  }
-  .gi-text strong {
-    display: block;
-    color: #3a3020;
-    font-weight: 500;
-    font-size: 11px;
-    margin-bottom: 1px;
-  }
-
-  /* ── Bonus ── */
-  .bonus {
-    background: #fffbf0;
-    border: 1px solid #e8d89a;
-    border-radius: 3px;
-    padding: 10px 12px;
-    margin-bottom: 12px;
-    display: flex;
-    gap: 9px;
-    align-items: flex-start;
-  }
-  .bonus-ico {
-    color: #ba7517;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .bonus-txt {
-    font-size: 11px;
-    color: #7a6040;
-    line-height: 1.55;
-  }
-  .bonus-txt strong {
-    color: #4a3010;
-    font-weight: 500;
-  }
-
-  /* ── Social proof ── */
-  .social-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 14px;
-    padding: 11px 14px;
-    background: #f4f0e8;
-    border: 1px solid #e8e2d8;
-    border-radius: 3px;
-  }
-  .avatars { display: flex; }
-  .av {
-    width: 26px; height: 26px;
-    border-radius: 50%;
-    border: 2px solid #faf8f4;
-    overflow: hidden;
-    margin-left: -7px;
-    background: #d0c8b8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 9px;
-    color: #6a5a48;
-    font-weight: 500;
-    flex-shrink: 0;
-  }
-  .av:first-child { margin-left: 0; }
-  .social-text {
-    font-size: 12px;
-    color: #6a6050;
-    line-height: 1.4;
-    flex: 1;
-  }
-  .social-text strong {
-    color: #2a2018;
-    font-weight: 500;
-  }
-
-  /* ── CTAs ── */
+  .sbar { flex: 1; height: 2px; background: #e8e2d8; border-radius: 2px; overflow: hidden; }
+  .sfill { height: 100%; width: 70%; background: #c85a30; }
   .cta {
-    display: block;
-    width: 100%;
-    background: #c8a84a;
-    color: #1a1208;
-    border: none;
-    padding: 15px;
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 2px;
-    text-align: center;
-    text-decoration: none;
-    transition: background 0.2s;
-    margin-bottom: 8px;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; background: #25D366; color: #fff; border: none;
+    padding: 13px; font-family: 'DM Sans', -apple-system, sans-serif;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.05em;
+    cursor: pointer; border-radius: 3px; transition: background 0.2s;
+    margin-bottom: 7px; text-decoration: none;
   }
-  .cta:hover { background: #daba5a; }
-  .cta:active { background: #b89838; }
-
+  .cta:hover { background: #20c05a; }
+  .cta svg { flex-shrink: 0; }
   .cta2 {
-    width: 100%;
-    background: transparent;
-    color: #a09888;
-    border: 1px solid #e0d8cc;
-    padding: 10px;
-    font-family: inherit;
-    font-size: 11px;
-    cursor: pointer;
-    border-radius: 2px;
-    transition: all 0.2s;
+    width: 100%; background: transparent; color: #b0a898;
+    border: 1px solid #e0d8cc; padding: 8px;
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    font-size: 10px; cursor: pointer; border-radius: 2px; transition: all 0.2s;
   }
-  .cta2:hover {
-    color: #6a6050;
-    border-color: #c0b8a8;
-  }
-
-  /* ── Trust bar ── */
+  .cta2:hover { color: #6a6050; border-color: #c0b8a8; }
   .trust {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 12px;
-    padding-top: 11px;
-    border-top: 1px solid #e8e2d8;
-    flex-wrap: wrap;
+    display: flex; align-items: center; justify-content: center;
+    gap: 10px; margin-top: 10px; padding-top: 9px;
+    border-top: 1px solid #e8e2d8; flex-wrap: wrap;
   }
-  .tr {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 10px;
-    color: #a09888;
-  }
-  .tr svg { color: #a09888; }
-
-  /* ── Mobile ── */
-  @media (max-width: 540px) {
+  .tr { display: flex; align-items: center; gap: 4px; font-size: 9px; color: #b0a898; }
+  @media (max-width: 480px) {
     #offer-card { flex-direction: column; }
-    .photo-col {
-      width: 100%;
-      height: 180px;
-    }
-    .hl { font-size: 26px; }
-    .pmain { font-size: 40px; }
+    .photo-col { width: 100%; height: 160px; }
+    .hl { font-size: 20px; }
+    .pmain { font-size: 34px; }
   }
 </style>
 
 <script is:inline>
 (function () {
-  const STORAGE_KEY = 'cris_offer_seen';
-  const TIMER_KEY   = 'cris_offer_end';
+  var PHONE     = '56999679935';
+  var SEEN_KEY  = 'cris_offer_seen';
+  var TIMER_KEY = 'cris_offer_end';
+  var DELAY_MS  = 3000;
+
+  var copy = {
+    en: {
+      flash:  'Flash offer \u00b7 today only',
+      eyebrow:'H\u1ed9i An \u00b7 Photography session',
+      hl:     'Your session<br>for <em>just</em> $99.',
+      pnote:  'Only for the next 24 hours',
+      tabs:   ['Family', 'Couple', 'Branding'],
+      inc:    ['1 hour', '25+ photos', 'Sneak 24h', 'Online gallery'],
+      spots:  '3 dates available',
+      cta:    'Book via WhatsApp',
+      cta2:   "No thanks, I'll pay full price",
+      tr:     ['No upfront payment', 'Local resident', 'Reply within 24h'],
+      quote:  '\u201cI\u2019m very happy with the result. Now we have a lot of great photos for our website.\u201d',
+      msgs: {
+        'Family':   'Hi+Cris,+I%27d+like+to+book+a+Family+session+for+%2499',
+        'Couple':   'Hi+Cris,+I%27d+like+to+book+a+Couple+session+for+%2499',
+        'Branding': 'Hi+Cris,+I%27d+like+to+book+a+Branding+session+for+%2499'
+      }
+    },
+    es: {
+      flash:  'Oferta flash \u00b7 solo hoy',
+      eyebrow:'H\u1ed9i An \u00b7 Sesi\u00f3n fotogr\u00e1fica',
+      hl:     'Tu sesi\u00f3n<br>por <em>solo</em> $99.',
+      pnote:  'Solo durante las pr\u00f3ximas 24 horas',
+      tabs:   ['Familia', 'Pareja', 'Branding'],
+      inc:    ['1 hora', '25+ fotos', 'Sneak 24h', 'Galer\u00eda online'],
+      spots:  '3 fechas disponibles',
+      cta:    'Reservar por WhatsApp',
+      cta2:   'No gracias, prefiero precio completo',
+      tr:     ['Sin pago previo', 'Residente local', 'Respuesta en 24h'],
+      quote:  '\u201cEstoy muy feliz con el resultado. Ahora tenemos muchas fotos incre\u00edbles para nuestra web.\u201d',
+      msgs: {
+        'Familia':  'Hola+Cris,+quiero+reservar+la+sesi%C3%B3n+de+Familia+por+%2499',
+        'Pareja':   'Hola+Cris,+quiero+reservar+la+sesi%C3%B3n+de+Pareja+por+%2499',
+        'Branding': 'Hola+Cris,+quiero+reservar+la+sesi%C3%B3n+de+Branding+por+%2499'
+      }
+    }
+  };
+
+  var lang = 'en';
+  var currentType = 'Family';
+
+  function detectLang() {
+    var l = (navigator.language || 'en').toLowerCase();
+    return l.startsWith('es') ? 'es' : 'en';
+  }
+
+  function set(id, val) {
+    var el = document.getElementById(id);
+    if (el) el.innerHTML = val;
+  }
+
+  function updateWsp() {
+    var msg = copy[lang].msgs[currentType] || '';
+    var el = document.getElementById('pop-wsp');
+    if (el) el.href = 'https://wa.me/' + PHONE + '?text=' + msg;
+  }
+
+  function applyLang(l) {
+    lang = l;
+    var c = copy[l];
+    set('pop-flash',   c.flash);
+    set('pop-eyebrow', c.eyebrow);
+    set('pop-hl',      c.hl);
+    set('pop-pnote',   c.pnote);
+    set('pop-spots',   c.spots);
+    set('pop-cta-txt', c.cta);
+    set('pop-quote',   c.quote);
+    set('pop-inc1',    c.inc[0]);
+    set('pop-inc2',    c.inc[1]);
+    set('pop-inc3',    c.inc[2]);
+    set('pop-inc4',    c.inc[3]);
+    set('pop-tr1',     c.tr[0]);
+    set('pop-tr2',     c.tr[1]);
+    set('pop-tr3',     c.tr[2]);
+    var dismiss = document.getElementById('pop-dismiss');
+    if (dismiss) dismiss.textContent = c.cta2;
+    var tabs = document.querySelectorAll('#offer-card .stab');
+    tabs.forEach(function(btn, i) { btn.textContent = c.tabs[i]; });
+    tabs.forEach(function(b) { b.classList.remove('active'); });
+    if (tabs[0]) tabs[0].classList.add('active');
+    currentType = c.tabs[0];
+    updateWsp();
+  }
 
   function initTimer() {
-    let end = parseInt(sessionStorage.getItem(TIMER_KEY) || '0', 10);
-    if (!end || end < Date.now()) {
-      end = Date.now() + 24 * 3600 * 1000;
-      sessionStorage.setItem(TIMER_KEY, String(end));
-    }
+    var stored = parseInt(sessionStorage.getItem(TIMER_KEY) || '0', 10);
+    var end = (stored && stored > Date.now()) ? stored : Date.now() + 24 * 3600 * 1000;
+    sessionStorage.setItem(TIMER_KEY, String(end));
     return end;
   }
 
   function tick(end) {
-    const d = Math.max(0, end - Date.now());
-    const h = Math.floor(d / 3600000);
-    const m = Math.floor((d % 3600000) / 60000);
-    const s = Math.floor((d % 60000) / 1000);
-    const pad = n => String(n).padStart(2, '0');
-    const eh = document.getElementById('pop-th');
-    const em = document.getElementById('pop-tm');
-    const es = document.getElementById('pop-ts');
-    if (eh) eh.textContent = pad(h);
-    if (em) em.textContent = pad(m);
-    if (es) es.textContent = pad(s);
+    var d = Math.max(0, end - Date.now());
+    var h = Math.floor(d / 3600000);
+    var m = Math.floor((d % 3600000) / 60000);
+    var s = Math.floor((d % 60000) / 1000);
+    var pad = function(n) { return String(n).padStart(2, '0'); };
+    set('pop-th', pad(h));
+    set('pop-tm', pad(m));
+    set('pop-ts', pad(s));
   }
 
-  function close() {
-    const overlay = document.getElementById('offer-overlay');
-    if (overlay) {
-      overlay.style.opacity = '0';
-      overlay.style.transition = 'opacity 0.25s ease';
-      setTimeout(() => { overlay.classList.remove('is-visible'); }, 260);
-    }
-    sessionStorage.setItem(STORAGE_KEY, '1');
+  function closePopup() {
+    var overlay = document.getElementById('offer-overlay');
+    if (!overlay) return;
+    overlay.style.transition = 'opacity 0.25s ease';
+    overlay.style.opacity = '0';
+    setTimeout(function() { overlay.classList.remove('is-visible'); }, 260);
+    sessionStorage.setItem(SEEN_KEY, '1');
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    if (sessionStorage.getItem(STORAGE_KEY)) return;
-
-    const overlay = document.getElementById('offer-overlay');
+    if (sessionStorage.getItem(SEEN_KEY)) return;
+    var overlay = document.getElementById('offer-overlay');
     if (!overlay) return;
 
-    // Show after 3s
+    applyLang(detectLang());
+
     setTimeout(function () {
       overlay.classList.add('is-visible');
-
-      const end = initTimer();
+      var end = initTimer();
       tick(end);
-      setInterval(function () { tick(end); }, 1000);
-    }, 3000);
+      setInterval(function() { tick(end); }, 1000);
+    }, DELAY_MS);
 
-    // Close buttons
-    document.getElementById('offer-close')?.addEventListener('click', close);
-    document.getElementById('offer-dismiss')?.addEventListener('click', close);
+    var closeBtn = document.getElementById('pop-close');
+    var dismiss  = document.getElementById('pop-dismiss');
+    if (closeBtn) closeBtn.addEventListener('click', closePopup);
+    if (dismiss)  dismiss.addEventListener('click', closePopup);
+    overlay.addEventListener('click', function(e) { if (e.target === overlay) closePopup(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePopup(); });
 
-    // Close on overlay click (outside card)
-    overlay.addEventListener('click', function (e) {
-      if (e.target === overlay) close();
-    });
-
-    // Close on Escape
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') close();
-    });
-
-    // Tabs
-    const tabs = document.querySelectorAll('.stab');
-    const cta  = document.getElementById('offer-cta');
-    tabs.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        tabs.forEach(b => b.classList.remove('active'));
+    var tabs = document.querySelectorAll('#offer-card .stab');
+    tabs.forEach(function(btn, i) {
+      btn.addEventListener('click', function() {
+        tabs.forEach(function(b) { b.classList.remove('active'); });
         btn.classList.add('active');
-        const type = btn.dataset.type;
-        if (cta) cta.textContent = 'Reservar sesión ' + type + ' por $99 →';
+        currentType = copy[lang].tabs[i];
+        updateWsp();
       });
     });
   });
