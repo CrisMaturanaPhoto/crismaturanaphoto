@@ -40,22 +40,135 @@ const images = [
   canonical="https://crismaturana.com/es/portfolio/portraits"
   alternates={alternates}
 >
-  <div class="page-hero">
-    <div class="container">
-      <h1>Retratos</h1>
-      <p>Luz natural. Expresiones honestas.</p>
+    <div class="gallery-hero">
+    <div class="gallery-hero-bg"></div>
+    <div class="gallery-hero-overlay"></div>
+    <div class="gallery-hero-content">
+      <p class="hero-label">Portfolio · Retratos</p>
+      <p class="hero-location">Hội An · Chile · Sudeste Asiático</p>
+      <h1>Luz natural.<br>Expresiones honestas.</h1>
+      <p class="hero-text">Trabajo principalmente con luz natural para crear retratos suaves y auténticos. Mi enfoque es relajado e intuitivo — te guío durante la sesión para que todo fluya con naturalidad.</p>
+      
     </div>
   </div>
   <section class="section">
     <div class="container">
-      <div class="gallery-intro">
-        <p>Trabajo principalmente con luz natural para crear retratos suaves y auténticos, llenos de profundidad y atmósfera. Mi enfoque es relajado e intuitivo — te guío suavemente durante la sesión, ayudándote a posar de una manera que se siente natural y sin esfuerzo.</p>
-      </div>
       <Gallery images={images} layout="masonry" columns={3} />
     </div>
   </section>
 </Layout>
 
 <style>
-  .gallery-intro { max-width: 700px; margin: 0 auto 3rem; text-align: center; color: var(--color-text-muted); font-size: 1rem; line-height: 1.8; }
+  
+  .gallery-hero {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+
+  .gallery-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/rachel-portrait-0013.JPG');
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px) brightness(1.1);
+    transform: scale(1.05);
+  }
+
+  .gallery-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.65);
+  }
+
+  .gallery-hero-content {
+    position: relative;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 7rem 2.5rem 2rem;
+    text-align: center;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #1a1a18;
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-location {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6f6b65;
+    margin-bottom: 1.25rem;
+  }
+
+  .gallery-hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 400;
+    font-style: italic;
+    color: #1a1a18;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text {
+    font-size: 0.9rem;
+    color: #4a4a48;
+    line-height: 1.8;
+    max-width: 500px;
+    margin: 0 auto 1.75rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(0,0,0,0.12);
+    padding-top: 1.25rem;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: rgba(160, 120, 64, 0.6);
+    margin: 0;
+    line-height: 1;
+  }
+
+  .stat-sm {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(160, 120, 64, 0.6);
+    padding-bottom: 0.2rem;
+  }
+
+  .stat-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6f6b65;
+    margin: 0.25rem 0 0;
+  }
+
+  .stat-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .gallery-hero-content { text-align: center; padding: 7rem 1.5rem 2rem; }
+    .hero-text { max-width: 100%; }
+    .hero-stats { justify-content: center; gap: 1.5rem; }
+  }
+
 </style>

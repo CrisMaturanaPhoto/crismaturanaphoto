@@ -36,27 +36,141 @@ const images = [
   canonical="https://crismaturana.com/es/portfolio/couples-families"
   alternates={alternates}
 >
-  <div class="page-hero-img" style="background-image: url('https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-10.jpg')">
-    <div class="page-hero-content">
-      <h1>Parejas y Familias</h1>
-      <p>El amor se ve mejor cuando no está posado.</p>
+  <div class="gallery-hero">
+    <div class="gallery-hero-bg"></div>
+    <div class="gallery-hero-overlay"></div>
+    <div class="gallery-hero-content">
+      <p class="hero-label">Portfolio · Parejas y Familias</p>
+      <p class="hero-location">Hội An · Chile · Sudeste Asiático</p>
+      <h1>Dos personas. Una familia. La vida real en medio.</h1>
+      <p class="hero-text">Parejas en su primer viaje juntos. Familias que llevan años sin quedarse quietas. Me presento, observo y dejo que las cosas pasen. Un poco de dirección no hace daño — pero los mejores fotogramas siempre son los que ocurren entre medio.</p>
+      <div class="hero-stats">
+        <div class="stat"><p class="stat-num">15+</p><p class="stat-label">Años</p></div>
+        <div class="stat"><p class="stat-num">100+</p><p class="stat-label">Sesiones</p></div>
+        <div class="stat"><p class="stat-num stat-sm">Always</p><p class="stat-label">Present</p></div>
+        <div class="stat stat-text"><p class="stat-num stat-sm">Natural & Espontáneo</p><p class="stat-label">Estilo</p></div>
+      </div>
     </div>
   </div>
   <section class="section">
     <div class="container">
-      <div class="gallery-intro">
-        <p>Ya sea una pareja explorando una nueva ciudad o una familia compartiendo una tarde tranquila — busco los momentos reales, los que ocurren entre las poses.</p>
-      </div>
       <Gallery images={images} layout="masonry" columns={3} />
     </div>
   </section>
 </Layout>
 
 <style>
-  .page-hero-img { height: 60vh; min-height: 400px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative; }
-  .page-hero-img::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.35); }
-  .page-hero-content { position: relative; z-index: 1; text-align: center; padding: 0 2rem; }
-  .page-hero-content h1 { font-family: var(--font-serif); font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 400; color: white; margin-bottom: 1rem; }
-  .page-hero-content p { font-size: 1rem; color: rgba(255,255,255,0.85); letter-spacing: 0.05em; }
-  .gallery-intro { max-width: 700px; margin: 0 auto 3rem; text-align: center; color: var(--color-text-muted); font-size: 1rem; line-height: 1.8; }
+  
+  .gallery-hero {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+
+  .gallery-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-113.JPG');
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px) brightness(1.1);
+    transform: scale(1.05);
+  }
+
+  .gallery-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.65);
+  }
+
+  .gallery-hero-content {
+    position: relative;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 7rem 2.5rem 2rem;
+    text-align: center;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #1a1a18;
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-location {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6f6b65;
+    margin-bottom: 1.25rem;
+  }
+
+  .gallery-hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 400;
+    font-style: italic;
+    color: #1a1a18;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text {
+    font-size: 0.9rem;
+    color: #4a4a48;
+    line-height: 1.8;
+    max-width: 500px;
+    margin: 0 auto 1.75rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(0,0,0,0.12);
+    padding-top: 1.25rem;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: rgba(160, 120, 64, 0.6);
+    margin: 0;
+    line-height: 1;
+  }
+
+  .stat-sm {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(160, 120, 64, 0.6);
+    padding-bottom: 0.2rem;
+  }
+
+  .stat-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6f6b65;
+    margin: 0.25rem 0 0;
+  }
+
+  .stat-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .gallery-hero-content { text-align: center; padding: 7rem 1.5rem 2rem; }
+    .hero-text { max-width: 100%; }
+    .hero-stats { justify-content: center; gap: 1.5rem; }
+  }
+
+
 </style>

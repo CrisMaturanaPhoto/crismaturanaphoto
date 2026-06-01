@@ -29,22 +29,135 @@ const images = [
   canonical="https://crismaturana.com/es/portfolio/aerial"
   alternates={alternates}
 >
-  <div class="page-hero">
-    <div class="container">
-      <h1>Desde el Aire</h1>
-      <p>La perspectiva lo cambia todo.</p>
+    <div class="gallery-hero">
+    <div class="gallery-hero-bg"></div>
+    <div class="gallery-hero-overlay"></div>
+    <div class="gallery-hero-content">
+      <p class="hero-label">Portfolio · Desde Arriba</p>
+      <p class="hero-location">Vietnam · Chile · Tailandia</p>
+      <h1>La perspectiva<br>lo cambia todo.</h1>
+      <p class="hero-text">Fotografía aérea desde Vietnam, Chile y Tailandia — arrozales, bosques de cocoteros, paisajes desérticos y botes de pesca vistos desde un ángulo completamente diferente.</p>
+      
     </div>
   </div>
   <section class="section">
     <div class="container">
-      <div class="gallery-intro">
-        <p>Fotografía con dron desde Vietnam, Chile y Tailandia — arrozales, bosques de cocoteros, paisajes desérticos y botes de pescadores vistos desde un ángulo completamente distinto.</p>
-      </div>
       <Gallery images={images} layout="masonry" columns={3} />
     </div>
   </section>
 </Layout>
 
 <style>
-  .gallery-intro { max-width: 700px; margin: 0 auto 3rem; text-align: center; color: var(--color-text-muted); font-size: 1rem; line-height: 1.8; }
+  
+  .gallery-hero {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+
+  .gallery-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/DronCoconutBoat%40-10.JPG');
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px) brightness(1.1);
+    transform: scale(1.05);
+  }
+
+  .gallery-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.65);
+  }
+
+  .gallery-hero-content {
+    position: relative;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 7rem 2.5rem 2rem;
+    text-align: center;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #1a1a18;
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-location {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6f6b65;
+    margin-bottom: 1.25rem;
+  }
+
+  .gallery-hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 400;
+    font-style: italic;
+    color: #1a1a18;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text {
+    font-size: 0.9rem;
+    color: #4a4a48;
+    line-height: 1.8;
+    max-width: 500px;
+    margin: 0 auto 1.75rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(0,0,0,0.12);
+    padding-top: 1.25rem;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: rgba(160, 120, 64, 0.6);
+    margin: 0;
+    line-height: 1;
+  }
+
+  .stat-sm {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(160, 120, 64, 0.6);
+    padding-bottom: 0.2rem;
+  }
+
+  .stat-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6f6b65;
+    margin: 0.25rem 0 0;
+  }
+
+  .stat-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .gallery-hero-content { text-align: center; padding: 7rem 1.5rem 2rem; }
+    .hero-text { max-width: 100%; }
+    .hero-stats { justify-content: center; gap: 1.5rem; }
+  }
+
 </style>
