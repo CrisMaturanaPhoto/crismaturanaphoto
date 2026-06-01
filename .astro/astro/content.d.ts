@@ -141,9 +141,23 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"drone-workflow-vietnam-es.md": {
+	id: "drone-workflow-vietnam-es.md";
+  slug: "drone-workflow-vietnam-es";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "drone-workflow-vietnam.md": {
 	id: "drone-workflow-vietnam.md";
   slug: "drone-workflow-vietnam";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"family-connection-over-composition-es.md": {
+	id: "family-connection-over-composition-es.md";
+  slug: "family-connection-over-composition-es";
   body: string;
   collection: "blog";
   data: any
@@ -155,9 +169,23 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".md"] };
+"guide-to-old-quarter-es.md": {
+	id: "guide-to-old-quarter-es.md";
+  slug: "guide-to-old-quarter-es";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "guide-to-old-quarter.md": {
 	id: "guide-to-old-quarter.md";
   slug: "guide-to-old-quarter";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"hoi-an-at-dawn-es.md": {
+	id: "hoi-an-at-dawn-es.md";
+  slug: "hoi-an-at-dawn-es";
   body: string;
   collection: "blog";
   data: any
@@ -169,6 +197,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".md"] };
+"milky-way-settings-guide-es.md": {
+	id: "milky-way-settings-guide-es.md";
+  slug: "milky-way-settings-guide-es";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "milky-way-settings-guide.md": {
 	id: "milky-way-settings-guide.md";
   slug: "milky-way-settings-guide";
@@ -176,9 +211,23 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".md"] };
+"quiet-portrait-es.md": {
+	id: "quiet-portrait-es.md";
+  slug: "quiet-portrait-es";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "quiet-portrait.md": {
 	id: "quiet-portrait.md";
   slug: "quiet-portrait";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
+"weddings-without-directing-es.md": {
+	id: "weddings-without-directing-es.md";
+  slug: "weddings-without-directing-es";
   body: string;
   collection: "blog";
   data: any

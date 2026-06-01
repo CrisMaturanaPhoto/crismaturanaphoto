@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import HomeContent from '../components/HomeContent.astro';
 import { heroSlides, portfolioCategories } from '../lib/ui';
 import { getLatestBlogPosts, buildAlternates } from '../lib/utils';
+import SpecialOfferPopup from '../components/SpecialOfferPopup.astro';
 
 const latestBlogPosts = await getLatestBlogPosts(3);
 const alternates = buildAlternates('/', '/es/');
@@ -18,4 +19,5 @@ const alternates = buildAlternates('/', '/es/');
     portfolioCategories={portfolioCategories}
     latestBlogPosts={latestBlogPosts}
   />
+  <SpecialOfferPopup />
 </Layout>

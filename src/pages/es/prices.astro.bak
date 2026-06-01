@@ -1,0 +1,613 @@
+---
+// src/pages/es/prices.astro
+// Reemplaza el contenido de tu página de precios existente
+import Layout from '../../layouts/Layout.astro'; // ajusta el path a tu layout
+---
+
+<Layout title="Precios · Sesiones de Retrato · Cris Maturana Photo">
+
+  <section class="pricing-section">
+
+    <p class="pricing-eyebrow">Sesiones de retrato · Hội An</p>
+    <h1 class="pricing-headline">Imágenes que<br><em>realmente te representan</em></h1>
+    <p class="pricing-sub">Selecciona el tipo de sesión para ver los packages</p>
+
+    <!-- NAV TABS -->
+    <div class="sessions-nav">
+      <button class="session-btn active" onclick="switchSession('familia', this)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"/><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0 -3 -3.85"/></svg>
+        Familia
+      </button>
+      <button class="session-btn" onclick="switchSession('branding', this)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a1 1 0 0 0 .993 .883l.117 -.883h-1.11z"/><path d="M12 3c0 4.243 -3.538 8.2 -6 10l6 8l6 -8c-2.462 -1.8 -6 -5.757 -6 -10z"/></svg>
+        Branding personal
+      </button>
+      <button class="session-btn" onclick="switchSession('parejas', this)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"/></svg>
+        Parejas
+      </button>
+    </div>
+
+    <!-- ==================== FAMILIA ==================== -->
+    <div class="session-content active" id="session-familia">
+      <div class="packages-grid">
+
+        <!-- Essentials -->
+        <div class="pkg-card">
+          <p class="pkg-name">Essentials</p>
+          <p class="pkg-tagline">Un recuerdo, sin complicaciones.</p>
+          <div class="pkg-price">
+            <span class="currency">USD</span>
+            <span class="amount">160</span>
+          </div>
+          <div class="pkg-divider"></div>
+          <ul class="pkg-features">
+            <li><span class="icon-check" aria-hidden="true"></span><span>1 hora de sesión</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>1 locación a tu elección</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>15 fotos editadas</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>Galería privada online</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Guía previa: cómo vestir y prepararse</span></li>
+            <li class="delivery"><span class="icon-photo" aria-hidden="true"></span><span>JPG web/social + alta resolución para imprimir</span></li>
+          </ul>
+          <a class="pkg-cta outline" href="mailto:hello@crismaturana.com?subject=Sesión%20Familia%20Essentials">Reservar ahora</a>
+          <p class="pkg-note">Entrega en 5–7 días</p>
+        </div>
+
+        <!-- Story (featured) -->
+        <div class="pkg-card featured">
+          <div class="featured-badge">Más popular</div>
+          <p class="pkg-name">Story</p>
+          <p class="pkg-tagline">La sesión completa de familia.</p>
+          <div class="pkg-price">
+            <span class="currency">USD</span>
+            <span class="amount">250</span>
+          </div>
+          <div class="pkg-divider"></div>
+          <ul class="pkg-features">
+            <li><span class="icon-check" aria-hidden="true"></span><span>2 horas de sesión</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>2 locaciones a elegir</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>30 fotos editadas</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>Galería privada online</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Guía previa + llamada de 15 min para planificar</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>1 foto en blanco y negro — estilo documental, para enmarcar</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Mini video slideshow de 30 seg con las mejores fotos</span></li>
+            <li class="delivery"><span class="icon-photo" aria-hidden="true"></span><span>JPG web/social + alta resolución para imprimir</span></li>
+          </ul>
+          <a class="pkg-cta solid" href="https://wa.me/56999679935?text=Hola%2C+me+interesa+el+package+Story+para+familia">WhatsApp · Reservar</a>
+          <p class="pkg-note">Entrega en 5–7 días</p>
+        </div>
+
+        <!-- Heritage -->
+        <div class="pkg-card">
+          <p class="pkg-name">Heritage</p>
+          <p class="pkg-tagline">Para atesorar generaciones.</p>
+          <div class="pkg-price">
+            <span class="currency">USD</span>
+            <span class="amount">350</span>
+          </div>
+          <div class="pkg-divider"></div>
+          <ul class="pkg-features">
+            <li><span class="icon-check" aria-hidden="true"></span><span>3–4 horas de sesión</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>Locaciones ilimitadas</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>50 fotos editadas</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>Galería privada online</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Guía previa + llamada de planificación</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>1 foto en blanco y negro — estilo documental, para enmarcar</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Mini video slideshow de 30 seg con las mejores fotos</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Archivos RAW de todas las fotos editadas</span></li>
+            <li class="delivery"><span class="icon-photo" aria-hidden="true"></span><span>JPG web/social + alta resolución para imprimir</span></li>
+          </ul>
+          <a class="pkg-cta outline" href="mailto:hello@crismaturana.com?subject=Sesión%20Familia%20Heritage">Reservar ahora</a>
+          <p class="pkg-note">Entrega en 7–10 días</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================== BRANDING ==================== -->
+    <div class="session-content" id="session-branding">
+      <div class="packages-grid">
+
+        <!-- Portrait -->
+        <div class="pkg-card">
+          <p class="pkg-name">Portrait</p>
+          <p class="pkg-tagline">Tu presencia, en una imagen.</p>
+          <div class="pkg-price">
+            <span class="currency">USD</span>
+            <span class="amount">150</span>
+          </div>
+          <div class="pkg-divider"></div>
+          <ul class="pkg-features">
+            <li><span class="icon-check" aria-hidden="true"></span><span>45 min de sesión</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>1 look / outfit</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>1 locación a tu elección</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>10 fotos editadas</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>Orientación de posing incluida</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Checklist de outfits según el tipo de marca</span></li>
+            <li class="delivery"><span class="icon-photo" aria-hidden="true"></span><span>JPG web/social + alta resolución para imprimir</span></li>
+          </ul>
+          <a class="pkg-cta outline" href="mailto:hello@crismaturana.com?subject=Sesión%20Branding%20Portrait">Reservar ahora</a>
+          <p class="pkg-note">Entrega en 5–7 días</p>
+        </div>
+
+        <!-- Brand (featured) -->
+        <div class="pkg-card featured">
+          <div class="featured-badge">Más popular</div>
+          <p class="pkg-name">Brand</p>
+          <p class="pkg-tagline">Contenido listo para usar.</p>
+          <div class="pkg-price">
+            <span class="currency">USD</span>
+            <span class="amount">290</span>
+          </div>
+          <div class="pkg-divider"></div>
+          <ul class="pkg-features">
+            <li><span class="icon-check" aria-hidden="true"></span><span>2 horas de sesión</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>2–3 looks / outfits</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>2 locaciones a elegir</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>30 fotos editadas</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>Orientación de posing incluida</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Checklist de outfits + llamada previa de 15 min</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>3 fotos seleccionadas para perfil — con nota de cuál usar en LinkedIn, Instagram y web</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Mini video slideshow de 30 seg para redes</span></li>
+            <li class="delivery"><span class="icon-photo" aria-hidden="true"></span><span>JPG web/social + alta resolución para imprimir</span></li>
+          </ul>
+          <a class="pkg-cta solid" href="https://wa.me/56999679935?text=Hola%2C+me+interesa+el+package+Brand+para+branding">WhatsApp · Reservar</a>
+          <p class="pkg-note">Entrega en 5–7 días</p>
+        </div>
+
+        <!-- Presence -->
+        <div class="pkg-card">
+          <p class="pkg-name">Presence</p>
+          <p class="pkg-tagline">Tu marca, en profundidad.</p>
+          <div class="pkg-price">
+            <span class="currency">USD</span>
+            <span class="amount">480</span>
+          </div>
+          <div class="pkg-divider"></div>
+          <ul class="pkg-features">
+            <li><span class="icon-check" aria-hidden="true"></span><span>3–4 horas de sesión</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>4+ looks / locaciones</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>50 fotos editadas</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>Orientación de posing incluida</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Checklist + llamada de planificación</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>3 fotos seleccionadas para perfil — con nota de cuál usar en LinkedIn, Instagram y web</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Mini video slideshow de 30 seg para redes</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Archivos RAW de todas las fotos editadas</span></li>
+            <li class="delivery"><span class="icon-photo" aria-hidden="true"></span><span>JPG web/social + alta resolución para imprimir</span></li>
+          </ul>
+          <a class="pkg-cta outline" href="mailto:hello@crismaturana.com?subject=Sesión%20Branding%20Presence">Reservar ahora</a>
+          <p class="pkg-note">Entrega en 7–10 días</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================== PAREJAS ==================== -->
+    <div class="session-content" id="session-parejas">
+      <div class="packages-grid">
+
+        <!-- Intimate -->
+        <div class="pkg-card">
+          <p class="pkg-name">Intimate</p>
+          <p class="pkg-tagline">Un momento real entre ustedes.</p>
+          <div class="pkg-price">
+            <span class="currency">USD</span>
+            <span class="amount">160</span>
+          </div>
+          <div class="pkg-divider"></div>
+          <ul class="pkg-features">
+            <li><span class="icon-check" aria-hidden="true"></span><span>1 hora de sesión</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>1 locación a tu elección</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>15 fotos editadas</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>Galería privada online</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Guía de actividades para parejas — poses naturales sin posar</span></li>
+            <li class="delivery"><span class="icon-photo" aria-hidden="true"></span><span>JPG web/social + alta resolución para imprimir</span></li>
+          </ul>
+          <a class="pkg-cta outline" href="mailto:hello@crismaturana.com?subject=Sesión%20Parejas%20Intimate">Reservar ahora</a>
+          <p class="pkg-note">Entrega en 5–7 días</p>
+        </div>
+
+        <!-- Golden (featured) -->
+        <div class="pkg-card featured">
+          <div class="featured-badge">Más popular</div>
+          <p class="pkg-name">Golden</p>
+          <p class="pkg-tagline">Hội An en su mejor luz.</p>
+          <div class="pkg-price">
+            <span class="currency">USD</span>
+            <span class="amount">280</span>
+          </div>
+          <div class="pkg-divider"></div>
+          <ul class="pkg-features">
+            <li><span class="icon-check" aria-hidden="true"></span><span>2 horas de sesión</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>2 locaciones a elegir</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>30 fotos editadas</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>Galería privada online</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Guía de actividades + llamada de 15 min para planificar</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>1 foto en blanco y negro — estilo documental, para enmarcar</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Mini video slideshow de 30 seg para compartir</span></li>
+            <li class="delivery"><span class="icon-photo" aria-hidden="true"></span><span>JPG web/social + alta resolución para imprimir</span></li>
+          </ul>
+          <a class="pkg-cta solid" href="https://wa.me/56999679935?text=Hola%2C+me+interesa+el+package+Golden+para+parejas">WhatsApp · Reservar</a>
+          <p class="pkg-note">Entrega en 5–7 días</p>
+        </div>
+
+        <!-- Journey -->
+        <div class="pkg-card">
+          <p class="pkg-name">Journey</p>
+          <p class="pkg-tagline">Una historia que vale encuadrar.</p>
+          <div class="pkg-price">
+            <span class="currency">USD</span>
+            <span class="amount">450</span>
+          </div>
+          <div class="pkg-divider"></div>
+          <ul class="pkg-features">
+            <li><span class="icon-check" aria-hidden="true"></span><span>Half day — 4 horas</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>Locaciones ilimitadas en Hội An</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>50 fotos editadas</span></li>
+            <li><span class="icon-check" aria-hidden="true"></span><span>Galería privada online</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Guía de actividades + llamada de planificación</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>1 foto en blanco y negro — estilo documental, para enmarcar</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Mini video slideshow de 30 seg para compartir</span></li>
+            <li class="value-add"><span class="icon-star" aria-hidden="true"></span><span>Archivos RAW de todas las fotos editadas</span></li>
+            <li class="delivery"><span class="icon-photo" aria-hidden="true"></span><span>JPG web/social + alta resolución para imprimir</span></li>
+          </ul>
+          <a class="pkg-cta outline" href="mailto:hello@crismaturana.com?subject=Sesión%20Parejas%20Journey">Reservar ahora</a>
+          <p class="pkg-note">Entrega en 7–10 días</p>
+        </div>
+
+      </div>
+    </div>
+
+    <p class="footer-note">
+      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"/></svg>
+      Todos los packages incluyen locaciones en Hội An · Precios en USD
+    </p>
+
+  </section>
+
+</Layout>
+
+<style>
+  .pricing-section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .pricing-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text-muted, #888);
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .pricing-headline {
+    font-family: var(--font-serif, Georgia, serif);
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 0.6rem;
+    line-height: 1.25;
+  }
+
+  .pricing-headline em {
+    font-style: italic;
+  }
+
+  .pricing-sub {
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-text-muted, #888);
+    margin: 0 0 2.5rem;
+    font-weight: 300;
+  }
+
+  /* NAV */
+  .sessions-nav {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .session-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.18);
+    border-radius: 100px;
+    padding: 7px 20px;
+    font-size: 13px;
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+
+  .session-btn.active,
+  .session-btn:hover {
+    background: currentColor;
+    border-color: currentColor;
+  }
+
+  .session-btn.active span,
+  .session-btn:hover span {
+    color: #fff;
+  }
+
+  /* Simpler approach for button active state */
+  .session-btn.active {
+    background: #1a1a1a;
+    color: #fff;
+    border-color: #1a1a1a;
+  }
+
+  /* GRID */
+  .session-content {
+    display: none;
+  }
+
+  .session-content.active {
+    display: block;
+  }
+
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: start;
+  }
+
+  @media (max-width: 640px) {
+    .packages-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* CARDS */
+  .pkg-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 16px;
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+
+  :global(.dark) .pkg-card {
+    background: rgba(255,255,255,0.03);
+    border-color: rgba(255,255,255,0.1);
+  }
+
+  .pkg-card:hover {
+    border-color: rgba(0,0,0,0.25);
+  }
+
+  .pkg-card.featured {
+    border: 2px solid #1a1a1a;
+    padding-top: 2.25rem;
+  }
+
+  :global(.dark) .pkg-card.featured {
+    border-color: rgba(255,255,255,0.7);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 16px;
+    border-radius: 0 0 10px 10px;
+    white-space: nowrap;
+  }
+
+  :global(.dark) .featured-badge {
+    background: #fff;
+    color: #1a1a1a;
+  }
+
+  .pkg-name {
+    font-family: var(--font-serif, Georgia, serif);
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 0 0.2rem;
+  }
+
+  .pkg-tagline {
+    font-size: 12px;
+    color: var(--color-text-muted, #888);
+    margin: 0 0 1.25rem;
+    font-weight: 300;
+  }
+
+  .pkg-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 1.25rem;
+  }
+
+  .pkg-price .currency {
+    font-size: 13px;
+    color: var(--color-text-muted, #888);
+    font-weight: 300;
+  }
+
+  .pkg-price .amount {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .pkg-divider {
+    height: 1px;
+    background: rgba(0,0,0,0.08);
+    margin: 0 0 1.25rem;
+  }
+
+  :global(.dark) .pkg-divider {
+    background: rgba(255,255,255,0.08);
+  }
+
+  /* FEATURES */
+  .pkg-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .pkg-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12.5px;
+    color: var(--color-text-muted, #666);
+    line-height: 1.45;
+  }
+
+  /* inline SVG icons via pseudo-elements */
+  .icon-check::before {
+    content: '✓';
+    font-size: 12px;
+    color: #1a1a1a;
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-weight: 600;
+  }
+
+  :global(.dark) .icon-check::before {
+    color: #fff;
+  }
+
+  .icon-star::before {
+    content: '★';
+    font-size: 11px;
+    color: #B45309;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .icon-photo::before {
+    content: '↓';
+    font-size: 12px;
+    color: #aaa;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .pkg-features li.value-add span {
+    color: inherit;
+    font-weight: 500;
+  }
+
+  .pkg-features li.delivery {
+    border-top: 1px solid rgba(0,0,0,0.07);
+    padding-top: 8px;
+    margin-top: 2px;
+  }
+
+  :global(.dark) .pkg-features li.delivery {
+    border-top-color: rgba(255,255,255,0.07);
+  }
+
+  /* CTAs */
+  .pkg-cta {
+    display: block;
+    width: 100%;
+    padding: 11px 0;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: inherit;
+    margin-top: auto;
+  }
+
+  .pkg-cta.outline {
+    background: transparent;
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+  }
+
+  .pkg-cta.outline:hover {
+    background: rgba(0,0,0,0.05);
+  }
+
+  :global(.dark) .pkg-cta.outline {
+    color: #fff;
+    border-color: rgba(255,255,255,0.5);
+  }
+
+  :global(.dark) .pkg-cta.outline:hover {
+    background: rgba(255,255,255,0.07);
+  }
+
+  .pkg-cta.solid {
+    background: #1a1a1a;
+    color: #fff;
+    border: 1px solid #1a1a1a;
+  }
+
+  .pkg-cta.solid:hover {
+    opacity: 0.85;
+  }
+
+  :global(.dark) .pkg-cta.solid {
+    background: #fff;
+    color: #1a1a1a;
+    border-color: #fff;
+  }
+
+  .pkg-note {
+    font-size: 11px;
+    color: var(--color-text-muted, #aaa);
+    text-align: center;
+    margin-top: 7px;
+  }
+
+  /* FOOTER */
+  .footer-note {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 12px;
+    color: var(--color-text-muted, #aaa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+</style>
+
+<script is:inline>
+  function switchSession(id, btn) {
+    document.querySelectorAll('.session-content').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    document.querySelectorAll('.session-btn').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    document.getElementById('session-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>

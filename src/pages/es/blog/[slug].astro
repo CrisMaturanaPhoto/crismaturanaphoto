@@ -1,0 +1,144 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import { buildAlternates } from '../../../lib/utils';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts
+    .filter((post) => post.data.lang === 'es')
+    .map((post) => ({
+      params: { slug: post.slug },
+      props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+// Slug EN equivalente: quitar el sufijo -es
+const enSlug = post.slug.replace(/-es$/, '');
+const alternates = buildAlternates(`/blog/${enSlug}`, `/es/blog/${post.slug}`);
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat('es-ES', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  }).format(date);
+---
+
+<Layout
+  title={`${post.data.title} – Blog – Cristóbal Maturana`}
+  description={post.data.excerpt}
+  lang="es"
+  canonical={`https://crismaturana.com/es/blog/${post.slug}`}
+  alternates={alternates}
+>
+  <article class="post container">
+    <header class="post-header">
+      <a class="back-link" href="/es/blog">← Volver al Blog</a>
+      <p class="post-tag">{post.data.category}</p>
+      <h1>{post.data.title}</h1>
+      <p class="post-meta">
+        <span>{formatDate(post.data.publishDate)}</span>
+        <span>{post.data.readTime}</span>
+      </p>
+    </header>
+
+    <img class="cover-image" src={post.data.coverImage} alt={post.data.title} loading="eager" />
+
+    <div class="post-body">
+      <Content />
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .post {
+    max-width: 860px;
+    margin-top: calc(var(--nav-height) + 2.5rem);
+    margin-bottom: 3.5rem;
+  }
+  .post-header { margin-bottom: 2rem; }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    transition: color 0.2s;
+    font-weight: 700;
+  }
+  .back-link:hover { color: var(--color-accent); }
+  .post-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .post-header h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .post-meta {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.08em;
+  }
+  .post-meta span { margin-right: 1rem; }
+  .cover-image {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    object-fit: cover;
+    margin-bottom: 3rem;
+  }
+  .post-body {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--color-text-muted);
+  }
+  .post-body h2 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--color-heading);
+    margin: 2.5rem 0 1rem;
+  }
+  .post-body h3 {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--color-heading);
+    margin: 2rem 0 0.75rem;
+  }
+  .post-body p { margin-bottom: 1.25rem; }
+  .post-body img {
+    width: 100%;
+    height: auto;
+    margin: 2rem 0;
+    border-radius: 4px;
+  }
+  .post-body a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; }
+  .post-body strong { color: var(--color-heading); font-weight: 600; }
+  .post-body hr { border: none; border-top: 1px solid var(--color-border); margin: 2.5rem 0; }
+  .post-body ul, .post-body ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
+  .post-body li { margin-bottom: 0.4rem; }
+  .post-body blockquote {
+    border-left: 3px solid var(--color-accent);
+    padding: 0.75rem 1.5rem;
+    margin: 2rem 0;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--color-heading);
+  }
+</style>
