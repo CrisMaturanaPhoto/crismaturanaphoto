@@ -24,7 +24,7 @@ const translations = {
 
     // INDEX ABOUT
     "about.label": "About the photographer",
-    "about.text": "Hi, I'm Cristóbal, photographer and visual storyteller. I capture authentic, meaningful moments with intention and depth.",
+    "about.text": "Hi, I'm Cristóbal, a photographer and visual storyteller.",
     "about.link": "More about me",
 
     // INDEX PROCESS
@@ -63,7 +63,7 @@ const translations = {
     "testi.5.name": "Monika",
     "testi.5.role": "Product Photography · Canada",
 
-    "about.subtext": "Each frame is shaped by light, emotion, and the subtle details that often go unnoticed. My experience living abroad expanded my perspective, allowing me to see beauty in contrasts, cultures, and quiet in-between moments. I approach every project with sensitivity and purpose, creating images that feel honest, timeless, and deeply personal.",
+    "about.subtext": "I document real moments with honesty and intention. What inspires me most is creating photographs that become part of someone's legacy—images that will be remembered, shared, and valued for years to come. Living abroad has taught me to appreciate different cultures, human connections, and the beauty found in everyday life.",
 
     // INDEX INSTAGRAM
     "ig.heading": "Let's connect on Instagram",
@@ -172,7 +172,7 @@ const translations = {
 
     // ABOUT
     "about.label": "About the photographer",
-    "about.text": "Hi, I'm Cristóbal, photographer and visual storyteller. I capture authentic, meaningful moments with intention and depth.",
+    "about.text": "Hi, I'm Cristóbal, a photographer and visual storyteller.",
     "about.link": "More about me",
     "about.title": "Light, depth,\nand the moments\nin between.",
 
@@ -206,7 +206,7 @@ const translations = {
 
     // INDEX ABOUT
     "about.label": "Sobre el fotógrafo",
-    "about.text": "Hola, soy Cristóbal, fotógrafo y narrador visual. Capturo momentos auténticos y significativos con intención y profundidad.",
+    "about.text": "Hola, soy Cristóbal, fotógrafo y narrador visual.",
     "about.link": "Más sobre mí",
 
     // INDEX PROCESS
@@ -245,7 +245,7 @@ const translations = {
     "testi.5.name": "Monika",
     "testi.5.role": "Fotografía de Producto · Canadá",
 
-    "about.subtext": "Cada imagen está moldeada por la luz, la emoción y los detalles sutiles que suelen pasar desapercibidos. Mi experiencia viviendo en el extranjero amplió mi perspectiva, permitiéndome ver belleza en los contrastes, las culturas y los momentos silenciosos. Abordo cada proyecto con sensibilidad y propósito, creando imágenes que se sienten honestas, atemporales y profundamente personales.",
+    "about.subtext": "Documento momentos reales con honestidad e intención. Lo que más me inspira es crear fotografías que formen parte del legado de alguien—imágenes que serán recordadas, compartidas y valoradas por años. Vivir en el extranjero me ha enseñado a apreciar diferentes culturas, conexiones humanas y la belleza que se encuentra en la vida cotidiana.",
 
     // INDEX INSTAGRAM
     "ig.heading": "Conectemos en Instagram",
@@ -355,7 +355,7 @@ const translations = {
 
     // ABOUT
     "about.label": "Sobre el fotógrafo",
-    "about.text": "Hola, soy Cristóbal, fotógrafo y narrador visual. Capturo momentos auténticos y significativos con intención y profundidad.",
+    "about.text": "Hola, soy Cristóbal, fotógrafo y narrador visual.",
     "about.link": "Más sobre mí",
     "about.title": "Luz, profundidad,\ny los momentos\nen medio de todo.",
 

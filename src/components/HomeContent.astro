@@ -151,10 +151,10 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
         <div class="about-content">
           <p class="section-label" data-i18n="about.label" data-i18n="about.label">About the photographer</p>
           <h2 class="section-title">
-            <span data-i18n="about.text">Hi, I'm Cristóbal, photographer and visual storyteller. I capture authentic, meaningful moments with intention and depth.</span>
+            <span data-i18n="about.text">Hi, I'm Cristóbal, a photographer and visual storyteller.</span>
           </h2>
           <p class="about-text" data-i18n="about.subtext">
-            Each frame is shaped by light, emotion, and the subtle details that often go unnoticed. My experience living abroad expanded my perspective, allowing me to see beauty in contrasts, cultures, and quiet in-between moments. I approach every project with sensitivity and purpose, creating images that feel honest, timeless, and deeply personal.
+            I document real moments with honesty and intention. What inspires me most is creating photographs that become part of someone's legacy—images that will be remembered, shared, and valued for years to come. Living abroad has taught me to appreciate different cultures, human connections, and the beauty found in everyday life.
           </p>
           <div class="about-img-wrap-mobile">
             <img
@@ -625,24 +625,23 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
   .about-section { background: var(--color-surface); }
 
   .about-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    display: flex;
     align-items: center;
+    gap: 2.5rem;
   }
 
   .about-img-wrap-mobile { display: none; }
 
   .about-img-wrap {
-    position: relative;
+    flex-shrink: 0;
   }
 
   .about-img-wrap img {
-    width: 100%;
-    height: 100%;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     object-position: top;
-    border-radius: 12px;
+    border-radius: 50%;
   }
 
   .about-text {
@@ -654,12 +653,11 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
 
   .about-signature {
     mix-blend-mode: multiply;
-    height: 80px;
+    height: 110px;
     width: auto;
     margin-bottom: 1.5rem;
     filter: none;
     opacity: 1;
-    
   }
 
   .about-social {
@@ -1069,13 +1067,10 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
   /* Responsive */
   @media (max-width: 900px) {
     .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
-    .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .about-inner { flex-direction: row; gap: 1.5rem; align-items: center; }
     .about-img-wrap-mobile { display: none; }
-
-  .about-img-wrap { display: none; }
-    .about-img-wrap-mobile { display: block; width: 50%; margin: 0 auto; }
-    .about-img-wrap-mobile img { border-radius: 12px; height: 300px; object-fit: cover; }
-    .about-img-wrap img { height: 300px; }
+    .about-img-wrap { display: block; }
+    .about-img-wrap img { width: 100px; height: 100px; border-radius: 50%; }
     .about-content { order: 2; }
     .awards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .blog-preview-grid { grid-template-columns: 1fr; }
