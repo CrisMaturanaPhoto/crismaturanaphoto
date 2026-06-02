@@ -248,7 +248,7 @@ const translations = {
     "about.subtext": "Cada imagen está moldeada por la luz, la emoción y los detalles sutiles que suelen pasar desapercibidos. Mi experiencia viviendo en el extranjero amplió mi perspectiva, permitiéndome ver belleza en los contrastes, las culturas y los momentos silenciosos. Abordo cada proyecto con sensibilidad y propósito, creando imágenes que se sienten honestas, atemporales y profundamente personales.",
 
     // INDEX INSTAGRAM
-    "ig.heading": "Conéctate en Instagram",
+    "ig.heading": "Conectemos en Instagram",
 
     // INDEX CTA
     "cta.badge": "Reservas abiertas · Temporada de Matrimonios Chile 2026",

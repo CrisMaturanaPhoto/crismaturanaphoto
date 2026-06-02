@@ -21,18 +21,11 @@ export interface PortfolioCategory {
 
 export const heroSlides: HeroSlide[] = [
   {
-    title: 'Documentary Weddings',
-    subtitle: 'DESTINATION DOCUMENTARY PHOTOGRAPHER',
-    cta: 'Find More',
-    href: '/portfolio/weddings',
-    bg: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/abrazo-001.JPG',
-  },
-  {
     title: 'Photo Tours Vietnam',
     subtitle: 'DESTINATION DOCUMENTARY PHOTOGRAPHER',
     cta: 'Find More',
     href: '/portfolio/photo-tours-vietnam-2026',
-    bg: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-10.JPG',
+    bg: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/DuyHaiSeleccion%40-10.JPG',
   },
   {
     title: 'Documentary Weddings',
@@ -46,8 +39,14 @@ export const heroSlides: HeroSlide[] = [
     subtitle: 'REAL MOMENTS. HONEST CONNECTION.',
     cta: 'Find More',
     href: '/portfolio/couples-families',
-    bg: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-10.jpg',
-    focus: 'center 22%',
+    bg: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-113.JPG',
+  },
+  {
+    title: 'Documentary Weddings',
+    subtitle: 'DESTINATION DOCUMENTARY PHOTOGRAPHER',
+    cta: 'Find More',
+    href: '/portfolio/weddings',
+    bg: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/poppin-chris-005.JPG',
   },
 ];
 
