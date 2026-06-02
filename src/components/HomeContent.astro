@@ -149,13 +149,9 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
           />
         </div>
         <div class="about-content">
-          <p class="section-label" data-i18n="about.label" data-i18n="about.label">About the photographer</p>
-          <h2 class="section-title">
-            <span data-i18n="about.text">Hi, I'm Cristóbal, a photographer and visual storyteller.</span>
-          </h2>
-          <p class="about-text" data-i18n="about.subtext">
-            I document real moments with honesty and intention. What inspires me most is creating photographs that become part of someone's legacy—images that will be remembered, shared, and valued for years to come. Living abroad has taught me to appreciate different cultures, human connections, and the beauty found in everyday life.
-          </p>
+          <p class="section-label" data-i18n="about.label">About the photographer</p>
+          <p class="about-text" data-i18n="about.subtext">I document real moments with honesty and intention. What inspires me most is creating photographs that become part of someone's legacy—images that will be remembered, shared, and valued for years to come.</p>
+          <p class="about-text" data-i18n="about.subtext2">Living abroad has taught me to appreciate different cultures, human connections, and the beauty found in everyday life.</p>
           <div class="about-img-wrap-mobile">
             <img
               src="https://CrisMaturana.b-cdn.net/AUTORETRATO/DSC_1505-2%203.JPG"
@@ -637,8 +633,8 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
   }
 
   .about-img-wrap img {
-    width: 140px;
-    height: 140px;
+    width: 210px;
+    height: 210px;
     object-fit: cover;
     object-position: top;
     border-radius: 50%;
@@ -1070,7 +1066,7 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
     .about-inner { flex-direction: row; gap: 1.5rem; align-items: center; }
     .about-img-wrap-mobile { display: none; }
     .about-img-wrap { display: block; }
-    .about-img-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+    .about-img-wrap img { width: 150px; height: 150px; border-radius: 50%; }
     .about-content { order: 2; }
     .awards-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .blog-preview-grid { grid-template-columns: 1fr; }

@@ -63,7 +63,8 @@ const translations = {
     "testi.5.name": "Monika",
     "testi.5.role": "Product Photography · Canada",
 
-    "about.subtext": "I document real moments with honesty and intention. What inspires me most is creating photographs that become part of someone's legacy—images that will be remembered, shared, and valued for years to come. Living abroad has taught me to appreciate different cultures, human connections, and the beauty found in everyday life.",
+    "about.subtext": "I document real moments with honesty and intention. What inspires me most is creating photographs that become part of someone's legacy—images that will be remembered, shared, and valued for years to come.",
+    "about.subtext2": "Living abroad has taught me to appreciate different cultures, human connections, and the beauty found in everyday life.",
 
     // INDEX INSTAGRAM
     "ig.heading": "Let's connect on Instagram",
@@ -245,7 +246,8 @@ const translations = {
     "testi.5.name": "Monika",
     "testi.5.role": "Fotografía de Producto · Canadá",
 
-    "about.subtext": "Documento momentos reales con honestidad e intención. Lo que más me inspira es crear fotografías que formen parte del legado de alguien—imágenes que serán recordadas, compartidas y valoradas por años. Vivir en el extranjero me ha enseñado a apreciar diferentes culturas, conexiones humanas y la belleza que se encuentra en la vida cotidiana.",
+    "about.subtext": "Documento momentos reales con honestidad e intención. Lo que más me inspira es crear fotografías que formen parte del legado de alguien—imágenes que serán recordadas, compartidas y valoradas por años.",
+    "about.subtext2": "Vivir en el extranjero me ha enseñado a apreciar diferentes culturas, conexiones humanas y la belleza que se encuentra en la vida cotidiana.",
 
     // INDEX INSTAGRAM
     "ig.heading": "Conectemos en Instagram",
