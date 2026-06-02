@@ -2,181 +2,613 @@
 import Layout from '../../layouts/Layout.astro';
 import { buildAlternates } from '../../lib/utils';
 
-const alternates = buildAlternates('/portfolio/photo-tours-vietnam-2026', '/es/portfolio/photo-tours-vietnam-2026');
+const alternates = buildAlternates('/photo-tours-vietnam-2026', '/es/photo-tours-vietnam-2026');
+
+const tours = [
+  {
+    id: 'duy-hai',
+    num: '01',
+    badge: 'COSTA · DOCUMENTAL',
+    name: 'Amanecer en el Pueblo Pesquero',
+    location: 'Duy Hai · 40 min de Hội An',
+    tagline: 'Botes de bambú, aire salado y pescadores clasificando la captura al borde de la primera luz.',
+    time: '4:30 – 8:30 AM',
+    duration: '3,5 horas',
+    groupSize: 'Máx. 4 personas',
+    level: 'Todos los niveles',
+    price: '$95',
+    priceNote: 'por persona',
+    heroImg: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-1.JPG',
+    heroAlt: 'Pescadores vietnamitas con botes de bambú al amanecer dorado en Duy Hai',
+    gallery: [
+      { src: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHay2HoiAn%40-0001.JPG', alt: 'Pueblo pesquero de Duy Hai con luz matinal' },
+      { src: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-10.JPG', alt: 'Botes de bambú saliendo antes del amanecer' },
+      { src: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-15.JPG', alt: 'Mercado de pescado fresco en Duy Hai' },
+      { src: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHay2HoiAn%40-21.JPG', alt: 'Siluetas de barcos tradicionales en hora dorada' },
+      { src: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-1.JPG', alt: 'Pescadores en Duy Hai al amanecer' },
+    ],
+    shots: [
+      'Botes de bambú redondos (thuyền thúng) saliendo antes del amanecer',
+      'Pescadores clasificando la captura nocturna sobre la arena mojada',
+      'El mercado espontáneo de pescado — caras, color, movimiento',
+      'Barcos tradicionales en silueta contra un horizonte dorado',
+      'Olas en larga exposición y reflejos de embarcaciones en la orilla',
+    ],
+    includes: ['Transporte privado de ida y vuelta desde Hội An', 'Café y bánh mì', 'Coaching fotográfico en tiempo real', 'Lista de encuadres y guía de composición'],
+    description: 'La mayoría de los visitantes nunca llegan a Duy Hai. El pueblo despierta antes de las 4 AM — pescadores que regresan, redes que se reparan, el mercado espontáneo que aparece sobre la arena. Estarás ahí con un fotógrafo que conoce a estos hombres por su nombre, en el preciso instante en que la luz se vuelve dorada y el caos se vuelve hermoso.',
+  },
+  {
+    id: 'old-town',
+    num: '02',
+    badge: 'MÁS SOLICITADO · CALLE · ARQUITECTURA',
+    name: 'El Pueblo Antiguo Antes de los Turistas',
+    location: 'Casco Antiguo de Hội An · Patrimonio UNESCO',
+    tagline: 'Las paredes amarillas, el mercado matutino, el Hội An real — fotografiado antes de que lleguen los turistas.',
+    time: '6:00 – 9:00 AM',
+    duration: '3 horas',
+    groupSize: 'Máx. 4 personas',
+    level: 'Todos los niveles',
+    price: '$110',
+    priceNote: 'por persona',
+    heroImg: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-32.jpg',
+    heroAlt: 'Calles vacías del Casco Antiguo de Hội An con luz dorada de la mañana',
+    gallery: [
+      { src: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/market-001.JPG', alt: 'Vendedora en el mercado con productos coloridos' },
+      { src: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-37.jpg', alt: 'Vendedores en el mercado matutino de Hội An' },
+      { src: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-39.JPG', alt: 'Esquina con pared amarilla al amanecer' },
+      { src: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-43.jpg', alt: 'Vida en las calles del Pueblo Antiguo de Hội An' },
+      { src: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-32.jpg', alt: 'Tejados de Hội An con luz matinal' },
+    ],
+    shots: [
+      'Paredes amarillas UNESCO con luz rasante matinal — textura, sombra, profundidad',
+      'Callejones vacíos y fachadas icónicas antes de que empiece el día',
+      'El mercado matutino: fruta tropical, mariscos frescos, vendedoras con sombreros cónicos',
+      'Color y vida callejera auténtica — el Hội An real, no la versión de postal',
+      'El Puente Japonés Cubierto — arquitectura, simetría, quietud',
+    ],
+    includes: ['Tour a pie (sin transporte)', 'Desayuno juntos en el mercado', 'Revisión completa de imágenes en tiempo real'],
+    description: 'A las 7 AM el Pueblo Antiguo pertenece a los turistas. A las 6 AM todavía pertenece a los locales — los vendedores acomodando sus puestos, las motos cruzando callejones estrechos, la luz deslizándose en ángulo bajo sobre esas famosas paredes amarillas. Este es el tour del que la gente vuelve diciendo "finalmente conseguí la foto por la que vine a Vietnam".',
+  },
+  {
+    id: 'thu-bon',
+    num: '03',
+    badge: 'DOCUMENTAL · PAISAJE · BOTE',
+    name: 'Vida en el Río a la Hora Dorada',
+    location: 'Río Thu Bon · Campos de Hội An',
+    tagline: 'Luz cálida de tarde, un bote de madera y pescadores lanzando redes mientras el río se vuelve dorado.',
+    time: '3:30 – 6:30 PM',
+    duration: '3 horas',
+    groupSize: 'Máx. 4 personas',
+    level: 'Todos los niveles',
+    price: '$105',
+    priceNote: 'por persona',
+    heroImg: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/ThuBhonRiver-SELECTION/man-fishing-net-004.JPEG',
+    heroAlt: 'Pescador lanzando red en el Río Thu Bon a la hora dorada en Hội An',
+    gallery: [
+      { src: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/ThuBhonRiver-SELECTION/ThuBhonRiver-004.JPG', alt: 'Vida en el río Thu Bon a la hora dorada' },
+      { src: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/ThuBhonRiver-SELECTION/man-fishing-net-001.JPEG', alt: 'Pescador tradicional en el Río Thu Bon' },
+      { src: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/ThuBhonRiver-SELECTION/ThuBhonRiver-008.jpg', alt: 'Paisaje con luz de tarde en el Thu Bon' },
+      { src: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/ThuBhonRiver-SELECTION/ThuBhonRiver-009.jpg', alt: 'Reflejos de palmeras en el río Thu Bon' },
+      { src: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/ThuBhonRiver-SELECTION/man-fishing-net-004.JPEG', alt: 'Pescador lanzando red en el Río Thu Bon' },
+    ],
+    shots: [
+      'Pescadores lanzando redes desde un bote de madera tradicional',
+      'Luz dorada cálida reflejándose en el agua quieta como espejo',
+      'Reflejos de palmeras y arrozales inundados',
+      'Botes de bambú navegando canales estrechos del río',
+      'Vida ribereña rural — agricultores, niños, ritmo cotidiano',
+    ],
+    includes: ['Bote de madera privado con guía fluvial local', 'Coaching fotográfico a bordo en tiempo real', 'Lista de encuadres e instrucciones de timing'],
+    description: 'El Thu Bon a última hora de la tarde es algo que no puedes fotografiar desde la orilla. A medida que el sol baja, la luz convierte el agua en oro líquido y cada red lanzada se convierte en un encuadre perfecto. Necesitas un bote, el guía correcto y paciencia — este tour te da las tres cosas. La experiencia más meditativa de las tres, lenta y llena de encuadres que no encontrarás en ningún otro lugar.',
+  },
+];
 ---
+
 <Layout
-  title="Photo Tours Vietnam 2026 – Cristóbal Maturana"
-  description="Dos tours fotográficos en Hội An, Vietnam 2026."
+  title="Photo Tours Hội An, Vietnam 2026 — Tours Fotográficos Privados con Guía Local"
+  description="Tres tours fotográficos privados en Hội An, Vietnam. Pueblos de pescadores, calles antiguas y vida fluvial al amanecer. Máx. 4 personas. Guiados por Cristóbal Maturana."
   lang="es"
-  canonical="https://crismaturana.com/es/portfolio/photo-tours-vietnam-2026"
+  canonical="https://crismaturana.com/es/photo-tours-vietnam-2026"
   alternates={alternates}
-><!-- PHOTO TOURS VIETNAM 2026 ES — crismaturana.com -->
+>
+
+<!-- ═══ SCHEMA.ORG ═══ -->
+<script type="application/ld+json" is:inline>{JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://crismaturana.com/es" },
+        { "@type": "ListItem", "position": 2, "name": "Photo Tours Vietnam 2026", "item": "https://crismaturana.com/es/photo-tours-vietnam-2026" }
+      ]
+    },
+    {
+      "@type": "TouristTrip",
+      "name": "Amanecer en el Pueblo Pesquero — Tour Fotográfico Duy Hai",
+      "description": "Tour fotográfico privado al amanecer en el pueblo pesquero de Duy Hai, cerca de Hội An, Vietnam.",
+      "touristType": "Fotógrafo",
+      "offers": { "@type": "Offer", "price": "95", "priceCurrency": "USD" },
+      "provider": { "@type": "Person", "name": "Cristóbal Maturana" },
+      "location": { "@type": "Place", "name": "Duy Hai, Quảng Nam, Vietnam" }
+    },
+    {
+      "@type": "TouristTrip",
+      "name": "El Pueblo Antiguo Antes de los Turistas — Tour Fotográfico Hội An",
+      "description": "Tour fotográfico privado matutino por el Casco Antiguo de Hội An Patrimonio UNESCO.",
+      "touristType": "Fotógrafo",
+      "offers": { "@type": "Offer", "price": "110", "priceCurrency": "USD" },
+      "provider": { "@type": "Person", "name": "Cristóbal Maturana" },
+      "location": { "@type": "Place", "name": "Casco Antiguo de Hội An, Vietnam" }
+    },
+    {
+      "@type": "TouristTrip",
+      "name": "Vida en el Río a la Hora Dorada — Tour Fotográfico Río Thu Bon",
+      "description": "Tour fotográfico privado en bote por el Río Thu Bon, Hội An. Pescadores lanzando redes, luz dorada de tarde y vida rural al atardecer.",
+      "touristType": "Fotógrafo",
+      "offers": { "@type": "Offer", "price": "105", "priceCurrency": "USD" },
+      "provider": { "@type": "Person", "name": "Cristóbal Maturana" },
+      "location": { "@type": "Place", "name": "Río Thu Bon, Hội An, Vietnam" }
+    }
+  ]
+})}</script>
 
 <style>
-  .cm-tours-wrap { font-family: inherit; max-width: 1080px; margin: 0 auto; padding: 2rem 1.5rem; color: inherit; }
-  .cm-tours-intro { text-align: center; margin-bottom: 3rem; }
-  .cm-tours-intro .eyebrow { font-size: 16px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; opacity: 0.85; margin-bottom: 0.75rem; }
-  .cm-tours-intro p { font-size: 1rem; opacity: 0.6; max-width: 560px; margin: 0 auto; line-height: 1.7; }
-  .cm-local-note { font-style: italic; opacity: 0.45; margin-top: 1rem !important; }
-  .cm-tours-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-  .cm-tour-card { display: flex; flex-direction: column; }
-  .cm-slider { position: relative; width: 100%; overflow: hidden; border-radius: 4px; background: transparent; }
-  .cm-slider-track { display: flex; transition: transform 0.4s ease; will-change: transform; }
-  .cm-slider-track img { width: 100%; flex-shrink: 0; height: 240px; object-fit: cover; object-position: center; display: block; }
-  .cm-slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: #fff; border: none; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; font-size: 16px; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.2s; }
-  .cm-slider-btn:hover { background: rgba(0,0,0,0.8); }
-  .cm-slider-btn.prev { left: 10px; }
-  .cm-slider-btn.next { right: 10px; }
-  .cm-slider-dots { display: flex; justify-content: center; gap: 6px; padding: 8px 0 4px; }
-  .cm-slider-dots span { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: 0.2; cursor: pointer; transition: opacity 0.2s; }
-  .cm-slider-dots span.active { opacity: 0.7; }
-  .cm-tour-header { padding: 1.25rem 0 0.75rem; }
-  .cm-tour-num { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.35; display: block; margin-bottom: 0.4rem; }
-  .cm-tour-header h3 { font-size: 1.35rem; font-weight: 400; margin: 0 0 0.3rem; letter-spacing: -0.01em; }
-  .cm-tour-header .tagline { font-size: 0.85rem; opacity: 0.5; margin: 0; }
-  .cm-tour-badge { display: inline-block; margin-top: 0.6rem; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border: 1px solid currentColor; border-radius: 2px; opacity: 0.4; }
-  .cm-tour-meta { display: flex; gap: 1.25rem; flex-wrap: wrap; padding: 0.75rem 0; border-top: 1px solid rgba(128,128,128,0.15); border-bottom: 1px solid rgba(128,128,128,0.15); margin: 0.5rem 0; }
-  .cm-tour-meta-item { font-size: 0.78rem; opacity: 0.5; }
-  .cm-tour-meta-item strong { display: block; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; font-weight: 400; margin-bottom: 2px; }
-  .cm-tour-body { display: flex; flex-direction: column; gap: 0.75rem; padding: 0.5rem 0; flex: 1; }
-  .cm-tour-section-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.3; margin-bottom: 0.4rem; }
-  .cm-tour-shots { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.35rem; }
-  .cm-tour-shots li { font-size: 0.83rem; opacity: 0.6; padding-left: 1rem; position: relative; line-height: 1.45; }
-  .cm-tour-shots li::before { content: "—"; position: absolute; left: 0; opacity: 0.3; }
-  .cm-tour-includes { font-size: 0.78rem; opacity: 0.4; line-height: 1.6; }
-  .cm-tour-footer { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0 0; border-top: 1px solid rgba(128,128,128,0.15); margin-top: auto; }
-  .cm-tour-price { font-size: 1.5rem; font-weight: 300; letter-spacing: -0.02em; }
-  .cm-tour-price span { font-size: 0.72rem; opacity: 0.4; margin-left: 3px; font-weight: 400; }
-  .cm-tour-cta a { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 18px; border: 1px solid currentColor; border-radius: 2px; text-decoration: none; color: inherit; opacity: 0.6; transition: opacity 0.2s; }
-  .cm-tour-cta a:hover { opacity: 1; }
-  .cm-tours-footer { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(128,128,128,0.15); }
-  .cm-tours-footer p { font-size: 0.85rem; opacity: 0.4; margin: 0 0 1rem; }
-  .cm-tours-footer a { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: inherit; opacity: 0.5; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+  .pt-page { font-family: var(--font-sans); color: var(--color-text); }
+  .pt-hero { position: relative; height: 100svh; min-height: 600px; max-height: 900px; overflow: hidden; display: flex; align-items: flex-end; }
+  .pt-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+  .pt-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,8,5,0.85) 0%, rgba(10,8,5,0.35) 50%, rgba(10,8,5,0.08) 100%); }
+  .pt-hero-content { position: relative; z-index: 2; padding: 0 2rem 4rem; max-width: 860px; margin: 0 auto; width: 100%; }
+  .pt-hero-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 1rem; display: block; }
+  .pt-hero h1 { font-family: var(--font-serif); font-size: clamp(2.4rem, 5.5vw, 4.2rem); font-weight: 400; color: #fff; line-height: 1.1; margin-bottom: 1.25rem; letter-spacing: -0.01em; }
+  .pt-hero h1 em { font-style: italic; }
+  .pt-hero-sub { font-size: clamp(0.95rem, 1.6vw, 1.1rem); color: rgba(255,255,255,0.72); max-width: 520px; line-height: 1.7; margin-bottom: 2rem; font-weight: 300; }
+  .pt-hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+  .pt-btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; background: var(--color-accent); color: #fff; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: background 0.25s, transform 0.15s; border: none; cursor: pointer; }
+  .pt-btn-primary:hover { background: #b8934a; transform: translateY(-1px); }
+  .pt-btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; border: 1px solid rgba(255,255,255,0.45); color: rgba(255,255,255,0.85); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: border-color 0.25s, color 0.25s; cursor: pointer; background: transparent; }
+  .pt-btn-ghost:hover { border-color: #fff; color: #fff; }
+  .pt-scroll-arrow { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 2; color: rgba(255,255,255,0.4); font-size: 1.4rem; animation: bounce 2s infinite; text-decoration: none; }
+  @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
+  .pt-trust { background: var(--color-heading); padding: 1.1rem 2rem; }
+  .pt-trust-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+  .pt-trust-item { display: flex; align-items: center; gap: 0.6rem; color: rgba(255,255,255,0.65); font-size: 0.76rem; font-weight: 400; letter-spacing: 0.05em; white-space: nowrap; }
+  .pt-trust-item strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+  .pt-trust-dot { color: var(--color-accent); font-size: 0.9rem; line-height: 1; }
+  .pt-section { padding: 5rem 2rem; }
+  .pt-section-inner { max-width: 1160px; margin: 0 auto; }
+  .pt-section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.75rem; display: block; }
+  .pt-section-title { font-family: var(--font-serif); font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 400; color: var(--color-heading); line-height: 1.2; margin-bottom: 1rem; }
+  .pt-section-intro { font-size: 1.05rem; color: var(--color-text-muted); max-width: 600px; line-height: 1.75; margin-bottom: 3.5rem; }
+  .pt-tours-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid var(--color-border); }
+  .pt-tour-card { border-bottom: 1px solid var(--color-border); overflow: hidden; }
+  .pt-tour-card:last-child { border-bottom: none; }
+  .pt-tour-summary { display: grid; grid-template-columns: 1fr 1fr; cursor: pointer; transition: background 0.2s; position: relative; }
+  .pt-tour-summary:hover .pt-tour-img { transform: scale(1.03); }
+  .pt-tour-img-wrap { overflow: hidden; aspect-ratio: 4/3; position: relative; }
+  .pt-tour-img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.5s ease; display: block; }
+  .pt-tour-img-wrap::after { content: ''; position: absolute; inset: 0; background: rgba(10,8,5,0); transition: background 0.3s; }
+  .pt-tour-summary:hover .pt-tour-img-wrap::after { background: rgba(10,8,5,0.18); }
+  .pt-tour-expand-hint { position: absolute; bottom: 1.25rem; right: 1.25rem; z-index: 3; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.55); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; font-weight: 300; line-height: 1; transition: background 0.25s, transform 0.25s; pointer-events: none; }
+  .pt-tour-summary:hover .pt-tour-expand-hint { background: rgba(201,169,110,0.85); border-color: transparent; transform: scale(1.08); }
+  .pt-tour-expand-hint.open { background: rgba(201,169,110,0.9); border-color: transparent; }
+  .pt-tour-expand-hint.open span { transform: rotate(45deg); display: inline-block; }
+  .pt-tour-info { padding: 2.5rem 2.5rem 2rem; display: flex; flex-direction: column; justify-content: space-between; background: var(--color-bg); }
+  .pt-tour-badge-wrap { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+  .pt-tour-num-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent); }
+  .pt-tour-badge-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-muted); padding: 2px 8px; border: 1px solid var(--color-border); border-radius: 2px; }
+  .pt-tour-info h2 { font-family: var(--font-serif); font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 400; color: var(--color-heading); line-height: 1.2; margin-bottom: 0.5rem; }
+  .pt-tour-location { font-size: 0.75rem; color: var(--color-accent); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.75rem; }
+  .pt-tour-tagline { font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.65; margin-bottom: 1.75rem; font-style: italic; }
+  .pt-tour-quickmeta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; padding-bottom: 1.75rem; border-bottom: 1px solid var(--color-border); }
+  .pt-qm-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-muted); display: block; margin-bottom: 2px; }
+  .pt-qm-val { font-size: 0.85rem; font-weight: 400; color: var(--color-heading); }
+  .pt-tour-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .pt-price-from { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-muted); display: block; margin-bottom: 2px; }
+  .pt-price-amount { font-family: var(--font-serif); font-size: 2rem; font-weight: 400; color: var(--color-heading); letter-spacing: -0.02em; line-height: 1; }
+  .pt-price-per { font-size: 0.75rem; color: var(--color-text-muted); margin-left: 4px; }
+  .pt-tour-actions { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+  .pt-btn-book { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.75rem 1.5rem; background: var(--color-heading); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
+  .pt-btn-book:hover { background: var(--color-accent); transform: translateY(-1px); }
+  .pt-btn-details { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.75rem 1.5rem; border: 1px solid var(--color-border); color: var(--color-text); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; cursor: pointer; transition: border-color 0.2s, color 0.2s; font-family: inherit; white-space: nowrap; }
+  .pt-btn-details:hover { border-color: var(--color-heading); color: var(--color-heading); }
+  .pt-btn-details .arrow { display: inline-block; transition: transform 0.3s; }
+  .pt-btn-details.open .arrow { transform: rotate(180deg); }
+  .pt-tour-detail { max-height: 0; overflow: hidden; transition: max-height 0.55s cubic-bezier(0.4, 0, 0.2, 1); background: var(--color-surface); border-top: 1px solid transparent; }
+  .pt-tour-detail.open { max-height: 1200px; border-top-color: var(--color-border); }
+  .pt-tour-detail-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 3rem 0; }
+  .pt-detail-left { padding: 0 3rem 0 2.5rem; border-right: 1px solid var(--color-border); }
+  .pt-detail-right { padding: 0 2.5rem 0 3rem; }
+  .pt-detail-heading { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 1rem; display: block; }
+  .pt-detail-desc { font-size: 0.95rem; line-height: 1.8; color: var(--color-text); margin-bottom: 2rem; }
+  .pt-shots-list { list-style: none; padding: 0; margin: 0 0 2rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .pt-shots-list li { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--color-text); line-height: 1.5; }
+  .pt-shots-list li::before { content: ''; display: block; width: 20px; height: 1px; background: var(--color-accent); margin-top: 0.65em; flex-shrink: 0; }
+  .pt-includes-list { list-style: none; padding: 0; margin: 0 0 2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .pt-includes-list li { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--color-text); line-height: 1.5; }
+  .pt-includes-list li::before { content: '✓'; color: var(--color-accent); font-weight: 700; font-size: 0.8rem; flex-shrink: 0; margin-top: 0.05em; }
+  .pt-detail-slider { position: relative; width: 100%; overflow: hidden; border-radius: 2px; margin-bottom: 2rem; aspect-ratio: 16/9; }
+  .pt-detail-track { display: flex; height: 100%; transition: transform 0.4s ease; will-change: transform; }
+  .pt-detail-track img { width: 100%; height: 100%; flex-shrink: 0; object-fit: cover; display: block; }
+  .pt-detail-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(10,8,5,0.6); color: #fff; border: none; cursor: pointer; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; z-index: 5; transition: background 0.2s; }
+  .pt-detail-nav:hover { background: rgba(10,8,5,0.9); }
+  .pt-detail-prev { left: 10px; }
+  .pt-detail-next { right: 10px; }
+  .pt-detail-dots { display: flex; justify-content: center; gap: 5px; margin-bottom: 2rem; }
+  .pt-detail-dots button { width: 5px; height: 5px; border-radius: 50%; border: none; background: var(--color-border); cursor: pointer; padding: 0; transition: background 0.2s; }
+  .pt-detail-dots button.active { background: var(--color-accent); }
+  .pt-detail-cta { display: flex; flex-direction: column; gap: 0.75rem; }
+  .pt-detail-book { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; background: var(--color-heading); color: #fff; text-decoration: none; transition: background 0.2s; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .pt-detail-book:hover { background: var(--color-accent); }
+  .pt-detail-book-price { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400; letter-spacing: -0.01em; }
+  .pt-detail-note { font-size: 0.75rem; color: var(--color-text-muted); text-align: center; line-height: 1.5; }
+  .pt-why { background: var(--color-surface); }
+  .pt-why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .pt-why-img-wrap { position: sticky; top: 100px; }
+  .pt-why-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center center; display: block; }
+  .pt-why-features { display: flex; flex-direction: column; gap: 2rem; margin-top: 2.5rem; }
+  .pt-why-feature h3 { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 400; color: var(--color-heading); margin-bottom: 0.4rem; }
+  .pt-why-feature p { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.7; }
+  .pt-faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--color-border); border: 1px solid var(--color-border); }
+  .pt-faq-item { background: var(--color-bg); padding: 2rem; cursor: pointer; }
+  .pt-faq-item:hover { background: var(--color-surface); }
+  .pt-faq-q { font-family: var(--font-serif); font-size: 1rem; font-weight: 400; color: var(--color-heading); margin-bottom: 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+  .pt-faq-icon { font-size: 1.2rem; color: var(--color-accent); flex-shrink: 0; transition: transform 0.3s; margin-top: 0.05em; line-height: 1; }
+  .pt-faq-item.open .pt-faq-icon { transform: rotate(45deg); }
+  .pt-faq-a { font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.75; margin-top: 0; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, margin-top 0.3s; }
+  .pt-faq-item.open .pt-faq-a { max-height: 400px; margin-top: 1rem; }
+  .pt-final-cta { position: relative; overflow: hidden; }
+  .pt-final-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .pt-final-overlay { position: absolute; inset: 0; background: rgba(10,8,5,0.78); }
+  .pt-final-content { position: relative; z-index: 2; padding: 7rem 2rem; max-width: 700px; margin: 0 auto; text-align: center; }
+  .pt-final-content .pt-section-label { color: var(--color-accent); }
+  .pt-final-content h2 { font-family: var(--font-serif); font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 400; color: #fff; line-height: 1.2; margin-bottom: 1rem; }
+  .pt-final-content p { font-size: 1rem; color: rgba(255,255,255,0.68); line-height: 1.75; margin-bottom: 2.5rem; }
+  .pt-final-note { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-top: 1.25rem !important; margin-bottom: 0 !important; }
+  @media (max-width: 900px) {
+    .pt-tour-summary { grid-template-columns: 1fr; }
+    .pt-tour-img-wrap { aspect-ratio: 16/9; }
+    .pt-tour-info { padding: 1.75rem 1.5rem; }
+    .pt-tour-detail-inner { grid-template-columns: 1fr; }
+    .pt-detail-left { padding: 0 1.5rem; border-right: none; border-bottom: 1px solid var(--color-border); padding-bottom: 2rem; }
+    .pt-detail-right { padding: 2rem 1.5rem 0; }
+    .pt-why-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .pt-why-img-wrap { position: static; }
+    .pt-why-img { aspect-ratio: 16/9; }
+    .pt-faq-grid { grid-template-columns: 1fr; }
+    .pt-tour-detail.open { max-height: 2400px; }
+  }
+  @media (max-width: 640px) {
+    .pt-section { padding: 3rem 1.25rem; }
+    .pt-hero-content { padding: 0 1.25rem 3rem; }
+    .pt-trust-inner { gap: 1.25rem; }
+    .pt-tour-actions { flex-direction: column; align-items: stretch; }
+    .pt-tour-bottom { flex-direction: column; align-items: flex-start; }
+  }
 </style>
 
-<div class="cm-tours-wrap">
-  <div class="cm-tours-intro">
-    <p class="eyebrow">Photo Tours Vietnam 2026</p>
-    <p>Dos salidas fotográficas guiadas en Hội An. Lugares reales, luz real, sin poses. Máximo 4 participantes por tour.</p>
-    <p class="cm-local-note">Disponibles solo en Hội An · Guiados por Cristóbal Maturana</p>
-  </div>
+<div class="pt-page">
 
-  <div class="cm-tours-grid">
-
-    <!-- TOUR 1 -->
-    <div class="cm-tour-card">
-      <div class="cm-slider" data-slider>
-        <div class="cm-slider-track">
-          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-43.jpg" alt="Pueblo Antiguo de Hội An al amanecer" loading="lazy" />
-          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-26.JPG" alt="Calles del Pueblo Antiguo" loading="lazy" />
-          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-40.JPG" alt="Vida local en Hội An" loading="lazy" />
-          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-5.JPG" alt="Fotógrafo local Hội An" loading="lazy" />
-        </div>
-        <button class="cm-slider-btn prev" aria-label="Anterior">&#8249;</button>
-        <button class="cm-slider-btn next" aria-label="Siguiente">&#8250;</button>
-        <div class="cm-slider-dots">
-          <span class="active"></span><span></span><span></span><span></span>
-        </div>
-      </div>
-      <div class="cm-tour-header">
-        <span class="cm-tour-num">Tour 01</span>
-        <h3>Pueblo Antiguo al Amanecer</h3>
-        <p class="tagline">Antes de que lleguen los turistas.</p>
-        <span class="cm-tour-badge">Máx. 4 personas</span>
-      </div>
-      <div class="cm-tour-meta">
-        <div class="cm-tour-meta-item"><strong>Hora</strong>05:30 – 08:30</div>
-        <div class="cm-tour-meta-item"><strong>Duración</strong>3 horas</div>
-        <div class="cm-tour-meta-item"><strong>Nivel</strong>Todos</div>
-        <div class="cm-tour-meta-item"><strong>Idioma</strong>ES / EN</div>
-      </div>
-      <div class="cm-tour-body">
-        <div>
-          <p class="cm-tour-section-label">Qué fotografiarás</p>
-          <ul class="cm-tour-shots">
-            <li>Callejones y fachadas pintadas del Pueblo Antiguo</li>
-            <li>Mercado matutino y vendedores locales</li>
-            <li>Botes de bambú en el río Thu Bồn</li>
-            <li>Luz dorada sobre los tejados de tejas</li>
-            <li>Retratos de personas locales (con consentimiento)</li>
-          </ul>
-        </div>
-        <p class="cm-tour-includes">Incluye: guía fotográfico privado · feedback en tiempo real · sin transporte (nos movemos caminando)</p>
-      </div>
-      <div class="cm-tour-footer">
-        <div class="cm-tour-price">$85 <span>USD / persona</span></div>
-        <div class="cm-tour-cta"><a href="/es/contact">Reservar</a></div>
+  <!-- HERO -->
+  <section class="pt-hero">
+    <img
+      src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-1.JPG"
+      alt="Pescadores vietnamitas con botes de bambú al amanecer — photo tour Hội An"
+      class="pt-hero-img"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="pt-hero-overlay"></div>
+    <div class="pt-hero-content">
+      <span class="pt-hero-eyebrow">Hội An · Vietnam · 2026</span>
+      <h1>Fotografía Vietnam<br><em>como realmente es</em></h1>
+      <p class="pt-hero-sub">
+        Tres tours fotográficos privados guiados por un fotógrafo local. Pueblos de pescadores, calles antiguas, vida en el río al amanecer. Máximo 4 personas. Sin apuro. Sin masas.
+      </p>
+      <div class="pt-hero-ctas">
+        <a href="#tours" class="pt-btn-primary">Ver los Tours ↓</a>
+        <a href="/es/contact" class="pt-btn-ghost">Reservar Fecha</a>
       </div>
     </div>
+    <a href="#tours" class="pt-scroll-arrow" aria-label="Bajar a los tours">↓</a>
+  </section>
 
-    <!-- TOUR 2 -->
-    <div class="cm-tour-card">
-      <div class="cm-slider" data-slider>
-        <div class="cm-slider-track">
-          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-10.JPG" alt="Mercado de pescado Duy Hải" loading="lazy" />
-          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-1.JPG" alt="Pescadores al amanecer" loading="lazy" />
-          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-4.JPG" alt="Vida de pescadores" loading="lazy" />
-          <img src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/DuyHai-SELECTION/DuyHaiSeleccion%40-15.JPG" alt="Botes de bambú tradicionales" loading="lazy" />
-        </div>
-        <button class="cm-slider-btn prev" aria-label="Anterior">&#8249;</button>
-        <button class="cm-slider-btn next" aria-label="Siguiente">&#8250;</button>
-        <div class="cm-slider-dots">
-          <span class="active"></span><span></span><span></span><span></span>
-        </div>
-      </div>
-      <div class="cm-tour-header">
-        <span class="cm-tour-num">Tour 02</span>
-        <h3>Pescadores de Duy Hải</h3>
-        <p class="tagline">Una mañana de trabajo real en el mar.</p>
-        <span class="cm-tour-badge">Máx. 4 personas</span>
-      </div>
-      <div class="cm-tour-meta">
-        <div class="cm-tour-meta-item"><strong>Hora</strong>04:30 – 08:00</div>
-        <div class="cm-tour-meta-item"><strong>Duración</strong>3,5 horas</div>
-        <div class="cm-tour-meta-item"><strong>Nivel</strong>Todos</div>
-        <div class="cm-tour-meta-item"><strong>Idioma</strong>ES / EN</div>
-      </div>
-      <div class="cm-tour-body">
-        <div>
-          <p class="cm-tour-section-label">Qué fotografiarás</p>
-          <ul class="cm-tour-shots">
-            <li>Pescadores recogiendo redes al amanecer</li>
-            <li>Mercado de pescado fresco en la orilla</li>
-            <li>Botes de bambú tradicionales (thúng chài)</li>
-            <li>Retratos de trabajadores locales</li>
-            <li>Luz de madrugada sobre el océano</li>
-          </ul>
-        </div>
-        <p class="cm-tour-includes">Incluye: transporte ida y vuelta desde Hội An · guía fotográfico privado · feedback en tiempo real</p>
-      </div>
-      <div class="cm-tour-footer">
-        <div class="cm-tour-price">$110 <span>USD / persona</span></div>
-        <div class="cm-tour-cta"><a href="/es/contact">Reservar</a></div>
+  <!-- TRUST BAR -->
+  <div class="pt-trust" role="complementary">
+    <div class="pt-trust-inner">
+      <span class="pt-trust-item"><span class="pt-trust-dot">◆</span> <strong>Máx. 4 personas</strong> — siempre privado</span>
+      <span class="pt-trust-item"><span class="pt-trust-dot">◆</span> <strong>Todos los niveles</strong> bienvenidos</span>
+      <span class="pt-trust-item"><span class="pt-trust-dot">◆</span> <strong>Todo el año</strong> disponible</span>
+      <span class="pt-trust-item"><span class="pt-trust-dot">◆</span> <strong>Fotógrafo local</strong> — vive en Hội An</span>
+      <span class="pt-trust-item"><span class="pt-trust-dot">◆</span> <strong>Coaching en tiempo real</strong> incluido</span>
+    </div>
+  </div>
+
+  <!-- TOURS -->
+  <section class="pt-section" id="tours" aria-labelledby="tours-heading">
+    <div class="pt-section-inner">
+      <span class="pt-section-label">Tres Experiencias · Una Ubicación</span>
+      <h2 class="pt-section-title" id="tours-heading">Tours Fotográficos Privados<br>en Hội An</h2>
+      <p class="pt-section-intro">
+        Cada tour está construido alrededor de un tipo de luz específico, un mundo específico — y el momento exacto en que cobra vida. Haz clic en cualquier tour para ver los detalles completos, galería y qué incluye.
+      </p>
+
+      <div class="pt-tours-grid">
+        {tours.map((tour, idx) => (
+          <article class="pt-tour-card" id={`tour-${tour.id}`}>
+            <div
+              class="pt-tour-summary"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls={`detail-${tour.id}`}
+              data-tour={tour.id}
+            >
+              <div class="pt-tour-img-wrap">
+                <img
+                  src={tour.heroImg}
+                  alt={tour.heroAlt}
+                  class="pt-tour-img"
+                  loading={idx === 0 ? 'eager' : 'lazy'}
+                />
+                <div class="pt-tour-expand-hint" data-hint={tour.id} aria-hidden="true">
+                  <span>+</span>
+                </div>
+              </div>
+              <div class="pt-tour-info">
+                <div class="pt-tour-top">
+                  <div class="pt-tour-badge-wrap">
+                    <span class="pt-tour-num-tag">Tour {tour.num}</span>
+                    <span class="pt-tour-badge-tag">{tour.badge}</span>
+                  </div>
+                  <h2>{tour.name}</h2>
+                  <p class="pt-tour-location">{tour.location}</p>
+                  <p class="pt-tour-tagline">{tour.tagline}</p>
+                  <div class="pt-tour-quickmeta">
+                    <div class="pt-qm-item">
+                      <span class="pt-qm-label">Horario</span>
+                      <span class="pt-qm-val">{tour.time}</span>
+                    </div>
+                    <div class="pt-qm-item">
+                      <span class="pt-qm-label">Duración</span>
+                      <span class="pt-qm-val">{tour.duration}</span>
+                    </div>
+                    <div class="pt-qm-item">
+                      <span class="pt-qm-label">Grupo</span>
+                      <span class="pt-qm-val">{tour.groupSize}</span>
+                    </div>
+                    <div class="pt-qm-item">
+                      <span class="pt-qm-label">Nivel</span>
+                      <span class="pt-qm-val">{tour.level}</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="pt-tour-bottom">
+                  <div class="pt-tour-price-block">
+                    <span class="pt-price-from">Desde</span>
+                    <span class="pt-price-amount">{tour.price}<span class="pt-price-per"> / persona</span></span>
+                  </div>
+                  <div class="pt-tour-actions">
+                    <a href="/es/contact" class="pt-btn-book" onclick="event.stopPropagation()">Reservar este Tour →</a>
+                    <button class="pt-btn-details" data-details-btn={tour.id} aria-expanded="false" aria-controls={`detail-${tour.id}`}>
+                      Ver Detalles <span class="arrow">↓</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-tour-detail" id={`detail-${tour.id}`} role="region" aria-label={`Detalles completos: ${tour.name}`}>
+              <div class="pt-tour-detail-inner">
+                <div class="pt-detail-left">
+                  <div class="pt-detail-slider" id={`dslider-${tour.id}`}>
+                    <div class="pt-detail-track" data-track>
+                      {tour.gallery.map((img) => (
+                        <img src={img.src} alt={img.alt} loading="lazy" />
+                      ))}
+                    </div>
+                    <button class="pt-detail-nav pt-detail-prev" data-prev aria-label="Foto anterior">&#8249;</button>
+                    <button class="pt-detail-nav pt-detail-next" data-next aria-label="Foto siguiente">&#8250;</button>
+                  </div>
+                  <div class="pt-detail-dots" data-dots>
+                    {tour.gallery.map((_, i) => (
+                      <button class={i === 0 ? 'active' : ''} data-dot={i} aria-label={`Foto ${i + 1}`}></button>
+                    ))}
+                  </div>
+                  <div class="pt-detail-cta">
+                    <a href="/es/contact" class="pt-detail-book">
+                      <span>Reservar {tour.name}</span>
+                      <span class="pt-detail-book-price">{tour.price}</span>
+                    </a>
+                    <p class="pt-detail-note">Cancelación gratuita hasta 48h antes · Confirmación inmediata</p>
+                  </div>
+                </div>
+                <div class="pt-detail-right">
+                  <span class="pt-detail-heading">Sobre este tour</span>
+                  <p class="pt-detail-desc">{tour.description}</p>
+                  <span class="pt-detail-heading">Qué fotografiarás</span>
+                  <ul class="pt-shots-list">
+                    {tour.shots.map((shot) => (
+                      <li>{shot}</li>
+                    ))}
+                  </ul>
+                  <span class="pt-detail-heading">Qué incluye</span>
+                  <ul class="pt-includes-list">
+                    {tour.includes.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
+  </section>
 
-  </div>
+  <!-- WHY -->
+  <section class="pt-section pt-why" aria-labelledby="why-heading">
+    <div class="pt-section-inner">
+      <div class="pt-why-grid">
+        <div class="pt-why-content">
+          <span class="pt-section-label">Por qué estos tours son distintos</span>
+          <h2 class="pt-section-title" id="why-heading">No soy un guía turístico.<br>Soy un fotógrafo que vive aquí en Hội An.</h2>
+          <p style="font-size:1rem;color:var(--color-text-muted);line-height:1.8;margin-bottom:0.75rem">
+            Me mudé a Hội An hace dos años y, desde entonces, este lugar se convirtió en mi hogar. Con el tiempo he conocido a pescadores, vendedores de mercado y vecinos que forman parte de la vida cotidiana de la ciudad. Sé dónde encontrar la mejor luz al amanecer, qué rincones cobran vida antes de que lleguen los turistas y cuáles son los lugares que siguen inspirándome a fotografiar semana tras semana.
+          </p>
+          <p style="font-size:1rem;color:var(--color-text-muted);line-height:1.8;margin-bottom:0;font-style:italic">
+            Son los mismos lugares que recorrería con mi cámara aunque no existieran estos tours.
+          </p>
+          <div class="pt-why-features">
+            <div class="pt-why-feature">
+              <h3>Una mirada más cercana a la vida local</h3>
+              <p>Después de dos años viviendo y fotografiando en Hội An, he construido relaciones genuinas con pescadores, vendedores de mercado y personas de la comunidad local. Eso nos permite acercarnos con respeto y fotografiar momentos más naturales y auténticos.</p>
+            </div>
+            <div class="pt-why-feature">
+              <h3>Coaching adaptado a tu cámara</h3>
+              <p>Ya sea que fotografíes con un smartphone o una cámara profesional, aprenderás a aprovechar al máximo el equipo que ya tienes. El objetivo es volver a casa con tus mejores imágenes.</p>
+            </div>
+            <div class="pt-why-feature">
+              <h3>Grupos pequeños, momentos reales</h3>
+              <p>Máximo 4 personas por tour. Lo suficientemente pequeño para moverse con libertad, conectar con la gente y trabajar la luz con calma, sin multitudes ni prisas.</p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-why-img-wrap">
+          <img
+            src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/ThuBhonRiver-SELECTION/ThuBhonRiver-004.JPG"
+            alt="Mujer remando un bote de madera en el Río Thu Bon, Hội An"
+            class="pt-why-img"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="cm-tours-footer">
-    <p>Disponibles todo el año · Reserva con al menos 48 horas de anticipación</p>
-    <a href="/es/contact">Consultar disponibilidad</a>
-  </div>
+  <!-- FAQ -->
+  <section class="pt-section" aria-labelledby="faq-heading">
+    <div class="pt-section-inner">
+      <span class="pt-section-label">Preguntas Frecuentes</span>
+      <h2 class="pt-section-title" id="faq-heading">Todo lo que necesitas<br>saber antes de reservar</h2>
+      <div class="pt-faq-grid">
+        <div class="pt-faq-item" data-faq>
+          <p class="pt-faq-q">¿Necesito ser fotógrafo profesional? <span class="pt-faq-icon">+</span></p>
+          <p class="pt-faq-a">Para nada. Estos tours están diseñados para todos los niveles — desde usuarios de smartphone hasta fotógrafos con equipo profesional. El coaching se adapta a dónde estás y qué quieres aprender.</p>
+        </div>
+        <div class="pt-faq-item" data-faq>
+          <p class="pt-faq-q">¿Qué cámara debo traer? <span class="pt-faq-icon">+</span></p>
+          <p class="pt-faq-a">Trae lo que tengas y con lo que te sientas cómodo. Smartphone, compacta, mirrorless, DSLR — la luz y las escenas son lo que importa. Sacaremos el máximo de tu equipo, sea cual sea.</p>
+        </div>
+        <div class="pt-faq-item" data-faq>
+          <p class="pt-faq-q">¿Cuál es la mejor época del año para fotografiar? <span class="pt-faq-icon">+</span></p>
+          <p class="pt-faq-a">Los tours funcionan todo el año, y cada temporada ofrece algo distinto. Febrero a mayo es generalmente la mejor época — clima seco, luz suave por las mañanas, temperaturas cómodas y cielos despejados. Junio a agosto trae condiciones más cálidas, colores vibrantes, arrozales exuberantes y atardeceres dramáticos, ideal para fotografía callejera y de paisaje. Septiembre a enero es la temporada de lluvias: los aguaceros son más frecuentes, pero los fotógrafos suelen ser recompensados con atmósferas envolventes, mañanas neblinosas, reflejos en las calles y cielos dramáticos que dan carácter real a las imágenes. Para las condiciones más consistentes, recomendamos febrero–mayo y octubre–diciembre.</p>
+        </div>
+        <div class="pt-faq-item" data-faq>
+          <p class="pt-faq-q">¿Puedo combinar varios tours en mi viaje? <span class="pt-faq-icon">+</span></p>
+          <p class="pt-faq-a">Sí — y muchos viajeros lo hacen. Como cada tour es de madrugada y cubre ubicaciones completamente distintas, puedes hacer los tres en tres días consecutivos. Las reservas combinadas tienen un 10% de descuento.</p>
+        </div>
+        <div class="pt-faq-item" data-faq>
+          <p class="pt-faq-q">¿Con cuánta anticipación hay que reservar? <span class="pt-faq-icon">+</span></p>
+          <p class="pt-faq-a">Mínimo 48 horas de anticipación para confirmar la logística. En temporada alta (ene–feb, jul–ago) los cupos se llenan con 1–2 semanas de anticipación. Recomiendo reservar en cuanto tengas tus fechas confirmadas.</p>
+        </div>
+        <div class="pt-faq-item" data-faq>
+          <p class="pt-faq-q">¿Los tours son en español? <span class="pt-faq-icon">+</span></p>
+          <p class="pt-faq-a">Sí. Soy chileno y llevo años fotografiando Vietnam. Los tours se realizan en español e inglés. Si vienes desde América Latina o España, te sentirás en casa.</p>
+        </div>
+        <div class="pt-faq-item" data-faq>
+          <p class="pt-faq-q">¿Es apto para viajeros solos? <span class="pt-faq-icon">+</span></p>
+          <p class="pt-faq-a">Absolutamente. Muchos participantes vienen solos y el tamaño reducido del grupo facilita conectar. Los tours también están disponibles en formato completamente privado — consúltame las tarifas.</p>
+        </div>
+        <div class="pt-faq-item" data-faq>
+          <p class="pt-faq-q">¿Cuál es la política de cancelación? <span class="pt-faq-icon">+</span></p>
+          <p class="pt-faq-a">Cancelación gratuita hasta 48 horas antes del tour. Dentro de las 48 horas aplica el 50% del valor. Si cancelamos por condiciones climáticas extremas, recibes reembolso completo o la opción de reprogramar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="pt-final-cta" aria-labelledby="cta-heading">
+    <img
+      src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/ThuBhonRiver-SELECTION/man-fishing-net-004.JPEG"
+      alt="Pescador lanzando red en el Río Thu Bon al amanecer — photo tour Hội An"
+      class="pt-final-bg"
+      loading="lazy"
+    />
+    <div class="pt-final-overlay"></div>
+    <div class="pt-final-content">
+      <span class="pt-section-label">Limitado a 4 personas por tour</span>
+      <h2 id="cta-heading">La luz no espera.<br><em>Tú tampoco deberías.</em></h2>
+      <p>
+        Los cupos se llenan rápido — especialmente en temporada alta. Escríbeme con tus fechas de viaje y el tour que te interesa. Confirmo disponibilidad en menos de 24 horas.
+      </p>
+      <a href="/es/contact" class="pt-btn-primary" style="font-size:0.82rem;padding:1rem 2.5rem;margin:0 auto">
+        Reservar mi Tour Fotográfico →
+      </a>
+      <p class="pt-final-note">Cancelación gratuita · Respuesta inmediata · Disponible en Español e Inglés</p>
+    </div>
+  </section>
+
 </div>
 
-<script>
-  document.querySelectorAll('[data-slider]').forEach(slider => {
-    const track = slider.querySelector('.cm-slider-track');
-    const dots = slider.querySelectorAll('.cm-slider-dots span');
-    const imgs = track.querySelectorAll('img');
-    let idx = 0;
-    function go(n) {
-      idx = (n + imgs.length) % imgs.length;
-      track.style.transform = `translateX(-${idx * 100}%)`;
-      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+<script is:inline>
+  document.querySelectorAll('[data-tour]').forEach(function(summary) {
+    var tourId = summary.dataset.tour;
+    var detail = document.getElementById('detail-' + tourId);
+    var detailBtn = document.querySelector('[data-details-btn="' + tourId + '"]');
+    var hint = document.querySelector('[data-hint="' + tourId + '"]');
+    function toggle(e) {
+      if (e.target && e.target.closest('a')) return;
+      var isOpen = detail.classList.contains('open');
+      detail.classList.toggle('open', !isOpen);
+      summary.setAttribute('aria-expanded', String(!isOpen));
+      if (detailBtn) {
+        detailBtn.setAttribute('aria-expanded', String(!isOpen));
+        detailBtn.classList.toggle('open', !isOpen);
+      }
+      if (hint) hint.classList.toggle('open', !isOpen);
+      if (!isOpen) {
+        setTimeout(function() { detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 100);
+      }
     }
-    slider.querySelector('.prev').addEventListener('click', () => go(idx - 1));
-    slider.querySelector('.next').addEventListener('click', () => go(idx + 1));
-    dots.forEach((d, i) => d.addEventListener('click', () => go(i)));
+    summary.addEventListener('click', toggle);
+    summary.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(e); }
+    });
+    if (detailBtn) {
+      detailBtn.addEventListener('click', function(e) { e.stopPropagation(); toggle(e); });
+    }
+  });
+
+  document.querySelectorAll('.pt-tour-detail').forEach(function(detail) {
+    var track = detail.querySelector('[data-track]');
+    var dots = detail.querySelectorAll('[data-dot]');
+    var prevBtn = detail.querySelector('[data-prev]');
+    var nextBtn = detail.querySelector('[data-next]');
+    if (!track) return;
+    var imgs = track.querySelectorAll('img');
+    var total = imgs.length;
+    var idx = 0;
+    function go(n) {
+      idx = (n + total) % total;
+      track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+      dots.forEach(function(d, i) { d.classList.toggle('active', i === idx); });
+    }
+    if (prevBtn) prevBtn.addEventListener('click', function() { go(idx - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { go(idx + 1); });
+    dots.forEach(function(d) {
+      d.addEventListener('click', function() { go(parseInt(d.dataset.dot)); });
+    });
+  });
+
+  document.querySelectorAll('[data-faq]').forEach(function(item) {
+    item.addEventListener('click', function() {
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('[data-faq]').forEach(function(el) { el.classList.remove('open'); });
+      if (!isOpen) item.classList.add('open');
+    });
   });
 </script>
 
