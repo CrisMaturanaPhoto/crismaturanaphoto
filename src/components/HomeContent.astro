@@ -1486,7 +1486,10 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
 .hero-kb .hero-slide.active .hero-kb-img { animation: kenburns 12s ease-out forwards; }
 @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.12); } }
 .hero-kb-overlay { position: absolute; inset: 0; z-index: 1; background: rgba(10,9,7,0.05); }
-.hero-mosaic-card { position: absolute; z-index: 2; top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: center; padding: 0 5vw; max-width: 760px; width: 100%; }
+.hero-mosaic-card { position: absolute; z-index: 2; top: 12rem; left: 50%; transform: translateX(-50%); text-align: center; padding: 0 5vw; max-width: 760px; width: 100%; }
+.hero-mosaic-card .hero-subtitle { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; }
+.hero-mosaic-title { margin-top: 0; }
+.hero-bottom-content { position: absolute; z-index: 2; bottom: 5rem; left: 50%; transform: translateX(-50%); text-align: center; padding: 0 5vw; max-width: 760px; width: 100%; }
 .hero-mosaic-card .hero-subtitle { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.85); margin-bottom: 1rem; }
 .hero-mosaic-title { font-family: 'Cormorant Garant', Georgia, serif; font-size: clamp(2.8rem,6vw,5.5rem); font-weight: 300; line-height: 1.05; color: #fff; margin: 1rem 0 1.5rem; }
 .hero-mosaic-sub { font-size: 1rem; color: rgba(255,255,255,0.82); line-height: 1.8; margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; }
