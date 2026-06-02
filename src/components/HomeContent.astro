@@ -479,7 +479,7 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%);
+    background: none;
   }
 
   .hero-slide.active { opacity: 1; }
@@ -1485,13 +1485,13 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
 .hero-kb-img { position: absolute; inset: 0; background-size: cover; background-position: var(--hero-focus, center); transform: scale(1); }
 .hero-kb .hero-slide.active .hero-kb-img { animation: kenburns 12s ease-out forwards; }
 @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.12); } }
-.hero-kb-overlay { position: absolute; inset: 0; z-index: 1; background: rgba(10,9,7,0.05); }
-.hero-mosaic-card { position: absolute; z-index: 2; top: 12rem; left: 50%; transform: translateX(-50%); text-align: center; padding: 0 5vw; max-width: 760px; width: 100%; }
+.hero-kb-overlay { position: absolute; inset: 0; z-index: 1; background: none; }
+.hero-mosaic-card { position: absolute; z-index: 2; bottom: 5rem; left: 50%; transform: translateX(-50%); text-align: center; padding: 0 5vw; max-width: 760px; width: 100%; }
 .hero-mosaic-card .hero-subtitle { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; }
 .hero-mosaic-title { margin-top: 0; }
 .hero-bottom-content { position: absolute; z-index: 2; bottom: 5rem; left: 50%; transform: translateX(-50%); text-align: center; padding: 0 5vw; max-width: 760px; width: 100%; }
-.hero-mosaic-card .hero-subtitle { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.85); margin-bottom: 1rem; }
-.hero-mosaic-title { font-family: 'Cormorant Garant', Georgia, serif; font-size: clamp(2.8rem,6vw,5.5rem); font-weight: 300; line-height: 1.05; color: #fff; margin: 1rem 0 1.5rem; }
+.hero-mosaic-card .hero-subtitle { display: none; }
+.hero-mosaic-title { font-family: 'Cormorant Garant', Georgia, serif; font-size: 50px; font-weight: 300; line-height: 1.05; color: #fff; margin: 1rem 0 1.5rem; }
 .hero-mosaic-sub { font-size: 1rem; color: rgba(255,255,255,0.82); line-height: 1.8; margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; }
 .hero-ctas { display: flex; gap: 1.4rem; justify-content: center; align-items: center; flex-wrap: wrap; }
 .btn-dark { display: inline-flex; padding: 1.1rem 2.6rem; background: #e8c070; color: #14110d; font-family: 'Jost', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.3s; }
