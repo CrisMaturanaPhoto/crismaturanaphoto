@@ -1,4 +1,3 @@
-draft: true
 ---
 title: "Family Sessions: Connection Over Composition"
 excerpt: "The most memorable family photographs rarely happen in front of the camera."
@@ -8,6 +7,7 @@ tags: ["family", "lifestyle"]
 readTime: "5 min read"
 coverImage: "https://crismaturana.com/wp-content/uploads/2017/03/TheHyggeFamily@-24-267x400.jpg"
 featured: false
+draft: true
 ---
 
 Composition matters, but connection matters more.

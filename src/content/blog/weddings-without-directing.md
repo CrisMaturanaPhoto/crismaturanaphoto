@@ -1,4 +1,3 @@
-draft: true
 ---
 title: "Why I Stopped Directing at Weddings"
 excerpt: "The moment I put away the shot list was the moment my wedding work became what I always wanted it to be."
@@ -8,6 +7,7 @@ tags: ["weddings", "documentary"]
 readTime: "4 min read"
 coverImage: "https://crismaturana.com/wp-content/uploads/2017/03/IMG_9822-599x400.jpg"
 featured: false
+draft: true
 ---
 
 Weddings move quickly, but the best moments are rarely staged.
