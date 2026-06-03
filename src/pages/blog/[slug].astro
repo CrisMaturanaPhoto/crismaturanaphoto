@@ -33,7 +33,7 @@ const formatDate = (date: Date) =>
       </p>
     </header>
 
-    <img class="cover-image" src={post.data.coverImage} alt={post.data.title} loading="eager" />
+    <img class="cover-image" src={post.data.coverImage} alt={post.data.title} width="1200" height="800" loading="eager" fetchpriority="high" />
 
     <div class="post-body">
       <Content />

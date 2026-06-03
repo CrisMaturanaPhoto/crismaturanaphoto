@@ -21,6 +21,8 @@ const galleryId = `gallery-${Math.random().toString(36).slice(2, 7)}`;
       <img
         src={img.thumb}
         alt={img.alt ?? `Photo ${i + 1}`}
+        width="900"
+        height="600"
         loading="lazy"
         decoding="async"
       />

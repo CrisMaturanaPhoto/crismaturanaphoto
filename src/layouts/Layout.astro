@@ -258,7 +258,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
     <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
       <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
       <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">&#8249;</button>
-      <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+      <img class="lightbox-img" id="lightbox-img" src="" alt="" loading="lazy" />
       <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">&#8250;</button>
     </div>
 

@@ -55,7 +55,7 @@ const categories = [
         {categories.map((cat) => (
           <a href={cat.href} class="portfolio-card">
             <div class="card-img">
-              <img src={cat.thumb} alt={cat.title} loading="lazy" style={`object-position: ${cat.focus ?? 'center'};`} />
+              <img src={cat.thumb} alt={cat.title} width="600" height="400" loading="lazy" style={`object-position: ${cat.focus ?? 'center'};`} />
             </div>
             <div class="card-overlay">
               <h2 class="card-title">{cat.title}</h2>

@@ -125,7 +125,7 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
         {portfolioCategories.map((cat) => (
           <a href={cat.href} class="portfolio-card">
             <div class="portfolio-card-img">
-              <img src={cat.thumb} alt={cat.title} loading="lazy" style={`object-position: ${cat.focus ?? 'center'};`} />
+              <img src={cat.thumb} alt={cat.title} width="600" height="400" loading="lazy" style={`object-position: ${cat.focus ?? 'center'};`} />
             </div>
             <div class="portfolio-card-info">
               <h3 class="portfolio-card-title" data-i18n={`portfolio.cat${portfolioCategories.indexOf(cat)+1}.title`}>{cat.title}</h3>
@@ -145,6 +145,8 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
           <img
             src="https://CrisMaturana.b-cdn.net/AUTORETRATO/DSC_1505-2%203.JPG"
             alt="Cristóbal Maturana"
+            width="900"
+            height="600"
             loading="lazy"
           />
         </div>
@@ -157,6 +159,8 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
             <img
               src="https://CrisMaturana.b-cdn.net/AUTORETRATO/DSC_1505-2%203.JPG"
               alt="Cristóbal Maturana"
+              width="900"
+              height="600"
               loading="lazy"
             />
           </div>
@@ -164,6 +168,8 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
             src="https://CrisMaturana.b-cdn.net/Logos/firma-Cristobal-Maturana-300x150.png"
             alt="Cristóbal Maturana signature"
             class="about-signature"
+            width="300"
+            height="150"
             loading="lazy"
           />
           <div class="about-social">
@@ -323,76 +329,76 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
                 <div class="ig-marquee-wrap">
       <div class="ig-marquee">
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/MartinsSoul%40-26.JPG" alt="Portrait – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/MartinsSoul%40-26.JPG" alt="Portrait – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/Danya1%40-27.JPG" alt="Portrait – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/Danya1%40-27.JPG" alt="Portrait – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Yaz-Li-portrait-001.jpg" alt="Wedding – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Yaz-Li-portrait-001.jpg" alt="Wedding – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/abrazo-001.JPG" alt="Wedding – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/abrazo-001.JPG" alt="Wedding – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Bernardita%26MauricioMatri-331.jpg" alt="Wedding – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Bernardita%26MauricioMatri-331.jpg" alt="Wedding – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Javiera%26Gonzalo%40-435.jpg" alt="Wedding – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Javiera%26Gonzalo%40-435.jpg" alt="Wedding – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/yaz-lin-001.jpg" alt="Wedding – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/yaz-lin-001.jpg" alt="Wedding – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-10.jpg" alt="Couples – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-10.jpg" alt="Couples – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/pareja-gam-santiago-chile.jpg" alt="Couples – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/pareja-gam-santiago-chile.jpg" alt="Couples – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/HoiAnDron%40-17.JPG" alt="Aerial – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/HoiAnDron%40-17.JPG" alt="Aerial – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/01.25HoiAn%40-5.JPG" alt="Travel – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/01.25HoiAn%40-5.JPG" alt="Travel – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/CONTACT/RiverBoatsHoiAn%40-9.JPG" alt="Travel – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/CONTACT/RiverBoatsHoiAn%40-9.JPG" alt="Travel – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/MartinsSoul%40-26.JPG" alt="Portrait – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/MartinsSoul%40-26.JPG" alt="Portrait – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/Danya1%40-27.JPG" alt="Portrait – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/Danya1%40-27.JPG" alt="Portrait – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Yaz-Li-portrait-001.jpg" alt="Wedding – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Yaz-Li-portrait-001.jpg" alt="Wedding – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/abrazo-001.JPG" alt="Wedding – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/abrazo-001.JPG" alt="Wedding – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Bernardita%26MauricioMatri-331.jpg" alt="Wedding – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Bernardita%26MauricioMatri-331.jpg" alt="Wedding – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Javiera%26Gonzalo%40-435.jpg" alt="Wedding – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Javiera%26Gonzalo%40-435.jpg" alt="Wedding – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/yaz-lin-001.jpg" alt="Wedding – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/yaz-lin-001.jpg" alt="Wedding – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-10.jpg" alt="Couples – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-10.jpg" alt="Couples – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/pareja-gam-santiago-chile.jpg" alt="Couples – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/pareja-gam-santiago-chile.jpg" alt="Couples – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/HoiAnDron%40-17.JPG" alt="Aerial – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/HoiAnDron%40-17.JPG" alt="Aerial – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/01.25HoiAn%40-5.JPG" alt="Travel – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/01.25HoiAn%40-5.JPG" alt="Travel – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
         <a href="https://www.instagram.com/cristobalmaturanaphoto/" target="_blank" class="ig-item">
-          <img src="https://CrisMaturana.b-cdn.net/CONTACT/RiverBoatsHoiAn%40-9.JPG" alt="Travel – Cristóbal Maturana" loading="lazy" />
+          <img src="https://CrisMaturana.b-cdn.net/CONTACT/RiverBoatsHoiAn%40-9.JPG" alt="Travel – Cristóbal Maturana" width="900" height="600" loading="lazy" />
         </a>
       </div>
     </div>
@@ -434,7 +440,7 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
         {latestBlogPosts.map((post) => (
           <a href={`/blog/${post.slug}`} class="blog-preview-card">
             <div class="blog-preview-image">
-              <img src={post.data.coverImage} alt={post.data.title} loading="lazy" />
+              <img src={post.data.coverImage} alt={post.data.title} width="600" height="400" loading="lazy" />
             </div>
             <div class="blog-preview-content">
               <p class="blog-preview-category" data-i18n={"blog.cat." + post.data.category.toLowerCase().replace(/ /g, "_")}>{post.data.category}</p>

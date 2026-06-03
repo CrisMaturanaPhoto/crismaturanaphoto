@@ -349,6 +349,8 @@ const tours = [
                   src={tour.heroImg}
                   alt={tour.heroAlt}
                   class="pt-tour-img"
+                  width="900"
+                  height="600"
                   loading={idx === 0 ? 'eager' : 'lazy'}
                 />
                 <div class="pt-tour-expand-hint" data-hint={tour.id} aria-hidden="true">
@@ -404,7 +406,7 @@ const tours = [
                   <div class="pt-detail-slider" id={`dslider-${tour.id}`}>
                     <div class="pt-detail-track" data-track>
                       {tour.gallery.map((img) => (
-                        <img src={img.src} alt={img.alt} loading="lazy" />
+                        <img src={img.src} alt={img.alt} width="900" height="600" loading="lazy" />
                       ))}
                     </div>
                     <button class="pt-detail-nav pt-detail-prev" data-prev aria-label="Foto anterior">&#8249;</button>
@@ -480,6 +482,8 @@ const tours = [
             src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/ThuBhonRiver-SELECTION/ThuBhonRiver-004.JPG"
             alt="Mujer remando un bote de madera en el Río Thu Bon, Hội An"
             class="pt-why-img"
+            width="900"
+            height="600"
             loading="lazy"
           />
         </div>
@@ -535,6 +539,8 @@ const tours = [
       src="https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/ThuBhonRiver-SELECTION/man-fishing-net-004.JPEG"
       alt="Pescador lanzando red en el Río Thu Bon al amanecer — photo tour Hội An"
       class="pt-final-bg"
+      width="1200"
+      height="800"
       loading="lazy"
     />
     <div class="pt-final-overlay"></div>

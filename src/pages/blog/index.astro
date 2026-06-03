@@ -36,7 +36,7 @@ const formatDate = (date: Date) =>
     <div class="featured-wrapper container">
       <article class="featured-post">
         <a class="featured-img" href={`/blog/${featuredPost.slug}`}>
-          <img src={featuredPost.data.coverImage} alt={featuredPost.data.title} loading="lazy" />
+          <img src={featuredPost.data.coverImage} alt={featuredPost.data.title} width="1200" height="800" loading="eager" fetchpriority="high" />
         </a>
         <div class="featured-body">
           <span class="featured-badge">Featured</span>
@@ -62,6 +62,8 @@ const formatDate = (date: Date) =>
             <img
               src={post.data.coverImage}
               alt={post.data.title}
+              width="600"
+              height="400"
               loading="lazy"
               style={`object-position: ${post.slug === 'quiet-portrait' ? 'center top' : 'center'};`}
             />
