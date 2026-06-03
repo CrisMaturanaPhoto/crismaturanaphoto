@@ -1,11 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('blog', ({ data }) => data.lang === 'es');
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.slug.replace(/-es$/, '') },
     props: { post },
   }));
 }
@@ -14,7 +14,7 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 
 const formatDate = (date: Date) =>
-  new Intl.DateTimeFormat('en-US', {
+  new Intl.DateTimeFormat('es-ES', {
     month: 'long',
     day: 'numeric',
     year: 'numeric',
@@ -24,7 +24,7 @@ const formatDate = (date: Date) =>
 <Layout title={`${post.data.title} – Blog – Cristóbal Maturana`} description={post.data.excerpt}>
   <article class="post container">
     <header class="post-header">
-      <a class="back-link" href="/blog">Back to Blog</a>
+      <a class="back-link" href="/es/blog">Volver al Blog</a>
       <p class="post-tag">{post.data.category}</p>
       <h1>{post.data.title}</h1>
       <p class="post-meta">

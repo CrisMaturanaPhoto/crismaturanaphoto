@@ -1,3 +1,4 @@
+draft: true
 ---
 title: "Shooting the Milky Way - Settings, Gear and Patience"
 excerpt: "Everything I know about astrophotography, distilled into a practical guide for photographers who want to start shooting stars."

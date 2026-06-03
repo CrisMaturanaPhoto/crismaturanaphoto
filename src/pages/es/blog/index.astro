@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../../layouts/Layout.astro';
-import { buildAlternates } from '../../../lib/utils';
-
+const posts = (await getCollection('blog'))
+  .filter((post) => (!post.data.lang || post.data.lang === 'en') && !post.data.draft)
 const allPosts = await getCollection('blog');
 const posts = allPosts
   .filter((post) => post.data.lang === 'es')

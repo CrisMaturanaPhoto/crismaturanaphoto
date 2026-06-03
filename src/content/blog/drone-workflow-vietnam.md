@@ -1,3 +1,4 @@
+draft: true
 ---
 title: "Aerial Photography - My Drone Workflow in Vietnam"
 excerpt: "Permits, flight windows, and the unexpected beauty you only find when you look straight down."

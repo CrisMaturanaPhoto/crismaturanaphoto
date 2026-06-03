@@ -1,3 +1,4 @@
+draft: true
 ---
 title: "Why I Stopped Directing at Weddings"
 excerpt: "The moment I put away the shot list was the moment my wedding work became what I always wanted it to be."
