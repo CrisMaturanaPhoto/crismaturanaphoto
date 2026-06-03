@@ -246,6 +246,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
       }
     </style>
     <script is:inline src="/scripts/translations.js"></script>
+    <slot name="head" />
 </head>
   <body>
     <Nav />
