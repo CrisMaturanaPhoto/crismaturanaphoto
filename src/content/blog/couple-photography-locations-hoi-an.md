@@ -5,7 +5,7 @@ publishDate: 2026-06-14
 category: "Travel & Culture"
 tags: ["hoi-an", "couple-photography", "vietnam", "travel", "photo-session", "honeymoon"]
 readTime: "7 min read"
-coverImage: "https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-113.JPG"
+coverImage: "https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-55.jpg"
 featured: false
 ---
 
