@@ -20,7 +20,11 @@ The Japanese Bridge is iconic for a reason. The carved wooden structure, the sof
 
 The problem: by 8am it's crowded. By 9am you're competing with tour groups and selfie sticks.
 
-**The window:** Arrive before 7am. At sunrise, the light comes in low and warm from the east, hitting the bridge at an angle that makes everything glow. You'll have maybe 30–45 minutes before the first tour buses arrive. That's enough for a full sequence of shots — on the bridge, in the narrow alley alongside it, and at the canal edge below.
+**The window:** Arrive before 7am.
+
+![Couple session Japanese Bridge Hội An early morning](https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Poppin%26Chris-016.JPG)
+
+At sunrise, the light comes in low and warm from the east, hitting the bridge at an angle that makes everything glow. You'll have maybe 30–45 minutes before the first tour buses arrive. That's enough for a full sequence of shots — on the bridge, in the narrow alley alongside it, and at the canal edge below.
 
 What most couples miss: the small passage *beside* the bridge, not on it. The weathered yellow walls, the hanging plants, the compressed perspective of the alley — that's where the real frames are.
 
@@ -46,7 +50,6 @@ About 3km north of the Old Town, Trà Quế is a working herb and vegetable vill
 
 The bicycle approach works well here. Ride out from the Old Town (about 15–20 minutes on a flat road), shoot with the bikes as a prop, then leave them and walk into the fields. There's a raised path between the paddies that lets you get surrounded by rice on both sides — that's the shot most people come for.
 
-![Couple session Trà Quế rice fields Hội An](https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/agnes-couple-001.JPG)
 
 ![Couple photography rice fields Vietnam golden hour](https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-16.jpg)
 
