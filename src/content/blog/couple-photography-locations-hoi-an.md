@@ -38,8 +38,6 @@ Faded ochre walls. Wooden shutters. Bougainvillea spilling over doorways. Narrow
 
 ![Couple photography in Hội An Old Town yellow walls](https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/poppin-chris-oldtown-001.JPG)
 
-![Couple session Hội An Ancient Town narrow streets](https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Poppin%26Chris-003.JPG)
-
 For couples, the narrow alleys are especially powerful. The compression of the space creates natural intimacy. I don't have to direct much — the environment does the work.
 
 ## 3. Trà Quế Village and the Rice Fields — Golden Hour
