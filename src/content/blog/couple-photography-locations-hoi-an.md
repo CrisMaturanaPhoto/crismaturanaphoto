@@ -7,6 +7,7 @@ tags: ["hoi-an", "couple-photography", "vietnam", "travel", "photo-session", "ho
 readTime: "7 min read"
 coverImage: "https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-55.jpg"
 featured: false
+lang: "en"
 ---
 
 Hội An is one of the most photogenic towns in Southeast Asia. But knowing *where* to go is only half of it — the other half is knowing *when*, and what to avoid.
