@@ -32,6 +32,10 @@ Faded ochre walls. Wooden shutters. Bougainvillea spilling over doorways. Narrow
 
 **The window:** These streets work at two times. Early morning (before 8am) when the light is soft and the streets are empty. And late afternoon (after 4:30pm) when the sun drops behind the rooftops and everything is in open shade — no harsh shadows, no squinting.
 
+![Couple photography in Hội An Old Town yellow walls](https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/poppin-chris-oldtown-001.JPG)
+
+![Couple session Hội An Ancient Town narrow streets](https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Poppin%26Chris-003.JPG)
+
 For couples, the narrow alleys are especially powerful. The compression of the space creates natural intimacy. I don't have to direct much — the environment does the work.
 
 ## 3. Trà Quế Village and the Rice Fields — Golden Hour
@@ -41,6 +45,10 @@ About 3km north of the Old Town, Trà Quế is a working herb and vegetable vill
 **The window:** Arrive around 4:30–5pm. The golden hour here lasts longer than in the Old Town because you have unobstructed horizon to the west. The light turns the rice fields amber, and the flat landscape creates a clean, minimal backdrop that's completely different from the urban Old Town.
 
 The bicycle approach works well here. Ride out from the Old Town (about 15–20 minutes on a flat road), shoot with the bikes as a prop, then leave them and walk into the fields. There's a raised path between the paddies that lets you get surrounded by rice on both sides — that's the shot most people come for.
+
+![Couple session Trà Quế rice fields Hội An](https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/agnes-couple-001.JPG)
+
+![Couple photography rice fields Vietnam golden hour](https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/jose-photos-%40-16.jpg)
 
 The village around Anh My, a few minutes further, is quieter and less visited. If you want the rice fields without other tourists in the background, that's the direction to go.
 
@@ -53,14 +61,6 @@ The market is loud, chaotic, and alive. It's not the obvious choice for a couple
 The produce section in the early morning (before 7am) has extraordinary light filtering through the corrugated roof. The color is relentless: pyramids of dragon fruit, bunches of morning glory, rows of fresh herbs.
 
 This only works if the couple is comfortable being photographed in a public, active space. I shoot discreetly and move fast. The results don't look like anyone else's couple photos from Hội An.
-
-## 5. The Thu Bon River at Dusk
-
-The riverfront along Bach Dang fills with tourists at sunset — that part I'd avoid. But walk five minutes south, past the ferry crossing toward An Hội island, and the river opens up into something quieter.
-
-**The window:** 30 minutes before sunset until 20 minutes after. The sky reflects in the water, the fishing boats drift past, and the lanterns on the island start to glow. It's the classic Hội An image, but from an angle that most people don't find.
-
-This works especially well as the final stop in a longer session — start at the rice fields for golden hour, then make your way back to the river for the last light.
 
 ---
 
