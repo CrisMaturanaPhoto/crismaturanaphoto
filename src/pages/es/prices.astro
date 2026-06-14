@@ -42,8 +42,9 @@ import Layout from '../../layouts/Layout.astro';
 
   <div class="page-hero">
     <div class="container">
-      <h1>Precios</h1>
-      <p>Selecciona el tipo de sesión para explorar los packages</p>
+      <p class="hero-session-label">Retratos · Parejas & Familias</p>
+      <h1>Precios de Sesión</h1>
+      <p>Packages fijos para sesiones de retrato, parejas y familias — desde USD 150. Selecciona el tipo para explorar.</p>
     </div>
   </div>
 
@@ -261,6 +262,13 @@ import Layout from '../../layouts/Layout.astro';
 
       <p class="footer-note">Todos los packages incluyen locaciones en Hội An · Precios en USD</p>
 
+      <div class="custom-quote">
+        <p class="custom-label">Matrimonios · Branding Personal · Proyectos a Medida</p>
+        <h2 class="custom-heading">¿Algo diferente en mente?</h2>
+        <p class="custom-text">Cada matrimonio y proyecto mayor es único — el día, el alcance, lo que quieres recordar. Cuéntame qué estás planeando y preparo una propuesta que se ajuste a ti. Sin compromiso.</p>
+        <a href="/es/contact" class="btn btn-accent custom-cta">Escribirme para cotizar →</a>
+      </div>
+
     </div>
   </section>
 
@@ -476,6 +484,69 @@ import Layout from '../../layouts/Layout.astro';
     opacity: 0.5;
     margin-top: 3rem;
     font-weight: 300;
+  }
+
+  .hero-session-label {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .custom-quote {
+    margin-top: 4rem;
+    padding: 3rem 2.5rem;
+    border: 1px solid var(--color-border);
+    text-align: center;
+    background: var(--color-surface);
+    position: relative;
+  }
+
+  .custom-quote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2.5rem;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  .custom-label {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .custom-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--color-heading);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .custom-text {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 1.75rem;
+    font-weight: 300;
+  }
+
+  .custom-cta {
+    display: inline-block;
   }
 
   .page-hero { padding-bottom: 0 !important; margin-bottom: 0 !important; border-bottom: none !important; }
