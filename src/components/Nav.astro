@@ -24,6 +24,11 @@ const navLinks = [
   },
   { label: 'Contact', i18n: 'nav.contact', href: '/contact' },
 ];
+// Calcula los links EN/ES basado en la URL actual
+const path = Astro.url.pathname;
+const isEs = path.startsWith('/es/') || path === '/es';
+const enHref = isEs ? (path.replace(/^\/es/, '') || '/') : path;
+const esHref = isEs ? path : ('/es' + (path === '/' ? '/' : path));
 ---
 
 <header class="site-header" id="site-header">
@@ -57,9 +62,9 @@ const navLinks = [
       </ul>
     </nav>
     <div class="lang-switcher" role="group" aria-label="Language selector">
-      <button class="lang-btn active" data-lang="en" onclick="window.setLang && window.setLang('en')" aria-label="English">EN</button>
+      <a href={enHref} class={`lang-btn ${!isEs ? 'active' : ''}`} aria-label="English">EN</a>
       <span class="lang-divider">|</span>
-      <button class="lang-btn" data-lang="es" onclick="window.setLang && window.setLang('es')" aria-label="Español">ES</button>
+      <a href={esHref} class={`lang-btn ${isEs ? 'active' : ''}`} aria-label="Español">ES</a>
     </div>
   </div>
 </header>
