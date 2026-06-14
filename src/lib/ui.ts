@@ -21,13 +21,6 @@ export interface PortfolioCategory {
 
 export const heroSlides: HeroSlide[] = [
   {
-    title: 'Photo Tours Vietnam',
-    subtitle: 'DESTINATION DOCUMENTARY PHOTOGRAPHER',
-    cta: 'Find More',
-    href: '/portfolio/photo-tours-vietnam-2026',
-    bg: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/DuyHaiSeleccion%40-10.JPG',
-  },
-  {
     title: 'Documentary Weddings',
     subtitle: 'DESTINATION DOCUMENTARY PHOTOGRAPHER',
     cta: 'View Portfolio',
@@ -47,6 +40,13 @@ export const heroSlides: HeroSlide[] = [
     cta: 'Find More',
     href: '/portfolio/weddings',
     bg: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/poppin-chris-005.JPG',
+  },
+  {
+    title: 'Photo Tours Vietnam',
+    subtitle: 'DESTINATION DOCUMENTARY PHOTOGRAPHER',
+    cta: 'Find More',
+    href: '/portfolio/photo-tours-vietnam-2026',
+    bg: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/DuyHaiSeleccion%40-10.JPG',
   },
 ];
 
