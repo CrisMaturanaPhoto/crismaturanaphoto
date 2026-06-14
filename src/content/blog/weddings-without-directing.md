@@ -8,6 +8,7 @@ readTime: "4 min read"
 coverImage: "https://crismaturana.com/wp-content/uploads/2017/03/IMG_9822-599x400.jpg"
 featured: false
 draft: true
+lang: "en"
 ---
 
 Weddings move quickly, but the best moments are rarely staged.

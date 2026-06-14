@@ -8,6 +8,7 @@ readTime: "5 min read"
 coverImage: "https://crismaturana.com/wp-content/uploads/2017/03/TheHyggeFamily@-24-267x400.jpg"
 featured: false
 draft: true
+lang: "en"
 ---
 
 Composition matters, but connection matters more.

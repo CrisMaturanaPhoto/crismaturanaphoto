@@ -8,6 +8,7 @@ readTime: "9 min read"
 coverImage: "https://crismaturana.com/wp-content/uploads/2017/03/temp_image_for_default_share-4-711x400.jpg"
 featured: false
 draft: true
+lang: "en"
 ---
 
 Astrophotography is mostly preparation followed by small windows of opportunity.

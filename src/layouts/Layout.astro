@@ -49,6 +49,24 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
         localStorage.setItem('lang', pageLang);
       } catch (e) {}
       document.documentElement.lang = pageLang;
+
+      // Auto-redirect: solo en primera visita (sin 'lang-redirected' en localStorage)
+      // Si el navegador está en español y estamos en una página EN (no /es/), redirigir a /es/
+      try {
+        var path = window.location.pathname;
+        var isEsPage = path.startsWith('/es') || path.startsWith('/es/');
+        var alreadyRedirected = localStorage.getItem('lang-redirected');
+        if (!alreadyRedirected && !isEsPage) {
+          var browserLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+          if (browserLang.toLowerCase().startsWith('es')) {
+            localStorage.setItem('lang-redirected', '1');
+            var esPath = '/es' + (path === '/' ? '/' : path);
+            window.location.replace(esPath);
+          } else {
+            localStorage.setItem('lang-redirected', '1');
+          }
+        }
+      } catch (e) {}
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

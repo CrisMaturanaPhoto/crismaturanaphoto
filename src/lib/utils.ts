@@ -1,10 +1,11 @@
 // utils.ts — Helpers compartidos por las páginas de la home (EN/ES).
 import { getCollection } from 'astro:content';
 
-/** Devuelve los `limit` posts de blog más recientes, ordenados desc por fecha. */
-export async function getLatestBlogPosts(limit = 3) {
+/** Devuelve los `limit` posts de blog más recientes, filtrados por idioma y ordenados desc por fecha. */
+export async function getLatestBlogPosts(limit = 3, lang = 'en') {
   const posts = await getCollection('blog');
   return posts
+    .filter((p) => (p.data.lang ?? 'en') === lang)
     .sort(
       (a, b) =>
         b.data.publishDate.getTime() - a.data.publishDate.getTime(),

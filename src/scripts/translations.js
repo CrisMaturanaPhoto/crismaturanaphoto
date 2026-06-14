@@ -375,6 +375,23 @@ window.getLang = function getLang() {
 
 window.setLang = function setLang(lang) {
   localStorage.setItem('lang', lang);
+  localStorage.setItem('lang-redirected', '1');
+
+  // Navegar a la URL equivalente en el otro idioma
+  var path = window.location.pathname;
+  var isEsPage = path.startsWith('/es/') || path === '/es';
+
+  if (lang === 'es' && !isEsPage) {
+    // EN → ES: agregar prefijo /es
+    window.location.href = '/es' + (path === '/' ? '/' : path);
+    return;
+  } else if (lang === 'en' && isEsPage) {
+    // ES → EN: quitar prefijo /es
+    var enPath = path.replace(/^\/es/, '') || '/';
+    window.location.href = enPath;
+    return;
+  }
+
   window.applyTranslations(lang);
   window.updateSwitcher(lang);
 }

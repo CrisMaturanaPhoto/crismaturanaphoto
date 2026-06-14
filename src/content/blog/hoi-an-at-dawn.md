@@ -7,6 +7,7 @@ tags: ["travel", "culture", "vietnam", "golden-hour", "hoi-an", "street-photogra
 readTime: "7 min read"
 coverImage: "https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-32.jpg"
 featured: true
+lang: "en"
 ---
 
 Hoi An before sunrise has a stillness that is hard to describe but easy to feel. The lanterns are still lit, the streets belong only to the light, and for a short window of time, the Old Town looks exactly as it must have looked a hundred years ago.

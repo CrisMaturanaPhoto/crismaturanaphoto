@@ -7,6 +7,7 @@ tags: ["personal-branding", "portraits", "wellness", "yoga", "business"]
 readTime: "6 min read"
 coverImage: "https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/agnes-partner-portrait-001.JPG"
 featured: true
+lang: "en"
 ---
 
 You have three seconds.

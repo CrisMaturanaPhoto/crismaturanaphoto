@@ -7,6 +7,7 @@ tags: ["hoi-an", "photo-spots", "vietnam", "travel", "street-photography", "inst
 readTime: "8 min read"
 coverImage: "https://CrisMaturana.b-cdn.net/ARTICLES/Best%20Photo%20Spots%20in%20Hoi%20An%20Old%20Town/01.25HoiAn%40-34.JPG"
 featured: true
+lang: "en"
 ---
 
 Most photography guides to Hội An tell you the same five things. Go to the Japanese Bridge. Walk Trần Phú. See the lanterns.

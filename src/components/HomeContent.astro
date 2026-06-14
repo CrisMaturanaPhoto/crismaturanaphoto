@@ -25,9 +25,11 @@ interface Props {
   heroSlides: HeroSlide[];
   portfolioCategories: PortfolioCategory[];
   latestBlogPosts: any[];
+  lang?: string;
 }
 
-const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
+const { heroSlides, portfolioCategories, latestBlogPosts, lang = 'en' } = Astro.props;
+const blogPrefix = lang === 'es' ? '/es/blog' : '/blog';
 ---
 
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -434,11 +436,11 @@ const { heroSlides, portfolioCategories, latestBlogPosts } = Astro.props;
     <div class="container">
       <div class="blog-preview-head">
         <p class="section-label" data-i18n="blog.label">From the Blog</p>
-        <a href="/blog" class="blog-preview-link" data-i18n="blog.viewall">View All Articles</a>
+        <a href={blogPrefix} class="blog-preview-link" data-i18n="blog.viewall">View All Articles</a>
       </div>
       <div class="blog-preview-grid">
         {latestBlogPosts.map((post) => (
-          <a href={`/blog/${post.slug}`} class="blog-preview-card">
+          <a href={`${blogPrefix}/${post.slug.replace(/-es$/, '')}`} class="blog-preview-card">
             <div class="blog-preview-image">
               <img src={post.data.coverImage} alt={post.data.title} width="600" height="400" loading="lazy" />
             </div>

@@ -8,6 +8,7 @@ readTime: "6 min read"
 coverImage: "https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/criadero-peces-thu-bhon-river-2.jpg"
 featured: false
 draft: true
+lang: "en"
 ---
 
 Drone images are less about altitude and more about pattern.

@@ -5,7 +5,7 @@ import HomeContent from '../../components/HomeContent.astro';
 import { heroSlides, portfolioCategories } from '../../lib/ui';
 import { getLatestBlogPosts, buildAlternates } from '../../lib/utils';
 
-const latestBlogPosts = await getLatestBlogPosts(3);
+const latestBlogPosts = await getLatestBlogPosts(3, 'es');
 const alternates = buildAlternates('/', '/es/');
 ---
 
@@ -20,6 +20,7 @@ const alternates = buildAlternates('/', '/es/');
     heroSlides={heroSlides}
     portfolioCategories={portfolioCategories}
     latestBlogPosts={latestBlogPosts}
+    lang="es"
   />
 
 </Layout>
