@@ -183,11 +183,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
           <div class="field"><label for="session" data-i18n="contact.form.session">Tipo de sesión</label>
             <select id="session" name="session_type">
               <option value="" disabled selected>Selecciona una opción</option>
-              <option data-i18n="contact.form.session.opt1">Retrato / Marca Personal</option>
-              <option data-i18n="contact.form.session.opt2">Yoga / Bienestar</option>
-              <option data-i18n="contact.form.session.opt3">Matrimonio</option>
-              <option data-i18n="contact.form.session.opt4">Fotografía de Producto</option>
-              <option data-i18n="contact.form.session.opt5">Documental / Viaje</option>
+              <option value="Wedding" data-i18n="contact.form.session.opt3">Matrimonio</option>
+              <option value="Couples &amp; Families">Parejas y Familias</option>
+              <option value="Portrait / Personal Branding" data-i18n="contact.form.session.opt1">Retrato / Marca Personal</option>
+              <option value="Yoga / Wellness Branding" data-i18n="contact.form.session.opt2">Yoga / Bienestar</option>
+              <option value="Product Photography" data-i18n="contact.form.session.opt4">Fotografía de Producto</option>
+              <option value="Documentary / Travel" data-i18n="contact.form.session.opt5">Documental / Viaje</option>
               <optgroup label="Photo Tours Vietnam">
                 <option value="Photo Tour – Dawn at the Fishing Village">Photo Tour – Amanecer en el Pueblo Pesquero</option>
                 <option value="Photo Tour – Old Town Before the Crowds">Photo Tour – El Pueblo Antiguo Antes de las Multitudes</option>
@@ -225,6 +226,19 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
 </section>
 
 <script>
+  // Pre-seleccionar tipo de sesión desde URL (?session=Wedding)
+  const params = new URLSearchParams(window.location.search);
+  const sessionParam = params.get('session');
+  if (sessionParam) {
+    const select = document.getElementById('session');
+    if (select) {
+      for (const opt of select.options) {
+        if (opt.value === sessionParam) { opt.selected = true; break; }
+      }
+      select.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
   const heroBg = document.getElementById('heroBg');
   function onScroll() {
     const scrollY = window.scrollY;

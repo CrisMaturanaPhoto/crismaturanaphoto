@@ -177,11 +177,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
           <div class="field"><label for="session" data-i18n="contact.form.session">Type of session</label>
             <select id="session" name="session_type">
               <option value="" disabled selected>Select one</option>
-              <option>Portrait / Personal Branding</option>
-              <option>Yoga / Wellness Branding</option>
-              <option>Wedding</option>
-              <option>Product Photography</option>
-              <option>Documentary / Travel</option>
+              <option value="Wedding">Wedding</option>
+              <option value="Couples &amp; Families">Couples &amp; Families</option>
+              <option value="Portrait / Personal Branding">Portrait / Personal Branding</option>
+              <option value="Yoga / Wellness Branding">Yoga / Wellness Branding</option>
+              <option value="Product Photography">Product Photography</option>
+              <option value="Documentary / Travel">Documentary / Travel</option>
               <optgroup label="Photo Tours Vietnam">
                 <option value="Photo Tour – Dawn at the Fishing Village">Photo Tour – Dawn at the Fishing Village</option>
                 <option value="Photo Tour – Old Town Before the Crowds">Photo Tour – Old Town Before the Crowds</option>
@@ -219,6 +220,19 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
 </section>
 
 <script>
+  // Pre-select session type from URL param (?session=Wedding)
+  const params = new URLSearchParams(window.location.search);
+  const sessionParam = params.get('session');
+  if (sessionParam) {
+    const select = document.getElementById('session');
+    if (select) {
+      for (const opt of select.options) {
+        if (opt.value === sessionParam) { opt.selected = true; break; }
+      }
+      select.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
   const heroBg = document.getElementById('heroBg');
   function onScroll() {
     const scrollY = window.scrollY;
