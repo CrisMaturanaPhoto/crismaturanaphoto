@@ -1,0 +1,386 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Gallery from '../../components/Gallery.astro';
+import { buildAlternates } from '../../lib/utils';
+
+const alternates = buildAlternates('/investment', '/es/investment');
+
+const highlightImages = [
+  { thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/poppin-chris-004.JPG', full: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/poppin-chris-004.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/poppin-chris-005.JPG', full: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/poppin-chris-005.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Poppin%26Chris-Wedding-%40-228.jpg', full: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Poppin%26Chris-Wedding-%40-228.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Poppin%26Chris-Wedding-%40-226.jpg', full: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Poppin%26Chris-Wedding-%40-226.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Sofia%26AlanEdit-289.jpg', full: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Sofia%26AlanEdit-289.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/sunset-wedding-001.jpg', full: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/sunset-wedding-001.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Yaz-Li-portrait-001.jpg', full: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Yaz-Li-portrait-001.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/yaz-lin-003.jpg', full: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/yaz-lin-003.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/yaz-lin-004.jpg', full: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/yaz-lin-004.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/abrazo-001.JPG', full: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/abrazo-001.JPG' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Bernardita%26MauricioMatri-331.jpg', full: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Bernardita%26MauricioMatri-331.jpg' },
+  { thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Cami%26Pablo0001.jpg', full: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Cami%26Pablo0001.jpg' },
+].map(img => ({ ...img, alt: 'Fotografía documental de matrimonios por Cristóbal Maturana' }));
+---
+
+<Layout
+  title="La Inversión — Fotografía de Matrimonios | Cristóbal Maturana"
+  description="Qué significa invertir en fotografía documental de matrimonios con Cristóbal Maturana — momentos reales, emoción real, contados con honestidad."
+  lang="es"
+  canonical="https://crismaturana.com/es/investment"
+  alternates={alternates}
+>
+
+  <script slot="head" type="application/ld+json" is:inline>{
+    JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Fotografía Documental de Matrimonios",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Cris Maturana Photo",
+        "url": "https://crismaturana.com",
+        "address": { "@type": "PostalAddress", "addressCountry": "CL" }
+      },
+      "areaServed": ["Chile", "Mundo"],
+      "offers": [
+        { "@type": "Offer", "name": "Paquetes de Matrimonio en Chile", "price": "1200000", "priceCurrency": "CLP" },
+        { "@type": "Offer", "name": "Destination Weddings", "description": "Propuesta personalizada" },
+        { "@type": "Offer", "name": "Sesiones de Pareja", "price": "180000", "priceCurrency": "CLP" }
+      ]
+    })
+  }</script>
+
+  <!-- Hero -->
+  <div class="inv-hero">
+    <div class="inv-hero-bg"></div>
+    <div class="inv-hero-overlay"></div>
+    <div class="inv-hero-content">
+      <p class="hero-label">La Inversión</p>
+      <h1>Un día así de honesto<br>merece ser contado bien.</h1>
+      <p class="hero-text">Sin poses. Sin actuación. Solo tu matrimonio, tal como ocurrió — capturado por alguien que sabe cuándo desaparecer.</p>
+    </div>
+  </div>
+
+  <!-- Filosofía -->
+  <section class="section">
+    <div class="container narrow">
+      <p class="section-label">Filosofía</p>
+      <h2 class="section-title">Documental, ante todo.</h2>
+      <p class="lead-text">No dirijo los momentos — los espero. Mi enfoque está en la observación: risas reales, nervios reales, la mirada que nadie debía ver. Después de quince años, he aprendido que las fotografías más bellas son las que nadie tuvo que pedir.</p>
+    </div>
+  </section>
+
+  <!-- La Experiencia -->
+  <section class="section section-alt">
+    <div class="container">
+      <p class="section-label">La Experiencia</p>
+      <h2 class="section-title">Cómo es trabajar juntos.</h2>
+      <div class="exp-grid">
+        <div class="exp-card">
+          <p class="exp-num">01</p>
+          <p class="exp-name">Antes</p>
+          <p class="exp-text">Una conversación real sobre tu historia, tu gente, y cómo se desarrollará el día — para que llegado el momento, nada se sienta ajeno.</p>
+        </div>
+        <div class="exp-card">
+          <p class="exp-num">02</p>
+          <p class="exp-name">Durante</p>
+          <p class="exp-text">Me muevo en silencio durante el día. Sin pausas para posar, sin dirigir la sala — solo una presencia atenta y constante desde los preparativos hasta el último baile.</p>
+        </div>
+        <div class="exp-card">
+          <p class="exp-num">03</p>
+          <p class="exp-name">Después</p>
+          <p class="exp-text">Una edición cuidadosa y sin apuro. Cada fotografía se selecciona y se trabaja para contar la verdad de tu día — entregada en una galería privada a la que volverás durante años.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label">Portfolio</p>
+      <h2 class="section-title">Algunos momentos de matrimonios reales.</h2>
+      <Gallery images={highlightImages} layout="masonry" columns={3} />
+    </div>
+  </section>
+
+  <!-- Inversión -->
+  <section class="section section-alt">
+    <div class="container narrow">
+      <p class="section-label">Inversión</p>
+      <h2 class="section-title">Lo que se necesita para contar tu historia.</h2>
+      <p class="lead-text inv-intro">Cada matrimonio es distinto, así que cada propuesta se construye en torno al tuyo. Aquí es donde comienzan los paquetes.</p>
+
+      <div class="inv-lines">
+        <div class="inv-line">
+          <p class="inv-line-name">Paquetes de Matrimonio en Chile</p>
+          <p class="inv-line-price">Desde <span>$1.200.000 CLP</span></p>
+        </div>
+        <div class="inv-line">
+          <p class="inv-line-name">Destination Weddings</p>
+          <p class="inv-line-price"><span>Propuesta a Medida</span></p>
+        </div>
+        <div class="inv-line">
+          <p class="inv-line-name">Sesiones de Pareja</p>
+          <p class="inv-line-price">Desde <span>$180.000 CLP</span></p>
+        </div>
+      </div>
+
+      <a href="https://wa.me/56999679935?text=Hola%2C+quisiera+conversar+sobre+la+fecha+de+mi+matrimonio+y+una+propuesta" class="btn btn-accent inv-cta">Conversemos sobre tu fecha</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container narrow">
+      <p class="section-label">Preguntas Frecuentes</p>
+      <h2 class="section-title">Preguntas que vale la pena responder antes.</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>¿Con cuánta anticipación deberíamos reservar?</summary>
+          <p>La mayoría de las parejas escribe entre 8 y 12 meses antes de su fecha, especialmente para la primavera y el verano en Chile (octubre–marzo). Las fechas se reservan con un primer abono.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Viajas para destination weddings?</summary>
+          <p>Sí — viajo por todo Chile y al extranjero. Los destination weddings se cotizan individualmente según el lugar, los días de viaje y lo que requiera el día.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué incluye un paquete de matrimonio?</summary>
+          <p>Horas de cobertura, un fotógrafo (o fotógrafo más asistente), fotos editadas en alta resolución y una galería privada online — los detalles se confirman al conversar sobre tu día.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cuánto demora la entrega de las fotos?</summary>
+          <p>Un adelanto dentro de 24–48 horas, y la galería completa entre 15 y 30 días según el paquete.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cómo reservamos nuestra fecha?</summary>
+          <p>Un abono de 30–50% reserva tu fecha una vez que acordemos una propuesta. El resto se paga a la entrega de las fotografías.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="section final-cta">
+    <div class="container narrow">
+      <h2 class="section-title">Hablemos de tu día.</h2>
+      <p class="lead-text">Cuéntame tu fecha y dónde será — armaré una propuesta construida en torno a tu historia.</p>
+      <div class="final-cta-row">
+        <a href="https://wa.me/56999679935?text=Hola%2C+quisiera+conversar+sobre+mi+matrimonio" class="btn btn-accent">Consultar por WhatsApp</a>
+        <a href="/es/contact?session=Wedding" class="cta-link">O envía un mensaje →</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .container.narrow { max-width: 720px; }
+
+  .inv-hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .inv-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Bernardita%26MauricioMatri-321.jpg');
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+  }
+
+  .inv-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(20,18,16,0.45) 0%, rgba(20,18,16,0.55) 100%);
+  }
+
+  .inv-hero-content {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 6rem 2.5rem;
+    text-align: center;
+  }
+
+  .inv-hero .hero-label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .inv-hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 5.5vw, 3.75rem);
+    font-weight: 400;
+    font-style: italic;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+
+  .inv-hero .hero-text {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.8;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .section-alt { background: var(--color-surface); }
+
+  .lead-text {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.85;
+    max-width: 640px;
+  }
+
+  .inv-intro { margin-bottom: 2.5rem; }
+
+  .exp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .exp-card { border-top: 2px solid var(--color-accent); padding-top: 1.25rem; }
+
+  .exp-num {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .exp-name {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--color-heading);
+    margin-bottom: 0.6rem;
+  }
+
+  .exp-text {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+  }
+
+  .inv-lines {
+    border-top: 1px solid var(--color-border);
+    margin-top: 1rem;
+  }
+
+  .inv-line {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--color-border);
+    flex-wrap: wrap;
+  }
+
+  .inv-line-name {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--color-heading);
+  }
+
+  .inv-line-price {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .inv-line-price span {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-style: normal;
+    color: var(--color-heading);
+  }
+
+  .inv-cta { display: inline-block; margin-top: 2.5rem; }
+
+  .faq-list { margin-top: 2.5rem; border-top: 1px solid var(--color-border); }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.25rem 0;
+  }
+
+  .faq-item summary {
+    cursor: pointer;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--color-heading);
+    list-style: none;
+  }
+
+  .faq-item summary::-webkit-details-marker { display: none; }
+
+  .faq-item summary::after {
+    content: '+';
+    float: right;
+    color: var(--color-accent);
+    font-size: 1.3rem;
+  }
+
+  .faq-item[open] summary::after { content: '–'; }
+
+  .faq-item p {
+    margin-top: 0.9rem;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+  }
+
+  .final-cta { text-align: center; }
+  .final-cta .lead-text { margin: 0 auto 2rem; }
+
+  .final-cta-row {
+    display: flex;
+    gap: 1.75rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-link {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-heading);
+    text-decoration: none;
+  }
+
+  .cta-link:hover { color: var(--color-accent); }
+
+  @media (max-width: 800px) {
+    .exp-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .inv-line { flex-direction: column; gap: 0.4rem; }
+  }
+
+  @media (max-width: 600px) {
+    .inv-hero { min-height: 60vh; }
+    .inv-hero-bg { background-position: center 25%; transform: scale(1.1); }
+    .inv-hero-content { padding: 4.5rem 1.75rem; }
+  }
+
+  /* Solo en esta página: nombre del header en negro en vez de blanco */
+  :global(.logo-name) {
+    color: var(--color-heading) !important;
+  }
+</style>

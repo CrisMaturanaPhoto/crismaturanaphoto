@@ -1,0 +1,338 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { buildAlternates } from '../lib/utils';
+
+const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrimonios-chile');
+---
+
+<Layout
+  title="Wedding Pricing in Chile 2026 | Cristóbal Maturana"
+  description="Wedding photography packages and rates in Chile. Three packages starting at CLP $1,200,000. Documentary style, real moments."
+  lang="en"
+  canonical="https://crismaturana.com/wedding-pricing-chile"
+  alternates={alternates}
+>
+
+  <script slot="head" type="application/ld+json" is:inline>{
+    JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Wedding Photography in Chile",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Cris Maturana Photo",
+        "url": "https://crismaturana.com",
+        "address": { "@type": "PostalAddress", "addressCountry": "CL" }
+      },
+      "areaServed": "Chile",
+      "offers": [
+        { "@type": "Offer", "name": "Essential", "price": "1200000", "priceCurrency": "CLP" },
+        { "@type": "Offer", "name": "Complete", "price": "1800000", "priceCurrency": "CLP" },
+        { "@type": "Offer", "name": "Premium", "price": "2500000", "priceCurrency": "CLP" }
+      ]
+    })
+  }</script>
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="hero-session-label">Weddings · Chile</p>
+      <h1>Rates &amp; Packages</h1>
+      <p>Three packages built for weddings in Chile — starting at CLP $1,200,000. Documentary style, real moments, no forced poses.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="pricing-grid">
+
+        <div class="pkg-card">
+          <p class="tier-label">ESSENTIAL</p>
+          <p class="pkg-name">Essential</p>
+          <p class="pkg-tagline">Everything you need, done right.</p>
+          <div class="pkg-price"><span class="currency">CLP</span><span class="amount">$1,200,000</span></div>
+          <div class="pkg-divider"></div>
+          <ul class="pkg-features">
+            <li><span class="icon-check">✓</span><span>6 hours of coverage</span></li>
+            <li><span class="icon-check">✓</span><span>1 photographer</span></li>
+            <li><span class="icon-check">✓</span><span>Ceremony + reception</span></li>
+            <li><span class="icon-check">✓</span><span>300+ edited photos in high resolution</span></li>
+            <li><span class="icon-check">✓</span><span>Private online gallery</span></li>
+            <li class="value-add"><span class="icon-star">★</span><span>Day-of planning guide</span></li>
+            <li class="delivery"><span class="icon-del">↓</span><span>JPG web/social + full resolution for printing</span></li>
+          </ul>
+          <a href="https://wa.me/56999679935?text=Hi%2C+I%27m+interested+in+the+Essential+package+for+my+wedding" class="btn btn-accent pkg-cta">Chat on WhatsApp</a>
+          <p class="pkg-note">Delivery in 30 days</p>
+        </div>
+
+        <div class="pkg-card featured">
+          <div class="featured-badge">Most Popular</div>
+          <p class="tier-label">COMPLETE</p>
+          <p class="pkg-name">Complete</p>
+          <p class="pkg-tagline">Full coverage of your day.</p>
+          <div class="pkg-price"><span class="currency">CLP</span><span class="amount">$1,800,000</span></div>
+          <div class="pkg-divider"></div>
+          <ul class="pkg-features">
+            <li><span class="icon-check">✓</span><span>8 hours of coverage (getting ready, ceremony &amp; party)</span></li>
+            <li><span class="icon-check">✓</span><span>1 photographer + assistant</span></li>
+            <li><span class="icon-check">✓</span><span>500+ edited photos in high resolution</span></li>
+            <li><span class="icon-check">✓</span><span>Private online gallery</span></li>
+            <li class="value-add"><span class="icon-star">★</span><span>Couple's session before or after the wedding (golden hour)</span></li>
+            <li class="value-add"><span class="icon-star">★</span><span>Planning call before the day</span></li>
+            <li class="delivery"><span class="icon-del">↓</span><span>JPG web/social + full resolution for printing</span></li>
+          </ul>
+          <a href="https://wa.me/56999679935?text=Hi%2C+I%27m+interested+in+the+Complete+package+for+my+wedding" class="btn btn-accent pkg-cta">Chat on WhatsApp</a>
+          <p class="pkg-note">Delivery in 21 days</p>
+        </div>
+
+        <div class="pkg-card">
+          <p class="tier-label">PREMIUM</p>
+          <p class="pkg-name">Premium</p>
+          <p class="pkg-tagline">Your whole day, start to finish.</p>
+          <div class="pkg-price"><span class="currency">CLP</span><span class="amount">$2,500,000</span></div>
+          <div class="pkg-divider"></div>
+          <ul class="pkg-features">
+            <li><span class="icon-check">✓</span><span>10–12 hours of coverage (getting ready through the last dance)</span></li>
+            <li><span class="icon-check">✓</span><span>1 photographer + assistant</span></li>
+            <li><span class="icon-check">✓</span><span>700+ edited photos in high resolution</span></li>
+            <li><span class="icon-check">✓</span><span>Private online gallery</span></li>
+            <li class="value-add"><span class="icon-star">★</span><span>Couple's session before the wedding</span></li>
+            <li class="value-add"><span class="icon-star">★</span><span>60-second highlight video</span></li>
+            <li class="value-add"><span class="icon-star">★</span><span>Printed 30×30 cm album (20 pages)</span></li>
+            <li class="delivery"><span class="icon-del">↓</span><span>JPG web/social + full resolution for printing</span></li>
+          </ul>
+          <a href="https://wa.me/56999679935?text=Hi%2C+I%27m+interested+in+the+Premium+package+for+my+wedding" class="btn btn-accent pkg-cta">Chat on WhatsApp</a>
+          <p class="pkg-note">Priority delivery in 14 days</p>
+        </div>
+
+      </div>
+
+      <p class="footer-note">Wedding packages available across Chile · Prices in Chilean pesos (CLP) · Travel outside the Santiago Metropolitan Region quoted separately</p>
+
+      <div class="custom-quote">
+        <p class="custom-label">Something different in mind?</p>
+        <h2 class="custom-heading">Every wedding is unique.</h2>
+        <p class="custom-text">Tell me your date, your venue, and what you're picturing, and I'll put together a proposal that fits. No commitment needed.</p>
+        <a href="https://wa.me/56999679935?text=Hi%2C+I%27d+like+a+custom+quote+for+my+wedding" class="btn btn-accent custom-cta">Get a custom quote →</a>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .pkg-card {
+    position: relative;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 2rem 1.75rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s;
+  }
+
+  .pkg-card:hover { border-color: var(--color-accent); }
+
+  .pkg-card.featured {
+    border-color: var(--color-accent);
+    border-width: 2px;
+    padding-top: 3rem;
+    background: #fff;
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-accent);
+    color: var(--color-bg);
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.3rem 1rem;
+    white-space: nowrap;
+  }
+
+  .tier-label {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    color: var(--color-accent);
+    margin-bottom: 0.35rem;
+  }
+
+  .pkg-name {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--color-heading);
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+  }
+
+  .pkg-tagline {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+  }
+
+  .pkg-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 0.5rem;
+  }
+
+  .pkg-price .currency {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    font-weight: 300;
+  }
+
+  .pkg-price .amount {
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
+    font-weight: 400;
+    color: var(--color-heading);
+    line-height: 1;
+  }
+
+  .pkg-divider { height: 1px; background: var(--color-border); margin-bottom: 0.5rem; }
+
+  .pkg-features {
+    list-style: none;
+    margin-bottom: 1.75rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .pkg-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    border-bottom: 1px solid var(--color-border);
+    line-height: 1.4;
+    font-weight: 300;
+  }
+
+  .pkg-features li.value-add span:last-child { color: var(--color-text); font-weight: 400; }
+
+  .pkg-features li.delivery {
+    opacity: 0.55;
+    border-bottom: none;
+    border-top: 1px solid var(--color-border);
+    margin-top: 0.25rem;
+  }
+
+  .icon-check { color: var(--color-accent); font-weight: 700; flex-shrink: 0; font-size: 0.85rem; margin-top: 1px; }
+  .icon-star { color: #c0392b; font-size: 0.75rem; flex-shrink: 0; margin-top: 2px; }
+  .icon-del { color: var(--color-text-muted); flex-shrink: 0; font-size: 0.8rem; margin-top: 1px; }
+
+  .pkg-cta { display: block; width: 100%; text-align: center; margin-top: auto; }
+
+  .pkg-note {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    margin-top: 0.6rem;
+    opacity: 0.6;
+    font-weight: 300;
+  }
+
+  .footer-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    opacity: 0.5;
+    margin-top: 3rem;
+    font-weight: 300;
+  }
+
+  .hero-session-label {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .custom-quote {
+    margin-top: 4rem;
+    padding: 3rem 2.5rem;
+    border: 1px solid var(--color-border);
+    text-align: center;
+    background: var(--color-surface);
+    position: relative;
+  }
+
+  .custom-quote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2.5rem;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  .custom-label {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .custom-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--color-heading);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .custom-text {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 1.75rem;
+    font-weight: 300;
+  }
+
+  .custom-cta { display: inline-block; }
+
+  .page-hero { padding-bottom: 0 !important; margin-bottom: 0 !important; border-bottom: none !important; }
+  .section { padding-top: 1.5rem !important; }
+
+  @media (max-width: 900px) {
+    .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+  }
+</style>
