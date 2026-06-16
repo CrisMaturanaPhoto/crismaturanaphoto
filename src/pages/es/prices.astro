@@ -555,6 +555,17 @@ import Layout from '../../layouts/Layout.astro';
   @media (max-width: 900px) {
     .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
   }
+
+  @media (max-width: 480px) {
+    .sessions-nav { flex-wrap: nowrap; gap: 0.4rem; }
+    .session-btn {
+      flex: 1;
+      padding: 0.5rem 0.4rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+  }
 </style>
 
 <script is:inline>
