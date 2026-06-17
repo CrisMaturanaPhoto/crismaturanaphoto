@@ -1,81 +1,29 @@
 ---
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import Analytics from '@vercel/analytics/astro';
 
 export interface Props {
   title: string;
   description?: string;
-  /** Idioma de la página. 'en' por defecto; pasa 'es' en las páginas en español. */
-  lang?: string;
-  /** URL canónica. Si no se entrega, se calcula sola desde el dominio + la ruta. */
-  canonical?: string;
-  /** Versiones alternativas en otros idiomas (hreflang). */
-  alternates?: { hreflang: string; href: string }[];
 }
 
-const {
-  title,
-  description = 'Cristóbal Maturana – Documentary Photographer & Visual Storyteller',
-  lang = 'en',
-  canonical,
-  alternates = [],
-} = Astro.props;
-
-// Canónica auto-calculada desde el `site` de astro.config (www) + la ruta actual.
-const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
+const { title, description = 'Cristóbal Maturana – Documentary Photographer & Visual Storyteller' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalURL} />
-    {alternates.map((alt) => (
-      <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
-    ))}
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>{title}</title>
-
-    {/*
-      Sincroniza el idioma ANTES de pintar para evitar FOUC.
-      La URL manda: el `lang` de la página sobreescribe lo guardado en
-      localStorage. translations.js (más abajo) lee localStorage en
-      DOMContentLoaded, así que dejamos el valor listo aquí.
-    */}
-    <script is:inline define:vars={{ pageLang: lang }}>
-      try {
-        localStorage.setItem('lang', pageLang);
-      } catch (e) {}
-      document.documentElement.lang = pageLang;
-
-      // Auto-redirect: solo en primera visita (sin 'lang-redirected' en localStorage)
-      // Si el navegador está en español y estamos en una página EN (no /es/), redirigir a /es/
-      try {
-        var path = window.location.pathname;
-        var isEsPage = path.startsWith('/es') || path.startsWith('/es/');
-        var alreadyRedirected = localStorage.getItem('lang-redirected');
-        if (!alreadyRedirected && !isEsPage) {
-          var browserLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-          if (browserLang.toLowerCase().startsWith('es')) {
-            localStorage.setItem('lang-redirected', '1');
-            var esPath = '/es' + (path === '/' ? '/' : path);
-            window.location.replace(esPath);
-          } else {
-            localStorage.setItem('lang-redirected', '1');
-          }
-        }
-      } catch (e) {}
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" />
-    </noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <style is:global>
       *, *::before, *::after {
         box-sizing: border-box;
@@ -84,12 +32,11 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
       }
 
       :root {
-        --color-bg: #ffffff;
-        --color-surface: #f8f6f3;
-        --color-border: #e6e1da;
-        --color-text: #2e2e2c;
-        --color-text-muted: #6f6b65;
-        --color-heading: #1a1a18;
+        --color-bg: #111111;
+        --color-surface: #1a1a1a;
+        --color-border: #2a2a2a;
+        --color-text: #e8e8e8;
+        --color-text-muted: #888888;
         --color-accent: #c9a96e;
         --color-white: #ffffff;
         --font-serif: 'Playfair Display', Georgia, serif;
@@ -129,12 +76,12 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
       }
 
       .section {
-        padding: 30px 0 80px;
+        padding: 80px 0;
       }
 
       .section-label {
         font-family: var(--font-sans);
-        font-size: 1.2rem;
+        font-size: 0.75rem;
         font-weight: 700;
         letter-spacing: 0.2em;
         text-transform: uppercase;
@@ -146,7 +93,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
         font-family: var(--font-serif);
         font-size: clamp(2rem, 4vw, 3rem);
         font-weight: 400;
-        color: var(--color-heading);
+        color: var(--color-white);
         line-height: 1.2;
         margin-bottom: 1.5rem;
       }
@@ -183,17 +130,17 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
 
       /* Page hero */
       .page-hero {
-        padding: 80px 0 0;
+        padding: 120px 0 60px;
         text-align: center;
-        border-bottom: none;
-        margin-bottom: 0;
+        border-bottom: 1px solid var(--color-border);
+        margin-bottom: 60px;
       }
 
       .page-hero h1 {
         font-family: var(--font-serif);
         font-size: clamp(2.5rem, 5vw, 4rem);
         font-weight: 400;
-        color: var(--color-heading);
+        color: var(--color-white);
         margin-bottom: 1rem;
       }
 
@@ -265,10 +212,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
         .container { padding: 0 1.25rem; }
       }
     </style>
-    <script is:inline src="/scripts/translations.js"></script>
-    <Analytics />
-    <slot name="head" />
-</head>
+  </head>
   <body>
     <Nav />
     <main>
@@ -280,7 +224,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
     <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
       <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
       <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">&#8249;</button>
-      <img class="lightbox-img" id="lightbox-img" src="" alt="" loading="lazy" />
+      <img class="lightbox-img" id="lightbox-img" src="" alt="" />
       <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">&#8250;</button>
     </div>
 

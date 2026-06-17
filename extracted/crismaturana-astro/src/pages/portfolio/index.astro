@@ -1,0 +1,156 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const categories = [
+  {
+    title: 'Photo Tours Vietnam 2026',
+    href: '/portfolio/photo-tours-vietnam-2026',
+    thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/DronCoconutBoat@-9-711x400.jpg',
+  },
+  {
+    title: 'Portraits',
+    subtitle: 'Natural light. Honest expressions.',
+    href: '/portfolio/portraits',
+    thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/DSC_1690_2048px-267x400.jpg',
+  },
+  {
+    title: 'Weddings',
+    subtitle: 'Moments that last forever.',
+    href: '/portfolio/weddings',
+    thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/IMG_9822-599x400.jpg',
+  },
+  {
+    title: 'Travel & Culture',
+    subtitle: 'Observing the world, honestly.',
+    href: '/portfolio/travel-culture',
+    thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/01.25HoiAn@-39-800x534.jpg',
+  },
+  {
+    title: 'From Above',
+    subtitle: 'Perspective changes everything.',
+    href: '/portfolio/aerial',
+    thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/HoiAnDron@-3-711x400.jpg',
+  },
+  {
+    title: 'Couples & Family',
+    subtitle: 'Genuine connection, beautifully captured.',
+    href: '/portfolio/landscapes',
+    thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/TheHyggeFamily@-24-267x400.jpg',
+  },
+  {
+    title: 'Architecture',
+    subtitle: 'Form, light, and space.',
+    href: '/portfolio/architecture',
+    thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/HoiAnDron@-1-711x400.jpg',
+  },
+  {
+    title: 'Night Sky',
+    subtitle: 'The universe above.',
+    href: '/portfolio/night-sky',
+    thumb: 'https://crismaturana.com/wp-content/uploads/2017/03/temp_image_for_default_share-4-711x400.jpg',
+  },
+];
+---
+
+<Layout title="Portfolio – Cristóbal Maturana" description="Photography portfolio by Cristóbal Maturana.">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Portfolio</h1>
+      <p>A selection of my finest work</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="portfolio-grid">
+        {categories.map((cat) => (
+          <a href={cat.href} class="portfolio-card">
+            <div class="card-img">
+              <img src={cat.thumb} alt={cat.title} loading="lazy" />
+            </div>
+            <div class="card-overlay">
+              <h2 class="card-title">{cat.title}</h2>
+              {cat.subtitle && <p class="card-sub">{cat.subtitle}</p>}
+              <span class="card-cta">View Gallery →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+  }
+
+  .portfolio-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .portfolio-card:hover .card-img img {
+    transform: scale(1.07);
+  }
+
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .portfolio-card:hover .card-overlay { opacity: 1; }
+
+  .card-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--color-white);
+    margin-bottom: 0.3rem;
+  }
+
+  .card-sub {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 0.75rem;
+  }
+
+  .card-cta {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 900px) {
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 500px) {
+    .portfolio-grid { grid-template-columns: 1fr; }
+  }
+</style>

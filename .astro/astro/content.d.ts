@@ -141,6 +141,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"couple-photography-locations-hoi-an.md": {
+	id: "couple-photography-locations-hoi-an.md";
+  slug: "couple-photography-locations-hoi-an";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".md"] };
 "drone-workflow-vietnam-es.md": {
 	id: "drone-workflow-vietnam-es.md";
   slug: "drone-workflow-vietnam-es";

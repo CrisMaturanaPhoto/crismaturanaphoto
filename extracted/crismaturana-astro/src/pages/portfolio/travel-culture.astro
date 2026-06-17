@@ -1,0 +1,84 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Gallery from '../../components/Gallery.astro';
+
+const base = 'https://crismaturana.com/wp-content/uploads/2017/03/';
+
+const images = [
+  { thumb: base + '01.25HoiAn@-39-800x534.jpg', full: base + '01.25HoiAn@-39.jpg' },
+  { thumb: base + '01.25HoiAn@-47-800x534.jpg', full: base + '01.25HoiAn@-47.jpg' },
+  { thumb: base + '01.25HoiAn@-34-800x534.jpg', full: base + '01.25HoiAn@-34.jpg' },
+  { thumb: base + '01.25HoiAn@-37-800x534.jpg', full: base + '01.25HoiAn@-37.jpg' },
+  { thumb: base + '01.25HoiAn@-36-800x1199.jpg', full: base + '01.25HoiAn@-36.jpg' },
+  { thumb: base + '01.25HoiAn@-42-800x534.jpg', full: base + '01.25HoiAn@-42.jpg' },
+  { thumb: base + 'BudaPai-1-800x534.jpg', full: base + 'BudaPai-1.jpg' },
+  { thumb: base + 'BudaPai-4-800x534.jpg', full: base + 'BudaPai-4.jpg' },
+  { thumb: base + 'DuyHay2HoiAn@-14-800x1199.jpg', full: base + 'DuyHay2HoiAn@-14.jpg' },
+  { thumb: base + 'DuyHaiFisherman@-11-800x534.jpg', full: base + 'DuyHaiFisherman@-11.jpg' },
+  { thumb: base + 'DuyHaiFisherman@-18-800x534.jpg', full: base + 'DuyHaiFisherman@-18.jpg' },
+  { thumb: base + 'DuyHaiFisherman@-23-800x534.jpg', full: base + 'DuyHaiFisherman@-23.jpg' },
+  { thumb: base + 'DuyHaiFisherman@-24-800x534.jpg', full: base + 'DuyHaiFisherman@-24.jpg' },
+  { thumb: base + 'DuyHaiFisherman@-32-800x534.jpg', full: base + 'DuyHaiFisherman@-32.jpg' },
+  { thumb: base + 'DuyHaiFisherman@-36-800x534.jpg', full: base + 'DuyHaiFisherman@-36.jpg' },
+  { thumb: base + 'DuyHaiFisherman@-44-800x534.jpg', full: base + 'DuyHaiFisherman@-44.jpg' },
+  { thumb: base + 'DuyHaiSeleccion@-8-800x534.jpg', full: base + 'DuyHaiSeleccion@-8.jpg' },
+  { thumb: base + 'DuyHaiSeleccion@-10-800x534.jpg', full: base + 'DuyHaiSeleccion@-10.jpg' },
+  { thumb: base + 'DuyHay2HoiAn@-23-800x534.jpg', full: base + 'DuyHay2HoiAn@-23.jpg' },
+  { thumb: base + 'DuyHay2HoiAn@-36-800x534.jpg', full: base + 'DuyHay2HoiAn@-36.jpg' },
+  { thumb: base + 'DuyHay2HoiAn@-27-800x534.jpg', full: base + 'DuyHay2HoiAn@-27.jpg' },
+  { thumb: base + 'DuyHay2HoiAn@-33-800x534.jpg', full: base + 'DuyHay2HoiAn@-33.jpg' },
+  { thumb: base + 'DuyHay2HoiAn@-18-800x534.jpg', full: base + 'DuyHay2HoiAn@-18.jpg' },
+  { thumb: base + 'IMG_7564-800x537.jpg', full: base + 'IMG_7564-scaled.jpg' },
+  { thumb: base + 'IMG_7565-800x537.jpg', full: base + 'IMG_7565-scaled.jpg' },
+  { thumb: base + 'IMG_7566-800x1196.jpg', full: base + 'IMG_7566-scaled.jpg' },
+  { thumb: base + 'IMG_7567-800x535.jpg', full: base + 'IMG_7567-scaled.jpg' },
+  { thumb: base + 'IMG_7571-800x1196.jpg', full: base + 'IMG_7571-scaled.jpg' },
+  { thumb: base + 'IMG_7576-800x535.jpg', full: base + 'IMG_7576-scaled.jpg' },
+  { thumb: base + 'IMG_7579-800x537.jpg', full: base + 'IMG_7579.jpg' },
+  { thumb: base + 'IMG_7582-800x537.jpg', full: base + 'IMG_7582.jpg' },
+  { thumb: base + 'IMG_7578-800x537.jpg', full: base + 'IMG_7578.jpg' },
+  { thumb: base + 'IMG_7580-800x537.jpg', full: base + 'IMG_7580.jpg' },
+  { thumb: base + 'IMG_7581-800x537.jpg', full: base + 'IMG_7581.jpg' },
+  { thumb: base + 'IMG_7583-800x537.jpg', full: base + 'IMG_7583.jpg' },
+  { thumb: base + 'IMG_7586-800x537.jpg', full: base + 'IMG_7586.jpg' },
+  { thumb: base + 'IMG_7589-800x1192.jpg', full: base + 'IMG_7589.jpg' },
+  { thumb: base + 'RiceHarvest@-4-800x534.jpg', full: base + 'RiceHarvest@-4.jpg' },
+  { thumb: base + 'RiceHarvest@-20-800x534.jpg', full: base + 'RiceHarvest@-20.jpg' },
+  { thumb: base + 'RiverBoatsHoiAn@-2-800x534.jpg', full: base + 'RiverBoatsHoiAn@-2.jpg' },
+  { thumb: base + 'RiverBoatsHoiAn@-8-800x534.jpg', full: base + 'RiverBoatsHoiAn@-8.jpg' },
+  { thumb: base + 'RiverBoatsHoiAn@-9-800x534.jpg', full: base + 'RiverBoatsHoiAn@-9.jpg' },
+  { thumb: base + 'RiverBoatsHoiAn@-10-800x534.jpg', full: base + 'RiverBoatsHoiAn@-10.jpg' },
+  { thumb: base + 'UltimoDiaLangkawi-11-800x534.jpg', full: base + 'UltimoDiaLangkawi-11.jpg' },
+  { thumb: base + 'UltimoDiaLangkawi-18-800x534.jpg', full: base + 'UltimoDiaLangkawi-18.jpg' },
+  { thumb: base + 'SevenWells@-1-800x534.jpg', full: base + 'SevenWells@-1.jpg' },
+].map(img => ({ ...img, alt: 'Travel & Culture photo by Cristóbal Maturana' }));
+---
+
+<Layout title="Travel & Culture – Cristóbal Maturana" description="Travel and culture documentary photography by Cristóbal Maturana.">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Travel & Culture</h1>
+      <p>Observing the world, honestly.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery-intro">
+        <p>A visual exploration of places, people, and everyday life across different cultures. Through a documentary approach and natural light, I capture authentic moments as they unfold — focusing on atmosphere, human connection, and the subtle details that define each destination. Honest images shaped by perspective and experience.</p>
+      </div>
+      <Gallery images={images} layout="masonry" columns={3} />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .gallery-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+</style>

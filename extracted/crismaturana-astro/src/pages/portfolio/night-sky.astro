@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Gallery from '../../components/Gallery.astro';
+
+const base = 'https://crismaturana.com/wp-content/uploads/2017/03/';
+
+const images = [
+  { thumb: base + 'temp_image_for_default_share-4-711x400.jpg', full: base + 'temp_image_for_default_share-4.jpg' },
+  { thumb: base + 'temp_image_for_default_share-5-711x400.jpg', full: base + 'temp_image_for_default_share-5.jpg' },
+  { thumb: base + 'temp_image_for_default_share-6-711x400.jpg', full: base + 'temp_image_for_default_share-6.jpg' },
+  { thumb: base + 'temp_image_for_default_share-7-711x400.jpg', full: base + 'temp_image_for_default_share-7.jpg' },
+  { thumb: base + 'temp_image_for_default_share-8-711x400.jpg', full: base + 'temp_image_for_default_share-8.jpg' },
+  { thumb: base + 'Dron@-8-711x400.jpg', full: base + 'Dron@-8.jpg' },
+  { thumb: base + 'Dron@-5-711x400.jpg', full: base + 'Dron@-5.jpg' },
+  { thumb: base + 'Dron@-2-711x400.jpg', full: base + 'Dron@-2.jpg' },
+  { thumb: base + '65A7130F-8437-40C6-A0CE-A484A4A9FA4D-711x400.jpg', full: base + '65A7130F-8437-40C6-A0CE-A484A4A9FA4D.jpg' },
+].map(img => ({ ...img, alt: 'Night sky astrophotography by Cristóbal Maturana' }));
+---
+
+<Layout title="Night Sky – Cristóbal Maturana" description="Night sky and astrophotography by Cristóbal Maturana.">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Night Sky</h1>
+      <p>The universe above.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery-intro">
+        <p>When the sun sets and the world quiets, a completely different canvas appears above. Long exposures under open skies reveal the Milky Way, star trails, and the subtle glow of galaxies — a reminder of how vast and beautiful our universe truly is.</p>
+      </div>
+      <Gallery images={images} layout="grid" columns={3} />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .gallery-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+</style>
