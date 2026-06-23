@@ -1,9 +1,9 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import Gallery from '../../../components/Gallery.astro';
-import { buildAlternates } from '../../../lib/utils';
+import Layout from '../../layouts/Layout.astro';
+import Gallery from '../../components/Gallery.astro';
+import { buildAlternates } from '../../lib/utils';
 
-const alternates = buildAlternates('/portfolio/couples-families', '/es/portfolio/couples-families');
+const alternates = buildAlternates('/family-portrait-photography-hoi-an', '/es/fotografia-familiar-hoi-an');
 
 const images = [
   { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/agnes-couple-001.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/agnes-couple-001.JPG' },
@@ -30,19 +30,34 @@ const images = [
 ---
 
 <Layout
-  title="Parejas y Familias – Cristóbal Maturana"
-  description="Fotografía de parejas y familias por Cristóbal Maturana."
+  title="Fotógrafo de Familias, Parejas y Retratos en Hội An y Da Nang | Cristóbal Maturana"
+  description="Sesiones de fotografía familiar, de pareja y retratos en Hội An y Da Nang, Vietnam. Estilo documental, luz natural, momentos reales. Paquetes desde $160 USD."
   lang="es"
-  canonical="https://crismaturana.com/es/portfolio/couples-families"
+  canonical="https://crismaturana.com/es/fotografia-familiar-hoi-an"
   alternates={alternates}
 >
+  <script slot="head" type="application/ld+json" is:inline>{
+    JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Fotografía Familiar, de Parejas y Retratos",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Cris Maturana Photo",
+        "url": "https://crismaturana.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Hội An", "addressCountry": "VN" }
+      },
+      "areaServed": ["Hội An", "Da Nang", "Vietnam"]
+    })
+  }</script>
   <div class="gallery-hero">
     <div class="gallery-hero-bg"></div>
     <div class="gallery-hero-overlay"></div>
     <div class="gallery-hero-content">
       <p class="hero-label">Portfolio · Parejas y Familias</p>
-      <p class="hero-location">Hội An · Chile · Sudeste Asiático</p>
-      <h1>Dos personas. Una familia. La vida tal como es.</h1>
+      <p class="hero-location">Hội An · Da Nang · Sudeste Asiático</p>
+      <h1>Fotógrafo de Familias y Parejas en Hội An y Da Nang</h1>
+      <h2>Dos personas. Una familia. La vida tal como es.</h2>
       <p class="hero-text">Parejas en su primer viaje juntos. Familias que llevan años sin quedarse quietas. Me presento, observo y dejo que las cosas pasen. Un poco de dirección no hace daño — pero los mejores fotogramas siempre son los que ocurren entre medio.</p>
       <div class="hero-stats">
         <div class="stat"><p class="stat-num">15+</p><p class="stat-label">Años</p></div>
@@ -50,11 +65,68 @@ const images = [
         <div class="stat"><p class="stat-num stat-sm">Always</p><p class="stat-label">Present</p></div>
         <div class="stat stat-text"><p class="stat-num stat-sm">Natural & Espontáneo</p><p class="stat-label">Estilo</p></div>
       </div>
+      <div class="hero-cta">
+        <a href="/es/prices" class="cta-btn">Ver Paquetes y Precios</a>
+        <a href="/es/contact?session=Couples+%26+Families" class="cta-link">Reservar una Sesión →</a>
+      </div>
     </div>
   </div>
-  <section class="section">
+  <section class="section gallery-section">
     <div class="container">
       <Gallery images={images} layout="masonry" columns={3} />
+    </div>
+  </section>
+
+  <section class="section service-section">
+    <div class="container service-copy">
+
+      <h2>¿Qué esperar?</h2>
+      <p>
+        Las sesiones normalmente duran entre 1 y 4 horas según el paquete, y se hacen donde tú
+        quieras — las calles del Casco Antiguo, la ribera del río Thu Bon, la playa, o los
+        campos de arroz al atardecer. Los primeros minutos los uso para que todos se relajen y
+        se olviden de la cámara, y luego sigo el ritmo natural del momento — los niños siendo
+        niños, las parejas realmente conversando entre ellas, los abuelos contando historias.
+        La luz y el lugar hacen la mitad del trabajo; el resto ocurre solo.
+      </p>
+
+      <h2>¿Por qué reservar con Cristóbal?</h2>
+      <p>
+        Llevo más de 15 años fotografiando familias y parejas, desde Chile hasta Hội An, y ahora
+        con cobertura regular también en Da Nang. Mi formación documental significa que noto los
+        momentos intermedios que la mayoría de los fotógrafos se pierde — y trabajo rápido y sin
+        interrumpir, lo cual importa especialmente con niños y con parejas que se sienten
+        incómodas frente a la cámara.
+      </p>
+
+      <h2>Preguntas Frecuentes</h2>
+      <details>
+        <summary>¿También fotografías en Da Nang?</summary>
+        <p>Sí — Da Nang está a unos 30–45 minutos de Hội An, y regularmente hago sesiones familiares y de pareja ahí sin complicaciones adicionales de traslado.</p>
+      </details>
+      <details>
+        <summary>¿Cuántas personas pueden participar en una sesión familiar?</summary>
+        <p>Cualquier tamaño — desde una pareja esperando su primer hijo hasta familias multigeneracionales. Grupos más grandes pueden necesitar una sesión un poco más larga; te lo indico cuando conversemos.</p>
+      </details>
+      <details>
+        <summary>¿Cuántas fotos recibiremos y cuánto demora la entrega?</summary>
+        <p>Entre 15 y 50 fotos editadas según tu paquete, con un adelanto dentro de 24 horas y la galería completa entregada dentro de 7 días.</p>
+      </details>
+      <details>
+        <summary>¿Cómo reservo?</summary>
+        <p>Completa el formulario de contacto en crismaturana.com/es/contact, o escríbeme directamente. Te responderé dentro de 24–48 horas para confirmar fecha y lugar.</p>
+      </details>
+
+      <div class="custom-quote">
+        <p class="custom-label">Trabajemos Juntos</p>
+        <h2 class="custom-heading">Empecemos la conversación</h2>
+        <p class="custom-text">Cuéntame sobre tu familia o tu viaje — te respondo dentro de 24 horas.</p>
+        <a href="/es/contact?session=Couples+%26+Families" class="btn btn-accent custom-cta">Empezar la Conversación →</a>
+        <p class="custom-text" style="margin-top: 1rem; margin-bottom: 0;">
+          <a href="/es/prices">Ver paquetes y precios →</a>
+        </p>
+      </div>
+
     </div>
   </section>
 </Layout>
@@ -164,6 +236,154 @@ const images = [
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1.75rem;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 0.7rem 1.75rem;
+    background: #e8c070;
+    color: #1a1a18;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .cta-btn:hover {
+    background: #c9a050;
+  }
+
+  .cta-link {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #1a1a18;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+
+  .cta-link:hover {
+    color: rgba(160, 120, 64, 0.85);
+  }
+
+  .gallery-section {
+    padding-bottom: 0;
+  }
+
+  .service-section {
+    padding-top: 0;
+    margin-top: -30px;
+  }
+
+  .service-copy {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .service-copy h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    color: var(--color-heading);
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-copy p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .service-copy a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  .service-copy details {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+  }
+
+  .service-copy summary {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--color-heading);
+  }
+
+  .service-copy details p {
+    margin-top: 0.5rem;
+  }
+
+  .custom-quote {
+    margin-top: 4rem;
+    padding: 3rem 2.5rem;
+    border: 1px solid var(--color-border);
+    text-align: center;
+    background: var(--color-surface);
+    position: relative;
+  }
+
+  .custom-quote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2.5rem;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  .custom-label {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .custom-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 400;
+    color: var(--color-heading);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .custom-text {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 1.75rem;
+    font-weight: 300;
+  }
+
+  .custom-text a {
+    color: var(--color-accent);
+  }
+
+  .custom-cta {
+    display: inline-block;
   }
 
   @media (max-width: 768px) {

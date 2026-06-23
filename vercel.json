@@ -9,6 +9,16 @@
       "source": "/es/portfolio/weddings",
       "destination": "/es/fotografo-bodas-hoi-an",
       "permanent": true
+    },
+    {
+      "source": "/portfolio/couples-families",
+      "destination": "/family-portrait-photography-hoi-an",
+      "permanent": true
+    },
+    {
+      "source": "/es/portfolio/couples-families",
+      "destination": "/es/fotografia-familiar-hoi-an",
+      "permanent": true
     }
   ]
 }

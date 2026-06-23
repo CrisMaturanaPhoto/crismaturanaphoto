@@ -1,6 +1,9 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Gallery from '../../components/Gallery.astro';
+import Layout from '../layouts/Layout.astro';
+import Gallery from '../components/Gallery.astro';
+import { buildAlternates } from '../lib/utils';
+
+const alternates = buildAlternates('/family-portrait-photography-hoi-an', '/es/fotografia-familiar-hoi-an');
 
 const images = [
   { thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/agnes-couple-001.JPG', full: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/agnes-couple-001.JPG', alt: 'Couple photography session in Hội An by Cristóbal Maturana' },
@@ -31,17 +34,33 @@ const images = [
 ---
 
 <Layout
-  title="Couples & Family Photographer in Hội An, Vietnam – Cristóbal Maturana"
-  description="Couple and family photography sessions in Hội An, Vietnam. Documentary style, natural light, real moments. Packages from $160 USD. Book your session."
-  canonical="https://www.crismaturana.com/portfolio/couples-families"
+  title="Family, Portrait & Couples Photographer in Hoi An & Da Nang | Cristóbal Maturana"
+  description="Family, couples, and portrait photography sessions in Hoi An and Da Nang, Vietnam. Documentary style, natural light, real moments. Packages from $160 USD."
+  lang="en"
+  canonical="https://crismaturana.com/family-portrait-photography-hoi-an"
+  alternates={alternates}
 >
+  <script slot="head" type="application/ld+json" is:inline>{
+    JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Family, Couples & Portrait Photography",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Cris Maturana Photo",
+        "url": "https://crismaturana.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Hội An", "addressCountry": "VN" }
+      },
+      "areaServed": ["Hội An", "Da Nang", "Vietnam"]
+    })
+  }</script>
   <div class="gallery-hero">
     <div class="gallery-hero-bg"></div>
     <div class="gallery-hero-overlay"></div>
     <div class="gallery-hero-content">
       <p class="hero-label">Couple & Family Photography · Hội An, Vietnam</p>
-      <p class="hero-location">Ancient Town · Thu Bon River · Southeast Asia</p>
-      <h1>Couples & Family Photographer in Hội An</h1>
+      <p class="hero-location">Ancient Town · Thu Bon River · Da Nang · Southeast Asia</p>
+      <h1>Couples &amp; Family Photographer in Hội An &amp; Da Nang</h1>
       <h2>Two people. A family. Real life in between.</h2>
       <p class="hero-text">Couples on their first trip together. Families that haven't sat still in years. I photograph in Hội An's Old Town, along the Thu Bon River, and at golden hour in the rice fields — I show up, watch, and let things happen. The best frames are always the ones in between.</p>
       <div class="hero-stats">
@@ -56,9 +75,61 @@ const images = [
       </div>
     </div>
   </div>
-  <section class="section">
+  <section class="section gallery-section">
     <div class="container">
       <Gallery images={images} layout="masonry" columns={3} />
+    </div>
+  </section>
+
+  <section class="section service-section">
+    <div class="container service-copy">
+
+      <h2>What to Expect</h2>
+      <p>
+        Sessions usually run 1 to 4 hours depending on your package, and take place wherever
+        feels right for you — Old Town lanes, the Thu Bon riverside, the beach, or rice fields
+        at golden hour. I spend the first few minutes letting everyone settle in and forget the
+        camera is there, then follow the natural rhythm of the time together — kids being kids,
+        partners actually talking to each other, grandparents telling stories. The light and the
+        location do half the work; the rest takes care of itself.
+      </p>
+
+      <h2>Why Book with Cristóbal?</h2>
+      <p>
+        I've been photographing families and couples for 15+ years, from Chile to Hội An and
+        now regularly in Da Nang. My documentary background means I notice the in-between
+        moments most photographers miss — and I work fast and unobtrusively, which matters most
+        with kids and with couples who feel awkward in front of a camera.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>Do you photograph in Da Nang too?</summary>
+        <p>Yes — Da Nang is about 30–45 minutes from Hội An, and I regularly shoot family and couples sessions there with no extra travel complexity.</p>
+      </details>
+      <details>
+        <summary>How many people can be in a family session?</summary>
+        <p>Any size — from a couple expecting their first child to multi-generational families. Larger groups may need a slightly longer session; I'll let you know when we talk.</p>
+      </details>
+      <details>
+        <summary>How many photos will we receive, and how long does delivery take?</summary>
+        <p>Between 15 and 50 edited photos depending on your package, with a sneak peek within 24 hours and the full gallery delivered within 7 days.</p>
+      </details>
+      <details>
+        <summary>How do I book?</summary>
+        <p>Fill in the contact form at crismaturana.com/contact, or message me directly. I'll reply within 24–48 hours to confirm a date and location.</p>
+      </details>
+
+      <div class="custom-quote">
+        <p class="custom-label">Let's Work Together</p>
+        <h2 class="custom-heading">Start the conversation</h2>
+        <p class="custom-text">Tell me about your family or your trip — I'll get back to you within 24 hours.</p>
+        <a href="/contact?session=Couples+%26+Families" class="btn btn-accent custom-cta">Start the Conversation →</a>
+        <p class="custom-text" style="margin-top: 1rem; margin-bottom: 0;">
+          <a href="/prices">View packages &amp; prices →</a>
+        </p>
+      </div>
+
     </div>
   </section>
 </Layout>
@@ -219,6 +290,112 @@ const images = [
 
   .cta-link:hover {
     color: rgba(160, 120, 64, 0.85);
+  }
+
+  .gallery-section {
+    padding-bottom: 0;
+  }
+
+  .service-section {
+    padding-top: 0;
+    margin-top: -30px;
+  }
+
+  .service-copy {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .service-copy h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    color: var(--color-heading);
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-copy p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .service-copy a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  .service-copy details {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+  }
+
+  .service-copy summary {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--color-heading);
+  }
+
+  .service-copy details p {
+    margin-top: 0.5rem;
+  }
+
+  .custom-quote {
+    margin-top: 4rem;
+    padding: 3rem 2.5rem;
+    border: 1px solid var(--color-border);
+    text-align: center;
+    background: var(--color-surface);
+    position: relative;
+  }
+
+  .custom-quote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2.5rem;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  .custom-label {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .custom-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 400;
+    color: var(--color-heading);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .custom-text {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 1.75rem;
+    font-weight: 300;
+  }
+
+  .custom-text a {
+    color: var(--color-accent);
+  }
+
+  .custom-cta {
+    display: inline-block;
   }
 
   @media (max-width: 768px) {
