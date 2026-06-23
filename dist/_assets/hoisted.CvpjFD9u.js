@@ -1,1 +1,0 @@
-import"./hoisted.DvcHtAxe.js";const s=document.querySelectorAll(".filter-btn"),l=document.querySelectorAll(".post-card");s.forEach(e=>{e.addEventListener("click",()=>{s.forEach(t=>t.classList.remove("active")),e.classList.add("active");const c=e.dataset.filter;l.forEach(t=>{const a=t.dataset.category,o=c==="all"||a===c;t.classList.toggle("hidden",!o)})})});
