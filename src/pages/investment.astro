@@ -42,9 +42,9 @@ const highlightImages = [
       },
       "areaServed": ["Chile", "Worldwide"],
       "offers": [
-        { "@type": "Offer", "name": "Wedding Collections in Chile", "price": "1200000", "priceCurrency": "CLP" },
+        { "@type": "Offer", "name": "Wedding Collections in Chile", "price": "1200000", "priceCurrency": "CLP", "description": "8-hour wedding coverage. Approx. $1,300 USD." },
         { "@type": "Offer", "name": "Destination Weddings", "description": "Custom proposal" },
-        { "@type": "Offer", "name": "Couples Sessions", "price": "180000", "priceCurrency": "CLP" }
+        { "@type": "Offer", "name": "Couples Sessions", "price": "180000", "priceCurrency": "CLP", "description": "Approx. $200 USD." }
       ]
     })
   }</script>
@@ -112,8 +112,11 @@ const highlightImages = [
 
       <div class="inv-lines">
         <div class="inv-line">
-          <p class="inv-line-name">Wedding Collections in Chile</p>
-          <p class="inv-line-price">Starting from <span>$1.200.000 CLP</span></p>
+          <div>
+            <p class="inv-line-name">Wedding Collections in Chile</p>
+            <p class="inv-line-note">8-hour wedding coverage</p>
+          </div>
+          <p class="inv-line-price">Starting from <span>$1.200.000 CLP</span><span class="inv-line-usd">or $1,300 USD</span></p>
         </div>
         <div class="inv-line">
           <p class="inv-line-name">Destination Weddings</p>
@@ -121,9 +124,11 @@ const highlightImages = [
         </div>
         <div class="inv-line">
           <p class="inv-line-name">Couples Sessions</p>
-          <p class="inv-line-price">Starting from <span>$180.000 CLP</span></p>
+          <p class="inv-line-price">Starting from <span>$180.000 CLP</span><span class="inv-line-usd">or $200 USD</span></p>
         </div>
       </div>
+
+      <p class="inv-disclaimer">Reference prices. Confirm with the photographer.</p>
 
       <a href="https://wa.me/56999679935?text=Hi%2C+I%27d+like+to+talk+about+my+wedding+date+and+a+proposal" class="btn btn-accent inv-cta">Talk about your date</a>
     </div>
@@ -309,6 +314,22 @@ const highlightImages = [
     font-size: 1.3rem;
     font-style: normal;
     color: var(--color-heading);
+  }
+
+  .inv-line-note {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    margin-top: 0.25rem;
+  }
+
+  .inv-line-usd {
+    display: inline;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-style: normal;
+    color: var(--color-text-muted);
+    margin-left: 0.5rem;
   }
 
   .inv-cta { display: inline-block; margin-top: 2.5rem; }

@@ -42,9 +42,9 @@ const highlightImages = [
       },
       "areaServed": ["Chile", "Mundo"],
       "offers": [
-        { "@type": "Offer", "name": "Paquetes de Matrimonio en Chile", "price": "1200000", "priceCurrency": "CLP" },
+        { "@type": "Offer", "name": "Paquetes de Matrimonio en Chile", "price": "1200000", "priceCurrency": "CLP", "description": "Cobertura de matrimonio de 8 horas. Aprox. $1.300 USD." },
         { "@type": "Offer", "name": "Destination Weddings", "description": "Propuesta personalizada" },
-        { "@type": "Offer", "name": "Sesiones de Pareja", "price": "180000", "priceCurrency": "CLP" }
+        { "@type": "Offer", "name": "Sesiones de Pareja", "price": "180000", "priceCurrency": "CLP", "description": "Aprox. $200 USD." }
       ]
     })
   }</script>
@@ -104,7 +104,7 @@ const highlightImages = [
   </section>
 
   <!-- Inversión -->
-  <section class="section section-alt">
+  <section class="section section-alt" id="inversion">
     <div class="container narrow">
       <p class="section-label">Inversión</p>
       <h2 class="section-title">Lo que se necesita para contar tu historia.</h2>
@@ -112,8 +112,11 @@ const highlightImages = [
 
       <div class="inv-lines">
         <div class="inv-line">
-          <p class="inv-line-name">Paquetes de Matrimonio en Chile</p>
-          <p class="inv-line-price">Desde <span>$1.200.000 CLP</span></p>
+          <div>
+            <p class="inv-line-name">Paquetes de Matrimonio en Chile</p>
+            <p class="inv-line-note">Cobertura de matrimonio de 8 horas</p>
+          </div>
+          <p class="inv-line-price">Desde <span>$1.200.000 CLP</span><span class="inv-line-usd">o $1,300 USD</span></p>
         </div>
         <div class="inv-line">
           <p class="inv-line-name">Destination Weddings</p>
@@ -121,9 +124,11 @@ const highlightImages = [
         </div>
         <div class="inv-line">
           <p class="inv-line-name">Sesiones de Pareja</p>
-          <p class="inv-line-price">Desde <span>$180.000 CLP</span></p>
+          <p class="inv-line-price">Desde <span>$180.000 CLP</span><span class="inv-line-usd">o $200 USD</span></p>
         </div>
       </div>
+
+      <p class="inv-disclaimer">Precios referenciales. Confirmar con el fotógrafo.</p>
 
       <a href="https://wa.me/56999679935?text=Hola%2C+quisiera+conversar+sobre+la+fecha+de+mi+matrimonio+y+una+propuesta" class="btn btn-accent inv-cta">Conversemos sobre tu fecha</a>
     </div>
@@ -309,6 +314,22 @@ const highlightImages = [
     font-size: 1.3rem;
     font-style: normal;
     color: var(--color-heading);
+  }
+
+  .inv-line-note {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    margin-top: 0.25rem;
+  }
+
+  .inv-line-usd {
+    display: inline;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-style: normal;
+    color: var(--color-text-muted);
+    margin-left: 0.5rem;
   }
 
   .inv-cta { display: inline-block; margin-top: 2.5rem; }

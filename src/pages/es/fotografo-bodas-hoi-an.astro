@@ -1,9 +1,9 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import Gallery from '../../../components/Gallery.astro';
-import { buildAlternates } from '../../../lib/utils';
+import Layout from '../../layouts/Layout.astro';
+import Gallery from '../../components/Gallery.astro';
+import { buildAlternates } from '../../lib/utils';
 
-const alternates = buildAlternates('/portfolio/weddings', '/es/portfolio/weddings');
+const alternates = buildAlternates('/hoi-an-wedding-photographer', '/es/fotografo-bodas-hoi-an');
 
 const images = [
   { thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/abrazo-001.JPG', full: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/abrazo-001.JPG' },
@@ -40,18 +40,32 @@ const images = [
 ---
 
 <Layout
-  title="Matrimonios – Cristóbal Maturana"
-  description="Fotografía documental de matrimonios por Cristóbal Maturana."
+  title="Fotógrafo de Matrimonios en Hội An y Da Nang | Cristóbal Maturana"
+  description="Fotografía documental de matrimonios en Hội An, Da Nang y Vietnam. Momentos reales, sin poses forzadas."
   lang="es"
-  canonical="https://crismaturana.com/es/portfolio/weddings"
+  canonical="https://crismaturana.com/es/fotografo-bodas-hoi-an"
   alternates={alternates}
 >
+  <script slot="head" type="application/ld+json" is:inline>{
+    JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Fotografía Documental de Matrimonios",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Cris Maturana Photo",
+        "url": "https://crismaturana.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Hội An", "addressCountry": "VN" }
+      },
+      "areaServed": ["Hội An", "Da Nang", "Vietnam", "Chile"]
+    })
+  }</script>
   <div class="gallery-hero">
     <div class="gallery-hero-bg"></div>
     <div class="gallery-hero-overlay"></div>
     <div class="gallery-hero-content">
       <p class="hero-label">Portfolio · Matrimonios</p>
-      <p class="hero-location">Hội An · Chile · Sudeste Asiático</p>
+      <p class="hero-location">Hội An · Da Nang · Chile · Sudeste Asiático</p>
       <h1>Momentos que duran<br>para siempre.</h1>
       <p class="hero-text">Los matrimonios son una mezcla de caos, emoción y todo lo que hay en medio. Me quedo en segundo plano, lo suficientemente cerca para capturar lo que importa.</p>
             <div class="hero-stats">
@@ -60,14 +74,65 @@ const images = [
         <div class="stat stat-text"><p class="stat-num stat-sm">Natural & Espontáneo</p><p class="stat-label">Estilo</p></div>
       </div>
       <div class="hero-cta">
-        <a href="/es/investment" class="cta-btn">Ver Tarifas y Paquetes</a>
+        <a href="/es/investment#inversion" class="cta-btn">Ver Tarifas y Paquetes</a>
         <a href="/es/contact?session=Wedding" class="cta-link">Reservar una Sesión →</a>
       </div>
     </div>
   </div>
-  <section class="section">
+  <section class="section gallery-section">
     <div class="container">
       <Gallery images={images} layout="masonry" columns={3} />
+    </div>
+  </section>
+
+  <section class="section service-section">
+    <div class="container service-copy">
+
+      <h2>¿Qué esperar?</h2>
+      <p>
+        El día de la sesión me mantengo cerca pero fuera de cuadro — no detengo tu risa para
+        que poses, no te pido que mires a la cámara. Sigo la ceremonia, las reacciones, los
+        pequeños momentos entre los grandes: una mano apretada bajo la mesa, el rostro de tu
+        madre durante los votos. La cobertura normalmente va de 4 a 12 horas según el paquete,
+        y trabajo con luz natural siempre que es posible para que todo se sienta real y no
+        actuado.
+      </p>
+
+      <h2>¿Por qué reservar con Cristóbal?</h2>
+      <p>
+        Llevo más de 15 años documentando matrimonios, primero en Chile y ahora desde Hội An,
+        Vietnam, con cobertura regular también en Da Nang — lo que significa que he fotografiado
+        en casi todo tipo de luz, clima y dinámica familiar que existe. Mi enfoque está
+        inspirado en fotógrafos documentales como Steve McCurry y Fan Ho: paciencia antes que
+        dirección, y la certeza de que los momentos reales siempre son más interesantes que los
+        posados. No vas a recibir una lista de poses forzadas — vas a recibir el día tal como
+        ocurrió.
+      </p>
+
+      <h2>Preguntas Frecuentes</h2>
+      <details>
+        <summary>¿Viajas a Da Nang para matrimonios?</summary>
+        <p>Sí — Da Nang está a unos 30–45 minutos de Hội An, y regularmente fotografío matrimonios y elopements ahí sin complicaciones adicionales de traslado.</p>
+      </details>
+      <details>
+        <summary>¿Cuántas fotos recibiremos y cuánto demora la entrega?</summary>
+        <p>Recibes un adelanto dentro de las primeras 24 horas, y la galería completa editada se entrega dentro de 30 días según tu paquete.</p>
+      </details>
+      <details>
+        <summary>¿Cómo reservo?</summary>
+        <p>Completa el formulario de contacto en crismaturana.com/es/contact. Te responderé dentro de 24–48 horas para coordinar una breve llamada. Un depósito del 30–50% asegura tu fecha.</p>
+      </details>
+
+      <div class="custom-quote">
+        <p class="custom-label">Trabajemos Juntos</p>
+        <h2 class="custom-heading">Empecemos la conversación</h2>
+        <p class="custom-text">Cuéntame tu fecha y lo que estás imaginando — te respondo dentro de 24 horas.</p>
+        <a href="/es/contact?session=Wedding" class="btn btn-accent custom-cta">Empezar la Conversación →</a>
+        <p class="custom-text" style="margin-top: 1rem; margin-bottom: 0;">
+          <a href="/es/investment#inversion">Ver tarifas y paquetes →</a>
+        </p>
+      </div>
+
     </div>
   </section>
 </Layout>
@@ -215,6 +280,112 @@ const images = [
   }
 
   .cta-link:hover { color: rgba(160, 120, 64, 0.85); }
+
+  .gallery-section {
+    padding-bottom: 0;
+  }
+
+  .service-section {
+    padding-top: 0;
+    margin-top: -30px;
+  }
+
+  .service-copy {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .service-copy h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    color: var(--color-heading);
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-copy p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .service-copy a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  .service-copy details {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+  }
+
+  .service-copy summary {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--color-heading);
+  }
+
+  .service-copy details p {
+    margin-top: 0.5rem;
+  }
+
+  .custom-quote {
+    margin-top: 4rem;
+    padding: 3rem 2.5rem;
+    border: 1px solid var(--color-border);
+    text-align: center;
+    background: var(--color-surface);
+    position: relative;
+  }
+
+  .custom-quote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2.5rem;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  .custom-label {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .custom-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 400;
+    color: var(--color-heading);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .custom-text {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 1.75rem;
+    font-weight: 300;
+  }
+
+  .custom-text a {
+    color: var(--color-accent);
+  }
+
+  .custom-cta {
+    display: inline-block;
+  }
 
   @media (max-width: 768px) {
     .gallery-hero-content { text-align: center; padding: 7rem 1.5rem 2rem; }

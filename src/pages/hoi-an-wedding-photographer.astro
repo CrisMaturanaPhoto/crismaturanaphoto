@@ -1,6 +1,9 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Gallery from '../../components/Gallery.astro';
+import Layout from '../layouts/Layout.astro';
+import Gallery from '../components/Gallery.astro';
+import { buildAlternates } from '../lib/utils';
+
+const alternates = buildAlternates('/hoi-an-wedding-photographer', '/es/fotografo-bodas-hoi-an');
 
 const images = [
   { thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/abrazo-001.JPG', full: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/abrazo-001.JPG' },
@@ -70,13 +73,33 @@ const images = [
 ].map(img => ({ ...img, alt: 'Wedding photography by Cristóbal Maturana' }));
 ---
 
-<Layout title="Weddings – Cristóbal Maturana" description="Documentary wedding photography by Cristóbal Maturana.">
+<Layout
+  title="Hoi An & Da Nang Wedding Photographer | Cristóbal Maturana"
+  description="Documentary wedding photography in Hoi An, Da Nang, and across Vietnam &amp; Chile. Real moments, no forced poses."
+  lang="en"
+  canonical="https://crismaturana.com/hoi-an-wedding-photographer"
+  alternates={alternates}
+>
+  <script slot="head" type="application/ld+json" is:inline>{
+    JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Documentary Wedding Photography",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Cris Maturana Photo",
+        "url": "https://crismaturana.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Hội An", "addressCountry": "VN" }
+      },
+      "areaServed": ["Hội An", "Da Nang", "Vietnam", "Chile"]
+    })
+  }</script>
   <div class="gallery-hero">
     <div class="gallery-hero-bg"></div>
     <div class="gallery-hero-overlay"></div>
     <div class="gallery-hero-content">
       <p class="hero-label">Portfolio · Weddings</p>
-      <p class="hero-location">Hội An · Chile · Southeast Asia</p>
+      <p class="hero-location">Hội An · Da Nang · Chile · Southeast Asia</p>
       <h1>Moments that<br>last forever.</h1>
       <p class="hero-text">Weddings are a mix of chaos, emotion, and everything in between. I stay in the background, close enough to catch what matters.</p>
       <div class="hero-stats">
@@ -91,9 +114,59 @@ const images = [
       </div>
     </div>
   </div>
-  <section class="section">
+  <section class="section gallery-section">
     <div class="container">
       <Gallery images={images} layout="masonry" columns={3} />
+    </div>
+  </section>
+
+  <section class="section service-section">
+    <div class="container service-copy">
+
+      <h2>What to Expect</h2>
+      <p>
+        On the day, I stay close but out of the way — no stopping you mid-laugh to pose, no
+        forced looks at the camera. I follow the ceremony, the reactions, the small moments
+        between the big ones: a hand squeezed under the table, your mother's face during the
+        vows. Coverage typically runs 4–12 hours depending on your package, and I shoot in
+        available light whenever possible to keep things feeling real rather than performed.
+      </p>
+
+      <h2>Why Book with Cristóbal?</h2>
+      <p>
+        I've been documenting weddings for 15+ years, originally in Chile and now from Hội An,
+        Vietnam, with regular coverage in Da Nang as well — which means I've shot in nearly
+        every kind of light, weather, and family dynamic there is. My approach is shaped by
+        documentary photographers like Steve McCurry and Fan Ho: patience over direction, and
+        trust that real moments are always more interesting than staged ones. You won't get a
+        shot list of forced poses — you'll get the day as it actually happened.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>Do you travel to Da Nang for weddings?</summary>
+        <p>Yes — Da Nang is about 30–45 minutes from Hoi An, and I regularly shoot weddings and elopements there with no additional travel complexity.</p>
+      </details>
+      <details>
+        <summary>How many photos will we receive, and how long does delivery take?</summary>
+        <p>You'll get a sneak peek within 24 hours, and the fully edited gallery delivered within 30 days depending on your package.</p>
+      </details>
+
+      <details>
+        <summary>How do I book?</summary>
+        <p>Fill in the contact form at crismaturana.com/contact. I'll reply within 24–48 hours to schedule a short call. A 30–50% deposit secures your date.</p>
+      </details>
+
+      <div class="custom-quote">
+        <p class="custom-label">Let's Work Together</p>
+        <h2 class="custom-heading">Start the conversation</h2>
+        <p class="custom-text">Tell me about your date and what you're imagining — I'll get back to you within 24 hours.</p>
+        <a href="/contact?session=Wedding" class="btn btn-accent custom-cta">Start the Conversation →</a>
+        <p class="custom-text" style="margin-top: 1rem; margin-bottom: 0;">
+          <a href="/investment">Check rates &amp; packages →</a>
+        </p>
+      </div>
+
     </div>
   </section>
 </Layout>
@@ -240,6 +313,112 @@ const images = [
   }
 
   .cta-link:hover { color: rgba(160, 120, 64, 0.85); }
+
+  .gallery-section {
+    padding-bottom: 0;
+  }
+
+  .service-section {
+    padding-top: 0;
+    margin-top: -30px;
+  }
+
+  .service-copy {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .service-copy h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    color: var(--color-heading);
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-copy p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .service-copy a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  .service-copy details {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+  }
+
+  .service-copy summary {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--color-heading);
+  }
+
+  .service-copy details p {
+    margin-top: 0.5rem;
+  }
+
+  .custom-quote {
+    margin-top: 4rem;
+    padding: 3rem 2.5rem;
+    border: 1px solid var(--color-border);
+    text-align: center;
+    background: var(--color-surface);
+    position: relative;
+  }
+
+  .custom-quote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2.5rem;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  .custom-label {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .custom-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 400;
+    color: var(--color-heading);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .custom-text {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 1.75rem;
+    font-weight: 300;
+  }
+
+  .custom-text a {
+    color: var(--color-accent);
+  }
+
+  .custom-cta {
+    display: inline-block;
+  }
 
   @media (max-width: 768px) {
     .gallery-hero-content {

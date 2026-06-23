@@ -1,3 +1,14 @@
 {
-  "redirects": []
+  "redirects": [
+    {
+      "source": "/portfolio/weddings",
+      "destination": "/hoi-an-wedding-photographer",
+      "permanent": true
+    },
+    {
+      "source": "/es/portfolio/weddings",
+      "destination": "/es/fotografo-bodas-hoi-an",
+      "permanent": true
+    }
+  ]
 }

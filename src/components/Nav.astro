@@ -4,7 +4,7 @@ const navLinks = [
     label: 'Portfolio', i18n: 'nav.portfolio',
     href: '/portfolio',
     children: [
-      { label: 'Weddings', i18n: 'nav.weddings', href: '/portfolio/weddings' },
+      { label: 'Weddings', i18n: 'nav.weddings', href: '/hoi-an-wedding-photographer' },
       { label: 'Couples & Families', i18n: 'nav.couples', href: '/portfolio/couples-families' },
       { label: 'Portraits', i18n: 'nav.portraits', href: '/portfolio/portraits' },
       { label: 'Travel & Culture', i18n: 'nav.travel', href: '/portfolio/travel-culture' },
@@ -335,7 +335,7 @@ const esHref = isEs ? path : ('/es' + (path === '/' ? '/' : path));
     const isEs = lang === 'es';
     const map = {
       '/portfolio':                          isEs ? '/es/portfolio'                          : '/portfolio',
-      '/portfolio/weddings':                 isEs ? '/es/portfolio/weddings'                 : '/portfolio/weddings',
+      '/hoi-an-wedding-photographer':        isEs ? '/es/fotografo-bodas-hoi-an'             : '/hoi-an-wedding-photographer',
       '/portfolio/couples-families':         isEs ? '/es/portfolio/couples-families'         : '/portfolio/couples-families',
       '/portfolio/portraits':                isEs ? '/es/portfolio/portraits'                : '/portfolio/portraits',
       '/portfolio/travel-culture':           isEs ? '/es/portfolio/travel-culture'           : '/portfolio/travel-culture',
