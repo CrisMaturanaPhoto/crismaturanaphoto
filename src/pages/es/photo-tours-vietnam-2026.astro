@@ -164,19 +164,19 @@ const tours = [
 
 <style>
   .pt-page { font-family: var(--font-sans); color: var(--color-text); }
-  .pt-hero { position: relative; height: 100svh; min-height: 600px; max-height: 900px; overflow: hidden; display: flex; align-items: flex-end; }
+  .pt-hero { position: relative; height: 100svh; min-height: 600px; max-height: 900px; overflow: hidden; display: flex; align-items: stretch; }
   .pt-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
-  .pt-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,8,5,0.85) 0%, rgba(10,8,5,0.35) 50%, rgba(10,8,5,0.08) 100%); }
-  .pt-hero-content { position: relative; z-index: 2; padding: 0 2rem 4rem; max-width: 860px; margin: 0 auto; width: 100%; }
+  .pt-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.18) 40%, rgba(255,255,255,0) 65%, rgba(10,8,5,0.25) 100%); }
+  .pt-hero-content { position: relative; z-index: 2; padding: 7rem 2rem 4rem; max-width: 860px; margin: 0 auto; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
   .pt-hero-eyebrow { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 1rem; display: block; }
-  .pt-hero h1 { font-family: var(--font-serif); font-size: clamp(2.4rem, 5.5vw, 4.2rem); font-weight: 400; color: #fff; line-height: 1.1; margin-bottom: 1.25rem; letter-spacing: -0.01em; }
+  .pt-hero h1 { font-family: var(--font-serif); font-size: clamp(2.4rem, 5.5vw, 4.2rem); font-weight: 400; color: var(--color-heading); line-height: 1.1; margin-bottom: 1.25rem; letter-spacing: -0.01em; }
   .pt-hero h1 em { font-style: italic; }
-  .pt-hero-sub { font-size: clamp(0.95rem, 1.6vw, 1.1rem); color: rgba(255,255,255,0.72); max-width: 520px; line-height: 1.7; margin-bottom: 2rem; font-weight: 300; }
+  .pt-hero-sub { font-size: clamp(0.95rem, 1.6vw, 1.1rem); color: rgba(26,26,24,0.78); max-width: 520px; line-height: 1.7; margin-bottom: 2rem; font-weight: 300; }
   .pt-hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
   .pt-btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; background: var(--color-accent); color: #1a1814; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: background 0.25s, transform 0.15s; border: none; cursor: pointer; }
   .pt-btn-primary:hover { background: #b8934a; transform: translateY(-1px); }
-  .pt-btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; border: 1px solid rgba(255,255,255,0.45); color: rgba(255,255,255,0.85); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: border-color 0.25s, color 0.25s; cursor: pointer; background: transparent; }
-  .pt-btn-ghost:hover { border-color: #fff; color: #fff; }
+  .pt-btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2rem; border: 1px solid rgba(255,255,255,0.85); color: #fff; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: border-color 0.25s, color 0.25s, background 0.25s; cursor: pointer; background: rgba(10,8,5,0.4); backdrop-filter: blur(4px); }
+  .pt-btn-ghost:hover { border-color: #fff; color: #fff; background: rgba(10,8,5,0.6); }
   .pt-scroll-arrow { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 2; color: rgba(255,255,255,0.4); font-size: 1.4rem; animation: bounce 2s infinite; text-decoration: none; }
   @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
   .pt-trust { background: var(--color-heading); padding: 1.1rem 2rem; }
@@ -292,7 +292,9 @@ const tours = [
   }
   @media (max-width: 640px) {
     .pt-section { padding: 3rem 1.25rem; }
-    .pt-hero-content { padding: 0 1.25rem 3rem; }
+    .pt-hero-content { padding: 6rem 1.25rem 3rem; }
+    .pt-hero-ctas { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    .pt-hero-ctas a { width: 100%; justify-content: center; }
     .pt-trust-inner { gap: 1.25rem; }
     .pt-tour-actions { flex-direction: column; align-items: stretch; }
     .pt-price-options { gap: 1rem; }
@@ -312,11 +314,13 @@ const tours = [
     />
     <div class="pt-hero-overlay"></div>
     <div class="pt-hero-content">
-      <span class="pt-hero-eyebrow">Hội An · Vietnam · 2026</span>
-      <h1>Fotografía Vietnam<br><em>como realmente es</em></h1>
-      <p class="pt-hero-sub">
-        Tres tours fotográficos privados guiados por un fotógrafo local. Pueblos de pescadores, calles antiguas, vida en el río al amanecer. Tarifas grupales y privadas disponibles. Sin apuro. Sin masas.
-      </p>
+      <div class="pt-hero-text">
+        <span class="pt-hero-eyebrow">Hội An · Vietnam · 2026</span>
+        <h1>Fotografía Vietnam<br><em>como realmente es</em></h1>
+        <p class="pt-hero-sub">
+          Tres tours fotográficos privados guiados por un fotógrafo local. Pueblos de pescadores, calles antiguas, vida en el río al amanecer. Tarifas grupales y privadas disponibles. Sin apuro. Sin masas.
+        </p>
+      </div>
       <div class="pt-hero-ctas">
         <a href="#tours" class="pt-btn-primary">Ver los Tours ↓</a>
         <a href="/es/contact" class="pt-btn-ghost">Reservar Fecha</a>
@@ -477,7 +481,7 @@ const tours = [
           <span class="pt-section-label">Por qué estos tours son distintos</span>
           <h2 class="pt-section-title" id="why-heading">No soy un guía turístico.<br>Soy un fotógrafo que vive aquí en Hội An.</h2>
           <p style="font-size:1rem;color:var(--color-text-muted);line-height:1.8;margin-bottom:0.75rem">
-            Me mudé a Hội An hace dos años y, desde entonces, este lugar se convirtió en mi hogar. Con el tiempo he conocido a pescadores, vendedores de mercado y vecinos que forman parte de la vida cotidiana de la ciudad. Sé dónde encontrar la mejor luz al amanecer, qué rincones cobran vida antes de que lleguen los turistas y cuáles son los lugares que siguen inspirándome a fotografiar semana tras semana.
+            Me mudé a Hội An hace dos años y, desde entonces, este lugar se convirtió en mi hogar. Con el tiempo he conocido a pescadores, vendedores de mercado y vecinos que forman parte de la vida cotidiana de la ciudad. Sé dónde encontrar la mejor luz al amanecer, qué rincones cobran vida antes de que lleguen los turistas y cuáles son los lugares a los que sigo volviendo.
           </p>
           <p style="font-size:1rem;color:var(--color-text-muted);line-height:1.8;margin-bottom:0;font-style:italic">
             Son los mismos lugares que recorrería con mi cámara aunque no existieran estos tours.
@@ -552,6 +556,10 @@ const tours = [
         <div class="pt-faq-item" data-faq>
           <p class="pt-faq-q">¿Cuál es la política de cancelación? <span class="pt-faq-icon">+</span></p>
           <p class="pt-faq-a">Cancelación gratuita hasta 48 horas antes del tour. Dentro de las 48 horas aplica el 50% del valor. Si cancelamos por condiciones climáticas extremas, recibes reembolso completo o la opción de reprogramar.</p>
+        </div>
+        <div class="pt-faq-item" data-faq>
+          <p class="pt-faq-q">¿Puedo unirme a un tour si me estoy quedando en Da Nang? <span class="pt-faq-icon">+</span></p>
+          <p class="pt-faq-a">Sí — los tres tours también están disponibles como excursión de un día desde Da Nang, a unos 30–45 minutos. Solo avísame el hotel donde te alojas al reservar y coordino el traslado.</p>
         </div>
       </div>
     </div>
