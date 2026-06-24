@@ -1,0 +1,394 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Gallery from '../../components/Gallery.astro';
+import { buildAlternates } from '../../lib/utils';
+
+const alternates = buildAlternates('/personal-branding-photography-hoi-an', '/es/fotografia-marca-personal-hoi-an');
+
+const cdn = 'https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION';
+const images = [
+  { thumb: `${cdn}/agnes-portrait-001.JPG`, full: `${cdn}/agnes-portrait-001.JPG` },
+  { thumb: `${cdn}/agnes-portrait-002.JPG`, full: `${cdn}/agnes-portrait-002.JPG` },
+  { thumb: `${cdn}/agnes-partner-portrait-001.JPG`, full: `${cdn}/agnes-partner-portrait-001.JPG` },
+  { thumb: `${cdn}/agnes-partner-portrait-002.JPG`, full: `${cdn}/agnes-partner-portrait-002.JPG` },
+  { thumb: `${cdn}/anna-portrait-001.JPG`, full: `${cdn}/anna-portrait-001.JPG` },
+  { thumb: `${cdn}/anna-portrait-002.JPG`, full: `${cdn}/anna-portrait-002.JPG` },
+  { thumb: `${cdn}/Fo-Web%40-9.JPG`, full: `${cdn}/Fo-Web%40-9.JPG` },
+  { thumb: `${cdn}/HoiAnPortrais1%40-10.JPG`, full: `${cdn}/HoiAnPortrais1%40-10.JPG` },
+  { thumb: `${cdn}/HoiAnPortrais1%40-13.JPG`, full: `${cdn}/HoiAnPortrais1%40-13.JPG` },
+  { thumb: `${cdn}/HoiAnPortrais1%40-15.JPG`, full: `${cdn}/HoiAnPortrais1%40-15.JPG` },
+  { thumb: `${cdn}/HoiAnPortrais1%40-18.JPG`, full: `${cdn}/HoiAnPortrais1%40-18.JPG` },
+  { thumb: `${cdn}/hygge-farm-portrait-001.JPG`, full: `${cdn}/hygge-farm-portrait-001.JPG` },
+  { thumb: `${cdn}/MartinsSoul%40-24.JPG`, full: `${cdn}/MartinsSoul%40-24.JPG` },
+  { thumb: `${cdn}/MartinsSoul%40-27.JPG`, full: `${cdn}/MartinsSoul%40-27.JPG` },
+  { thumb: `${cdn}/monse-portrait-001.JPG`, full: `${cdn}/monse-portrait-001.JPG` },
+  { thumb: `${cdn}/MonseRetratos%40-18.jpg`, full: `${cdn}/MonseRetratos%40-18.jpg` },
+  { thumb: `${cdn}/MonseRetratos%40-30.jpg`, full: `${cdn}/MonseRetratos%40-30.jpg` },
+  { thumb: `${cdn}/MonseRetratos%40-40.jpg`, full: `${cdn}/MonseRetratos%40-40.jpg` },
+  { thumb: `${cdn}/rachel-portrait-001.JPG`, full: `${cdn}/rachel-portrait-001.JPG` },
+  { thumb: `${cdn}/rachel-portrait-0013.JPG`, full: `${cdn}/rachel-portrait-0013.JPG` },
+  { thumb: `${cdn}/tania-portrait-001.JPG`, full: `${cdn}/tania-portrait-001.JPG` },
+  { thumb: `${cdn}/TheHyggePortraits%40-72.JPG`, full: `${cdn}/TheHyggePortraits%40-72.JPG` },
+].map(img => ({ ...img, alt: 'Retrato por Cristóbal Maturana' }));
+---
+
+<Layout
+  title="Fotógrafo de Marca Personal y Retratos en Hội An y Da Nang | Cristóbal Maturana"
+  description="Sesiones de fotografía de marca personal y retratos en Hội An y Da Nang, Vietnam. Luz natural, expresiones honestas, presencia real."
+  lang="es"
+  canonical="https://crismaturana.com/es/fotografia-marca-personal-hoi-an"
+  alternates={alternates}
+>
+  <script slot="head" type="application/ld+json" is:inline>{
+    JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Fotografía de Marca Personal y Retratos",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Cris Maturana Photo",
+        "url": "https://crismaturana.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Hội An", "addressCountry": "VN" }
+      },
+      "areaServed": ["Hội An", "Da Nang", "Vietnam"]
+    })
+  }</script>
+    <div class="gallery-hero">
+    <div class="gallery-hero-bg"></div>
+    <div class="gallery-hero-overlay"></div>
+    <div class="gallery-hero-content">
+      <p class="hero-label">Portfolio · Retratos</p>
+      <p class="hero-location">Hội An · Da Nang · Sudeste Asiático</p>
+      <h1>Fotógrafo de Marca Personal y Retratos en Hội An y Da Nang</h1>
+      <h2>Luz natural. Expresiones honestas.</h2>
+      <p class="hero-text">Trabajo principalmente con luz natural para crear retratos suaves y auténticos. Mi enfoque es relajado e intuitivo — te guío durante la sesión para que todo fluya con naturalidad.</p>
+      <div class="hero-stats">
+        <div class="stat"><p class="stat-num">15+</p><p class="stat-label">Años</p></div>
+        <div class="stat"><p class="stat-num">100+</p><p class="stat-label">Sesiones</p></div>
+        <div class="stat"><p class="stat-num stat-sm">Always</p><p class="stat-label">Present</p></div>
+        <div class="stat stat-text"><p class="stat-num stat-sm">Natural & Espontáneo</p><p class="stat-label">Estilo</p></div>
+      </div>
+      <div class="hero-cta">
+        <a href="/es/prices" class="cta-btn">Ver Paquetes y Precios</a>
+        <a href="/es/contact?session=Portrait+%2F+Personal+Branding" class="cta-link">Reservar una Sesión →</a>
+      </div>
+    </div>
+  </div>
+  <section class="section gallery-section">
+    <div class="container">
+      <Gallery images={images} layout="masonry" columns={3} />
+    </div>
+  </section>
+
+  <section class="section service-section">
+    <div class="container service-copy">
+
+      <h2>¿Qué esperar?</h2>
+      <p>
+        Las sesiones normalmente duran entre 45 minutos y 4 horas según el paquete, y pueden
+        incluir un look o varios cambios de vestuario en distintos lugares de Hội An o Da Nang —
+        fondos del Casco Antiguo, luz junto al río, o algo más neutro si lo necesitas para
+        LinkedIn o un sitio web. Te guío con poses y expresiones simples para que no tengas que
+        pensar en eso; el objetivo son fotos que sigan pareciéndose a ti, solo que listas para
+        usar.
+      </p>
+
+      <h2>¿Por qué reservar con Cristóbal?</h2>
+      <p>
+        Llevo más de 15 años fotografiando a personas que no son modelos profesionales —
+        emprendedores, trabajadores remotos, parejas de vacaciones — lo que significa que sé
+        cómo hacer que alguien se sienta cómodo frente a la cámara. Para marca personal, eso
+        importa más que el equipo: la mejor foto de perfil es la que se toma cuando olvidaste
+        que te estaban fotografiando.
+      </p>
+
+      <h2>Preguntas Frecuentes</h2>
+      <details>
+        <summary>¿También ofreces sesiones en Da Nang?</summary>
+        <p>Sí — Da Nang está a unos 30–45 minutos de Hội An, y regularmente hago sesiones de retrato y marca personal ahí sin complicaciones adicionales de traslado.</p>
+      </details>
+      <details>
+        <summary>¿Para qué se usa una sesión de marca personal?</summary>
+        <p>Perfiles de LinkedIn, sitios web, redes sociales, kits de prensa — cualquier lugar donde necesites fotos que se vean profesionales pero no rígidas. Podemos planificar cambios de vestuario y locaciones según cómo vas a usar las imágenes.</p>
+      </details>
+      <details>
+        <summary>¿Cuántas fotos recibiremos y cuánto demora la entrega?</summary>
+        <p>Entre 10 y 50 fotos editadas según tu paquete, con un adelanto dentro de 24 horas y la galería completa entregada dentro de 7 a 10 días.</p>
+      </details>
+      <details>
+        <summary>¿Cómo reservo?</summary>
+        <p>Completa el <a href="/es/contact?session=Portrait+%2F+Personal+Branding">formulario de contacto</a> con Marca Personal preseleccionada, o escríbeme directamente. Te responderé dentro de 24–48 horas para confirmar fecha y lugar.</p>
+      </details>
+
+      <div class="custom-quote">
+        <p class="custom-label">Trabajemos Juntos</p>
+        <h2 class="custom-heading">Empecemos la conversación</h2>
+        <p class="custom-text">Cuéntame para qué son las fotos y qué estilo buscas — te respondo dentro de 24 horas.</p>
+        <a href="/es/contact?session=Portrait+%2F+Personal+Branding" class="btn btn-accent custom-cta">Empezar la Conversación →</a>
+        <p class="custom-text" style="margin-top: 1rem; margin-bottom: 0;">
+          <a href="/es/prices">Ver paquetes y precios →</a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<style>
+  
+  .gallery-hero {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+
+  .gallery-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/Danya1Muestra%40-2.JPG');
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px) brightness(1.1);
+    transform: scale(1.05);
+  }
+
+  .gallery-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.65);
+  }
+
+  .gallery-hero-content {
+    position: relative;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 7rem 2.5rem 2rem;
+    text-align: center;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #1a1a18;
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-location {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6f6b65;
+    margin-bottom: 1.25rem;
+  }
+
+  .gallery-hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 400;
+    font-style: italic;
+    color: #1a1a18;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text {
+    font-size: 0.9rem;
+    color: #4a4a48;
+    line-height: 1.8;
+    max-width: 500px;
+    margin: 0 auto 1.75rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(0,0,0,0.12);
+    padding-top: 1.25rem;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: rgba(160, 120, 64, 0.6);
+    margin: 0;
+    line-height: 1;
+  }
+
+  .stat-sm {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(160, 120, 64, 0.6);
+    padding-bottom: 0.2rem;
+  }
+
+  .stat-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6f6b65;
+    margin: 0.25rem 0 0;
+  }
+
+  .stat-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1.75rem;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 0.7rem 1.75rem;
+    background: #e8c070;
+    color: #1a1a18;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .cta-btn:hover { background: #c9a050; }
+
+  .cta-link {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #1a1a18;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+  }
+
+  .cta-link:hover { color: rgba(160, 120, 64, 0.85); }
+
+  .gallery-section {
+    padding-bottom: 0;
+  }
+
+  .service-section {
+    padding-top: 0;
+    margin-top: -30px;
+  }
+
+  .service-copy {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .service-copy h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    color: var(--color-heading);
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-copy p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .service-copy a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  .service-copy details {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+  }
+
+  .service-copy summary {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--color-heading);
+  }
+
+  .service-copy details p {
+    margin-top: 0.5rem;
+  }
+
+  .custom-quote {
+    margin-top: 4rem;
+    padding: 3rem 2.5rem;
+    border: 1px solid var(--color-border);
+    text-align: center;
+    background: var(--color-surface);
+    position: relative;
+  }
+
+  .custom-quote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2.5rem;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  .custom-label {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .custom-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 400;
+    color: var(--color-heading);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .custom-text {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 1.75rem;
+    font-weight: 300;
+  }
+
+  .custom-text a {
+    color: var(--color-accent);
+  }
+
+  .custom-cta {
+    display: inline-block;
+  }
+
+  @media (max-width: 768px) {
+    .gallery-hero-content { text-align: center; padding: 7rem 1.5rem 2rem; }
+    .hero-text { max-width: 100%; }
+    .hero-stats { justify-content: center; gap: 1.5rem; }
+  }
+
+</style>

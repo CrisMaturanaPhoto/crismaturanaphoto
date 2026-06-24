@@ -19,6 +19,16 @@
       "source": "/es/portfolio/couples-families",
       "destination": "/es/fotografia-familiar-hoi-an",
       "permanent": true
+    },
+    {
+      "source": "/portfolio/portraits",
+      "destination": "/personal-branding-photography-hoi-an",
+      "permanent": true
+    },
+    {
+      "source": "/es/portfolio/portraits",
+      "destination": "/es/fotografia-marca-personal-hoi-an",
+      "permanent": true
     }
   ]
 }

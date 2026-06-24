@@ -1,6 +1,9 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Gallery from '../../components/Gallery.astro';
+import Layout from '../layouts/Layout.astro';
+import Gallery from '../components/Gallery.astro';
+import { buildAlternates } from '../lib/utils';
+
+const alternates = buildAlternates('/personal-branding-photography-hoi-an', '/es/fotografia-marca-personal-hoi-an');
 
 const cdn = 'https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION';
 
@@ -36,14 +39,35 @@ const images = [
 ].map(img => ({ ...img, alt: 'Portrait photo by Cristóbal Maturana' }));
 ---
 
-<Layout title="Portraits – Cristóbal Maturana" description="Natural light portrait photography by Cristóbal Maturana.">
+<Layout
+  title="Personal Branding & Portrait Photographer in Hoi An & Da Nang | Cristóbal Maturana"
+  description="Personal branding and portrait photography sessions in Hoi An and Da Nang, Vietnam. Natural light, honest expressions, real presence."
+  lang="en"
+  canonical="https://crismaturana.com/personal-branding-photography-hoi-an"
+  alternates={alternates}
+>
+  <script slot="head" type="application/ld+json" is:inline>{
+    JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Personal Branding & Portrait Photography",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Cris Maturana Photo",
+        "url": "https://crismaturana.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Hội An", "addressCountry": "VN" }
+      },
+      "areaServed": ["Hội An", "Da Nang", "Vietnam"]
+    })
+  }</script>
   <div class="gallery-hero">
     <div class="gallery-hero-bg"></div>
     <div class="gallery-hero-overlay"></div>
     <div class="gallery-hero-content">
       <p class="hero-label">Portfolio · Portraits</p>
-      <p class="hero-location">Hội An · Chile · Southeast Asia</p>
-      <h1>Natural light.<br>Honest expressions.</h1>
+      <p class="hero-location">Hội An · Da Nang · Southeast Asia</p>
+      <h1>Personal Branding &amp; Portrait Photographer in Hội An &amp; Da Nang</h1>
+      <h2>Natural light. Honest expressions.</h2>
       <p class="hero-text">I work primarily with natural light to create soft, authentic portraits. My approach is relaxed and intuitive — I guide you throughout the session so everything feels effortless.</p>
       <div class="hero-stats">
         <div class="stat"><p class="stat-num">15+</p><p class="stat-label">Years</p></div>
@@ -57,9 +81,60 @@ const images = [
       </div>
     </div>
   </div>
-  <section class="section">
+  <section class="section gallery-section">
     <div class="container">
       <Gallery images={images} layout="masonry" columns={3} />
+    </div>
+  </section>
+
+  <section class="section service-section">
+    <div class="container service-copy">
+
+      <h2>What to Expect</h2>
+      <p>
+        Sessions usually run 45 minutes to 4 hours depending on your package, and can include
+        one outfit or several looks across different locations in Hội An or Da Nang — Old Town
+        backdrops, riverside light, or somewhere more neutral if you need it for LinkedIn or a
+        website. I'll guide you through simple poses and expressions so you don't have to think
+        about it; the goal is photos that still look like you, just camera-ready.
+      </p>
+
+      <h2>Why Book with Cristóbal?</h2>
+      <p>
+        I've spent 15+ years photographing people who aren't professional models —
+        entrepreneurs, remote workers, couples on holiday — which means I know how to put
+        someone at ease in front of a camera. For personal branding, that matters more than
+        equipment: the best headshot is the one where you forgot you were being photographed.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>Do you offer sessions in Da Nang too?</summary>
+        <p>Yes — Da Nang is about 30–45 minutes from Hội An, and I regularly shoot portrait and branding sessions there with no extra travel complexity.</p>
+      </details>
+      <details>
+        <summary>What's a personal branding session used for?</summary>
+        <p>LinkedIn profiles, websites, social media, press kits — anywhere you need photos that look professional but not stiff. We can plan outfit changes and locations around how you'll actually use the images.</p>
+      </details>
+      <details>
+        <summary>How many photos will we receive, and how long does delivery take?</summary>
+        <p>Between 10 and 50 edited photos depending on your package, with a sneak peek within 24 hours and the full gallery delivered within 7 to 10 days.</p>
+      </details>
+      <details>
+        <summary>How do I book?</summary>
+        <p>Fill in the <a href="/contact?session=Portrait+%2F+Personal+Branding">contact form</a> with Personal Branding preselected, or message me directly. I'll reply within 24–48 hours to confirm a date and location.</p>
+      </details>
+
+      <div class="custom-quote">
+        <p class="custom-label">Let's Work Together</p>
+        <h2 class="custom-heading">Start the conversation</h2>
+        <p class="custom-text">Tell me what the photos are for and what look you're going for — I'll get back to you within 24 hours.</p>
+        <a href="/contact?session=Portrait+%2F+Personal+Branding" class="btn btn-accent custom-cta">Start the Conversation →</a>
+        <p class="custom-text" style="margin-top: 1rem; margin-bottom: 0;">
+          <a href="/prices">View packages &amp; prices →</a>
+        </p>
+      </div>
+
     </div>
   </section>
 </Layout>
@@ -207,6 +282,112 @@ const images = [
   }
 
   .cta-link:hover { color: rgba(160, 120, 64, 0.85); }
+
+  .gallery-section {
+    padding-bottom: 0;
+  }
+
+  .service-section {
+    padding-top: 0;
+    margin-top: -30px;
+  }
+
+  .service-copy {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .service-copy h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    color: var(--color-heading);
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-copy p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .service-copy a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  .service-copy details {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+  }
+
+  .service-copy summary {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--color-heading);
+  }
+
+  .service-copy details p {
+    margin-top: 0.5rem;
+  }
+
+  .custom-quote {
+    margin-top: 4rem;
+    padding: 3rem 2.5rem;
+    border: 1px solid var(--color-border);
+    text-align: center;
+    background: var(--color-surface);
+    position: relative;
+  }
+
+  .custom-quote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2.5rem;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  .custom-label {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .custom-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 400;
+    color: var(--color-heading);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .custom-text {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 1.75rem;
+    font-weight: 300;
+  }
+
+  .custom-text a {
+    color: var(--color-accent);
+  }
+
+  .custom-cta {
+    display: inline-block;
+  }
 
   @media (max-width: 768px) {
     .gallery-hero-content { text-align: center; padding: 7rem 1.5rem 2rem; }
