@@ -153,10 +153,6 @@ const blogPrefix = lang === 'es' ? '/es/blog' : '/blog';
           />
         </div>
         <div class="about-content">
-          <p class="section-label" data-i18n="about.label">About the photographer</p>
-          <h2 class="section-title"><span data-i18n="about.text">Hi, I'm Cris, a photographer and visual storyteller.</span></h2>
-          <p class="about-text" data-i18n="about.subtext">I document real moments with honesty and intention. What inspires me most is creating photographs that become part of someone's legacy—images that will be remembered, shared, and valued for years to come.</p>
-          <p class="about-text" data-i18n="about.subtext2">Living abroad has taught me to appreciate different cultures, human connections, and the beauty found in everyday life.</p>
           <div class="about-img-wrap-mobile">
             <img
               src="https://CrisMaturana.b-cdn.net/AUTORETRATO/DSC_1505-2%203.JPG"
@@ -166,6 +162,10 @@ const blogPrefix = lang === 'es' ? '/es/blog' : '/blog';
               loading="lazy"
             />
           </div>
+          <p class="section-label" data-i18n="about.label">About the photographer</p>
+          <h2 class="section-title"><span data-i18n="about.text">Hi, I'm Cris, a photographer and visual storyteller.</span></h2>
+          <p class="about-text" data-i18n="about.subtext">I document real moments with honesty and intention. What inspires me most is creating photographs that become part of someone's legacy—images that will be remembered, shared, and valued for years to come.</p>
+          <p class="about-text" data-i18n="about.subtext2">Living abroad has taught me to appreciate different cultures, human connections, and the beauty found in everyday life.</p>
           <img
             src="https://CrisMaturana.b-cdn.net/Logos/firma-Cristobal-Maturana-300x150.png"
             alt="Cris Maturana signature"
@@ -1089,6 +1089,25 @@ const blogPrefix = lang === 'es' ? '/es/blog' : '/blog';
       align-items: flex-start;
       gap: 0.75rem;
     }
+    .about-inner { flex-direction: column; align-items: center; gap: 0; text-align: center; }
+    .about-img-wrap { display: none; }
+    .about-content { order: unset; }
+    .about-img-wrap-mobile {
+      display: block;
+      margin: 0 auto 1.75rem;
+      width: 170px;
+    }
+    .about-img-wrap-mobile img {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+    .about-text { text-align: center; }
+    .about-signature { margin-left: auto; margin-right: auto; }
+    .about-social { justify-content: center; }
   }
   .instagram-heading {
     font-family: var(--font-serif);
