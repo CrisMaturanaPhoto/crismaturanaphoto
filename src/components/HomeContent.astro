@@ -122,9 +122,24 @@ const blogPrefix = lang === 'es' ? '/es/blog' : '/blog';
   <!-- PORTFOLIO GRID -->
   <section class="section portfolio-section">
     <div class="container">
-      <p class="section-label" data-i18n="portfolio.label" data-i18n="portfolio.label">Take a look at my works</p>
+      <p class="section-label" data-i18n="portfolio.label">Take a look at my works</p>
       <div class="portfolio-grid">
-        {portfolioCategories.map((cat) => (
+        {portfolioCategories.slice(0, 4).map((cat) => (
+          <a href={cat.href} class="portfolio-card">
+            <div class="portfolio-card-img">
+              <img src={cat.thumb} alt={cat.title} width="600" height="400" loading="lazy" style={`object-position: ${cat.focus ?? 'center'};`} />
+            </div>
+            <div class="portfolio-card-info">
+              <h3 class="portfolio-card-title" data-i18n={`portfolio.cat${portfolioCategories.indexOf(cat)+1}.title`}>{cat.title}</h3>
+              {cat.subtitle && <p class="portfolio-card-sub" data-i18n={`portfolio.cat${portfolioCategories.indexOf(cat)+1}.sub`}>{cat.subtitle}</p>}
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <p class="section-label secondary-label" data-i18n="portfolio.label2">More of my work</p>
+      <div class="portfolio-grid secondary-grid">
+        {portfolioCategories.slice(4).map((cat) => (
           <a href={cat.href} class="portfolio-card">
             <div class="portfolio-card-img">
               <img src={cat.thumb} alt={cat.title} width="600" height="400" loading="lazy" style={`object-position: ${cat.focus ?? 'center'};`} />
@@ -569,9 +584,28 @@ const blogPrefix = lang === 'es' ? '/es/blog' : '/blog';
 
   .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
+  }
+
+  .secondary-label {
+    margin-top: 3.5rem;
+    opacity: 0.7;
+    font-size: 0.95rem;
+  }
+
+  .secondary-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+  }
+
+  .secondary-grid .portfolio-card-title {
+    font-size: 1.05rem;
+  }
+
+  .secondary-grid .portfolio-card-sub {
+    font-size: 0.72rem;
   }
 
   .portfolio-card {
@@ -1072,6 +1106,7 @@ const blogPrefix = lang === 'es' ? '/es/blog' : '/blog';
   /* Responsive */
   @media (max-width: 900px) {
     .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    .secondary-grid { grid-template-columns: repeat(2, 1fr); }
     .about-inner { flex-direction: row; gap: 1.5rem; align-items: center; }
     .about-img-wrap-mobile { display: none; }
     .about-img-wrap { display: block; }
@@ -1083,6 +1118,7 @@ const blogPrefix = lang === 'es' ? '/es/blog' : '/blog';
 
   @media (max-width: 600px) {
     .portfolio-grid { grid-template-columns: 1fr; }
+    .secondary-grid { grid-template-columns: 1fr; }
     .hero-arrow { display: none; }
     .blog-preview-head {
       flex-direction: column;

@@ -50,24 +50,33 @@ export const heroSlides: HeroSlide[] = [
   },
 ];
 
+// Las primeras 4 son los servicios principales (grid grande).
+// Las ultimas 2 son categorias secundarias de portfolio (fila chica abajo).
 export const portfolioCategories: PortfolioCategory[] = [
   {
-    title: 'Photo Tours Vietnam',
-    href: '/photo-tours-vietnam-2026',
-    thumb: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-43.jpg',
+    title: 'Weddings & Elopements',
+    subtitle: 'Moments that last forever.',
+    href: '/hoi-an-wedding-photographer',
+    thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Yaz-Li-portrait-001.jpg',
   },
   {
-    title: 'Portraits',
-    subtitle: 'Natural light. Honest expressions.',
+    title: 'Portraits & Families',
+    subtitle: 'Genuine connection, beautifully captured.',
     href: '/family-portrait-photography-hoi-an',
+    thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-10.jpg',
+  },
+  {
+    title: 'Brand & Lifestyle',
+    subtitle: 'Natural light. Honest expressions.',
+    href: '/personal-branding-photography-hoi-an',
     thumb: 'https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/MartinsSoul%40-26.JPG',
     focus: 'center top',
   },
   {
-    title: 'Weddings',
-    subtitle: 'Moments that last forever.',
-    href: '/hoi-an-wedding-photographer',
-    thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Yaz-Li-portrait-001.jpg',
+    title: 'Photography Tours',
+    subtitle: 'Photograph Vietnam the way it really is.',
+    href: '/photo-tours-vietnam-2026',
+    thumb: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-43.jpg',
   },
   {
     title: 'Travel & Culture',
@@ -80,11 +89,5 @@ export const portfolioCategories: PortfolioCategory[] = [
     subtitle: 'Perspective changes everything.',
     href: '/portfolio/aerial',
     thumb: 'https://CrisMaturana.b-cdn.net/FROMABOVE-SELECTION/atacama-desert-001.JPG',
-  },
-  {
-    title: 'Couples & Families',
-    subtitle: 'Genuine connection, beautifully captured.',
-    href: '/family-portrait-photography-hoi-an',
-    thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-10.jpg',
   },
 ];
