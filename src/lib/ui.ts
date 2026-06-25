@@ -24,28 +24,28 @@ export const heroSlides: HeroSlide[] = [
     title: 'Documentary Weddings',
     subtitle: 'DESTINATION DOCUMENTARY PHOTOGRAPHER',
     cta: 'View Portfolio',
-    href: '/portfolio/weddings',
+    href: '/hoi-an-wedding-photographer',
     bg: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Poppin%26Chris-Wedding-%40-228.jpg',
   },
   {
     title: 'Couples & Families',
     subtitle: 'REAL MOMENTS. HONEST CONNECTION.',
     cta: 'Find More',
-    href: '/portfolio/couples-families',
+    href: '/family-portrait-photography-hoi-an',
     bg: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Gina%26Nick%40-113.JPG',
   },
   {
     title: 'Documentary Weddings',
     subtitle: 'DESTINATION DOCUMENTARY PHOTOGRAPHER',
     cta: 'Find More',
-    href: '/portfolio/weddings',
+    href: '/hoi-an-wedding-photographer',
     bg: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/poppin-chris-005.JPG',
   },
   {
     title: 'Photo Tours Vietnam',
     subtitle: 'DESTINATION DOCUMENTARY PHOTOGRAPHER',
     cta: 'Find More',
-    href: '/portfolio/photo-tours-vietnam-2026',
+    href: '/photo-tours-vietnam-2026',
     bg: 'https://CrisMaturana.b-cdn.net/TRAVEL%26CULTURE-SELECTION/DuyHaiSeleccion%40-10.JPG',
   },
 ];
@@ -53,20 +53,20 @@ export const heroSlides: HeroSlide[] = [
 export const portfolioCategories: PortfolioCategory[] = [
   {
     title: 'Photo Tours Vietnam',
-    href: '/portfolio/photo-tours-vietnam-2026',
+    href: '/photo-tours-vietnam-2026',
     thumb: 'https://CrisMaturana.b-cdn.net/Photo-Tours-Vietnam/OldTown-SELECTION/01.25HoiAn%40-43.jpg',
   },
   {
     title: 'Portraits',
     subtitle: 'Natural light. Honest expressions.',
-    href: '/portfolio/couples-families',
+    href: '/family-portrait-photography-hoi-an',
     thumb: 'https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/MartinsSoul%40-26.JPG',
     focus: 'center top',
   },
   {
     title: 'Weddings',
     subtitle: 'Moments that last forever.',
-    href: '/portfolio/weddings',
+    href: '/hoi-an-wedding-photographer',
     thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Yaz-Li-portrait-001.jpg',
   },
   {
@@ -84,7 +84,7 @@ export const portfolioCategories: PortfolioCategory[] = [
   {
     title: 'Couples & Families',
     subtitle: 'Genuine connection, beautifully captured.',
-    href: '/portfolio/couples-families',
+    href: '/family-portrait-photography-hoi-an',
     thumb: 'https://CrisMaturana.b-cdn.net/COUPLES%26FAMILY-SELECTION/Alistair%26Emma-10.jpg',
   },
 ];
