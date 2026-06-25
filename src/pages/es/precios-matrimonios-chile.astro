@@ -26,9 +26,9 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
       },
       "areaServed": "Chile",
       "offers": [
-        { "@type": "Offer", "name": "Esencial", "price": "1200000", "priceCurrency": "CLP" },
-        { "@type": "Offer", "name": "Completo", "price": "1800000", "priceCurrency": "CLP" },
-        { "@type": "Offer", "name": "Premium", "price": "2500000", "priceCurrency": "CLP" }
+        { "@type": "Offer", "name": "Lo Esencial", "price": "850000", "priceCurrency": "CLP" },
+        { "@type": "Offer", "name": "La Jornada Completa", "price": "1200000", "priceCurrency": "CLP" },
+        { "@type": "Offer", "name": "El Día Entero", "price": "1650000", "priceCurrency": "CLP" }
       ]
     })
   }</script>
@@ -36,10 +36,18 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
   <div class="page-hero">
     <div class="container">
       <p class="hero-session-label">Matrimonios · Chile</p>
-      <h1>Tarifas y Paquetes</h1>
-      <p>Tres paquetes pensados para matrimonios en Chile — desde $1.200.000 CLP. Fotografía, momentos reales, sin poses forzadas.</p>
+      <h1>¿Cuánto de tu día quieres recordar?</h1>
+      <p>He fotografiado matrimonios en Chile y el Sudeste Asiático, y con los años he ido entendiendo qué fotos son las que de verdad se siguen mirando, las que ayudan a recordar cómo se sintió ese día, no solo cómo se veía, la idea es revivir ese día. Por eso ofrezco tres opciones distintas, según cuánto de tu matrimonio quieres dejar guardado: desde los momentos más importantes hasta cada detalle, de principio a fin.</p>
     </div>
   </div>
+
+  <section class="story-image-section">
+    <div class="story-image-wrap">
+      <img src="https://crismaturana.b-cdn.net/WEDDINGS-SELECTION/yaz-lin-005.jpg" alt="Fotografía documental de matrimonios en Chile por Cristóbal Maturana" class="story-image" loading="eager" />
+      <div class="story-image-overlay"></div>
+      <p class="story-image-caption">No vas a recordar cada detalle de tu matrimonio.<br>Las fotos sí.</p>
+    </div>
+  </section>
 
   <section class="section">
     <div class="container">
@@ -48,29 +56,32 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
 
         <div class="pkg-card">
           <p class="tier-label">ESENCIAL</p>
-          <p class="pkg-name">Esencial</p>
-          <p class="pkg-tagline">Lo justo y necesario, bien hecho.</p>
-          <div class="pkg-price"><span class="currency">CLP</span><span class="amount">$1.200.000</span></div>
+          <p class="pkg-name">Lo Esencial</p>
+          <p class="pkg-tagline">La ceremonia, los brindis, el baile — capturados por completo.</p>
+          <div class="pkg-price"><span class="currency">CLP</span><span class="amount">$850.000</span></div>
           <div class="pkg-divider"></div>
           <ul class="pkg-features">
-            <li><span class="icon-check">✓</span><span>6 horas de cobertura</span></li>
+            <li><span class="icon-check">✓</span><span>5 horas de cobertura</span></li>
             <li><span class="icon-check">✓</span><span>1 fotógrafo</span></li>
             <li><span class="icon-check">✓</span><span>Ceremonia + recepción</span></li>
-            <li><span class="icon-check">✓</span><span>300+ fotos editadas en alta resolución</span></li>
+            <li><span class="icon-check">✓</span><span>250+ fotos editadas en alta resolución</span></li>
             <li><span class="icon-check">✓</span><span>Galería privada online</span></li>
             <li class="value-add"><span class="icon-star">★</span><span>Guía de planificación del día</span></li>
             <li class="delivery"><span class="icon-del">↓</span><span>JPG web/redes + resolución completa para imprimir</span></li>
           </ul>
-          <a href="https://wa.me/56999679935?text=Hola%2C+me+interesa+el+paquete+Esencial+para+mi+matrimonio" class="btn btn-accent pkg-cta">Consultar por WhatsApp</a>
+          <div class="pkg-cta-group">
+            <a href="/es/contact?session=Wedding&amp;package=Lo+Esencial#contact-form" class="btn btn-accent pkg-cta">Enviar Email</a>
+            <a href="https://wa.me/56999679935?text=Hola%2C+me+interesa+Lo+Esencial+para+mi+matrimonio" class="pkg-cta pkg-cta-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Conversemos por WhatsApp</a>
+          </div>
           <p class="pkg-note">Entrega en 30 días</p>
         </div>
 
         <div class="pkg-card featured">
-          <div class="featured-badge">Más elegido</div>
-          <p class="tier-label">COMPLETO</p>
-          <p class="pkg-name">Completo</p>
-          <p class="pkg-tagline">La cobertura completa de tu día.</p>
-          <div class="pkg-price"><span class="currency">CLP</span><span class="amount">$1.800.000</span></div>
+          <div class="featured-badge">Lo Más Reservado</div>
+          <p class="tier-label">JORNADA COMPLETA</p>
+          <p class="pkg-name">La Jornada Completa</p>
+          <p class="pkg-tagline">La colección que eligen la mayoría de las parejas — y la que elegiría para mi propio matrimonio.</p>
+          <div class="pkg-price"><span class="currency">CLP</span><span class="amount">$1.200.000</span></div>
           <div class="pkg-divider"></div>
           <ul class="pkg-features">
             <li><span class="icon-check">✓</span><span>8 horas de cobertura (preparativos, ceremonia y fiesta)</span></li>
@@ -81,15 +92,18 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
             <li class="value-add"><span class="icon-star">★</span><span>Llamada de planificación previa</span></li>
             <li class="delivery"><span class="icon-del">↓</span><span>JPG web/redes + resolución completa para imprimir</span></li>
           </ul>
-          <a href="https://wa.me/56999679935?text=Hola%2C+me+interesa+el+paquete+Completo+para+mi+matrimonio" class="btn btn-accent pkg-cta">Consultar por WhatsApp</a>
+          <div class="pkg-cta-group">
+            <a href="/es/contact?session=Wedding&amp;package=La+Jornada+Completa#contact-form" class="btn btn-accent pkg-cta">Enviar Email</a>
+            <a href="https://wa.me/56999679935?text=Hola%2C+me+interesa+La+Jornada+Completa+para+mi+matrimonio" class="pkg-cta pkg-cta-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Conversemos por WhatsApp</a>
+          </div>
           <p class="pkg-note">Entrega en 21 días</p>
         </div>
 
         <div class="pkg-card">
-          <p class="tier-label">PREMIUM</p>
-          <p class="pkg-name">Premium</p>
-          <p class="pkg-tagline">Tu día completo, de principio a fin.</p>
-          <div class="pkg-price"><span class="currency">CLP</span><span class="amount">$2.500.000</span></div>
+          <p class="tier-label">EL DÍA ENTERO</p>
+          <p class="pkg-name">El Día Entero</p>
+          <p class="pkg-tagline">Cada hora, cada detalle — un archivo completo, no solo una galería.</p>
+          <div class="pkg-price"><span class="currency">CLP</span><span class="amount">$1.650.000</span></div>
           <div class="pkg-divider"></div>
           <ul class="pkg-features">
             <li><span class="icon-check">✓</span><span>10–12 horas de cobertura (desde los preparativos hasta el cierre de la fiesta)</span></li>
@@ -98,21 +112,24 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
             <li><span class="icon-check">✓</span><span>Galería privada online</span></li>
             <li class="value-add"><span class="icon-star">★</span><span>Sesión de pareja antes de la boda</span></li>
             <li class="value-add"><span class="icon-star">★</span><span>Video resumen de 60 segundos (highlight)</span></li>
-            <li class="value-add"><span class="icon-star">★</span><span>Álbum impreso 30×30 cm (20 páginas)</span></li>
+            <li class="value-add"><span class="icon-star">★</span><span>Álbum impreso 20×20 cm (16 páginas)</span></li>
             <li class="delivery"><span class="icon-del">↓</span><span>JPG web/redes + resolución completa para imprimir</span></li>
           </ul>
-          <a href="https://wa.me/56999679935?text=Hola%2C+me+interesa+el+paquete+Premium+para+mi+matrimonio" class="btn btn-accent pkg-cta">Consultar por WhatsApp</a>
+          <div class="pkg-cta-group">
+            <a href="/es/contact?session=Wedding&amp;package=El+D%C3%ADa+Entero#contact-form" class="btn btn-accent pkg-cta">Enviar Email</a>
+            <a href="https://wa.me/56999679935?text=Hola%2C+me+interesa+El+D%C3%ADa+Entero+para+mi+matrimonio" class="pkg-cta pkg-cta-whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Conversemos por WhatsApp</a>
+          </div>
           <p class="pkg-note">Entrega prioritaria en 14 días</p>
         </div>
 
       </div>
 
-      <p class="footer-note">Paquetes para matrimonios en todo Chile · Precios en pesos chilenos (CLP) · Viáticos fuera de la Región Metropolitana se cotizan aparte</p>
+      <p class="footer-note">Cada colección es un punto de partida, no un guion fijo · Disponible en todo Chile · Precios en pesos chilenos (CLP) · Viáticos fuera de la Región Metropolitana se cotizan aparte</p>
 
       <div class="custom-quote">
         <p class="custom-label">¿Tienes algo distinto en mente?</p>
-        <h2 class="custom-heading">Cada matrimonio es único.</h2>
-        <p class="custom-text">Cuéntame la fecha, el lugar y lo que imaginas para tu día, y armamos juntos una propuesta a medida. Sin compromiso.</p>
+        <h2 class="custom-heading">Cada matrimonio merece su propia historia.</h2>
+        <p class="custom-text">Cuéntame tu fecha, tu lugar y lo que imaginas — armo una propuesta a su medida. Sin compromiso.</p>
         <a href="https://wa.me/56999679935?text=Hola%2C+quisiera+una+cotizaci%C3%B3n+personalizada+para+mi+matrimonio" class="btn btn-accent custom-cta">Pedir cotización a medida →</a>
       </div>
 
@@ -248,7 +265,27 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
   .icon-star { color: #c0392b; font-size: 0.75rem; flex-shrink: 0; margin-top: 2px; }
   .icon-del { color: var(--color-text-muted); flex-shrink: 0; font-size: 0.8rem; margin-top: 1px; }
 
-  .pkg-cta { display: block; width: 100%; text-align: center; margin-top: auto; }
+  .pkg-cta-group { display: flex; flex-direction: column; gap: 0.6rem; margin-top: auto; }
+  .pkg-cta { display: block; width: 100%; text-align: center; }
+  .pkg-cta-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #25D366;
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.25s;
+  }
+  .pkg-cta-whatsapp:hover { background: #1fb858; }
+  .pkg-cta-whatsapp svg { flex-shrink: 0; }
 
   .pkg-note {
     font-size: 0.72rem;
@@ -331,6 +368,58 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
 
   .page-hero { padding-bottom: 0 !important; margin-bottom: 0 !important; border-bottom: none !important; }
   .section { padding-top: 1.5rem !important; }
+
+  .story-image-section {
+    margin-top: 2rem;
+  }
+
+  .story-image-wrap {
+    position: relative;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+    aspect-ratio: 16 / 7;
+    overflow: hidden;
+  }
+
+  .story-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .story-image-overlay {
+    position: absolute;
+    inset: 0 2rem;
+    background: linear-gradient(to top, rgba(10,9,7,0.65) 0%, rgba(10,9,7,0.05) 50%, transparent 100%);
+  }
+
+  .story-image-caption {
+    position: absolute;
+    left: calc(2rem + 2.5rem);
+    bottom: 1.75rem;
+    z-index: 2;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    line-height: 1.3;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+
+  @media (max-width: 700px) {
+    .story-image-wrap { aspect-ratio: 4 / 5; padding: 0 1.25rem; }
+    .story-image-overlay { inset: 0 1.25rem; }
+    .story-image-caption {
+      left: calc(1.25rem + 1.25rem);
+      right: 1.25rem;
+      bottom: 1.25rem;
+      font-size: 0.95rem;
+      white-space: normal;
+    }
+  }
 
   @media (max-width: 900px) {
     .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }

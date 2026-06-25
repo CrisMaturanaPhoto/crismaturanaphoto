@@ -208,6 +208,17 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
             </select>
           </div>
         </div>
+        <div class="form-row" id="weddingPackageRow">
+          <div class="field">
+            <label for="weddingpackage">Wedding package (if applicable)</label>
+            <select id="weddingpackage" name="wedding_package">
+              <option value="" selected>Not applicable</option>
+              <option value="The Essentials">The Essentials — $900 USD</option>
+              <option value="The Full Day">The Full Day — $1,300 USD</option>
+              <option value="Start to Finish">Start to Finish — $1,800 USD</option>
+            </select>
+          </div>
+        </div>
         <div class="form-row" id="tourTypeRow">
           <div class="field">
             <label for="tourtype" data-i18n="contact.form.tourtype">Tour format (if booking a Photo Tour)</label>
@@ -283,7 +294,18 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
   }
 
   // Scroll to the form once params have been applied
-  if (sessionParam || typeParam) {
+  // Pre-select wedding package from URL (?package=The+Essentials)
+  const packageParam = params.get('package');
+  if (packageParam) {
+    const packageSelect = document.getElementById('weddingpackage');
+    if (packageSelect) {
+      for (const opt of packageSelect.options) {
+        if (opt.value === packageParam) { opt.selected = true; break; }
+      }
+    }
+  }
+
+  if (sessionParam || typeParam || packageParam) {
     const select = document.getElementById('session');
     if (select) select.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
