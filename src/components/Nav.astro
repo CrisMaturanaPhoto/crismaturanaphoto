@@ -75,6 +75,8 @@ const esHref = isEs ? path : ('/es' + (path === '/' ? '/' : path));
     right: 0;
     z-index: 1000;
     height: var(--nav-height);
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(6px);
     transition: background 0.4s ease, backdrop-filter 0.4s ease;
   }
 
