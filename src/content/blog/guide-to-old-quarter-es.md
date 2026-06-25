@@ -14,7 +14,7 @@ La mayoría de las guías fotográficas sobre Hội An te dicen lo mismo: ve al 
 
 No están equivocadas — pero también están describiendo lo que 10.000 turistas fotografían el mismo día, desde el mismo lugar, a la misma hora.
 
-Llevo años viviendo aquí. Fotografío el Pueblo Antiguo regularmente. Lo que sigue es lo que realmente sé — las ventanas de luz reales, los rincones olvidados y los consejos honestos que le doy a los clientes en mis photo tours.
+Llevo años viviendo aquí. Fotografío el Pueblo Antiguo regularmente. Lo que sigue es lo que realmente sé — las ventanas de luz reales, los rincones olvidados y los consejos honestos que le doy a los clientes en mis [photo tours](/es/photo-tours-vietnam-2026).
 
 ## 1. Calle Trần Phú — La Hora de la Pared Amarilla
 
@@ -99,4 +99,4 @@ Este artículo cubre los puntos destacados. La **Guía Completa de Spots Fotogr�
 
 O si prefieres que un fotógrafo local te muestre en persona:
 
-**[Únete a un Photo Tour en Hội An →](/es/portfolio/photo-tours-vietnam-2026)**
+**[Únete a un Photo Tour en Hội An →](/es/photo-tours-vietnam-2026)**

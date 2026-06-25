@@ -14,7 +14,7 @@ You have three seconds.
 
 That's how long someone spends looking at your profile, your website, or your Instagram before deciding whether you're worth their time. Three seconds. And in those three seconds, a blurry selfie or an outdated headshot is silently costing you clients.
 
-Personal branding photography isn't a luxury. It's one of the highest-return investments a freelancer, coach, yoga teacher, or entrepreneur can make.
+[Personal branding photography](/personal-branding-photography-hoi-an) isn't a luxury. It's one of the highest-return investments a freelancer, coach, yoga teacher, or entrepreneur can make.
 
 ## What Personal Branding Photography Actually Does
 
@@ -81,6 +81,6 @@ At the end of a personal branding session with me, you'll have:
 
 I'm based in Hội An, Vietnam, and I work with coaches, teachers, entrepreneurs, and wellness professionals who are serious about their visual identity.
 
-Sessions are available in Hội An and surrounding areas. If you're visiting Vietnam, this is also the perfect moment to invest in images you'll use for years.
+[Sessions are available in Hội An and surrounding areas](/personal-branding-photography-hoi-an), including Da Nang. If you're visiting Vietnam, this is also the perfect moment to invest in images you'll use for years.
 
 **[Get in Touch to Book Your Session →](/contact)**

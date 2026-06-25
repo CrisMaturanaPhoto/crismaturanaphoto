@@ -14,7 +14,7 @@ Tienes tres segundos.
 
 Eso es lo que alguien pasa mirando tu perfil, tu sitio web o tu Instagram antes de decidir si vales su tiempo. Tres segundos. Y en esos tres segundos, una selfie borrosa o una foto desactualizada te está costando clientes en silencio.
 
-La fotografía de marca personal no es un lujo. Es una de las inversiones con mayor retorno que un freelancer, coach, profesora de yoga o emprendedor puede hacer.
+[La fotografía de marca personal](/es/fotografia-marca-personal-hoi-an) no es un lujo. Es una de las inversiones con mayor retorno que un freelancer, coach, profesora de yoga o emprendedor puede hacer.
 
 ## Qué Hace Realmente la Fotografía de Marca Personal
 
@@ -81,6 +81,6 @@ Al final de una sesión de marca personal conmigo, tendrás:
 
 Estoy basado en Hội An, Vietnam, y trabajo con coaches, profesores, emprendedores y profesionales del bienestar que se toman en serio su identidad visual.
 
-Las sesiones están disponibles en Hội An y alrededores. Si estás visitando Vietnam, este es también el momento perfecto para invertir en imágenes que usarás por años.
+[Las sesiones están disponibles en Hội An y alrededores](/es/fotografia-marca-personal-hoi-an), incluyendo Da Nang. Si estás visitando Vietnam, este es también el momento perfecto para invertir en imágenes que usarás por años.
 
 **[Contáctame para Reservar tu Sesión →](/es/contact)**

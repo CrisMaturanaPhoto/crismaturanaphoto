@@ -69,7 +69,7 @@ Muévete despacio. A veces baja la cámara. Tómate un café de uno de los puest
 - **Respeta las puertas cerradas.** Si una tienda o casa está cerrada, no fotografíes por la ventana.
 - **La lluvia no es tu enemiga.** Algunas de mis mejores imágenes de Hội An fueron tomadas con llovizna leve — los reflejos en las calles de piedra mojadas son increíbles.
 
-Si visitas Hội An y quieres vivir esto de verdad, ofrezco **Photo Tours al amanecer** en grupos pequeños diseñados específicamente alrededor de estos lugares y esta luz. Te irás con imágenes que no se parecen en nada a las fotos de turistas — porque estarás ahí tres horas antes de que lleguen.
+Si visitas Hội An y quieres vivir esto de verdad, ofrezco [Photo Tours al amanecer](/es/photo-tours-vietnam-2026) en grupos pequeños diseñados específicamente alrededor de estos lugares y esta luz. Te irás con imágenes que no se parecen en nada a las fotos de turistas — porque estarás ahí tres horas antes de que lleguen.
 
 ---
 
@@ -79,4 +79,4 @@ Vivo aquí. Sé exactamente dónde pararse, cuándo llegar, y cómo encontrar lo
 
 Mi **Photo Tour por el Pueblo Antiguo** se hace al amanecer — grupo pequeño, 3 horas, lugares reales. Sin trampas turísticas. Solo luz honesta y fotografía honesta.
 
-**[Reservar el Photo Tour por el Pueblo Antiguo →](/es/portfolio/photo-tours-vietnam-2026)**
+**[Reservar el Photo Tour por el Pueblo Antiguo →](/es/photo-tours-vietnam-2026)**

@@ -12,7 +12,7 @@ lang: "en"
 
 Hội An is one of the most photogenic towns in Southeast Asia. But knowing *where* to go is only half of it — the other half is knowing *when*, and what to avoid.
 
-I'm a photographer based here. I've shot couples in the Old Town, in the rice fields, along the river. What follows is the honest version of the guide — the one I give couples who book a session with me.
+I'm a photographer based here. I've shot couples in the Old Town, in the rice fields, along the river. What follows is the honest version of the guide — the one I give couples who [book a session](/family-portrait-photography-hoi-an) with me.
 
 ## 1. The Japanese Covered Bridge — Early Morning Only
 
@@ -79,4 +79,4 @@ A few things that make a real difference:
 
 ---
 
-If you're planning a couple session in Hội An, I offer packages starting from $160 USD — from a 1-hour session in the Old Town to a full golden hour experience in the rice fields. [Check the packages and availability here](/prices), or [get in touch directly](/contact).
+If you're planning a [couple photography session in Hội An](/family-portrait-photography-hoi-an), I offer packages starting from $160 USD — from a 1-hour session in the Old Town to a full golden hour experience in the rice fields. [Check the packages and availability here](/prices), or [get in touch directly](/contact).

@@ -14,7 +14,7 @@ Most photography guides to Hội An tell you the same five things. Go to the Jap
 
 They're not wrong — but they're also describing what 10,000 other tourists are photographing on the same day, from the same spot, at the same time.
 
-I've lived here for years. I shoot the Old Town regularly. What follows is what I actually know — the real windows of light, the overlooked corners, and the honest advice I give clients on my photo tours.
+I've lived here for years. I shoot the Old Town regularly. What follows is what I actually know — the real windows of light, the overlooked corners, and the honest advice I give clients on my [photo tours](/photo-tours-vietnam-2026).
 
 ## 1. Trần Phú Street — The Yellow Wall Hour
 
@@ -99,4 +99,4 @@ This article covers the highlights. The complete **Hội An Photo Location Guide
 
 Or if you'd rather have a local photographer show you in person:
 
-**[Join a Photo Tour in Hội An →](/portfolio/photo-tours-vietnam)**
+**[Join a Photo Tour in Hội An →](/photo-tours-vietnam-2026)**
