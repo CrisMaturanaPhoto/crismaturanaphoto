@@ -12,7 +12,7 @@ lang: "en"
 
 Hội An is one of the most photogenic towns in Southeast Asia. But knowing *where* to go is only half of it — the other half is knowing *when*, and what to avoid.
 
-I'm a documentary photographer based here. I've shot couples in the Old Town, in the rice fields, along the river. What follows is the honest version of the guide — the one I give couples who book a session with me.
+I'm a photographer based here. I've shot couples in the Old Town, in the rice fields, along the river. What follows is the honest version of the guide — the one I give couples who book a session with me.
 
 ## 1. The Japanese Covered Bridge — Early Morning Only
 

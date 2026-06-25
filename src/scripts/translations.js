@@ -16,9 +16,10 @@ const translations = {
     "nav.travel": "Travel & Culture",
     "nav.aerial": "From Above",
     "nav.couples": "Couples & Families",
+    "header.tagline": "Photographer",
 
     // INDEX HERO
-    "hero.label": "Documentary Photographer · Hội An, Vietnam",
+    "hero.label": "Photographer · Hội An, Vietnam",
     "hero.slide1.subtitle": "Real Moments. Honest Connection.",
     "hero.cta": "Find More",
 
@@ -178,7 +179,7 @@ const translations = {
     "about.title": "Light, depth,\nand the moments\nin between.",
 
     // FOOTER
-    "footer.tagline": "Documentary Photographer",
+    "footer.tagline": "Photographer",
     "footer.rights": "All rights reserved.",
     "footer.location": "Hội An, Vietnam",
   },
@@ -199,9 +200,10 @@ const translations = {
     "nav.travel": "Viajes y Cultura",
     "nav.aerial": "Desde el Aire",
     "nav.couples": "Parejas y Familias",
+    "header.tagline": "Fotógrafo",
 
     // INDEX HERO
-    "hero.label": "Fotógrafo Documental · Hội An, Vietnam",
+    "hero.label": "Fotógrafo · Hội An, Vietnam",
     "hero.slide1.subtitle": "Momentos Reales. Conexión Auténtica.",
     "hero.cta": "Ver más",
 
@@ -362,7 +364,7 @@ const translations = {
     "about.title": "Luz, profundidad,\ny los momentos\nen medio de todo.",
 
     // FOOTER
-    "footer.tagline": "Fotógrafo Documental",
+    "footer.tagline": "Fotógrafo",
     "footer.rights": "Todos los derechos reservados.",
     "footer.location": "Hội An, Vietnam",
   }
