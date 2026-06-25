@@ -1,4 +1,4 @@
-// translations.js — Cristóbal Maturana Photo
+// translations.js — Cris Maturana Photo
 const translations = {
   en: {
     // NAV
@@ -24,7 +24,7 @@ const translations = {
 
     // INDEX ABOUT
     "about.label": "About the photographer",
-    "about.text": "Hi, I'm Cristóbal, a photographer and visual storyteller.",
+    "about.text": "Hi, I'm Cris, a photographer and visual storyteller.",
     "about.link": "More about me",
 
     // INDEX PROCESS
@@ -173,7 +173,7 @@ const translations = {
 
     // ABOUT
     "about.label": "About the photographer",
-    "about.text": "Hi, I'm Cristóbal, a photographer and visual storyteller.",
+    "about.text": "Hi, I'm Cris, a photographer and visual storyteller.",
     "about.link": "More about me",
     "about.title": "Light, depth,\nand the moments\nin between.",
 
@@ -207,7 +207,7 @@ const translations = {
 
     // INDEX ABOUT
     "about.label": "Sobre el fotógrafo",
-    "about.text": "Hola, soy Cristóbal, fotógrafo y narrador visual.",
+    "about.text": "Hola, soy Cris, fotógrafo y narrador visual.",
     "about.link": "Más sobre mí",
 
     // INDEX PROCESS
@@ -357,7 +357,7 @@ const translations = {
 
     // ABOUT
     "about.label": "Sobre el fotógrafo",
-    "about.text": "Hola, soy Cristóbal, fotógrafo y narrador visual.",
+    "about.text": "Hola, soy Cris, fotógrafo y narrador visual.",
     "about.link": "Más sobre mí",
     "about.title": "Luz, profundidad,\ny los momentos\nen medio de todo.",
 

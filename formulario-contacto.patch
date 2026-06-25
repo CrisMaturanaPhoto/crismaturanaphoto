@@ -1,0 +1,156 @@
+diff --git a/src/pages/contact.astro b/src/pages/contact.astro
+index 924714a..ec40bce 100644
+--- a/src/pages/contact.astro
++++ b/src/pages/contact.astro
+@@ -175,7 +175,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
+       </div>
+     </div>
+     <div class="contact-form" id="contact-form">
+-      <form action="#" method="POST">
++      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
++        <input type="hidden" name="access_key" value="64390f03-a2a0-40d0-92a2-1f689e1bd885" />
++        <input type="hidden" name="subject" value="New inquiry from crismaturana.com" />
++        <input type="hidden" name="from_name" value="crismaturana.com contact form" />
++        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+         <div class="form-row">
+           <div class="field"><label for="fname" data-i18n="contact.form.fname">First name</label><input type="text" id="fname" name="first_name" placeholder="Ana" required /></div>
+           <div class="field"><label for="lname" data-i18n="contact.form.lname">Last name</label><input type="text" id="lname" name="last_name" placeholder="Garcia" required /></div>
+@@ -216,8 +220,9 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
+             <input type="number" id="people" name="number_of_people" min="1" max="10" placeholder="2" />
+           </div>
+         </div>
+-        <div class="field"><label for="message" data-i18n="contact.form.message">Tell me about your project</label><textarea id="message" name="message" placeholder="What are you envisioning? The more you share, the better." required></textarea></div>
+-        <button type="submit" class="btn-submit">Send message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
++        <div class="field"><label for="message" data-i18n="contact.form.message">Tell me about your project</label><textarea id="message" name="message" placeholder="What are you envisioning? The more you share, the better."></textarea></div>
++        <button type="submit" id="formSubmitBtn" class="btn-submit">Send message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
++        <p id="formStatus" style="margin-top:1rem;font-size:0.85rem;display:none;"></p>
+       </form>
+     </div>
+   </div>
+@@ -288,6 +293,48 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
+     if (scrollY <= heroH) heroBg.style.transform = 'translateY(' + (scrollY * 0.35) + 'px)';
+   }
+   window.addEventListener('scroll', onScroll, { passive: true });
++
++  // Submit contact form via Web3Forms (AJAX, no page redirect)
++  const contactForm = document.getElementById('contactForm');
++  if (contactForm) {
++    contactForm.addEventListener('submit', async function (e) {
++      e.preventDefault();
++      const btn = document.getElementById('formSubmitBtn');
++      const status = document.getElementById('formStatus');
++      const originalBtnHTML = btn.innerHTML;
++      btn.disabled = true;
++      btn.innerHTML = 'Sending...';
++      status.style.display = 'none';
++
++      try {
++        const formData = new FormData(contactForm);
++        const res = await fetch('https://api.web3forms.com/submit', {
++          method: 'POST',
++          headers: { 'Accept': 'application/json' },
++          body: formData,
++        });
++        const result = await res.json();
++        if (result.success) {
++          contactForm.reset();
++          status.textContent = "Thank you! Your message has been sent. I'll reply within 24-48 hours.";
++          status.style.color = 'var(--green2)';
++          status.style.display = 'block';
++        } else {
++          status.textContent = 'Something went wrong. Please try again or email me directly at info@crismaturana.com.';
++          status.style.color = '#b3261e';
++          status.style.display = 'block';
++        }
++      } catch (err) {
++        status.textContent = 'Something went wrong. Please try again or email me directly at info@crismaturana.com.';
++        status.style.color = '#b3261e';
++        status.style.display = 'block';
++      } finally {
++        btn.disabled = false;
++        btn.innerHTML = originalBtnHTML;
++      }
++    });
++  }
++
+   document.querySelectorAll('.faq-q').forEach(btn => {
+     btn.addEventListener('click', () => {
+       const item = btn.closest('.faq-item');
+diff --git a/src/pages/es/contact.astro b/src/pages/es/contact.astro
+index e66760e..88d514f 100644
+--- a/src/pages/es/contact.astro
++++ b/src/pages/es/contact.astro
+@@ -181,7 +181,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
+       </div>
+     </div>
+     <div class="contact-form" id="contact-form">
+-      <form action="#" method="POST">
++      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
++        <input type="hidden" name="access_key" value="64390f03-a2a0-40d0-92a2-1f689e1bd885" />
++        <input type="hidden" name="subject" value="New inquiry from crismaturana.com" />
++        <input type="hidden" name="from_name" value="crismaturana.com contact form" />
++        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+         <div class="form-row">
+           <div class="field"><label for="fname" data-i18n="contact.form.fname">Nombre</label><input type="text" id="fname" name="first_name" placeholder="Ana" required /></div>
+           <div class="field"><label for="lname" data-i18n="contact.form.lname">Apellido</label><input type="text" id="lname" name="last_name" placeholder="García" required /></div>
+@@ -221,8 +225,9 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
+             <input type="number" id="people" name="number_of_people" min="1" max="10" placeholder="2" />
+           </div>
+         </div>
+-        <div class="field"><label for="message" data-i18n="contact.form.message">Cuéntame sobre tu proyecto</label><textarea id="message" name="message" placeholder="¿Qué estás imaginando? Mientras más compartas, mejor." required></textarea></div>
+-        <button type="submit" class="btn-submit" data-i18n="contact.form.send">Enviar mensaje <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
++        <div class="field"><label for="message" data-i18n="contact.form.message">Cuéntame sobre tu proyecto</label><textarea id="message" name="message" placeholder="¿Qué estás imaginando? Mientras más compartas, mejor."></textarea></div>
++        <button type="submit" id="formSubmitBtn" class="btn-submit" data-i18n="contact.form.send">Enviar mensaje <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
++        <p id="formStatus" style="margin-top:1rem;font-size:0.85rem;display:none;"></p>
+       </form>
+     </div>
+   </div>
+@@ -292,6 +297,48 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
+     if (scrollY <= heroH) heroBg.style.transform = 'translateY(' + (scrollY * 0.35) + 'px)';
+   }
+   window.addEventListener('scroll', onScroll, { passive: true });
++
++  // Enviar formulario de contacto vía Web3Forms (AJAX, sin redirigir de página)
++  const contactForm = document.getElementById('contactForm');
++  if (contactForm) {
++    contactForm.addEventListener('submit', async function (e) {
++      e.preventDefault();
++      const btn = document.getElementById('formSubmitBtn');
++      const status = document.getElementById('formStatus');
++      const originalBtnHTML = btn.innerHTML;
++      btn.disabled = true;
++      btn.innerHTML = 'Enviando...';
++      status.style.display = 'none';
++
++      try {
++        const formData = new FormData(contactForm);
++        const res = await fetch('https://api.web3forms.com/submit', {
++          method: 'POST',
++          headers: { 'Accept': 'application/json' },
++          body: formData,
++        });
++        const result = await res.json();
++        if (result.success) {
++          contactForm.reset();
++          status.textContent = '¡Gracias! Tu mensaje fue enviado. Te responderé dentro de 24-48 horas.';
++          status.style.color = 'var(--green2)';
++          status.style.display = 'block';
++        } else {
++          status.textContent = 'Algo salió mal. Por favor intenta de nuevo o escríbeme directo a info@crismaturana.com.';
++          status.style.color = '#b3261e';
++          status.style.display = 'block';
++        }
++      } catch (err) {
++        status.textContent = 'Algo salió mal. Por favor intenta de nuevo o escríbeme directo a info@crismaturana.com.';
++        status.style.color = '#b3261e';
++        status.style.display = 'block';
++      } finally {
++        btn.disabled = false;
++        btn.innerHTML = originalBtnHTML;
++      }
++    });
++  }
++
+   document.querySelectorAll('.faq-q').forEach(btn => {
+     btn.addEventListener('click', () => {
+       const item = btn.closest('.faq-item');
