@@ -1,17 +1,15 @@
 ---
 const navLinks = [
   {
-    label: 'Portfolio', i18n: 'nav.portfolio',
-    href: '/portfolio',
+    label: 'Services', i18n: 'nav.services',
+    href: '#',
     children: [
-      { label: 'Weddings', i18n: 'nav.weddings', href: '/hoi-an-wedding-photographer' },
-      { label: 'Couples & Families', i18n: 'nav.couples', href: '/family-portrait-photography-hoi-an' },
-      { label: 'Portraits', i18n: 'nav.portraits', href: '/personal-branding-photography-hoi-an' },
-      { label: 'Travel & Culture', i18n: 'nav.travel', href: '/portfolio/travel-culture' },
-      { label: 'From Above', i18n: 'nav.aerial', href: '/portfolio/aerial' },
+      { label: 'Weddings & Elopements', i18n: 'nav.weddings', href: '/hoi-an-wedding-photographer' },
+      { label: 'Portraits & Families', i18n: 'nav.couples', href: '/family-portrait-photography-hoi-an' },
+      { label: 'Brand & Lifestyle', i18n: 'nav.portraits', href: '/personal-branding-photography-hoi-an' },
+      { label: 'Photography Tours', i18n: 'nav.phototours', href: '/photo-tours-vietnam-2026' },
     ],
   },
-  { label: 'Photo Tours', i18n: 'nav.phototours', href: '/photo-tours-vietnam-2026' },
   { label: 'Prices', i18n: 'nav.prices', href: '/prices' },
   { label: 'Blog', i18n: 'nav.blog', href: '/blog' },
   {
@@ -105,7 +103,7 @@ const esHref = isEs ? path : ('/es' + (path === '/' ? '/' : path));
   .logo-name {
     font-family: var(--font-serif);
     font-size: 1.15rem;
-    color: var(--color-white);
+    color: rgba(26,26,24,0.9);
     letter-spacing: 0.02em;
   }
 
@@ -140,11 +138,11 @@ const esHref = isEs ? path : ('/es' + (path === '/' ? '/' : path));
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(26,26,24,0.9);
     transition: color 0.2s;
   }
 
-  .nav-link:hover { color: var(--color-white); }
+  .nav-link:hover { color: var(--color-accent); }
 
   .dropdown-arrow {
     font-size: 0.6rem;
