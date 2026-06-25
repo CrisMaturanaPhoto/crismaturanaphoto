@@ -356,7 +356,8 @@ const esHref = isEs ? path : ('/es' + (path === '/' ? '/' : path));
   }
 
   // Aplicar al cargar
-  const initLang = localStorage.getItem('lang') || 'en';
+  const initPath = window.location.pathname;
+  const initLang = (initPath.startsWith('/es/') || initPath === '/es') ? 'es' : 'en';
   updateNavHrefs(initLang);
 
   // Escuchar cambios de idioma

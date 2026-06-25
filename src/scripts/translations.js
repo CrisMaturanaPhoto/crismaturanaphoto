@@ -372,7 +372,9 @@ const translations = {
 
 // ── Language switcher logic ──────────────────────────────
 window.getLang = function getLang() {
-  return localStorage.getItem('lang') || 'en';
+  var path = window.location.pathname;
+  var isEsPage = path.startsWith('/es/') || path === '/es';
+  return isEsPage ? 'es' : 'en';
 }
 
 window.setLang = function setLang(lang) {
