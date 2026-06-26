@@ -87,6 +87,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
 .social-row{display:flex;gap:0.8rem;flex-wrap:wrap;align-items:center;}
 .social-icon-link{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;color:var(--muted);text-decoration:none;transition:color 0.3s;}
 .social-icon-link:hover{color:var(--text);}
+.map-embed{margin-top:1.5rem;border:1px solid var(--border);border-radius:2px;overflow:hidden;}
+.map-embed iframe{display:block;filter:grayscale(15%) contrast(1.05);}
 .contact-form{background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:3rem;min-width:0;max-width:100%;}
 @media(max-width:600px){.contact-form{padding:1.8rem;}.section{padding:4rem 2rem;}.faq-section{padding:4rem 2rem 6rem;}}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;min-width:0;}
@@ -180,6 +182,14 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
       <div class="social-row">
         <a href="https://www.facebook.com/Matufoto/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
         <a href="https://www.instagram.com/crismaturanaphoto/" target="_blank" rel="noopener" class="social-icon-link" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+      </div>
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps?q=Hoi+An,+Vietnam&output=embed"
+          width="100%" height="220" style="border:0;" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Hội An, Vietnam — mapa">
+        </iframe>
       </div>
     </div>
     <div class="contact-form" id="contact-form">
