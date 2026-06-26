@@ -26,7 +26,7 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
       },
       "areaServed": "Chile",
       "offers": [
-        { "@type": "Offer", "name": "Lo Esencial", "price": "850000", "priceCurrency": "CLP" },
+        { "@type": "Offer", "name": "Lo Esencial", "price": "650000", "priceCurrency": "CLP" },
         { "@type": "Offer", "name": "La Jornada Completa", "price": "1200000", "priceCurrency": "CLP" },
         { "@type": "Offer", "name": "El Día Entero", "price": "1650000", "priceCurrency": "CLP" }
       ]
@@ -58,7 +58,7 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
           <p class="tier-label">ESENCIAL</p>
           <p class="pkg-name">Lo Esencial</p>
           <p class="pkg-tagline">La ceremonia, los brindis, el baile — capturados por completo.</p>
-          <div class="pkg-price"><span class="currency">CLP</span><span class="amount">$850.000</span></div>
+          <div class="pkg-price"><span class="currency">CLP</span><span class="amount">$650.000</span></div>
           <div class="pkg-divider"></div>
           <ul class="pkg-features">
             <li><span class="icon-check">✓</span><span>5 horas de cobertura</span></li>
@@ -66,7 +66,6 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
             <li><span class="icon-check">✓</span><span>Ceremonia + recepción</span></li>
             <li><span class="icon-check">✓</span><span>250+ fotos editadas en alta resolución</span></li>
             <li><span class="icon-check">✓</span><span>Galería privada online</span></li>
-            <li class="value-add"><span class="icon-star">★</span><span>Guía de planificación del día</span></li>
             <li class="delivery"><span class="icon-del">↓</span><span>JPG web/redes + resolución completa para imprimir</span></li>
           </ul>
           <div class="pkg-cta-group">
@@ -84,11 +83,11 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
           <div class="pkg-price"><span class="currency">CLP</span><span class="amount">$1.200.000</span></div>
           <div class="pkg-divider"></div>
           <ul class="pkg-features">
-            <li><span class="icon-check">✓</span><span>8 horas de cobertura (preparativos, ceremonia y fiesta)</span></li>
+            <li><span class="icon-check">✓</span><span>10 horas de cobertura (preparativos, ceremonia y fiesta)</span></li>
             <li><span class="icon-check">✓</span><span>1 fotógrafo + asistente</span></li>
             <li><span class="icon-check">✓</span><span>500+ fotos editadas en alta resolución</span></li>
             <li><span class="icon-check">✓</span><span>Galería privada online</span></li>
-            <li class="value-add"><span class="icon-star">★</span><span>Sesión de pareja antes o después de la boda (golden hour)</span></li>
+            <li class="value-add"><span class="icon-star">★</span><span>Sesión de pareja antes de la boda (golden hour) — para que nos conozcamos antes del gran día</span></li>
             <li class="value-add"><span class="icon-star">★</span><span>Llamada de planificación previa</span></li>
             <li class="delivery"><span class="icon-del">↓</span><span>JPG web/redes + resolución completa para imprimir</span></li>
           </ul>
@@ -106,13 +105,12 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
           <div class="pkg-price"><span class="currency">CLP</span><span class="amount">$1.650.000</span></div>
           <div class="pkg-divider"></div>
           <ul class="pkg-features">
-            <li><span class="icon-check">✓</span><span>10–12 horas de cobertura (desde los preparativos hasta el cierre de la fiesta)</span></li>
+            <li><span class="icon-check">✓</span><span>12 horas de cobertura (desde los preparativos hasta el cierre de la fiesta)</span></li>
             <li><span class="icon-check">✓</span><span>1 fotógrafo + asistente</span></li>
             <li><span class="icon-check">✓</span><span>700+ fotos editadas en alta resolución</span></li>
             <li><span class="icon-check">✓</span><span>Galería privada online</span></li>
-            <li class="value-add"><span class="icon-star">★</span><span>Sesión de pareja antes de la boda</span></li>
-            <li class="value-add"><span class="icon-star">★</span><span>Video resumen de 60 segundos (highlight)</span></li>
-            <li class="value-add"><span class="icon-star">★</span><span>Álbum impreso 20×20 cm (16 páginas)</span></li>
+            <li class="value-add"><span class="icon-star">★</span><span>Sesión de pareja antes de la boda — para que nos conozcamos antes del gran día</span></li>
+            <li class="value-add"><span class="icon-star">★</span><span>Álbum impreso 30×30 cm (40 páginas)</span></li>
             <li class="delivery"><span class="icon-del">↓</span><span>JPG web/redes + resolución completa para imprimir</span></li>
           </ul>
           <div class="pkg-cta-group">
@@ -255,7 +253,6 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
   .pkg-features li.value-add span:last-child { color: var(--color-text); font-weight: 400; }
 
   .pkg-features li.delivery {
-    opacity: 0.55;
     border-bottom: none;
     border-top: 1px solid var(--color-border);
     margin-top: 0.25rem;
@@ -281,7 +278,7 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
     font-weight: 500;
     letter-spacing: 0.04em;
     text-decoration: none;
-    border-radius: 2px;
+    border-radius: 40px;
     transition: background 0.25s;
   }
   .pkg-cta-whatsapp:hover { background: #1fb858; }
