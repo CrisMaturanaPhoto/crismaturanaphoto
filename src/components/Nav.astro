@@ -23,10 +23,27 @@ const navLinks = [
   { label: 'Contact', i18n: 'nav.contact', href: '/contact' },
 ];
 // Calcula los links EN/ES basado en la URL actual
+// Pares de páginas donde el slug en español NO es simplemente /es/ + el slug en inglés
+// (ej: /hoi-an-wedding-photographer vs /es/fotografo-bodas-hoi-an).
+// Sin esto, el switcher EN|ES del header construye una URL que no existe.
+const slugMap: Record<string, string> = {
+  '/hoi-an-wedding-photographer': '/es/fotografo-bodas-hoi-an',
+  '/family-portrait-photography-hoi-an': '/es/fotografia-familiar-hoi-an',
+  '/personal-branding-photography-hoi-an': '/es/fotografia-marca-personal-hoi-an',
+  '/wedding-pricing-chile': '/es/precios-matrimonios-chile',
+};
+const reverseSlugMap: Record<string, string> = Object.fromEntries(
+  Object.entries(slugMap).map(([en, es]) => [es, en])
+);
+
 const path = Astro.url.pathname;
 const isEs = path.startsWith('/es/') || path === '/es';
-const enHref = isEs ? (path.replace(/^\/es/, '') || '/') : path;
-const esHref = isEs ? path : ('/es' + (path === '/' ? '/' : path));
+const enHref = isEs
+  ? (reverseSlugMap[path] || path.replace(/^\/es/, '') || '/')
+  : path;
+const esHref = isEs
+  ? path
+  : (slugMap[path] || ('/es' + (path === '/' ? '/' : path)));
 ---
 
 <header class="site-header" id="site-header">
