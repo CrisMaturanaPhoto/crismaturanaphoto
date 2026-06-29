@@ -25,7 +25,7 @@ export const heroSlides: HeroSlide[] = [
     subtitle: 'DESTINATION DOCUMENTARY PHOTOGRAPHER',
     cta: 'View Portfolio',
     href: '/hoi-an-wedding-photographer',
-    bg: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Poppin%26Chris-Wedding-%40-228.jpg',
+    bg: 'https://CrisMaturana.b-cdn.net/Weddings/wedding-photographer-hoi-an-hero-01.jpg',
   },
   {
     title: 'Couples & Families',
@@ -39,7 +39,7 @@ export const heroSlides: HeroSlide[] = [
     subtitle: 'DESTINATION DOCUMENTARY PHOTOGRAPHER',
     cta: 'Find More',
     href: '/hoi-an-wedding-photographer',
-    bg: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/poppin-chris-005.JPG',
+    bg: 'https://CrisMaturana.b-cdn.net/Weddings/wedding-photographer-hoi-an-ceremony-01.jpg',
   },
   {
     title: 'Photo Tours Vietnam',
@@ -57,7 +57,7 @@ export const portfolioCategories: PortfolioCategory[] = [
     title: 'Weddings & Elopements',
     subtitle: 'Moments that last forever.',
     href: '/hoi-an-wedding-photographer',
-    thumb: 'https://CrisMaturana.b-cdn.net/WEDDINGS-SELECTION/Yaz-Li-portrait-001.jpg',
+    thumb: 'https://CrisMaturana.b-cdn.net/Weddings/wedding-photographer-hoi-an-couple-portrait-01.jpg',
   },
   {
     title: 'Portraits & Families',
