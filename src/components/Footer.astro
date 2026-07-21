@@ -1,5 +1,6 @@
 ---
 const year = new Date().getFullYear();
+const isEs = Astro.url.pathname.startsWith('/es/') || Astro.url.pathname === '/es';
 ---
 
 <footer class="site-footer">
@@ -32,6 +33,11 @@ const year = new Date().getFullYear();
             <li><a href="/portfolio/travel-culture" data-i18n="nav.travel" data-i18n="nav.travel">Travel & Culture</a></li>
             <li><a href="/portfolio/aerial" data-i18n="nav.aerial" data-i18n="nav.aerial">From Above</a></li>
             <li><a href="/family-portrait-photography-hoi-an" data-i18n="nav.couples" data-i18n="nav.couples">Couples & Families</a></li>
+            <li>
+              {isEs
+                ? <a href="/es/precios-matrimonios-chile">Matrimonios en Chile</a>
+                : <a href="/wedding-pricing-chile">Weddings in Chile</a>}
+            </li>
           </ul>
         </div>
         <div class="footer-nav-col">

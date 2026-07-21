@@ -25,19 +25,18 @@ const highlightImages = [
   title="La Inversión — Fotografía de Matrimonios | Cris Maturana"
   description="Qué significa invertir en fotografía de matrimonios con Cris Maturana — momentos reales, emoción real, contados con honestidad."
   lang="es"
-  canonical="https://crismaturana.com/es/investment"
+  canonical="https://www.crismaturana.com/es/investment"
   alternates={alternates}
 >
 
-  <script slot="head" type="application/ld+json" is:inline>{
-    JSON.stringify({
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Fotografía de Matrimonios",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Cris Maturana Photo",
-        "url": "https://crismaturana.com",
+        "url": "https://www.crismaturana.com",
         "address": { "@type": "PostalAddress", "addressCountry": "CL" }
       },
       "areaServed": ["Chile", "Mundo"],
@@ -46,8 +45,7 @@ const highlightImages = [
         { "@type": "Offer", "name": "Destination Weddings", "description": "Propuesta personalizada" },
         { "@type": "Offer", "name": "Sesiones de Pareja", "price": "180000", "priceCurrency": "CLP", "description": "Aprox. $200 USD." }
       ]
-    })
-  }</script>
+    })} />
 
   <!-- Hero -->
   <div class="inv-hero">

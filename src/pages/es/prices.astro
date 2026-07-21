@@ -8,21 +8,20 @@ import Layout from '../../layouts/Layout.astro';
   description="Sesiones de retrato familiar, branding personal y parejas en Hội An. Tres packages desde USD 150. Fotografía y orgánica con 15+ años de experiencia."
   lang="es"
   alternates={[
-    { hreflang: 'es', href: 'https://crismaturana.com/es/prices' },
-    { hreflang: 'en', href: 'https://crismaturana.com/prices' },
-    { hreflang: 'x-default', href: 'https://crismaturana.com/prices' },
+    { hreflang: 'es', href: 'https://www.crismaturana.com/es/prices' },
+    { hreflang: 'en', href: 'https://www.crismaturana.com/prices' },
+    { hreflang: 'x-default', href: 'https://www.crismaturana.com/prices' },
   ]}
 >
 
-  <script slot="head" type="application/ld+json" is:inline>{
-    JSON.stringify({
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Sesiones de Fotografía de Retrato",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Cris Maturana Photo",
-        "url": "https://crismaturana.com",
+        "url": "https://www.crismaturana.com",
         "address": { "@type": "PostalAddress", "addressLocality": "Hội An", "addressCountry": "VN" }
       },
       "areaServed": ["Hội An", "Da Nang", "Vietnam"],
@@ -37,8 +36,7 @@ import Layout from '../../layouts/Layout.astro';
         { "@type": "Offer", "name": "Parejas Golden", "price": "280", "priceCurrency": "USD" },
         { "@type": "Offer", "name": "Parejas Journey", "price": "450", "priceCurrency": "USD" }
       ]
-    })
-  }</script>
+    })} />
 
   <div class="page-hero">
     <div class="container">

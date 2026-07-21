@@ -33,23 +33,21 @@ const images = [
   title="Fotógrafo de Familias, Parejas y Retratos en Hội An y Da Nang | Cris Maturana"
   description="Sesiones de fotografía familiar, de pareja y retratos en Hội An y Da Nang, Vietnam. Estilo documental, luz natural, momentos reales. Paquetes desde $160 USD."
   lang="es"
-  canonical="https://crismaturana.com/es/fotografia-familiar-hoi-an"
+  canonical="https://www.crismaturana.com/es/fotografia-familiar-hoi-an"
   alternates={alternates}
 >
-  <script slot="head" type="application/ld+json" is:inline>{
-    JSON.stringify({
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Fotografía Familiar, de Parejas y Retratos",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Cris Maturana Photo",
-        "url": "https://crismaturana.com",
+        "url": "https://www.crismaturana.com",
         "address": { "@type": "PostalAddress", "addressLocality": "Hội An", "addressCountry": "VN" }
       },
       "areaServed": ["Hội An", "Da Nang", "Vietnam"]
-    })
-  }</script>
+    })} />
   <div class="gallery-hero">
     <div class="gallery-hero-bg"></div>
     <div class="gallery-hero-overlay"></div>

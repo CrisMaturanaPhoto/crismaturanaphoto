@@ -1,10 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { buildAlternates } from '../lib/utils';
+
+const alternates = buildAlternates('/about-me', '/es/about-me');
 ---
 
 <Layout
   title="About Me – Cris Maturana"
   description="Learn about Cris Maturana, photographer and visual storyteller based in Hội An, Vietnam."
+  alternates={alternates}
 >
   <div class="page-hero">
     <div class="container">

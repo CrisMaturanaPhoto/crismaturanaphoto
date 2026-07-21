@@ -1,6 +1,32 @@
 {
   "redirects": [
     {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "crismaturana.com" }],
+      "destination": "https://www.crismaturana.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/about-me/",
+      "destination": "/about-me",
+      "permanent": true
+    },
+    {
+      "source": "/es/about-me/",
+      "destination": "/es/about-me",
+      "permanent": true
+    },
+    {
+      "source": "/es/matrimonios-chile",
+      "destination": "/es/precios-matrimonios-chile",
+      "permanent": true
+    },
+    {
+      "source": "/es/matrimonios-chile/",
+      "destination": "/es/precios-matrimonios-chile",
+      "permanent": true
+    },
+    {
       "source": "/portfolio/weddings",
       "destination": "/hoi-an-wedding-photographer",
       "permanent": true

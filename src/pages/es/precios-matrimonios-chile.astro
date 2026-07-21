@@ -6,22 +6,21 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
 ---
 
 <Layout
-  title="Precios Matrimonios en Chile 2026 | Cris Maturana"
-  description="Paquetes y tarifas para matrimonios en Chile. Desde $200.000 CLP. Fotografía, sin poses forzadas."
+  title="Precio Fotógrafo de Matrimonios en Chile 2026 | Paquetes y Tarifas"
+  description="Conoce los precios reales de un fotógrafo de matrimonios en Chile: paquetes desde $200.000 CLP, cobertura en Santiago, Chillán y todo el país. Cotiza tu fecha."
   lang="es"
-  canonical="https://crismaturana.com/es/precios-matrimonios-chile"
+  canonical="https://www.crismaturana.com/es/precios-matrimonios-chile"
   alternates={alternates}
 >
 
-  <script slot="head" type="application/ld+json" is:inline>{
-    JSON.stringify({
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Fotografía de Matrimonios en Chile",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Cris Maturana Photo",
-        "url": "https://crismaturana.com",
+        "url": "https://www.crismaturana.com",
         "address": { "@type": "PostalAddress", "addressCountry": "CL" }
       },
       "areaServed": "Chile",
@@ -31,8 +30,54 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
         { "@type": "Offer", "name": "La Jornada Completa", "price": "1000000", "priceCurrency": "CLP" },
         { "@type": "Offer", "name": "El Día Entero", "price": "1200000", "priceCurrency": "CLP" }
       ]
-    })
-  }</script>
+    })} />
+
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta un fotógrafo de matrimonio en Chile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los paquetes van desde $200.000 CLP (matrimonio civil, 1–2 horas) hasta $1.200.000 CLP (cobertura de 12 horas, el día completo). El paquete más reservado, La Jornada Completa, cuesta $1.000.000 CLP. La hora extra tiene un valor de $100.000 CLP."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué incluye cada paquete de matrimonio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Todos los paquetes incluyen fotos editadas en alta resolución y galería privada online. Desde La Jornada Completa en adelante se suma sesión de pareja antes de la boda y llamada de planificación previa; El Día Entero además incluye un álbum impreso de 30×30 cm."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Trabajas matrimonios en todo Chile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, disponible en todo Chile. Los viáticos fuera de la Región Metropolitana se cotizan aparte según la fecha y el lugar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto demora la entrega de las fotos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La entrega estándar es en 30 días. El paquete El Día Entero tiene entrega prioritaria en 14 días."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo pedir una cotización personalizada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Cada colección es un punto de partida, no un guion fijo — cuéntame tu fecha, tu lugar y lo que imaginas, y armo una propuesta a tu medida sin compromiso."
+          }
+        }
+      ]
+    })} />
 
   <div class="page-hero">
     <div class="container">
@@ -153,6 +198,31 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
         <h2 class="custom-heading">Cada matrimonio merece su propia historia.</h2>
         <p class="custom-text">Cuéntame tu fecha, tu lugar y lo que imaginas — armo una propuesta a su medida. Sin compromiso.</p>
         <a href="https://wa.me/56999679935?text=Hola%2C+quisiera+una+cotizaci%C3%B3n+personalizada+para+mi+matrimonio" class="btn btn-accent custom-cta">Pedir cotización a medida →</a>
+      </div>
+
+      <div class="pricing-faq">
+        <h2 class="section-title" style="text-align:center;">Preguntas frecuentes</h2>
+
+        <div class="faq-item">
+          <h3>¿Cuánto cuesta un fotógrafo de matrimonio en Chile?</h3>
+          <p>Los paquetes van desde $200.000 CLP (matrimonio civil, 1–2 horas) hasta $1.200.000 CLP (cobertura de 12 horas, el día completo). El paquete más reservado, La Jornada Completa, cuesta $1.000.000 CLP. La hora extra tiene un valor de $100.000 CLP.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Qué incluye cada paquete de matrimonio?</h3>
+          <p>Todos los paquetes incluyen fotos editadas en alta resolución y galería privada online. Desde La Jornada Completa en adelante se suma sesión de pareja antes de la boda y llamada de planificación previa; El Día Entero además incluye un álbum impreso de 30×30 cm.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Trabajas matrimonios en todo Chile?</h3>
+          <p>Sí, disponible en todo Chile. Los viáticos fuera de la Región Metropolitana se cotizan aparte según la fecha y el lugar.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Cuánto demora la entrega de las fotos?</h3>
+          <p>La entrega estándar es en 30 días. El paquete El Día Entero tiene entrega prioritaria en 14 días.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Puedo pedir una cotización personalizada?</h3>
+          <p>Sí. Cada colección es un punto de partida, no un guion fijo — cuéntame tu fecha, tu lugar y lo que imaginas, y armo una propuesta a tu medida sin compromiso.</p>
+        </div>
       </div>
 
     </div>
@@ -457,5 +527,34 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
 
   @media (max-width: 900px) {
     .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+  }
+
+  .pricing-faq {
+    margin-top: 4rem;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .faq-item {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-item h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: var(--color-heading);
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-item p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-weight: 300;
   }
 </style>

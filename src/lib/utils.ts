@@ -13,7 +13,7 @@ export async function getLatestBlogPosts(limit = 3, lang = 'en') {
     .slice(0, limit);
 }
 
-const SITE = 'https://crismaturana.com';
+const SITE = 'https://www.crismaturana.com';
 
 /**
  * Versiones alternativas en otros idiomas para el <head> (hreflang).

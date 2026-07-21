@@ -66,23 +66,21 @@ const images = [
   title="Fotógrafo de Matrimonios en Hội An y Da Nang | Cris Maturana"
   description="Fotografía de matrimonios en Hội An, Da Nang y Vietnam. Momentos reales, sin poses forzadas."
   lang="es"
-  canonical="https://crismaturana.com/es/fotografo-bodas-hoi-an"
+  canonical="https://www.crismaturana.com/es/fotografo-bodas-hoi-an"
   alternates={alternates}
 >
-  <script slot="head" type="application/ld+json" is:inline>{
-    JSON.stringify({
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Fotografía de Matrimonios",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Cris Maturana Photo",
-        "url": "https://crismaturana.com",
+        "url": "https://www.crismaturana.com",
         "address": { "@type": "PostalAddress", "addressLocality": "Hội An", "addressCountry": "VN" }
       },
       "areaServed": ["Hội An", "Da Nang", "Vietnam", "Chile"]
-    })
-  }</script>
+    })} />
   <div class="gallery-hero">
     <div class="gallery-hero-bg"></div>
     <div class="gallery-hero-overlay"></div>

@@ -37,23 +37,21 @@ const images = [
   title="Family, Portrait & Couples Photographer in Hoi An & Da Nang | Cris Maturana"
   description="Family, couples, and portrait photography sessions in Hoi An and Da Nang, Vietnam. Documentary style, natural light, real moments. Packages from $160 USD."
   lang="en"
-  canonical="https://crismaturana.com/family-portrait-photography-hoi-an"
+  canonical="https://www.crismaturana.com/family-portrait-photography-hoi-an"
   alternates={alternates}
 >
-  <script slot="head" type="application/ld+json" is:inline>{
-    JSON.stringify({
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Family, Couples & Portrait Photography",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Cris Maturana Photo",
-        "url": "https://crismaturana.com",
+        "url": "https://www.crismaturana.com",
         "address": { "@type": "PostalAddress", "addressLocality": "Hội An", "addressCountry": "VN" }
       },
       "areaServed": ["Hội An", "Da Nang", "Vietnam"]
-    })
-  }</script>
+    })} />
   <div class="gallery-hero">
     <div class="gallery-hero-bg"></div>
     <div class="gallery-hero-overlay"></div>

@@ -6,22 +6,21 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
 ---
 
 <Layout
-  title="Wedding Pricing in Chile 2026 | Cris Maturana"
-  description="Wedding photography packages and rates in Chile. Three packages starting at CLP $1,200,000. Documentary style, real moments."
+  title="Wedding Photographer Pricing in Chile 2026 | Packages & Rates"
+  description="See real wedding photographer pricing in Chile: documentary packages from USD $700, coverage across Santiago, Chillán and the whole country. Get a quote."
   lang="en"
-  canonical="https://crismaturana.com/wedding-pricing-chile"
+  canonical="https://www.crismaturana.com/wedding-pricing-chile"
   alternates={alternates}
 >
 
-  <script slot="head" type="application/ld+json" is:inline>{
-    JSON.stringify({
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Wedding Photography in Chile",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Cris Maturana Photo",
-        "url": "https://crismaturana.com",
+        "url": "https://www.crismaturana.com",
         "address": { "@type": "PostalAddress", "addressCountry": "CL" }
       },
       "areaServed": "Chile",
@@ -30,8 +29,54 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
         { "@type": "Offer", "name": "The Full Day", "price": "1300", "priceCurrency": "USD" },
         { "@type": "Offer", "name": "Start to Finish", "price": "1800", "priceCurrency": "USD" }
       ]
-    })
-  }</script>
+    })} />
+
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a wedding photographer cost in Chile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Packages range from USD $700 (The Essentials, 5 hours) to USD $1,800 (Start to Finish, 12 hours). The Full Day package, the one most couples book, is USD $1,300."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's included in each wedding package?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every package includes edited high-resolution photos and a private online gallery. The Full Day and Start to Finish packages add a pre-wedding couple's session and a planning call; Start to Finish also includes a printed 30×30 cm album."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you shoot weddings across Chile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, available across Chile. Travel outside the Santiago Metropolitan Region is quoted separately based on the date and venue."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does photo delivery take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard delivery is 30 days. The Start to Finish package includes priority delivery in 14 days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get a custom quote?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — every package above is a starting point, not a script. Tell me your date, your venue, and what you're imagining, and I'll build a proposal around it."
+          }
+        }
+      ]
+    })} />
 
   <div class="page-hero">
     <div class="container">
@@ -129,6 +174,31 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
         <h2 class="custom-heading">Every wedding deserves its own story.</h2>
         <p class="custom-text">Tell me your date, your venue, and what you're imagining — I'll build a proposal around it. No commitment needed.</p>
         <a href="https://wa.me/56999679935?text=Hi%2C+I%27d+like+a+custom+quote+for+my+wedding" class="btn btn-accent custom-cta">Get a custom quote →</a>
+      </div>
+
+      <div class="pricing-faq">
+        <h2 class="section-title" style="text-align:center;">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <h3>How much does a wedding photographer cost in Chile?</h3>
+          <p>Packages range from USD $700 (The Essentials, 5 hours) to USD $1,800 (Start to Finish, 12 hours). The Full Day package, the one most couples book, is USD $1,300.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What's included in each wedding package?</h3>
+          <p>Every package includes edited high-resolution photos and a private online gallery. The Full Day and Start to Finish packages add a pre-wedding couple's session and a planning call; Start to Finish also includes a printed 30×30 cm album.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you shoot weddings across Chile?</h3>
+          <p>Yes, available across Chile. Travel outside the Santiago Metropolitan Region is quoted separately based on the date and venue.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long does photo delivery take?</h3>
+          <p>Standard delivery is 30 days. The Start to Finish package includes priority delivery in 14 days.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I get a custom quote?</h3>
+          <p>Yes — every package above is a starting point, not a script. Tell me your date, your venue, and what you're imagining, and I'll build a proposal around it.</p>
+        </div>
       </div>
 
     </div>
@@ -416,5 +486,34 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
 
   @media (max-width: 900px) {
     .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+  }
+
+  .pricing-faq {
+    margin-top: 4rem;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .faq-item {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-item h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: var(--color-heading);
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-item p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-weight: 300;
   }
 </style>

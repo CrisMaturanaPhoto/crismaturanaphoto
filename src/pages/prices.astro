@@ -8,21 +8,20 @@ import Layout from '../layouts/Layout.astro';
   description="Family, personal branding and couples portrait sessions in Hội An. Three packages starting at USD 150. Organic, documentary-style photography."
   lang="en"
   alternates={[
-    { hreflang: 'en', href: 'https://crismaturana.com/prices' },
-    { hreflang: 'es', href: 'https://crismaturana.com/es/prices' },
-    { hreflang: 'x-default', href: 'https://crismaturana.com/prices' },
+    { hreflang: 'en', href: 'https://www.crismaturana.com/prices' },
+    { hreflang: 'es', href: 'https://www.crismaturana.com/es/prices' },
+    { hreflang: 'x-default', href: 'https://www.crismaturana.com/prices' },
   ]}
 >
 
-  <script slot="head" type="application/ld+json" is:inline>{
-    JSON.stringify({
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Portrait Photography Sessions",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Cris Maturana Photo",
-        "url": "https://crismaturana.com",
+        "url": "https://www.crismaturana.com",
         "address": { "@type": "PostalAddress", "addressLocality": "Hội An", "addressCountry": "VN" }
       },
       "areaServed": ["Hội An", "Da Nang", "Vietnam"],
@@ -37,8 +36,7 @@ import Layout from '../layouts/Layout.astro';
         { "@type": "Offer", "name": "Couples Golden", "price": "280", "priceCurrency": "USD" },
         { "@type": "Offer", "name": "Couples Journey", "price": "450", "priceCurrency": "USD" }
       ]
-    })
-  }</script>
+    })} />
 
   <div class="page-hero">
     <div class="container">

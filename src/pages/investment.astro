@@ -25,19 +25,18 @@ const highlightImages = [
   title="The Investment — Wedding Photography | Cris Maturana"
   description="What it means to invest in documentary wedding photography with Cris Maturana — real moments, real emotion, told honestly."
   lang="en"
-  canonical="https://crismaturana.com/investment"
+  canonical="https://www.crismaturana.com/investment"
   alternates={alternates}
 >
 
-  <script slot="head" type="application/ld+json" is:inline>{
-    JSON.stringify({
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Documentary Wedding Photography",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Cris Maturana Photo",
-        "url": "https://crismaturana.com",
+        "url": "https://www.crismaturana.com",
         "address": { "@type": "PostalAddress", "addressCountry": "CL" }
       },
       "areaServed": ["Chile", "Worldwide"],
@@ -46,8 +45,7 @@ const highlightImages = [
         { "@type": "Offer", "name": "Destination Weddings", "description": "Custom proposal" },
         { "@type": "Offer", "name": "Couples Sessions", "price": "180000", "priceCurrency": "CLP", "description": "Approx. $200 USD." }
       ]
-    })
-  }</script>
+    })} />
 
   <!-- Hero -->
   <div class="inv-hero">
