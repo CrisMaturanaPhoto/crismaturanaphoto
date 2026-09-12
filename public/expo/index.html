@@ -9,15 +9,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #0d0c0a;
-    --panel: #14110d;
-    --paper: #f2ead9;
-    --ink: #f2ead9;
-    --ink-dim: #a89d88;
-    --amber: #e8c070;
-    --amber-deep: #a0722a;
-    --green: #3d6b2b;
-    --rule: rgba(242,234,217,0.12);
+    --bg: #ffffff;
+    --panel: #f7f2e8;
+    --paper: #14110d;
+    --ink: #1c1710;
+    --ink-dim: #6b6152;
+    --amber: #a97a2a;
+    --amber-deep: #7d5a1e;
+    --green: #2f5522;
+    --rule: rgba(20,17,13,0.12);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
@@ -30,14 +30,29 @@
   }
   .wrap{ max-width:720px; margin:0 auto; padding:0 28px; }
 
-  .hero{ padding:100px 0 68px; border-bottom:1px solid var(--rule); }
+  .hero{
+    position:relative;
+    padding:150px 0 100px;
+    border-bottom:1px solid var(--rule);
+    background:#0d0c0a url('https://CrisMaturana.b-cdn.net/Expo/Mujer-Tabaco-%40/DSC_3165-1536x1025.jpg') center/cover no-repeat;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(13,12,10,.45), rgba(13,12,10,.8));
+    pointer-events:none;
+  }
+  .hero-inner{ position:relative; z-index:1; }
   .plate{
     font-family:'Jost', sans-serif;
     font-size:13px;
     letter-spacing:.04em;
-    color:var(--amber);
+    color:#e8c070;
     margin-bottom:26px;
   }
+  .hero h1{ color:#f2ead9; }
+  .hero p{ color:rgba(242,234,217,0.85) !important; }
   h1{
     font-family:'Cormorant Garamond', serif;
     font-weight:500;
@@ -123,11 +138,13 @@
 
 <div class="wrap">
 
-  <section class="hero">
-    <div class="plate">Vietnam Creative Awards · Fine Arts Museum, Ho Chi Minh</div>
-    <h1>Help these portraits hang where they belong</h1>
-    <p>I've been selected to exhibit my portraits at the Fine Arts Museum in Ho Chi Minh City. I need your help printing and framing them to museum-grade quality.</p>
-    <a href="#aportar" class="btn">Support the project</a>
+  <section class="hero" oncontextmenu="return false;">
+    <div class="hero-inner">
+      <div class="plate">Vietnam Creative Awards · Fine Arts Museum, Ho Chi Minh</div>
+      <h1>Help these portraits hang where they belong</h1>
+      <p>I've been selected to exhibit my portraits at the Fine Arts Museum in Ho Chi Minh City. I need your help printing and framing them to museum-grade quality.</p>
+      <a href="#aportar" class="btn">Support the project</a>
+    </div>
   </section>
 
   <section>
