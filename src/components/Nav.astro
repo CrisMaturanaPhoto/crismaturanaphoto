@@ -20,6 +20,7 @@ const navLinks = [
       { label: 'FAQ', i18n: 'nav.faq', href: '/faq' },
     ],
   },
+  { label: 'Expo', href: '/expo' },
   { label: 'Contact', i18n: 'nav.contact', href: '/contact' },
 ];
 // Calcula los links EN/ES basado en la URL actual
@@ -354,6 +355,7 @@ const esHref = isEs
   function updateNavHrefs(lang) {
     const isEs = lang === 'es';
     const map = {
+      '/expo': isEs ? '/expo/es' : '/expo',
       '/portfolio':                          isEs ? '/es/portfolio'                          : '/portfolio',
       '/hoi-an-wedding-photographer':        isEs ? '/es/fotografo-bodas-hoi-an'             : '/hoi-an-wedding-photographer',
       '/family-portrait-photography-hoi-an':  isEs ? '/es/fotografia-familiar-hoi-an'         : '/family-portrait-photography-hoi-an',
