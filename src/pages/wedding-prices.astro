@@ -2,14 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import { buildAlternates } from '../lib/utils';
 
-const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrimonios-chile');
+const alternates = buildAlternates('/wedding-prices', '/es/precios-matrimonios');
 ---
 
 <Layout
   title="Wedding Photographer Pricing in Chile 2026 | Packages & Rates"
-  description="See real wedding photographer pricing in Chile: documentary packages from USD $700, coverage across Santiago, Chillán and the whole country. Get a quote."
+  description="See real wedding photographer pricing in Chile: documentary packages from USD $500, coverage across Santiago, Chillán and the whole country. Get a quote."
   lang="en"
-  canonical="https://www.crismaturana.com/wedding-pricing-chile"
+  canonical="https://www.crismaturana.com/wedding-prices"
   alternates={alternates}
 >
 
@@ -25,9 +25,9 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
       },
       "areaServed": "Chile",
       "offers": [
-        { "@type": "Offer", "name": "The Essentials", "price": "700", "priceCurrency": "USD" },
-        { "@type": "Offer", "name": "The Full Day", "price": "1300", "priceCurrency": "USD" },
-        { "@type": "Offer", "name": "Start to Finish", "price": "1800", "priceCurrency": "USD" }
+        { "@type": "Offer", "name": "The Essentials", "price": "500", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "The Full Day", "price": "1000", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Start to Finish", "price": "1200", "priceCurrency": "USD" }
       ]
     })} />
 
@@ -40,7 +40,7 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
           "name": "How much does a wedding photographer cost in Chile?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Packages range from USD $700 (The Essentials, 5 hours) to USD $1,800 (Start to Finish, 12 hours). The Full Day package, the one most couples book, is USD $1,300."
+            "text": "Packages range from USD $500 (The Essentials, 5 hours) to USD $1,200 (Start to Finish, 12 hours). The Full Day package, the one most couples book, is USD $1,000. Extra hours are USD $100 each."
           }
         },
         {
@@ -48,7 +48,7 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
           "name": "What's included in each wedding package?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Every package includes edited high-resolution photos and a private online gallery. The Full Day and Start to Finish packages add a pre-wedding couple's session and a planning call; Start to Finish also includes a printed 30×30 cm album."
+            "text": "Every package includes edited high-resolution photos and a private online gallery. The Full Day and Start to Finish packages add a pre-wedding couple's session and a planning call."
           }
         },
         {
@@ -103,7 +103,7 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
           <p class="tier-label">THE ESSENTIALS</p>
           <p class="pkg-name">The Essentials</p>
           <p class="pkg-tagline">The ceremony, the toasts, the dance — fully captured.</p>
-          <div class="pkg-price"><span class="currency">USD</span><span class="amount">$700</span></div>
+          <div class="pkg-price"><span class="currency">USD</span><span class="amount">$500</span></div>
           <div class="pkg-divider"></div>
           <ul class="pkg-features">
             <li><span class="icon-check">✓</span><span>5 hours of coverage</span></li>
@@ -125,7 +125,7 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
           <p class="tier-label">THE FULL DAY</p>
           <p class="pkg-name">The Full Day</p>
           <p class="pkg-tagline">The package most couples choose — and the one I'd choose for my own wedding.</p>
-          <div class="pkg-price"><span class="currency">USD</span><span class="amount">$1,300</span></div>
+          <div class="pkg-price"><span class="currency">USD</span><span class="amount">$1,000</span></div>
           <div class="pkg-divider"></div>
           <ul class="pkg-features">
             <li><span class="icon-check">✓</span><span>10 hours of coverage (getting ready, ceremony &amp; party)</span></li>
@@ -147,7 +147,7 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
           <p class="tier-label">START TO FINISH</p>
           <p class="pkg-name">Start to Finish</p>
           <p class="pkg-tagline">Every hour, every detail — a complete archive, not just a gallery.</p>
-          <div class="pkg-price"><span class="currency">USD</span><span class="amount">$1,800</span></div>
+          <div class="pkg-price"><span class="currency">USD</span><span class="amount">$1,200</span></div>
           <div class="pkg-divider"></div>
           <ul class="pkg-features">
             <li><span class="icon-check">✓</span><span>12 hours of coverage (getting ready through the last dance)</span></li>
@@ -155,7 +155,6 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
             <li><span class="icon-check">✓</span><span>700+ edited photos in high resolution</span></li>
             <li><span class="icon-check">✓</span><span>Private online gallery</span></li>
             <li class="value-add"><span class="icon-star">★</span><span>Pre-wedding couple's session</span></li>
-            <li class="value-add"><span class="icon-star">★</span><span>Printed 30×30 cm album (40 pages)</span></li>
             <li class="delivery"><span class="icon-del">↓</span><span>JPG web/social + full resolution for printing</span></li>
           </ul>
           <div class="pkg-cta-group">
@@ -169,6 +168,8 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
 
       <p class="footer-note">Every package above is a starting point — not a script · Available across Chile · Prices in USD · Travel outside the Santiago Metropolitan Region quoted separately</p>
 
+      <p class="extra-hour-note">Extra hour: <strong>USD $100</strong></p>
+
       <div class="custom-quote">
         <p class="custom-label">Something different in mind?</p>
         <h2 class="custom-heading">Every wedding deserves its own story.</h2>
@@ -181,11 +182,11 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
 
         <div class="faq-item">
           <h3>How much does a wedding photographer cost in Chile?</h3>
-          <p>Packages range from USD $700 (The Essentials, 5 hours) to USD $1,800 (Start to Finish, 12 hours). The Full Day package, the one most couples book, is USD $1,300.</p>
+          <p>Packages range from USD $500 (The Essentials, 5 hours) to USD $1,200 (Start to Finish, 12 hours). The Full Day package, the one most couples book, is USD $1,000. Extra hours are USD $100 each.</p>
         </div>
         <div class="faq-item">
           <h3>What's included in each wedding package?</h3>
-          <p>Every package includes edited high-resolution photos and a private online gallery. The Full Day and Start to Finish packages add a pre-wedding couple's session and a planning call; Start to Finish also includes a printed 30×30 cm album.</p>
+          <p>Every package includes edited high-resolution photos and a private online gallery. The Full Day and Start to Finish packages add a pre-wedding couple's session and a planning call.</p>
         </div>
         <div class="faq-item">
           <h3>Do you shoot weddings across Chile?</h3>
@@ -515,5 +516,17 @@ const alternates = buildAlternates('/wedding-pricing-chile', '/es/precios-matrim
     font-size: 0.95rem;
     line-height: 1.7;
     font-weight: 300;
+  }
+  .extra-hour-note {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    margin-top: 0.75rem;
+    font-weight: 300;
+  }
+
+  .extra-hour-note strong {
+    font-weight: 700;
+    color: var(--color-heading);
   }
 </style>

@@ -41,7 +41,7 @@ const highlightImages = [
       },
       "areaServed": ["Chile", "Mundo"],
       "offers": [
-        { "@type": "Offer", "name": "Paquetes de Matrimonio en Chile", "price": "1200000", "priceCurrency": "CLP", "description": "Cobertura de matrimonio de 8 horas. Aprox. $1.300 USD." },
+        { "@type": "Offer", "name": "Paquetes de Matrimonio en Chile", "price": "250000", "priceCurrency": "CLP", "description": "4 paquetes, desde 1–2 hasta 12 horas de cobertura." },
         { "@type": "Offer", "name": "Destination Weddings", "description": "Propuesta personalizada" },
         { "@type": "Offer", "name": "Sesiones de Pareja", "price": "180000", "priceCurrency": "CLP", "description": "Aprox. $200 USD." }
       ]
@@ -112,9 +112,10 @@ const highlightImages = [
         <div class="inv-line">
           <div>
             <p class="inv-line-name">Paquetes de Matrimonio en Chile</p>
-            <p class="inv-line-note">Cobertura de matrimonio de 8 horas</p>
+            <p class="inv-line-note">4 paquetes · desde 1–2 hasta 12 horas de cobertura</p>
+            <a href="/es/precios-matrimonios" class="inv-line-link">Ver todos los paquetes de matrimonio en Chile →</a>
           </div>
-          <p class="inv-line-price">Desde <span>$1.200.000 CLP</span><span class="inv-line-usd">o $1,300 USD</span></p>
+          <p class="inv-line-price">Desde <span>$250.000 CLP</span></p>
         </div>
         <div class="inv-line">
           <p class="inv-line-name">Destination Weddings</p>
@@ -330,6 +331,16 @@ const highlightImages = [
     margin-left: 0.5rem;
   }
 
+  .inv-line-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    opacity: 0.85;
+  }
+  .inv-line-link:hover { opacity: 1; }
   .inv-cta { display: inline-block; margin-top: 2.5rem; }
 
   .faq-list { margin-top: 2.5rem; border-top: 1px solid var(--color-border); }

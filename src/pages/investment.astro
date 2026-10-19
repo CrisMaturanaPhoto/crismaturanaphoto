@@ -41,7 +41,7 @@ const highlightImages = [
       },
       "areaServed": ["Chile", "Worldwide"],
       "offers": [
-        { "@type": "Offer", "name": "Wedding Collections in Chile", "price": "1200000", "priceCurrency": "CLP", "description": "8-hour wedding coverage. Approx. $1,300 USD." },
+        { "@type": "Offer", "name": "Wedding Collections in Chile", "price": "500", "priceCurrency": "USD", "description": "3 packages, from 5 to 12 hours of coverage." },
         { "@type": "Offer", "name": "Destination Weddings", "description": "Custom proposal" },
         { "@type": "Offer", "name": "Couples Sessions", "price": "180000", "priceCurrency": "CLP", "description": "Approx. $200 USD." }
       ]
@@ -112,9 +112,10 @@ const highlightImages = [
         <div class="inv-line">
           <div>
             <p class="inv-line-name">Wedding Collections in Chile</p>
-            <p class="inv-line-note">8-hour wedding coverage</p>
+            <p class="inv-line-note">3 packages · 5 to 12 hours of coverage</p>
+            <a href="/wedding-prices" class="inv-line-link">See all Chile wedding packages →</a>
           </div>
-          <p class="inv-line-price">Starting from <span>$1.200.000 CLP</span><span class="inv-line-usd">or $1,300 USD</span></p>
+          <p class="inv-line-price">Starting from <span>USD $500</span></p>
         </div>
         <div class="inv-line">
           <p class="inv-line-name">Destination Weddings</p>
@@ -330,6 +331,16 @@ const highlightImages = [
     margin-left: 0.5rem;
   }
 
+  .inv-line-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    opacity: 0.85;
+  }
+  .inv-line-link:hover { opacity: 1; }
   .inv-cta { display: inline-block; margin-top: 2.5rem; }
 
   .faq-list { margin-top: 2.5rem; border-top: 1px solid var(--color-border); }

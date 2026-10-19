@@ -17,13 +17,33 @@
       "permanent": true
     },
     {
+      "source": "/wedding-pricing-chile",
+      "destination": "/wedding-prices",
+      "permanent": true
+    },
+    {
+      "source": "/wedding-pricing-chile/",
+      "destination": "/wedding-prices",
+      "permanent": true
+    },
+    {
+      "source": "/es/precios-matrimonios-chile",
+      "destination": "/es/precios-matrimonios",
+      "permanent": true
+    },
+    {
+      "source": "/es/precios-matrimonios-chile/",
+      "destination": "/es/precios-matrimonios",
+      "permanent": true
+    },
+    {
       "source": "/es/matrimonios-chile",
-      "destination": "/es/precios-matrimonios-chile",
+      "destination": "/es/precios-matrimonios",
       "permanent": true
     },
     {
       "source": "/es/matrimonios-chile/",
-      "destination": "/es/precios-matrimonios-chile",
+      "destination": "/es/precios-matrimonios",
       "permanent": true
     },
     {
