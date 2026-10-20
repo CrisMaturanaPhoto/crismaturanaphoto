@@ -10,7 +10,14 @@ const navLinks = [
       { label: 'Photography Tours', i18n: 'nav.phototours', href: '/photo-tours-vietnam-2026' },
     ],
   },
-  { label: 'Prices', i18n: 'nav.prices', href: '/prices' },
+  {
+    label: 'Prices', i18n: 'nav.prices',
+    href: '#',
+    children: [
+      { label: 'Session Prices', i18n: 'nav.pricesSessions', href: '/prices' },
+      { label: 'Wedding Prices', i18n: 'nav.pricesWeddings', href: '/wedding-prices' },
+    ],
+  },
   { label: 'Blog', i18n: 'nav.blog', href: '/blog' },
   {
     label: 'About', i18n: 'nav.aboutmenu',
@@ -365,6 +372,7 @@ const esHref = isEs
       '/photo-tours-vietnam-2026': isEs ? '/es/photo-tours-vietnam-2026' : '/photo-tours-vietnam-2026',
       '/about-me':                           isEs ? '/es/about-me'                           : '/about-me',
       '/prices':                             isEs ? '/es/prices'                             : '/prices',
+      '/wedding-prices':                     isEs ? '/es/precios-matrimonios'                : '/wedding-prices',
       '/faq':                                isEs ? '/es/faq'                                : '/faq',
       '/contact':                            isEs ? '/es/contact'                            : '/contact',
     };
