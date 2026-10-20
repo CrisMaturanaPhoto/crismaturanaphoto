@@ -977,27 +977,6 @@ const tours = [
     .pt-detail-price-options { flex-direction: column; }
     .pt-detail-book { min-width: 0; }
   }
-  /* Solo computador: título arriba a la izquierda y texto a su derecha, sobre el cielo,
-     lejos de las banderas de los botes */
-  @media (min-width: 1024px) {
-    .pt-hero .pt-hero-content { max-width: 1360px; padding: 4.6rem 4rem 4rem; }
-    .pt-hero .pt-hero-text {
-      display: grid;
-      width: 100%;
-      max-width: none;
-      margin: 0;
-      grid-template-columns: max-content minmax(0, 400px);
-      grid-template-areas: "eyebrow ." "title sub";
-      column-gap: 4rem;
-      justify-content: space-between;
-      align-items: end;
-      align-content: start;
-    }
-    .pt-hero .pt-hero-eyebrow { grid-area: eyebrow; margin-bottom: 0.6rem; }
-    .pt-hero .pt-hero-text h1 { grid-area: title; margin-bottom: 0; font-size: clamp(2.4rem, 3.9vw, 3.6rem); }
-    .pt-hero .pt-hero-sub { grid-area: sub; margin-bottom: 0.4rem; max-width: none; }
-    .pt-hero .pt-hero-ctas { justify-content: flex-end; }
-  }
 </style>
 
 <div class="pt-page">
