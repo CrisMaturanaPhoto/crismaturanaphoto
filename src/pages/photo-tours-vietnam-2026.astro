@@ -977,6 +977,13 @@ const tours = [
     .pt-detail-price-options { flex-direction: column; }
     .pt-detail-book { min-width: 0; }
   }
+  /* Solo computador: texto del hero a la derecha, sobre el cielo, lejos de las banderas de los botes */
+  @media (min-width: 1024px) {
+    .pt-hero .pt-hero-content { max-width: 1360px; padding: 6.5rem 4rem 4rem; }
+    .pt-hero .pt-hero-text { margin-left: auto; max-width: 540px; }
+    .pt-hero .pt-hero-text h1 { font-size: clamp(2.4rem, 3.9vw, 3.6rem); margin-bottom: 1rem; }
+    .pt-hero .pt-hero-ctas { justify-content: flex-end; }
+  }
 </style>
 
 <div class="pt-page">
