@@ -1,0 +1,355 @@
+---
+// Landing exclusiva campaña email 2027-2028. Ruta: src/pages/es/novios-2027-2028.astro
+// noindex: no aparece en Google ni en el menú. Personalización: ?n=Nombre&f=MM-AAAA
+---
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Temporada 2027–2028 · Cris Maturana Fotografía de Matrimonios</title>
+<meta name="description" content="Fechas disponibles y beneficio de reserva para matrimonios en Chile entre octubre 2027 y marzo 2028.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style is:global>
+:root{
+  --ink:#14110d; --ink-2:#0d0c0a; --paper:#f3ede2; --paper-2:#e9e1d2;
+  --amber:#e8c070; --amber-d:#a0722a; --green:#3d6b2b; --muted:#6f665a; --line:#d8cdb9;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--paper);color:var(--ink);font:300 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--amber-d);outline-offset:3px}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+.serif{font-family:var(--serif)}
+.btn{display:inline-flex;align-items:center;gap:.5em;padding:.9em 1.5em;font:500 15px/1 var(--sans);letter-spacing:.02em;text-decoration:none;border:1px solid currentColor;transition:background .2s,color .2s}
+.btn-solid{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+.btn-solid:hover{background:#f0d08f}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+
+/* HERO: photo + letter */
+.hero{background:var(--ink);color:var(--paper);display:grid;grid-template-columns:1.1fr 1fr;min-height:92vh}
+.hero-photo{position:relative;overflow:hidden;min-width:0;background:#2a241c}
+.hero-photo img{width:100%;height:100%;object-fit:cover;animation:settle 2.4s ease-out both}
+@keyframes settle{from{transform:scale(1.06);opacity:.4}to{transform:scale(1);opacity:1}}
+.hero-photo figcaption{position:absolute;left:20px;bottom:16px;font-size:13px;color:rgba(243,237,226,.75)}
+.letter{padding:clamp(40px,7vw,96px) clamp(24px,5vw,72px);display:flex;flex-direction:column;justify-content:center;gap:22px}
+.letter .to{font:italic 400 22px/1.3 var(--serif);color:var(--amber)}
+.letter h1{font:500 clamp(40px,5.2vw,68px)/1.02 var(--serif);letter-spacing:-.01em}
+.letter p{max-width:46ch;color:rgba(243,237,226,.86)}
+.letter .sign{font:italic 400 26px/1 var(--serif);color:var(--paper)}
+.letter .sign small{display:block;font:300 14px/1.5 var(--sans);font-style:normal;color:rgba(243,237,226,.6);margin-top:6px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+
+/* BENEFIT */
+.benefit{background:var(--paper-2);border-bottom:1px solid var(--line)}
+.benefit .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(24px,5vw,72px);padding:clamp(56px,8vw,96px) 0}
+.benefit h2{font:500 clamp(30px,3.6vw,44px)/1.1 var(--serif)}
+.benefit .deadline{margin-top:14px;color:var(--amber-d);font-weight:500}
+.perks{list-style:none;display:grid;gap:0}
+.perks li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--line)}
+.perks li:last-child{border-bottom:1px solid var(--line)}
+.perks strong{font:500 22px/1.2 var(--serif)}
+.perks span{color:var(--muted)}
+
+/* SEASON CALENDAR — the memorable element */
+.season{padding:clamp(64px,9vw,112px) 0 clamp(48px,6vw,72px)}
+.season-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.season h2{font:500 clamp(34px,4.4vw,56px)/1.05 var(--serif);max-width:16ch}
+.season-head p{max-width:42ch;color:var(--muted)}
+.months{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:2px solid var(--ink)}
+.month{padding:18px 14px 22px;border-right:1px solid var(--line);position:relative}
+.month:last-child{border-right:0}
+.month .m{font:500 clamp(22px,2.4vw,34px)/1 var(--serif)}
+.month .y{font-size:13px;color:var(--muted)}
+.month .state{margin-top:18px;font-size:14px;display:flex;align-items:center;gap:8px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--green);flex:none}
+.state.few .dot{background:var(--amber-d)}
+.state.full .dot{background:#b9ae9c}
+.month.is-you{background:var(--ink);color:var(--paper)}
+.month.is-you .y{color:rgba(243,237,226,.6)}
+.month.is-you::after{content:"Su mes";position:absolute;top:-30px;left:14px;font:italic 400 18px/1 var(--serif);color:var(--amber-d)}
+.season small{display:block;margin-top:14px;color:var(--muted);font-size:13px}
+
+/* GALLERY */
+.gallery{padding:0 0 clamp(64px,9vw,112px)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(110px,13vw,170px);gap:10px}
+.grid figure{overflow:hidden;background:#cfc4b1}
+.grid img{width:100%;height:100%;object-fit:cover}
+.g1{grid-column:span 7;grid-row:span 3}.g2{grid-column:span 5;grid-row:span 2}.g3{grid-column:span 5;grid-row:span 1}
+.g4{grid-column:span 4;grid-row:span 2}.g5{grid-column:span 4;grid-row:span 2}.g6{grid-column:span 4;grid-row:span 2}
+.g7{grid-column:span 5;grid-row:span 2}.g8{grid-column:span 7;grid-row:span 2}
+.gallery .more{margin-top:20px;text-align:right}
+.gallery .more a{color:var(--amber-d);text-underline-offset:4px}
+
+/* APPROACH */
+.approach{background:var(--ink);color:var(--paper);padding:clamp(64px,9vw,112px) 0}
+.approach .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px)}
+.approach blockquote{font:400 clamp(28px,3.4vw,42px)/1.2 var(--serif)}
+.approach blockquote em{color:var(--amber)}
+.approach .facts{display:grid;gap:22px}
+.approach .facts div{border-top:1px solid rgba(243,237,226,.18);padding-top:16px}
+.approach .facts b{display:block;font:500 20px/1.3 var(--serif);color:var(--amber);margin-bottom:4px}
+.approach .facts p{color:rgba(243,237,226,.78)}
+
+/* PACKAGES */
+.packages{padding:clamp(64px,9vw,112px) 0}
+.packages h2{font:500 clamp(34px,4.4vw,52px)/1.05 var(--serif);margin-bottom:10px}
+.packages .lead{color:var(--muted);max-width:60ch;margin-bottom:40px}
+.pk{display:grid;grid-template-columns:1fr 1.2fr 1fr;align-items:stretch;border-top:2px solid var(--ink)}
+.p{padding:28px 24px 30px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.p:last-child{border-right:0}
+.p.featured{background:#fbf7ef;box-shadow:inset 0 3px 0 var(--amber-d)}
+.p .tag{font-size:13px;color:var(--amber-d);font-weight:500}
+.p h3{font:500 30px/1.1 var(--serif)}
+.p .price{font:500 34px/1 var(--serif)}
+.p .price small{font:300 14px var(--sans);color:var(--muted)}
+.p ul{list-style:none;display:grid;gap:7px;font-size:15px;flex:1}
+.p li{padding-left:18px;position:relative}
+.p li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:1px;background:var(--amber-d)}
+.p li.gift{color:var(--green);font-weight:500}
+.p .btn{align-self:flex-start;margin-top:8px}
+.civil{margin-top:22px;font-size:15px;color:var(--muted)}
+
+/* STEPS (real sequence) */
+.steps{background:var(--paper-2);padding:clamp(64px,9vw,104px) 0;border-top:1px solid var(--line)}
+.steps h2{font:500 clamp(30px,3.8vw,46px)/1.1 var(--serif);margin-bottom:36px}
+.steps ol{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s}
+.steps li{counter-increment:s}
+.steps li::before{content:counter(s);display:block;font:500 56px/1 var(--serif);color:var(--amber-d);margin-bottom:10px}
+.steps b{display:block;font:500 22px/1.25 var(--serif);margin-bottom:6px}
+.steps p{color:var(--muted)}
+
+/* FAQ */
+.faq{padding:clamp(64px,9vw,104px) 0}
+.faq .wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(24px,5vw,72px)}
+.faq h2{font:500 clamp(30px,3.8vw,46px)/1.1 var(--serif)}
+details{border-top:1px solid var(--line);padding:18px 0}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font:500 21px/1.3 var(--serif);list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--sans);font-weight:300;color:var(--amber-d)}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--muted);max-width:62ch}
+
+/* CLOSE */
+.close{background:var(--ink);color:var(--paper);padding:clamp(72px,10vw,128px) 0;text-align:center}
+.close h2{font:500 clamp(36px,5vw,64px)/1.05 var(--serif);max-width:18ch;margin:0 auto 18px}
+.close p{color:rgba(243,237,226,.78);max-width:52ch;margin:0 auto 30px}
+.close .cta-row{justify-content:center}
+footer{background:var(--ink-2);color:rgba(243,237,226,.55);font-size:13px;padding:24px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:rgba(243,237,226,.75)}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-photo{height:62vh}
+  .benefit .wrap,.approach .wrap,.faq .wrap{grid-template-columns:1fr}
+  .perks li{grid-template-columns:1fr;gap:4px}
+  .months{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .month{padding:14px 10px 18px}
+  .month .m{font-size:22px}
+  .hero-photo img{overflow:hidden}
+  .month:nth-child(3){border-right:0}
+  .month:nth-child(n+4){border-top:1px solid var(--line)}
+  .month.is-you::after{content:none}
+  .pk{grid-template-columns:1fr}
+  .p{border-right:0;border-bottom:1px solid var(--line)}
+  .steps ol{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(6,1fr);grid-auto-rows:120px}
+  .g1,.g8{grid-column:span 6}.g2,.g3,.g4,.g5,.g6,.g7{grid-column:span 3;grid-row:span 2}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <figure class="hero-photo">
+    <img src="https://CrisMaturana.b-cdn.net/Weddings/wedding-photographer-chile-couple-05.jpg" alt="Pareja de novios caminando juntos el día de su matrimonio en Chile" fetchpriority="high">
+    <figcaption>Matrimonio en Chile · fotografía documental</figcaption>
+  </figure>
+  <div class="letter">
+    <p class="to" data-greet>Para quienes se casan entre octubre 2027 y marzo 2028</p>
+    <h1>Una temporada, pocas fechas, y muchas ganas de contar su historia.</h1>
+    <p>Soy Cris Maturana, fotógrafo de matrimonios hace más de 15 años. Hoy vivo en Hội An, Vietnam, y para la temporada 2027–2028 voy a estar en Chile fotografiando un número acotado de matrimonios.</p>
+    <p>Si llegaron hasta aquí desde mi correo, esta página es para ustedes: fechas disponibles, precios claros y un beneficio que solo aplica a quienes reservan desde este enlace.</p>
+    <p class="sign">Cris<small>Fotografía documental de matrimonios</small></p>
+    <div class="cta-row">
+      <a class="btn btn-solid" data-wa href="https://wa.me/56999679935">Consultar mi fecha por WhatsApp</a>
+      <a class="btn btn-ghost" href="#paquetes">Ver precios</a>
+    </div>
+  </div>
+</section>
+
+<section class="benefit" id="beneficio">
+  <div class="wrap">
+    <div>
+      <h2>Beneficio para novios que llegan por correo</h2>
+      <p class="deadline">Válido reservando hasta el 31 de enero de 2027.</p>
+    </div>
+    <ul class="perks">
+      <li><strong>Precio 2026</strong><span>Congelamos la tarifa actual para su matrimonio en 2027 o 2028, aunque los valores de la temporada suban.</span></li>
+      <li><strong>+1 hora de regalo</strong><span>Una hora extra de cobertura sin costo (valor $100.000) en cualquier paquete desde Lo Esencial.</span></li>
+      <li><strong>Avance en 48 horas</strong><span>Una selección de sus fotos lista dos días después del matrimonio, para compartir con la familia mientras edito el resto.</span></li>
+      <li><strong>Reserva flexible</strong><span>Aseguran la fecha con un abono y, si la fecha cambia, la movemos una vez sin costo según disponibilidad.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="season" id="fechas">
+  <div class="wrap">
+    <div class="season-head">
+      <h2>Disponibilidad de la temporada en Chile</h2>
+      <p>Tomo un solo matrimonio por día y viajo a Chile por temporada, así que las fechas se cierran a medida que llegan las reservas.</p>
+    </div>
+    <!-- EDITAR: cambiar class "state" a "few" (pocas fechas) o "full" (completo) según se vayan reservando -->
+    <div class="months" role="list">
+      <div class="month" role="listitem" data-m="10-2027"><div class="m">Octubre</div><div class="y">2027</div><div class="state"><i class="dot"></i>Fechas disponibles</div></div>
+      <div class="month" role="listitem" data-m="11-2027"><div class="m">Noviembre</div><div class="y">2027</div><div class="state few"><i class="dot"></i>Pocas fechas</div></div>
+      <div class="month" role="listitem" data-m="12-2027"><div class="m">Diciembre</div><div class="y">2027</div><div class="state"><i class="dot"></i>Fechas disponibles</div></div>
+      <div class="month" role="listitem" data-m="01-2028"><div class="m">Enero</div><div class="y">2028</div><div class="state"><i class="dot"></i>Fechas disponibles</div></div>
+      <div class="month" role="listitem" data-m="02-2028"><div class="m">Febrero</div><div class="y">2028</div><div class="state"><i class="dot"></i>Fechas disponibles</div></div>
+      <div class="month" role="listitem" data-m="03-2028"><div class="m">Marzo</div><div class="y">2028</div><div class="state"><i class="dot"></i>Fechas disponibles</div></div>
+    </div>
+    <small>Sábados de noviembre son los más pedidos. ¿Su matrimonio es fuera de estas fechas? Escríbanme igual y lo vemos.</small>
+  </div>
+</section>
+
+<section class="gallery" aria-label="Matrimonios fotografiados en Chile">
+  <div class="wrap">
+    <div class="grid">
+      <figure class="g1"><img loading="lazy" src="https://CrisMaturana.b-cdn.net/Weddings/wedding-photographer-chile-ceremony-01.jpg" alt="Ceremonia de matrimonio"></figure>
+      <figure class="g2"><img loading="lazy" src="https://CrisMaturana.b-cdn.net/Weddings/wedding-photographer-chile-bride-make-up-01.jpg" alt="Novia en los preparativos"></figure>
+      <figure class="g3"><img loading="lazy" src="https://CrisMaturana.b-cdn.net/Weddings/wedding-photographer-chile-bouquet-rings-01.jpg" alt="Anillos y ramo de novia"></figure>
+      <figure class="g4"><img loading="lazy" src="https://CrisMaturana.b-cdn.net/Weddings/wedding-photographer-chile-just-married-01.jpg" alt="Recién casados saliendo de la ceremonia"></figure>
+      <figure class="g5"><img loading="lazy" src="https://CrisMaturana.b-cdn.net/Weddings/wedding-photographer-chile-embrace-01.jpg" alt="Abrazo de los novios"></figure>
+      <figure class="g6"><img loading="lazy" src="https://CrisMaturana.b-cdn.net/Weddings/wedding-photographer-chile-brindis-01.jpg" alt="Brindis en la recepción"></figure>
+      <figure class="g7"><img loading="lazy" src="https://CrisMaturana.b-cdn.net/Weddings/wedding-photographer-chile-couple-010.jpg" alt="Retrato de pareja al atardecer"></figure>
+      <figure class="g8"><img loading="lazy" src="https://CrisMaturana.b-cdn.net/Weddings/wedding-photographer-chile-party-03.jpg" alt="Fiesta de matrimonio en la pista de baile"></figure>
+    </div>
+    <p class="more"><a href="https://www.crismaturana.com/hoi-an-wedding-photographer">Ver más matrimonios</a></p>
+  </div>
+</section>
+
+<section class="approach">
+  <div class="wrap">
+    <blockquote>No voy a pedirles que posen toda la noche. Voy a estar atento a lo que ya está pasando: la mirada del papá, la risa en el brindis, la pista llena a las tres de la mañana.</blockquote>
+    <div class="facts">
+      <div><b>Estilo documental</b><p>Luz natural, momentos reales y una dirección suave solo cuando hace falta, con mi método FLOW para que se vean naturales.</p></div>
+      <div><b>15 años fotografiando</b><p>Empecé haciendo matrimonios en Chile y hoy trabajo también en el sudeste asiático. Esa mirada viaja conmigo a su matrimonio.</p></div>
+      <div><b>Entrega clara</b><p>Avance en 24–48 horas y galería completa editada en un máximo de 30 días, en alta resolución para imprimir.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="packages" id="paquetes">
+  <div class="wrap">
+    <h2>Precios de la temporada</h2>
+    <p class="lead">Valores en pesos chilenos, iguales a los publicados en mi web. Con el beneficio de este correo se agrega una hora de regalo y el precio queda congelado.</p>
+    <div class="pk">
+      <article class="p">
+        <h3>Lo Esencial</h3>
+        <p class="price">$500.000 <small>CLP</small></p>
+        <ul>
+          <li>5 horas de cobertura: ceremonia y recepción</li>
+          <li>250+ fotos editadas</li>
+          <li>Galería privada online</li>
+          <li class="gift">+1 hora de regalo (6 horas en total)</li>
+        </ul>
+        <a class="btn" href="https://www.crismaturana.com/es/contact?session=Wedding&package=Lo+Esencial&utm_source=email&utm_medium=campana&utm_campaign=novios2728#contact-form">Pedir Lo Esencial</a>
+      </article>
+      <article class="p featured">
+        <p class="tag">El más reservado</p>
+        <h3>La Jornada Completa</h3>
+        <p class="price">$1.000.000 <small>CLP</small></p>
+        <ul>
+          <li>10 horas: preparativos, ceremonia y fiesta</li>
+          <li>Fotógrafo + asistente</li>
+          <li>500+ fotos editadas y galería privada</li>
+          <li>Sesión de pareja antes del matrimonio</li>
+          <li>Llamada de planificación previa</li>
+          <li class="gift">+1 hora de regalo (11 horas en total)</li>
+        </ul>
+        <a class="btn btn-solid" href="https://www.crismaturana.com/es/contact?session=Wedding&package=La+Jornada+Completa&utm_source=email&utm_medium=campana&utm_campaign=novios2728#contact-form">Pedir La Jornada Completa</a>
+      </article>
+      <article class="p">
+        <h3>El Día Entero + Photobook</h3>
+        <p class="price">$1.290.000 <small>CLP</small></p>
+        <ul>
+          <li>12 horas, de los preparativos al cierre de la fiesta</li>
+          <li>Fotógrafo + asistente</li>
+          <li>700+ fotos editadas, entrega en 14 días</li>
+          <li>Sesión de pareja</li>
+          <li>Photobook 30×30 de regalo</li>
+          <li class="gift">+1 hora de regalo (13 horas en total)</li>
+        </ul>
+        <a class="btn" href="https://www.crismaturana.com/es/contact?session=Wedding&package=El+D%C3%ADa+Entero&utm_source=email&utm_medium=campana&utm_campaign=novios2728#contact-form">Pedir El Día Entero</a>
+      </article>
+    </div>
+    <p class="civil">¿Solo matrimonio civil? Cobertura de 1–2 horas por $250.000. Viáticos fuera de la Región Metropolitana se cotizan según lugar y fecha. <a href="https://www.crismaturana.com/es/precios-matrimonios">Ver todos los detalles y photobooks</a>.</p>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <h2>Cómo reservar desde Vietnam o desde Chile</h2>
+    <ol>
+      <li><b>Me escriben su fecha</b><p>Por WhatsApp o correo, con la fecha (o el mes) y el lugar. Respondo en menos de 24 horas.</p></li>
+      <li><b>Conversamos 20 minutos</b><p>Una videollamada para conocernos, entender cómo imaginan el día y elegir el paquete que les calza.</p></li>
+      <li><b>Aseguran la fecha</b><p>Con un abono y un contrato simple la fecha queda bloqueada para ustedes, con el beneficio incluido.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <h2>Preguntas frecuentes</h2>
+    <div>
+      <details><summary>Si vives en Vietnam, ¿cómo sé que vas a estar en Chile?</summary><p>Viajo a Chile por toda la temporada de matrimonios y organizo mi calendario en torno a las fechas reservadas. Su fecha queda firmada en contrato, y antes del matrimonio nos reunimos (en persona o por videollamada) para afinar cada detalle.</p></details>
+      <details><summary>¿Cuánto es el abono para reservar?</summary><p>Se reserva con un abono y el saldo se paga antes del matrimonio. Les envío el detalle exacto junto a la propuesta.</p></details>
+      <details><summary>Todavía no tenemos fecha exacta, ¿podemos igual?</summary><p>Sí. Pueden asegurar el beneficio con el mes aproximado y definimos el día cuando tengan el lugar confirmado, según disponibilidad.</p></details>
+      <details><summary>¿Fotografías fuera de Santiago?</summary><p>Sí, en todo Chile. Los viáticos fuera de la Región Metropolitana se cotizan aparte según la ciudad y la fecha.</p></details>
+      <details><summary>¿Qué pasa si cambiamos la fecha?</summary><p>Con la reserva flexible de esta campaña podemos mover la fecha una vez sin costo, sujeto a disponibilidad.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <h2>¿Su fecha sigue libre?</h2>
+    <p>Escríbanme su fecha o el mes que tienen en mente y les respondo con disponibilidad y una propuesta en menos de 24 horas.</p>
+    <div class="cta-row">
+      <a class="btn btn-solid" data-wa href="https://wa.me/56999679935">Escribir por WhatsApp</a>
+      <a class="btn btn-ghost" href="https://www.crismaturana.com/es/contact?session=Wedding&utm_source=email&utm_medium=campana&utm_campaign=novios2728#contact-form">Escribir por correo</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Cris Maturana · Fotografía de matrimonios en Chile</span>
+    <span><a href="https://www.crismaturana.com/es">crismaturana.com</a></span>
+  </div>
+</footer>
+
+<script is:inline>
+(function(){
+  try{
+    var q=new URLSearchParams(location.search);
+    var n=(q.get('n')||'').replace(/[^A-Za-zÀ-ÿ\s'-]/g,'').trim().slice(0,30);
+    var f=(q.get('f')||'').replace(/[^0-9-]/g,''); // formato MM-AAAA, ej 11-2027
+    if(n){n=n.charAt(0).toUpperCase()+n.slice(1);var g=document.querySelector('[data-greet]'); if(g) g.textContent='Hola, '+n;}
+    var mes='';
+    if(f){var cell=document.querySelector('.month[data-m="'+f+'"]'); if(cell){cell.classList.add('is-you'); mes=cell.querySelector('.m').textContent+' '+cell.querySelector('.y').textContent;}}
+    var msg='Hola Cris, llegué por tu correo de la temporada 2027–2028'+(n?'. Soy '+n:'')+(mes?'. Nos casamos en '+mes:'. Nos casamos en: ')+'. ¿Tienes la fecha disponible?';
+    document.querySelectorAll('[data-wa]').forEach(function(a){a.href='https://wa.me/56999679935?text='+encodeURIComponent(msg);});
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
