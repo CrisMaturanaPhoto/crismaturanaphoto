@@ -111,7 +111,7 @@ a{color:inherit}
 .packages{padding:clamp(64px,9vw,112px) 0}
 .packages h2{font:500 clamp(34px,4.4vw,52px)/1.05 var(--serif);margin-bottom:10px}
 .packages .lead{color:var(--muted);max-width:60ch;margin-bottom:40px}
-.pk{display:grid;grid-template-columns:1fr 1.2fr 1fr;align-items:stretch;border-top:2px solid var(--ink)}
+.pk{display:grid;grid-template-columns:1fr 1fr 1.2fr 1fr;align-items:stretch;border-top:2px solid var(--ink)}
 .p{padding:28px 24px 30px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
 .p:last-child{border-right:0}
 .p.featured{background:#fbf7ef;box-shadow:inset 0 3px 0 var(--amber-d)}
@@ -119,7 +119,7 @@ a{color:inherit}
 .p h3{font:500 30px/1.1 var(--serif)}
 .p .price{font:500 34px/1 var(--serif)}
 .p .price small{font:300 14px var(--sans);color:var(--muted)}
-.p ul{list-style:none;display:grid;gap:7px;font-size:15px;flex:1}
+.p ul{list-style:none;display:grid;gap:7px;font-size:15px;flex:1;align-content:start}
 .p li{padding-left:18px;position:relative}
 .p li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:1px;background:var(--amber-d)}
 .p li.gift{color:var(--green);font-weight:500}
@@ -156,6 +156,11 @@ footer{background:var(--ink-2);color:rgba(243,237,226,.55);font-size:13px;paddin
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:rgba(243,237,226,.75)}
 
+@media (max-width:1100px) and (min-width:901px){
+  .pk{grid-template-columns:1fr 1fr}
+  .p:nth-child(2){border-right:0}
+  .p:nth-child(n+3){border-top:1px solid var(--line)}
+}
 @media (max-width:900px){
   .hero{grid-template-columns:1fr;min-height:auto}
   .hero-photo{height:62vh}
@@ -260,8 +265,19 @@ footer a{color:rgba(243,237,226,.75)}
 <section class="packages" id="paquetes">
   <div class="wrap">
     <h2>Precios de la temporada</h2>
-    <p class="lead">Valores en pesos chilenos, iguales a los publicados en mi web. Con el beneficio de este correo se agrega una hora de regalo y el precio queda congelado.</p>
+    <p class="lead">Valores en pesos chilenos, iguales a los publicados en mi web. Con el beneficio de este correo el precio queda congelado y, desde Lo Esencial, se agrega una hora de regalo.</p>
     <div class="pk">
+      <article class="p">
+        <h3>Matrimonio Civil</h3>
+        <p class="price">$250.000 <small>CLP</small></p>
+        <ul>
+          <li>1 a 2 horas de cobertura de la ceremonia civil</li>
+          <li>Fotos editadas en alta resolución</li>
+          <li>Galería privada online</li>
+          <li class="gift">Avance de fotos en 48 horas</li>
+        </ul>
+        <a class="btn" href="https://www.crismaturana.com/es/contact?session=Wedding&package=Matrimonio+Civil&utm_source=email&utm_medium=campana&utm_campaign=novios2728#contact-form">Pedir Matrimonio Civil</a>
+      </article>
       <article class="p">
         <h3>Lo Esencial</h3>
         <p class="price">$500.000 <small>CLP</small></p>
@@ -301,7 +317,7 @@ footer a{color:rgba(243,237,226,.75)}
         <a class="btn" href="https://www.crismaturana.com/es/contact?session=Wedding&package=El+D%C3%ADa+Entero&utm_source=email&utm_medium=campana&utm_campaign=novios2728#contact-form">Pedir El Día Entero</a>
       </article>
     </div>
-    <p class="civil">¿Solo matrimonio civil? Cobertura de 1–2 horas por $250.000. Viáticos fuera de la Región Metropolitana se cotizan según lugar y fecha. <a href="https://www.crismaturana.com/es/precios-matrimonios">Ver todos los detalles y photobooks</a>.</p>
+    <p class="civil">Viáticos fuera de la Región Metropolitana se cotizan según lugar y fecha. <a href="https://www.crismaturana.com/es/precios-matrimonios">Ver todos los detalles y photobooks</a>.</p>
   </div>
 </section>
 
