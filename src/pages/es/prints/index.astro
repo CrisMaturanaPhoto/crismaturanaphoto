@@ -1,0 +1,14 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PrintsIndex from '../../../components/PrintsIndex.astro';
+import { buildAlternates } from '../../../lib/utils';
+const alternates = buildAlternates('/prints', '/es/prints');
+---
+<Layout
+  title="Prints fine art de Vietnam – Cris Maturana"
+  description="Prints fotográficos fine art firmados, de Vietnam, por el fotógrafo documental Cris Maturana. Cada foto con su historia."
+  lang="es"
+  alternates={alternates}
+>
+  <PrintsIndex lang="es" />
+</Layout>

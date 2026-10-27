@@ -18,6 +18,7 @@ const navLinks = [
       { label: 'Wedding Prices', i18n: 'nav.pricesWeddings', href: '/wedding-prices' },
     ],
   },
+  { label: 'Prints', href: '/prints' },
   { label: 'Blog', i18n: 'nav.blog', href: '/blog' },
   {
     label: 'About', i18n: 'nav.aboutmenu',
@@ -376,6 +377,7 @@ const esHref = isEs
       '/wedding-prices':                     isEs ? '/es/precios-matrimonios'                : '/wedding-prices',
       '/faq':                                isEs ? '/es/faq'                                : '/faq',
       '/contact':                            isEs ? '/es/contact'                            : '/contact',
+      '/prints':                             isEs ? '/es/prints'                             : '/prints',
     };
     document.querySelectorAll('.nav-link, .dropdown-link').forEach(el => {
       const href = el.getAttribute('href');

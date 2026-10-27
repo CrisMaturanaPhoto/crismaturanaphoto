@@ -1,0 +1,21 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PrintProduct from '../../components/PrintProduct.astro';
+import { publishedPrints } from '../../data/prints';
+import { buildAlternates } from '../../lib/utils';
+
+export function getStaticPaths() {
+  return publishedPrints.map((print) => ({ params: { slug: print.slug }, props: { print } }));
+}
+const { print } = Astro.props;
+const alternates = buildAlternates('/prints/' + print.slug, '/es/prints/' + print.slug);
+const lang = 'en';
+---
+<Layout
+  title={`${print.title[lang]} – Fine Art Print – Cris Maturana`}
+  description={print.story[lang][0]}
+  lang={lang}
+  alternates={alternates}
+>
+  <PrintProduct print={print} lang={lang} />
+</Layout>
