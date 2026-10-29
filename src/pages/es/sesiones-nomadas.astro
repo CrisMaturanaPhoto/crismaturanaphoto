@@ -1,0 +1,414 @@
+---
+// Landing oculta "Nomad Sessions" para digital nomads en Da Nang y Hội An. Ruta: src/pages/es/sesiones-nomadas.astro (versión ES de /nomad-sessions)
+// noindex + excluida del sitemap. Se comparte solo por grupos de Facebook y WhatsApp.
+// Seguimiento por grupo: agregar ?src=fb-danang-nomads, ?src=wa-hoian, etc. al link.
+---
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nomad Sessions · Retratos para nómadas digitales en Da Nang y Hội An</title>
+<meta name="description" content="Sesiones de retrato y marca personal para nómadas digitales en Da Nang y Hội An. Precio de lanzamiento desde USD 99.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="alternate" hreflang="en" href="https://www.crismaturana.com/nomad-sessions">
+<link rel="alternate" hreflang="es" href="https://www.crismaturana.com/es/sesiones-nomadas">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cris Maturana Photo">
+<meta property="og:title" content="Nomad Sessions · Da Nang & Hội An">
+<meta property="og:description" content="Retratos para quienes trabajan en remoto: nueva foto de perfil, contenido para tu marca y un recuerdo de tu tiempo en Vietnam. Desde USD 99.">
+<meta property="og:url" content="https://www.crismaturana.com/es/sesiones-nomadas">
+<meta property="og:image" content="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/MonseRetratos%40-30.jpg">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style is:global>
+/* Layout: ink hero with headline + tall portrait, paper body, ink postcard band for the gift */
+:root{
+  --ink:#14110d; --ink-2:#0d0c0a; --paper:#f3ede2; --paper-2:#e9e1d2; --card:#fbf7ef;
+  --amber:#e8c070; --amber-d:#a0722a; --green:#3d6b2b; --muted:#6f665a; --line:#d8cdb9;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--paper);color:var(--ink);font:300 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--amber-d);outline-offset:3px}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;gap:.5em;padding:.9em 1.5em;font:500 15px/1 var(--sans);letter-spacing:.02em;text-decoration:none;border:1px solid currentColor;transition:background .2s,color .2s}
+.btn-solid{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+.btn-solid:hover{background:#f0d08f}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.eyebrow{font:500 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase}
+
+/* HERO */
+.hero{background:var(--ink);color:var(--paper);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(40px,7vw,88px) 0}
+.hero .eyebrow{color:var(--amber)}
+.hero h1{font:500 clamp(42px,6vw,80px)/1 var(--serif);letter-spacing:-.015em;margin:22px 0 24px;text-wrap:balance}
+.hero h1 em{font-style:italic;color:var(--amber)}
+.hero p{max-width:48ch;color:rgba(243,237,226,.84)}
+.launch{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:26px 0 30px;padding-top:20px;border-top:1px solid rgba(243,237,226,.18)}
+.launch b{font:500 34px/1 var(--serif);color:var(--paper)}
+.launch span{font-size:14px;color:rgba(243,237,226,.62)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.hero figure{position:relative;margin:0}
+.hero figure img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;animation:settle 2s ease-out both}
+@keyframes settle{from{transform:scale(1.05);opacity:.5}to{transform:scale(1);opacity:1}}
+.hero figcaption{margin-top:10px;font-size:13px;color:rgba(243,237,226,.6);display:flex;justify-content:space-between;gap:12px}
+
+/* PROBLEM */
+.why{border-bottom:1px solid var(--line)}
+.why ul{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.why li{padding:clamp(28px,4vw,44px) clamp(16px,2.4vw,32px) clamp(28px,4vw,44px) 0;border-right:1px solid var(--line)}
+.why li+li{padding-left:clamp(16px,2.4vw,32px)}
+.why li:last-child{border-right:0}
+.why b{display:block;font:500 clamp(22px,2.2vw,27px)/1.2 var(--serif);margin-bottom:8px}
+.why p{color:var(--muted);font-size:16px}
+
+/* GALLERY */
+.gallery{padding:clamp(56px,8vw,96px) 0}
+.gallery-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.gallery h2{font:500 clamp(32px,4vw,50px)/1.05 var(--serif);max-width:18ch;text-wrap:balance}
+.gallery-head p{max-width:40ch;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(110px,13vw,170px);gap:10px}
+.grid figure{overflow:hidden;background:#cfc4b1}
+.grid img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transition:transform .6s ease}
+.grid figure:hover img{transform:scale(1.03)}
+.g1{grid-column:span 5;grid-row:span 3}.g2{grid-column:span 4;grid-row:span 2}.g3{grid-column:span 3;grid-row:span 2}
+.g4{grid-column:span 7;grid-row:span 1}.g5{grid-column:span 4;grid-row:span 2}.g6{grid-column:span 4;grid-row:span 2}.g7{grid-column:span 4;grid-row:span 2}
+
+/* PACKAGES */
+.packages{background:var(--paper-2);border-top:1px solid var(--line);padding:clamp(64px,9vw,112px) 0}
+.pk-head{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(20px,4vw,56px);align-items:end;margin-bottom:40px}
+.packages h2{font:500 clamp(34px,4.4vw,54px)/1.05 var(--serif);text-wrap:balance}
+.spots{border-left:2px solid var(--amber-d);padding-left:18px}
+.spots b{display:block;font:500 22px/1.25 var(--serif)}
+.spots span{color:var(--muted);font-size:15px}
+.pk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--ink)}
+.p{padding:30px 26px 32px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:12px;min-width:0}
+.p:last-child{border-right:0}
+.p.featured{background:var(--card);box-shadow:inset 0 3px 0 var(--amber-d)}
+.p .for{font-size:14px;color:var(--muted);min-height:2.6em}
+.p .tag{font-size:13px;color:var(--amber-d);font-weight:500;letter-spacing:.04em}
+.p h3{font:500 32px/1.05 var(--serif)}
+.p .meta{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.price s{font:400 20px/1 var(--serif);color:var(--muted)}
+.price b{font:500 44px/1 var(--serif)}
+.price small{font-size:13px;color:var(--muted)}
+.p ul{list-style:none;display:grid;gap:7px;font-size:15px;flex:1;align-content:start;padding-top:12px;border-top:1px solid var(--line)}
+.p li{padding-left:18px;position:relative}
+.p li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:1px;background:var(--amber-d)}
+.p li.gift{color:var(--green);font-weight:500}
+.p .btn{align-self:flex-start;margin-top:10px}
+.notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:32px;font-size:15px;color:var(--muted)}
+.notes b{display:block;color:var(--ink);font-weight:500;margin-bottom:2px}
+
+/* POSTCARD GIFT — signature element */
+.gift-band{background:var(--ink);color:var(--paper);padding:clamp(64px,9vw,112px) 0;overflow:hidden}
+.gift-band .wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(36px,6vw,96px);align-items:center}
+.gift-band .eyebrow{color:var(--amber)}
+.gift-band h2{font:500 clamp(34px,4.4vw,54px)/1.05 var(--serif);margin:18px 0 18px;text-wrap:balance}
+.gift-band p{color:rgba(243,237,226,.8);max-width:46ch}
+.gift-band p+p{margin-top:14px}
+.cards{position:relative;min-height:clamp(380px,46vw,520px)}
+.pc{position:absolute;width:min(64%,380px);aspect-ratio:3/2;background:#f7f1e6;color:#2b241b;box-shadow:0 22px 50px rgba(0,0,0,.45);padding:12px}
+.pc-front{right:0;top:0;transform:rotate(4deg);z-index:1}
+.pc-front img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.pc-back{left:0;bottom:0;transform:rotate(-5deg);z-index:2;display:grid;grid-template-columns:1.1fr 1fr;padding:18px 20px}
+.pc-back .msg{border-right:1px solid #cdbfa6;padding-right:14px;display:flex;flex-direction:column;justify-content:space-between}
+.pc-back .msg i{font:italic 400 clamp(17px,1.9vw,22px)/1.25 var(--serif)}
+.pc-back .msg small{font:500 10px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#7a6c57}
+.pc-back .addr{padding-left:14px;display:flex;flex-direction:column;gap:10px;position:relative}
+.stamp{align-self:flex-end;width:52px;height:62px;border:2px dashed #b9a98d;display:grid;place-items:center;text-align:center;font:500 9px/1.2 var(--sans);letter-spacing:.1em;color:var(--amber-d);background:#efe5d2}
+.stamp b{display:block;font:500 18px/1 var(--serif);color:#2b241b;letter-spacing:0}
+.postmark{position:absolute;right:66px;top:6px;width:64px;height:64px;border:1.5px solid rgba(160,114,42,.55);border-radius:50%;display:grid;place-items:center;text-align:center;font:500 7.5px/1.3 var(--sans);letter-spacing:.12em;color:rgba(160,114,42,.8);transform:rotate(-14deg)}
+.addr hr{border:0;border-top:1px solid #cdbfa6;margin-top:8px}
+.pc-label{position:absolute;left:0;top:0;font-size:13px;color:rgba(243,237,226,.55)}
+
+/* STEPS (real sequence) */
+.steps{padding:clamp(64px,9vw,104px) 0}
+.steps h2{font:500 clamp(30px,3.8vw,46px)/1.1 var(--serif);margin-bottom:36px}
+.steps ol{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;counter-reset:s}
+.steps li{counter-increment:s;border-top:1px solid var(--line);padding-top:18px}
+.steps li::before{content:counter(s);display:block;font:500 52px/1 var(--serif);color:var(--amber-d);margin-bottom:10px}
+.steps b{display:block;font:500 22px/1.25 var(--serif);margin-bottom:6px}
+.steps p{color:var(--muted)}
+
+/* ABOUT */
+.about{background:var(--paper-2);border-top:1px solid var(--line);padding:clamp(56px,8vw,96px) 0}
+.about .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(28px,6vw,96px)}
+.about blockquote{font:400 clamp(26px,3.2vw,40px)/1.2 var(--serif);text-wrap:balance}
+.about blockquote em{color:var(--amber-d)}
+.about .facts{display:grid;gap:18px}
+.about .facts div{border-top:1px solid var(--line);padding-top:14px}
+.about .facts b{display:block;font:500 20px/1.3 var(--serif);margin-bottom:2px}
+.about .facts p{color:var(--muted);font-size:16px}
+
+/* FAQ */
+.faq{padding:clamp(64px,9vw,104px) 0}
+.faq .wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(24px,5vw,72px)}
+.faq h2{font:500 clamp(30px,3.8vw,46px)/1.1 var(--serif)}
+details{border-top:1px solid var(--line);padding:18px 0}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font:500 21px/1.3 var(--serif);list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--sans);font-weight:300;color:var(--amber-d)}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--muted);max-width:62ch}
+
+/* CLOSE */
+.close{background:var(--ink);color:var(--paper);padding:clamp(72px,10vw,128px) 0;text-align:center}
+.close h2{font:500 clamp(36px,5vw,64px)/1.05 var(--serif);max-width:18ch;margin:0 auto 18px;text-wrap:balance}
+.close p{color:rgba(243,237,226,.78);max-width:52ch;margin:0 auto 30px}
+.close .cta-row{justify-content:center}
+footer{background:var(--ink-2);color:rgba(243,237,226,.55);font-size:13px;padding:24px 0 90px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:rgba(243,237,226,.75)}
+
+/* Floating WhatsApp */
+.wa-float{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;align-items:center;gap:8px;background:var(--green);color:#fff;text-decoration:none;font:500 15px/1 var(--sans);padding:14px 18px;border-radius:999px;box-shadow:0 10px 26px rgba(0,0,0,.28)}
+.wa-float svg{width:20px;height:20px;fill:currentColor}
+
+@media (max-width:900px){
+  .hero .wrap,.pk-head,.gift-band .wrap,.about .wrap,.faq .wrap{grid-template-columns:1fr}
+  .hero figure{max-width:440px}
+  .why ul{grid-template-columns:1fr}
+  .why li,.why li+li{padding:22px 0;border-right:0;border-bottom:1px solid var(--line)}
+  .why li:last-child{border-bottom:0}
+  .pk{grid-template-columns:1fr}
+  .p{border-right:0;border-bottom:1px solid var(--line)}
+  .p .for{min-height:0}
+  .notes,.steps ol{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:120px}
+  .g1,.g4{grid-column:span 6}.g1{grid-row:span 3}.g4{grid-row:span 2}.g2,.g3,.g5,.g6,.g7{grid-column:span 3;grid-row:span 2}
+  .g7{grid-column:span 6}
+  .cards{min-height:clamp(300px,80vw,420px)}
+  .pc{width:78%}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Nomad Sessions · Da Nang y Hội An</p>
+      <h1>Te viniste a Vietnam a vivir distinto. <em>Ten fotos que lo muestren.</em></h1>
+      <p>Sesiones de retrato y marca personal para quienes trabajan en remoto, emprenden o crean contenido. Una foto de perfil que se parezca a ti, imágenes para tu web y tus redes, y un recuerdo real de esta etapa de tu vida.</p>
+      <div class="launch">
+        <b>Desde USD 99</b>
+        <span>Precio de lanzamiento · primeras 15 sesiones o hasta el 31 de diciembre de 2026</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-solid" data-wa href="https://wa.me/56999679935">Reservar por WhatsApp</a>
+        <a class="btn btn-ghost" href="#sessions">Ver las sesiones</a>
+      </div>
+    </div>
+    <figure>
+      <img src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/MonseRetratos%40-30.jpg" alt="Retrato con luz natural de Cris Maturana" fetchpriority="high">
+      <figcaption><span>Sesión de retrato, Hội An</span><span>Luz natural</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="why" aria-label="Por qué una Nomad Session">
+  <div class="wrap">
+    <ul>
+      <li><b>Tu foto de perfil es una selfie de 2019</b><p>Tus clientes en LinkedIn, Upwork o tu web deciden en segundos. Un retrato claro y cercano trabaja en silencio por ti.</p></li>
+      <li><b>Tus redes no muestran cómo trabajas</b><p>El laptop en el coworking, el café junto al río, la playa después de una llamada. Escenas reales de tu vida aquí, listas para tu marca.</p></li>
+      <li><b>Te vas a ir de Vietnam sin una foto tuya</b><p>Cientos de fotos del Old Town y ninguna en la que aparezcas tú. Esta sesión lo resuelve.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="gallery" aria-label="Retratos">
+  <div class="wrap">
+    <div class="gallery-head">
+      <h2>Retratos relajados, lugares reales, cero poses rígidas.</h2>
+      <p>Soy fotógrafo documental. Te guío con suavidad, mantengo la sesión liviana y espero los momentos en que te olvidas de la cámara.</p>
+    </div>
+    <div class="grid">
+      <figure class="g1"><img loading="lazy" src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/agnes-portrait-001.JPG" alt="Retrato de marca personal"></figure>
+      <figure class="g2"><img loading="lazy" src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/anna-portrait-002.JPG" alt="Retrato con luz natural"></figure>
+      <figure class="g3"><img loading="lazy" src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/rachel-portrait-001.JPG" alt="Sesión de retrato"></figure>
+      <figure class="g4"><img loading="lazy" src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/HoiAnPortrais1%40-13.JPG" alt="Retrato en Hội An"></figure>
+      <figure class="g5"><img loading="lazy" src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/tania-portrait-001.JPG" alt="Retrato de marca personal"></figure>
+      <figure class="g6"><img loading="lazy" src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/MartinsSoul%40-24.JPG" alt="Sesión de retrato"></figure>
+      <figure class="g7"><img loading="lazy" src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/Danya1Muestra%40-2.JPG" alt="Sesión de retrato"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="packages" id="sessions">
+  <div class="wrap">
+    <div class="pk-head">
+      <h2>Tres sesiones, un precio claro cada una.</h2>
+      <div class="spots">
+        <b>Precio de lanzamiento para las primeras 15 sesiones</b>
+        <span>Válido hasta el 31 de diciembre de 2026 o hasta completar los 15 cupos. Precios en USD.</span>
+      </div>
+    </div>
+    <div class="pk">
+      <article class="p">
+        <h3>Profile</h3>
+        <p class="for">Necesitas una buena foto de perfil, ya.</p>
+        <p class="meta">45 min · 1 locación · 1 look</p>
+        <p class="price"><s>USD 140</s><b>USD 99</b></p>
+        <ul>
+          <li>12 fotos editadas</li>
+          <li>Profile Kit: 3 fotos recortadas para LinkedIn, Upwork, Instagram y Zoom</li>
+          <li>Coworking, café u Old Town</li>
+          <li>Guía de vestuario y posing</li>
+          <li>Avance en 24 h, galería en 5 días</li>
+          <li class="gift">Postal fine art de regalo</li>
+        </ul>
+        <a class="btn" data-wa data-pkg="Profile" href="https://wa.me/56999679935">Reservar Profile</a>
+      </article>
+      <article class="p featured">
+        <p class="tag">La más elegida</p>
+        <h3>Work &amp; Wander</h3>
+        <p class="for">Quieres contenido para tu marca y tus redes.</p>
+        <p class="meta">90 min · 2 locaciones · 2 looks</p>
+        <p class="price"><s>USD 260</s><b>USD 189</b></p>
+        <ul>
+          <li>30 fotos editadas</li>
+          <li>Profile Kit: 5 fotos recortadas por plataforma</li>
+          <li>Tu espacio de trabajo + calle o playa</li>
+          <li>Llamada de planificación de 15 min</li>
+          <li>Reel vertical de 30 segundos</li>
+          <li>Avance en 24 h, galería en 5–7 días</li>
+          <li class="gift">Postal fine art de regalo</li>
+        </ul>
+        <a class="btn btn-solid" data-wa data-pkg="Work &amp; Wander" href="https://wa.me/56999679935">Reservar Work &amp; Wander</a>
+      </article>
+      <article class="p">
+        <h3>Nomad Story</h3>
+        <p class="for">Tu marca y un recuerdo completo de Vietnam.</p>
+        <p class="meta">3 horas · 3+ locaciones · 3+ looks</p>
+        <p class="price"><s>USD 420</s><b>USD 299</b></p>
+        <ul>
+          <li>50 fotos editadas + archivos RAW</li>
+          <li>Profile Kit: 5 fotos recortadas por plataforma</li>
+          <li>Da Nang y Hội An en una sesión</li>
+          <li>Llamada de planificación</li>
+          <li>Reel vertical de 30 segundos</li>
+          <li>Avance en 24 h, galería en 7–10 días</li>
+          <li class="gift">Postal fine art de regalo</li>
+        </ul>
+        <a class="btn" data-wa data-pkg="Nomad Story" href="https://wa.me/56999679935">Reservar Nomad Story</a>
+      </article>
+    </div>
+    <div class="notes">
+      <p><b>Trae a otro nómada</b>Reserva con alguien de tu coworking o grupo y cada uno tiene USD 20 de descuento.</p>
+      <p><b>Reserva</b>Un abono del 30% asegura tu fecha. El resto se paga el día de la sesión.</p>
+      <p><b>Traslados</b>Incluidos dentro de Hội An o dentro de Da Nang. Las sesiones en ambas ciudades son parte de Nomad Story.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gift-band" aria-labelledby="gift-title">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Incluido en cada sesión</p>
+      <h2 id="gift-title">Una postal de tu vida en Vietnam.</h2>
+      <p>Cada cliente recibe una postal impresa en papel fine art con su retrato favorito de la sesión, con la fecha y el lugar impresos en el reverso.</p>
+      <p>Guárdala, mándala a casa o regálasela a quien siempre te pregunta qué haces realmente por acá.</p>
+    </div>
+    <div class="cards" aria-hidden="true">
+      <div class="pc pc-back">
+        <div class="msg">
+          <i>Saludos desde la vida que elegí.</i>
+          <small>Nomad Sessions · Cris Maturana Photo</small>
+        </div>
+        <div class="addr">
+          <div class="stamp"><span><b>VN</b>Việt Nam</span></div>
+          <div class="postmark">HỘI AN<br>· 2026 ·<br>DA NANG</div>
+          <hr><hr><hr>
+        </div>
+      </div>
+      <div class="pc pc-front">
+        <img loading="lazy" src="https://CrisMaturana.b-cdn.net/PORTRAITS-SELECTION/rachel-portrait-0012.JPG" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <h2>Cómo funciona</h2>
+    <ol>
+      <li><b>Escríbeme por WhatsApp</b><p>Cuéntame qué sesión te gusta y más o menos cuándo. Respondo en menos de 24 horas, coordinando con tus llamadas de trabajo (GMT+7).</p></li>
+      <li><b>Elegimos el día y el lugar</b><p>Coworking, café, Old Town, playa o arrozales. Preferimos temprano en la mañana o al final de la tarde, con la luz más suave.</p></li>
+      <li><b>Sesión y avance en 24 horas</b><p>Una sesión relajada con dirección suave. Recibes una primera selección al día siguiente y luego la galería completa.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <blockquote>Yo también soy un extranjero que eligió vivir aquí. Sé lo que es construir <em>una vida y un negocio</em> desde un laptop en Vietnam.</blockquote>
+    <div class="facts">
+      <div><b>Cris Maturana</b><p>Fotógrafo chileno de retrato y documental, viviendo en Hội An desde 2024.</p></div>
+      <div><b>Más de 15 años detrás de la cámara</b><p>Matrimonios, retratos y marca personal en Chile y el sudeste asiático.</p></div>
+      <div><b>Natural, no rígido</b><p>Dirección suave con mi método FLOW, para que te veas como tú en un buen día.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <h2>Preguntas</h2>
+    <div>
+      <details><summary>¿Qué me pongo?</summary><p>Al reservar recibes una guía de vestuario. Funcionan mejor los colores lisos y simples. Para Work &amp; Wander y Nomad Story, trae un look de trabajo y uno relajado.</p></details>
+      <details><summary>¿Puedo traer mi laptop?</summary><p>Sí, tráelo. Las escenas trabajando en un café o coworking son de las imágenes más útiles para tu marca.</p></details>
+      <details><summary>¿Y si llueve?</summary><p>Movemos la sesión a otro día sin costo, o la hacemos bajo techo en un café o coworking.</p></details>
+      <details><summary>¿Cómo pago?</summary><p>Un abono del 30% por transferencia Wise asegura tu fecha. El resto se paga el día de la sesión.</p></details>
+      <details><summary>Solo estoy unas semanas, ¿alcanza?</summary><p>Sí. Escríbeme tus fechas y buscamos un espacio antes de que te vayas. El avance llega en 24 horas y la galería completa se entrega online, estés donde estés.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <h2>Tu próxima foto de perfil, hecha en Vietnam.</h2>
+    <p>Mándame un mensaje con la sesión que te gusta y tus fechas. El precio de lanzamiento es solo para las primeras 15 sesiones.</p>
+    <div class="cta-row">
+      <a class="btn btn-solid" data-wa href="https://wa.me/56999679935">Reservar por WhatsApp</a>
+      <a class="btn btn-ghost" href="https://www.crismaturana.com/es/contact?session=Portrait+%2F+Personal+Branding&utm_source=nomads&utm_medium=landing&utm_campaign=nomad-sessions#contact-form">Prefiero escribir por correo</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Cris Maturana Photo · Retratos en Da Nang y Hội An</span>
+    <span><a href="https://www.crismaturana.com/es">crismaturana.com</a></span>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa href="https://wa.me/56999679935" aria-label="Reservar por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>
+  WhatsApp
+</a>
+
+<script is:inline>
+(function(){
+  try{
+    var q=new URLSearchParams(location.search);
+    var src=(q.get('src')||'').replace(/[^a-z0-9-]/gi,'').slice(0,40);
+    document.querySelectorAll('[data-wa]').forEach(function(a){
+      var pkg=a.getAttribute('data-pkg');
+      var msg='¡Hola Cris! Vi las Nomad Sessions'+(pkg?' y me interesa '+pkg:'')+'. Mis fechas son: ';
+      if(src) msg+=' (vía '+src+')';
+      a.href='https://wa.me/56999679935?text='+encodeURIComponent(msg);
+    });
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

@@ -7,5 +7,5 @@ export default defineConfig({
   build: {
     assets: '_assets',
   },
-  integrations: [sitemap({ filter: (page) => !page.includes('/novios-2027-2028') })],
+  integrations: [sitemap({ filter: (page) => !page.includes('/novios-2027-2028') && !page.includes('/nomad-sessions') && !page.includes('/sesiones-nomadas') })],
 });
